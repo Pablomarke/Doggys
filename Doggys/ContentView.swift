@@ -16,6 +16,15 @@ struct ContentView: View {
         ZStack {
             Color.customLightGreen.ignoresSafeArea()
             VStack(spacing: 5) {
+                Image(decorative: "logoEars")
+                    .resizable()
+                    .frame(width: 500, height: 300)
+                Image(decorative: "text")
+                    .resizable()
+                    .frame(width: 200, height: 70, alignment: .center)
+                    .padding(.top, -70)
+                    .padding(.bottom, 50)
+                
                 TextField("Email", text: $email)
                     .padding()
                     .frame(width:280)
@@ -26,7 +35,6 @@ struct ContentView: View {
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
                     .opacity(0.9)
-                    .padding(.top, 290)
                 
                 SecureField("Password", text: $password)
                     .padding()
@@ -62,7 +70,7 @@ struct ContentView: View {
                         .foregroundStyle(.white)
                         .font(.title3)
                 })
-                .padding(.top, 180)
+                .padding(.top, 150)
             }
             
             
