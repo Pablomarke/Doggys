@@ -18,11 +18,11 @@ struct ContentView: View {
             VStack(spacing: 5) {
                 Image(decorative: "logoEars")
                     .resizable()
-                    .frame(width: 500, height: 300)
+                    .frame(width: 400, height: 250)
                 Image(decorative: "text")
                     .resizable()
-                    .frame(width: 200, height: 70, alignment: .center)
-                    .padding(.top, -70)
+                    .frame(width: 160, height: 50, alignment: .center)
+                    .padding(.top, -60)
                     .padding(.bottom, 50)
                 
                 TextField("Email", text: $email)
