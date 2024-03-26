@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyCIdcWDDAK3YcwQITHEHP0pXjrfiTgT8cY</string>
+	<string>AIzaSyCGdkVpV0FttOxvQ-NloUU_jTa_cOQaLd4</string>
 	<key>GCM_SENDER_ID</key>
-	<string>674858437735</string>
+	<string>750531120214</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>pdcmdev.Doggys</string>
 	<key>PROJECT_ID</key>
-	<string>doggys-41653</string>
+	<string>doggys-5c38f</string>
 	<key>STORAGE_BUCKET</key>
-	<string>doggys-41653.appspot.com</string>
+	<string>doggys-5c38f.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:674858437735:ios:c912d66e585491379358c2</string>
+	<string>1:750531120214:ios:ef98cf3ae07eb4ca64bff7</string>
 </dict>
 </plist>
