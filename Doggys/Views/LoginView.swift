@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalytics
 
 struct LoginView: View {
     
@@ -18,36 +19,18 @@ struct LoginView: View {
             VStack(spacing: 5) {
                 Image(decorative: "logoEars")
                     .resizable()
-                    .frame(width: 400, height: 250)
+                    .frame(width: 400, 
+                           height: 250)
                 Image(decorative: "text")
                     .resizable()
-                    .frame(width: 160, height: 50, alignment: .center)
+                    .frame(width: 160, 
+                           height: 50,
+                           alignment: .center)
                     .padding(.top, -60)
                     .padding(.bottom, 50)
-                
-                TextField("Email", text: $email)
-                    .padding()
-                    .frame(width:280)
-                    .foregroundColor(.white)
-                    .background(Color.customLightBlue)
-                    .cornerRadius(20)
-                    .shadow(radius: 10, x: 5, y: 10)
-                    .textInputAutocapitalization(.never)
-                    .autocorrectionDisabled()
-                    .opacity(0.9)
-                
-                SecureField("Password", text: $password)
-                    .padding()
-                    .frame(width: 280)
-                    .foregroundColor(.white)
-                    .background(Color.customLightBlue)
-                    .cornerRadius(20)
-                    .shadow(radius: 10, x: 5, y: 10)
-                    .textInputAutocapitalization(.never)
-                    .autocorrectionDisabled()
-                    .opacity(0.9)
-                    .padding()
-                
+
+                TextFieldView(label: "Email")
+                SecureTextFieldView(label: "Password")
                 
                 Button(action: {
                     
@@ -64,7 +47,7 @@ struct LoginView: View {
                 .padding(.top, 40)
                 
                 Button(action: {
-                    
+//                    TODO: Button action
                 }, label: {
                     Text("Register")
                         .foregroundStyle(Color.customBlue)
@@ -72,9 +55,11 @@ struct LoginView: View {
                 })
                 .padding(.top, 150)
             }
-            
-            
         }
+        .onAppear(perform: {
+            Analytics.logEvent("Entro a la app",
+                               parameters: ["message":"Arranca la app"])
+        })
     }
 }
 
