@@ -28,7 +28,7 @@ struct LoginView: View {
                 TextField("Email", text: $email)
                     .padding()
                     .frame(width:280)
-                    .foregroundColor(.customBlue)
+                    .foregroundColor(.white)
                     .background(Color.customLightBlue)
                     .cornerRadius(20)
                     .shadow(radius: 10, x: 5, y: 10)
@@ -39,7 +39,7 @@ struct LoginView: View {
                 SecureField("Password", text: $password)
                     .padding()
                     .frame(width: 280)
-                    .foregroundColor(.customBlue)
+                    .foregroundColor(.white)
                     .background(Color.customLightBlue)
                     .cornerRadius(20)
                     .shadow(radius: 10, x: 5, y: 10)
@@ -67,7 +67,7 @@ struct LoginView: View {
                     
                 }, label: {
                     Text("Register")
-                        .foregroundStyle(.white)
+                        .foregroundStyle(Color.customBlue)
                         .font(.title3)
                 })
                 .padding(.top, 150)
