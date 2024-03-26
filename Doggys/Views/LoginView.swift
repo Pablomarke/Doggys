@@ -1,13 +1,13 @@
 //
-//  ContentView.swift
+//  LoginView.swift
 //  Doggys
 //
-//  Created by Pablo Márquez Marín on 21/3/24.
+//  Created by Marco Muñoz on 21/3/24.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct LoginView: View {
     
     @State private var email = ""
     @State private var password = ""
@@ -79,5 +79,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    LoginView()
 }
