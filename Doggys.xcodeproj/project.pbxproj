@@ -170,10 +170,10 @@
 		39228FDB2BAC701F00C91F40 /* Doggys */ = {
 			isa = PBXGroup;
 			children = (
+				A93207502BB4B0110068D9C2 /* ViewModels */,
 				A932074B2BB4ABE30068D9C2 /* Environment */,
 				A93207402BB49D110068D9C2 /* Protocols */,
 				A932073D2BB48FA90068D9C2 /* Models */,
-				A93207382BB48E000068D9C2 /* Firebase */,
 				A9B53B902BB336AC000AD215 /* Views */,
 				A9B53B8F2BB336A3000AD215 /* App */,
 				A9B53B8E2BB33687000AD215 /* Suporting Files */,
@@ -250,6 +250,14 @@
 				A932074E2BB4AC100068D9C2 /* LogViewModelEnvironmentKey.swift */,
 			);
 			path = Environment;
+			sourceTree = "<group>";
+		};
+		A93207502BB4B0110068D9C2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A93207382BB48E000068D9C2 /* Firebase */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		A973E23D2BB182EB00BDF917 /* Tools */ = {
