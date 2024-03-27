@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TextFieldView: View {
-    @State var label: String
+    @State var label = String()
 
     var body: some View {
         TextField(label, 

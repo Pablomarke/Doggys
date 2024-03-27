@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SecureTextFieldView: View {
-    @State var label: String
+    @State var label = String()
 
     var body: some View {
         SecureField(label,
