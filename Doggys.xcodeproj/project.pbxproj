@@ -16,6 +16,10 @@
 		39228FFA2BAC702100C91F40 /* DoggysUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39228FF92BAC702100C91F40 /* DoggysUITestsLaunchTests.swift */; };
 		397B93DA2BB353C20030D77E /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B93D92BB353C20030D77E /* TextFieldView.swift */; };
 		397B93DC2BB3560C0030D77E /* SecureTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B93DB2BB3560C0030D77E /* SecureTextFieldView.swift */; };
+		A93207372BB48DA90068D9C2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93207362BB48DA90068D9C2 /* LoginViewModel.swift */; };
+		A932073A2BB48E170068D9C2 /* FirebaseAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93207392BB48E170068D9C2 /* FirebaseAuthViewModel.swift */; };
+		A932073C2BB48F860068D9C2 /* AuthProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A932073B2BB48F860068D9C2 /* AuthProtocol.swift */; };
+		A932073F2BB48FB40068D9C2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A932073E2BB48FB40068D9C2 /* User.swift */; };
 		A973E23F2BB182F900BDF917 /* ColorsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A973E23E2BB182F900BDF917 /* ColorsApp.swift */; };
 		A9F98C912BB34C22004E9451 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A9F98C902BB34C22004E9451 /* FirebaseAnalytics */; };
 		A9F98C932BB34C22004E9451 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = A9F98C922BB34C22004E9451 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -77,6 +81,10 @@
 		39228FF92BAC702100C91F40 /* DoggysUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoggysUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		397B93D92BB353C20030D77E /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		397B93DB2BB3560C0030D77E /* SecureTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextFieldView.swift; sourceTree = "<group>"; };
+		A93207362BB48DA90068D9C2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A93207392BB48E170068D9C2 /* FirebaseAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthViewModel.swift; sourceTree = "<group>"; };
+		A932073B2BB48F860068D9C2 /* AuthProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocol.swift; sourceTree = "<group>"; };
+		A932073E2BB48FB40068D9C2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A973E23E2BB182F900BDF917 /* ColorsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsApp.swift; sourceTree = "<group>"; };
 		A9F98CC62BB34CD6004E9451 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,6 +164,10 @@
 		39228FDB2BAC701F00C91F40 /* Doggys */ = {
 			isa = PBXGroup;
 			children = (
+				A93207402BB49D110068D9C2 /* Protocols */,
+				A932073D2BB48FA90068D9C2 /* Models */,
+				A93207382BB48E000068D9C2 /* Firebase */,
+				A93207352BB48D8C0068D9C2 /* ViewModels */,
 				A9B53B902BB336AC000AD215 /* Views */,
 				A9B53B8F2BB336A3000AD215 /* App */,
 				A9B53B8E2BB33687000AD215 /* Suporting Files */,
@@ -197,6 +209,38 @@
 				397B93DB2BB3560C0030D77E /* SecureTextFieldView.swift */,
 			);
 			path = ToolViews;
+			sourceTree = "<group>";
+		};
+		A93207352BB48D8C0068D9C2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A93207362BB48DA90068D9C2 /* LoginViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A93207382BB48E000068D9C2 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				A93207392BB48E170068D9C2 /* FirebaseAuthViewModel.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		A932073D2BB48FA90068D9C2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A932073E2BB48FB40068D9C2 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A93207402BB49D110068D9C2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A932073B2BB48F860068D9C2 /* AuthProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		A973E23D2BB182EB00BDF917 /* Tools */ = {
@@ -398,9 +442,13 @@
 			files = (
 				39228FDF2BAC701F00C91F40 /* LoginView.swift in Sources */,
 				39228FDD2BAC701F00C91F40 /* DoggysApp.swift in Sources */,
+				A93207372BB48DA90068D9C2 /* LoginViewModel.swift in Sources */,
 				397B93DA2BB353C20030D77E /* TextFieldView.swift in Sources */,
 				397B93DC2BB3560C0030D77E /* SecureTextFieldView.swift in Sources */,
+				A932073F2BB48FB40068D9C2 /* User.swift in Sources */,
 				A973E23F2BB182F900BDF917 /* ColorsApp.swift in Sources */,
+				A932073C2BB48F860068D9C2 /* AuthProtocol.swift in Sources */,
+				A932073A2BB48E170068D9C2 /* FirebaseAuthViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,7 +612,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Doggys/Preview Content\"";
-				DEVELOPMENT_TEAM = D35BGERC28;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -593,7 +641,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Doggys/Preview Content\"";
-				DEVELOPMENT_TEAM = D35BGERC28;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
