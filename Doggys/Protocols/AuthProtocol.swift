@@ -1,5 +1,5 @@
 //
-//  AuthViewModelProtocol.swift
+//  AuthProtocol.swift
 //  Doggys
 //
 //  Created by Marco Muñoz on 27/3/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol AuthViewModelProtocol {
+protocol AuthProtocol {
     func register(email: String, password: String, onSuccess: @escaping (User) -> Void, onFailure: @escaping (Error) -> Void)
     func login(email: String, password: String, onSuccess: @escaping (User) -> Void, onFailure: @escaping (Error) -> Void)
     func isUserLoggedIn(onSuccess: @escaping (Bool) -> Void, onFailure: @escaping (Error) -> Void)
