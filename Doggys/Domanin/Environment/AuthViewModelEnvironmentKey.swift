@@ -17,4 +17,3 @@ extension EnvironmentValues {
         set { self[AuthViewModelEnvironmentKey.self] = newValue }
     }
 }
-

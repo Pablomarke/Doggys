@@ -6,6 +6,8 @@
 //
 
 protocol LogProtocol {
-    func log(screen: String, action: String)
-    func crash(screen: String, exception: Error)
+    func log(screen: String, 
+             action: String)
+    func crash(screen: String, 
+               exception: Error)
 }

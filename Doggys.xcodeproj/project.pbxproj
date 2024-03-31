@@ -213,10 +213,19 @@
 			path = ToolViews;
 			sourceTree = "<group>";
 		};
-		39D9D83B2BB710C900B5331A /* Domanin */ = {
+		399BE5312BB976B600AC323C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
 				A973E23D2BB182EB00BDF917 /* Tools */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		39D9D83B2BB710C900B5331A /* Domanin */ = {
+			isa = PBXGroup;
+			children = (
+				399BE5312BB976B600AC323C /* Assets */,
+				39228FE02BAC702100C91F40 /* Assets.xcassets */,
 				A932073D2BB48FA90068D9C2 /* Models */,
 				A93207402BB49D110068D9C2 /* Protocols */,
 				A932074B2BB4ABE30068D9C2 /* Environment */,
@@ -288,7 +297,6 @@
 			isa = PBXGroup;
 			children = (
 				A9F98CC62BB34CD6004E9451 /* GoogleService-Info.plist */,
-				39228FE02BAC702100C91F40 /* Assets.xcassets */,
 			);
 			path = "Suporting Files";
 			sourceTree = "<group>";
