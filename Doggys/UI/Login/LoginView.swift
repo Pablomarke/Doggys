@@ -9,6 +9,8 @@ import SwiftUI
 
 struct LoginView: View {
     //MARK: Properties
+    
+    @State private var isLoggedIn: Bool = false
     @Environment(\.authViewModel) private var authViewModel: AuthProtocol
     @Environment(\.logViewModel) private var logViewModel: LogProtocol
     @ObservedObject var viewModel: LoginViewModel
@@ -48,8 +50,17 @@ struct LoginView: View {
                                 x: 0,
                                 y: 10)
                 })
-                .padding(.top, 
+                .padding(.top,
                          40)
+                
+                Button {
+                    recoveryPassword()
+                } label: {
+                    Text("Recuperar Contraseña")
+                        .padding(.top, 25)
+                        .foregroundStyle(.gray)
+                    
+                }
                 
                 Button(action: {
                     registerUser()
@@ -59,11 +70,12 @@ struct LoginView: View {
                         .font(.title3)
                 })
                 .padding(.top, 
-                         150)
+                         110)
             }
         }
         .onAppear(perform: {
             viewModel.initAnalyticsFirebase()
+            checkIfUserIsLoggedIn()
         })
     }
 }
@@ -71,6 +83,18 @@ struct LoginView: View {
 //MARK: Private Methods
 private extension LoginView {
     // TODO: To viewmodel
+    
+    func checkIfUserIsLoggedIn() {
+        authViewModel.isUserLoggedIn(
+            onSuccess: { loggedIn in
+                isLoggedIn = loggedIn
+            },
+            onFailure: { error in
+                logViewModel.crash(screen: LoginView.viewName, exception: error)
+            }
+        )
+    }
+    
     func registerUser() {
         authViewModel.register(email: email,
                                password: password,
@@ -82,6 +106,17 @@ private extension LoginView {
             alertMessage = error.localizedDescription
             showAlert = true
         })
+    }
+    
+    func recoveryPassword(){
+        authViewModel.recoverPassword(email: email) {
+            logViewModel.log(screen: LoginView.viewName, action: "PASSWORD_RECOVERED")
+            alertMessage = "Password recovery initiated"
+        } onFailure: { error in
+            alertMessage = error.localizedDescription
+            showAlert = true
+        }
+
     }
 }
 
