@@ -14,7 +14,7 @@ class FirebaseAuthViewModel: AuthProtocol {
                   onSuccess: @escaping (User) -> Void,
                   onFailure: @escaping (Error) -> Void) {
         Auth.auth().createUser(withEmail: email, 
-                               password: password) { [weak self] result, error in
+                               password: password) { result, error in
             
             if let error = error {
                 onFailure(error)
@@ -33,7 +33,7 @@ class FirebaseAuthViewModel: AuthProtocol {
                onSuccess: @escaping (User) -> Void,
                onFailure: @escaping (Error) -> Void) {
         Auth.auth().signIn(withEmail: email, 
-                           password: password) { [weak self] result, error in
+                           password: password) { result, error in
             
             if let error = error {
                 onFailure(error)
@@ -58,7 +58,7 @@ class FirebaseAuthViewModel: AuthProtocol {
     func recoverPassword(email: String, 
                          onSuccess: @escaping () -> Void,
                          onFailure: @escaping (Error) -> Void) {
-        Auth.auth().sendPasswordReset(withEmail: email) { [weak self] error in
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
             
             if let error = error {
                 onFailure(error)
