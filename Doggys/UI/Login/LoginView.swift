@@ -26,6 +26,7 @@ struct LoginView: View {
         self.viewModel = viewModel
     }
     
+    //MARK: View
     var body: some View {
         ZStack {
             Color.customLightGreen.ignoresSafeArea()
@@ -37,7 +38,7 @@ struct LoginView: View {
                 SecureTextFieldView(label: "password",
                                     text: $password)
                 Button(action: {
-                    
+//                    TODO
                 }, label: {
                     Text("Login")
                         .font(.title2)
@@ -68,8 +69,12 @@ struct LoginView: View {
             viewModel.initAnalyticsFirebase()
         })
     }
+}
 
-    private func registerUser() {
+//MARK: Private Methods
+private extension LoginView {
+    // TODO: To viewmodel
+    func registerUser() {
         authViewModel.register(email: email,
                                password: password,
                                onSuccess: { user in

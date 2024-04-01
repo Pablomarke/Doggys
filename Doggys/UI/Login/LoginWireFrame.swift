@@ -21,7 +21,7 @@ final class LoginWireFrame {
         return AnyView(viewController)
     }
     
-    //MARK: Private Methods:
+    //MARK: Private Methods
     private func createViewModel(with dataManager: LoginDataManager) -> LoginViewModel {
         return LoginViewModel(dataManager: dataManager)
     }
