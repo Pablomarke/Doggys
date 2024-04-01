@@ -9,10 +9,11 @@ import SwiftUI
 
 struct SecureTextFieldView: View {
     @State var label = String()
-
+    @Binding var text: String
+    
     var body: some View {
         SecureField(label,
-                    text: $label)
+                    text: $text)
             .padding()
             .frame(width: 280)
             .foregroundColor(.white)
@@ -23,8 +24,4 @@ struct SecureTextFieldView: View {
             .autocorrectionDisabled()
             .opacity(0.9)
             .padding()    }
-}
-
-#Preview {
-    SecureTextFieldView(label: "Password")
 }

@@ -9,10 +9,11 @@ import SwiftUI
 
 struct TextFieldView: View {
     @State var label = String()
-
+    @Binding var text: String
+    
     var body: some View {
         TextField(label, 
-                  text: $label)
+                  text: $text)
             .padding()
             .frame(width:280)
             .foregroundColor(.white)
@@ -23,8 +24,4 @@ struct TextFieldView: View {
             .autocorrectionDisabled()
             .opacity(0.9)
     }
-}
-
-#Preview {
-    TextFieldView(label: "Email")
 }

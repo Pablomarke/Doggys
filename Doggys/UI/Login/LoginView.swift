@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import FirebaseAnalytics
 
 struct LoginView: View {
     //MARK: Properties
@@ -31,56 +30,28 @@ struct LoginView: View {
         ZStack {
             Color.customLightGreen.ignoresSafeArea()
             VStack(spacing: 5) {
-                Image(decorative: "logoEars")
-                    .resizable()
-                    .frame(width: 400,
-                           height: 250)
-                Image(decorative: "text")
-                    .resizable()
-                    .frame(width: 160,
-                           height: 50,
-                           alignment: .center)
-                    .padding(.top, -60)
-                    .padding(.bottom, 50)
+                LogoView()
+                TextFieldView(label: "E-mail",
+                              text: $email)
                 
-                TextField("email",
-                          text: $email)
-                .padding()
-                .frame(width:280)
-                .foregroundColor(.white)
-                .background(Color.customLightBlue)
-                .cornerRadius(20)
-                .shadow(radius: 10, x: 5, y: 10)
-                .textInputAutocapitalization(.never)
-                .autocorrectionDisabled()
-                .opacity(0.9)
-                
-                SecureField("password",
-                            text: $password)
-                .padding()
-                .frame(width: 280)
-                .foregroundColor(.white)
-                .background(Color.customLightBlue)
-                .cornerRadius(20)
-                .shadow(radius: 10, x: 5, y: 10)
-                .textInputAutocapitalization(.never)
-                .autocorrectionDisabled()
-                .opacity(0.9)
-                .padding()
-                
+                SecureTextFieldView(label: "password",
+                                    text: $password)
                 Button(action: {
                     
                 }, label: {
-                    
                     Text("Login")
                         .font(.title2)
                         .foregroundStyle(.white)
-                        .frame(width: 150, height: 40)
+                        .frame(width: 150, 
+                               height: 40)
                         .background(Color.customGreen)
                         .cornerRadius(15)
-                        .shadow(radius: 15, x: 0, y: 10)
+                        .shadow(radius: 15, 
+                                x: 0,
+                                y: 10)
                 })
-                .padding(.top, 40)
+                .padding(.top, 
+                         40)
                 
                 Button(action: {
                     registerUser()
@@ -89,27 +60,29 @@ struct LoginView: View {
                         .foregroundStyle(Color.customBlue)
                         .font(.title3)
                 })
-                .padding(.top, 150)
+                .padding(.top, 
+                         150)
             }
         }
         .onAppear(perform: {
-            Analytics.logEvent("Entro a la app",
-                               parameters: ["message":"Arranca la app"])
+            viewModel.initAnalyticsFirebase()
         })
     }
-    
-    
-    
+
     private func registerUser() {
-        authViewModel.register(email: email, password: password, onSuccess: { user in
-            logViewModel.log(screen: LoginView.viewName, action: "USER_REGISTERED")
-        }, onFailure: { error in
+        authViewModel.register(email: email,
+                               password: password,
+                               onSuccess: { user in
+            logViewModel.log(screen: LoginView.viewName,
+                             action: "USER_REGISTERED")
+        },
+                               onFailure: { error in
             alertMessage = error.localizedDescription
             showAlert = true
         })
     }
 }
-/*
+
 #Preview {
-    LoginView()
-}*/
+    LoginWireFrame().viewController
+}
