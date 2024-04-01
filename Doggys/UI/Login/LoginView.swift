@@ -9,16 +9,23 @@ import SwiftUI
 import FirebaseAnalytics
 
 struct LoginView: View {
-    
+    //MARK: Properties
     @Environment(\.authViewModel) private var authViewModel: AuthProtocol
     @Environment(\.logViewModel) private var logViewModel: LogProtocol
-    
+    @ObservedObject var viewModel: LoginViewModel
     @State private var alertMessage: String = ""
     @State private var email = ""
     @State private var password = ""
     @State private var showAlert: Bool = false
     private static var viewName: String = "LoginView"
     
+    public init(viewModel: LoginViewModel) {
+        self.viewModel = viewModel
+    }
+    
+    mutating func set(viewModel: LoginViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         ZStack {
@@ -91,6 +98,8 @@ struct LoginView: View {
         })
     }
     
+    
+    
     private func registerUser() {
         authViewModel.register(email: email, password: password, onSuccess: { user in
             logViewModel.log(screen: LoginView.viewName, action: "USER_REGISTERED")
@@ -100,7 +109,7 @@ struct LoginView: View {
         })
     }
 }
-
+/*
 #Preview {
     LoginView()
-}
+}*/
