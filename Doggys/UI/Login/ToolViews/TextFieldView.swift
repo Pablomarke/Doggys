@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct TextFieldView: View {
-    @State var label = String()
     @Binding var text: String
     
     var body: some View {
-        TextField(label, 
+        TextField(text,
                   text: $text)
             .padding()
             .frame(width:280)

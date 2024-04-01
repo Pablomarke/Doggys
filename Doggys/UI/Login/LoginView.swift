@@ -13,8 +13,8 @@ struct LoginView: View {
     @Environment(\.logViewModel) private var logViewModel: LogProtocol
     @ObservedObject var viewModel: LoginViewModel
     @State private var alertMessage: String = ""
-    @State private var email = ""
-    @State private var password = ""
+    @State private var email = "E-mail"
+    @State private var password = "Password"
     @State private var showAlert: Bool = false
     private static var viewName: String = "LoginView"
     
@@ -32,11 +32,8 @@ struct LoginView: View {
             Color.customLightGreen.ignoresSafeArea()
             VStack(spacing: 5) {
                 LogoView()
-                TextFieldView(label: "E-mail",
-                              text: $email)
-                
-                SecureTextFieldView(label: "password",
-                                    text: $password)
+                TextFieldView(text: $email)
+                SecureTextFieldView(text: $password)
                 Button(action: {
 //                    TODO
                 }, label: {

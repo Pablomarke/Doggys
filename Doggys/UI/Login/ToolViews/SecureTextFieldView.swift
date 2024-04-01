@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct SecureTextFieldView: View {
-    @State var label = String()
     @Binding var text: String
     
     var body: some View {
-        SecureField(label,
+        SecureField(text,
                     text: $text)
             .padding()
             .frame(width: 280)
