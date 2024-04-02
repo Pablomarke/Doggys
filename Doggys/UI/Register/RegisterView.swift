@@ -23,16 +23,11 @@ struct RegisterView: View {
         ZStack{
             Color.customGreenblue.ignoresSafeArea()
             VStack{
-                Image(.text)
-                    .resizable()
-                    .frame(width: 150, height: 50)
-                    .padding(.top, -30)
+                LogoView()
+                    .padding(.top, -150)
                 
                 TextFieldView(text: $email)
-                    .padding(.top, 100)
                 SecureTextFieldView(text: $password)
-                    .padding(.top, 25)
-                
                 Button(action: {
                     registerUser()
                 }, label: {
@@ -47,7 +42,7 @@ struct RegisterView: View {
                                 x: 0,
                                 y: 10)
                 })
-                .padding(.top, 60)
+                .padding(.top, 20)
             }
         }
     }

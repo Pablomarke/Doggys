@@ -22,10 +22,8 @@ struct RecoveryPasswordView: View {
         ZStack{
             Color.customGreen.ignoresSafeArea()
             VStack{
-                Image(.logoEars)
-                    .resizable()
-                    .frame(width: 400, height: 250)
-                    .padding(.top, -150)
+                LogoView()
+                    .padding(.top, -190)
                 TextFieldView(text: $email)
                     .padding()
                 Button(action: {
