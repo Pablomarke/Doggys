@@ -9,38 +9,28 @@ import SwiftUI
 
 struct LoginView: View {
     //MARK: Properties
-    
-    @State private var isLoggedIn: Bool = false
     @Environment(\.authViewModel) private var authViewModel: AuthProtocol
     @Environment(\.logViewModel) private var logViewModel: LogProtocol
     @ObservedObject var viewModel: LoginViewModel
-    @State private var alertMessage: String = ""
-    @State private var email = "e-mail"
-    @State private var password = "password"
-    @State private var showAlert: Bool = false
-    private static var viewName: String = "LoginView"
+    static var viewName: String = "LoginView"
     
     public init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
     }
-    
-    mutating func set(viewModel: LoginViewModel) {
-        self.viewModel = viewModel
-    }
-    
+
     //MARK: View
     var body: some View {
-        NavigationView{
+        NavigationView {
             ZStack {
                 Color.customGreenblue.ignoresSafeArea()
                 VStack(spacing: 5) {
                     LogoAppDetailView()
                         .padding()
-                    TextFieldView(text: $email)
+                    TextFieldView(text: $viewModel.email)
                         .padding(.top, 60)
-                    SecureTextFieldView(text: $password)
+                    SecureTextFieldView(text: $viewModel.password)
                     Button(action: {
-                        //MARK: TODO
+                        viewModel.checkIfUserIsLoggedIn()
                     }, label: {
                         Text("Login")
                             .font(.title2)
@@ -60,58 +50,44 @@ struct LoginView: View {
                         RecoveryPasswordView()
                     } label: {
                         Text("Recuperar Contraseña")
-                            .padding(.top, 25)
+                            .padding(.top, 
+                                     25)
                             .foregroundStyle(.gray)
                     }
-                    .padding(.bottom, 80)
+                    .padding(.bottom, 
+                             80)
                     
                     NavigationLink{
                         RegisterView()
                     }
-                label:{ Text("¿Aún no tienes cuenta?")
+                label: { Text("¿Aún no tienes cuenta?")
                     .font(.title3)}
                 }
             }
+            // MARK: - Life cycle -
             .onAppear(perform: {
                 viewModel.initAnalyticsFirebase()
-                checkIfUserIsLoggedIn()
+                viewModel.checkIfUserIsLoggedIn()
             })
         }
        .onTapGesture {
-           UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+           UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), 
+                                           to: nil,
+                                           from: nil,
+                                           for: nil)
         }
+    }
+    mutating func set(viewModel: LoginViewModel) {
+        self.viewModel = viewModel
     }
 }
 
 //MARK: Private Methods
 private extension LoginView {
-    // TODO: To View Model
-    
-    func checkIfUserIsLoggedIn() {
-        authViewModel.isUserLoggedIn(
-            onSuccess: { loggedIn in
-                isLoggedIn = loggedIn
-            },
-            onFailure: { error in
-                logViewModel.crash(screen: LoginView.viewName, exception: error)
-            }
-        )
-    }
-    
-    func registerUser() {
-        authViewModel.register(email: email,
-                               password: password,
-                               onSuccess: { user in
-            logViewModel.log(screen: LoginView.viewName,
-                             action: "USER_REGISTERED")
-        },
-                               onFailure: { error in
-            alertMessage = error.localizedDescription
-            showAlert = true
-        })
-    }
 }
 
+/*
 #Preview {
-    LoginWireFrame().viewController
-}
+    LoginWireFrame(authViewModel: AuthProtocol as! AuthProtocol,
+                   logViewModel: LogProtocol as! LogProtocol).viewController
+}*/
