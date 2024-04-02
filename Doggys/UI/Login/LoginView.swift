@@ -15,8 +15,8 @@ struct LoginView: View {
     @Environment(\.logViewModel) private var logViewModel: LogProtocol
     @ObservedObject var viewModel: LoginViewModel
     @State private var alertMessage: String = ""
-    @State private var email = "E-mail"
-    @State private var password = "Password"
+    @State private var email = "e-mail"
+    @State private var password = "password"
     @State private var showAlert: Bool = false
     private static var viewName: String = "LoginView"
     
@@ -30,53 +30,52 @@ struct LoginView: View {
     
     //MARK: View
     var body: some View {
-        ZStack {
-            Color.customLightGreen.ignoresSafeArea()
-            VStack(spacing: 5) {
-                LogoView()
-                TextFieldView(text: $email)
-                SecureTextFieldView(text: $password)
-                Button(action: {
-//                    TODO
-                }, label: {
-                    Text("Login")
-                        .font(.title2)
-                        .foregroundStyle(.white)
-                        .frame(width: 150, 
-                               height: 40)
-                        .background(Color.customGreen)
-                        .cornerRadius(15)
-                        .shadow(radius: 15, 
-                                x: 0,
-                                y: 10)
-                })
-                .padding(.top,
-                         40)
-                
-                Button {
-                    recoveryPassword()
-                } label: {
-                    Text("Recuperar Contraseña")
-                        .padding(.top, 25)
-                        .foregroundStyle(.gray)
+        NavigationView{
+            ZStack {
+                Color.customLightGreen.ignoresSafeArea()
+                VStack(spacing: 5) {
+                    LogoView()
+                    TextFieldView(text: $email)
+                    SecureTextFieldView(text: $password)
+                    Button(action: {
+                        //                    TODO
+                    }, label: {
+                        Text("Login")
+                            .font(.title2)
+                            .foregroundStyle(.white)
+                            .frame(width: 150,
+                                   height: 40)
+                            .background(Color.customGreen)
+                            .cornerRadius(15)
+                            .shadow(radius: 15,
+                                    x: 0,
+                                    y: 10)
+                    })
+                    .padding(.top,
+                             40)
                     
+                    Button {
+                        recoveryPassword()
+                    } label: {
+                        Text("Recuperar Contraseña")
+                            .padding(.top, 25)
+                            .foregroundStyle(.gray)
+                        
+                    }
+                    .padding(.bottom, 60)
+                    
+                    NavigationLink{
+                        RegisterView()
+                    }
+                label:{ Text("¿Aún no tienes cuenta?")
+                    .font(.title3)}
                 }
-                
-                Button(action: {
-                    registerUser()
-                }, label: {
-                    Text("Register")
-                        .foregroundStyle(Color.customBlue)
-                        .font(.title3)
-                })
-                .padding(.top, 
-                         110)
             }
+            .onAppear(perform: {
+                viewModel.initAnalyticsFirebase()
+                checkIfUserIsLoggedIn()
+            })
         }
-        .onAppear(perform: {
-            viewModel.initAnalyticsFirebase()
-            checkIfUserIsLoggedIn()
-        })
     }
 }
 
@@ -116,7 +115,7 @@ private extension LoginView {
             alertMessage = error.localizedDescription
             showAlert = true
         }
-
+        
     }
 }
 
