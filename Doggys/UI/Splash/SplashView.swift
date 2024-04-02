@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct SplashView: View {
+    //MARK: - Properties -
     @ObservedObject var viewModel: SplashViewModel
     static var viewName: String = "SplashView"
-    @State private var isActive = false
     
     public init(viewModel: SplashViewModel) {
         self.viewModel = viewModel
     }
     
+    // MARK: - View -
     var body: some View {
         NavigationStack {
             ZStack {
@@ -29,15 +30,15 @@ struct SplashView: View {
                     Spacer()
                 }
             }
+            // MARK: - Life cycle -
             .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.isActive = true
-                }
+                viewModel.initView()
             }
+            // MARK: - Navigation -
             .background(
                 NavigationLink(
-                    destination: RegisterView(),
-                    isActive: $isActive
+                    destination: LoginWireFrame().viewController,
+                    isActive: $viewModel.isActive
                 ) {
                     EmptyView()
                 }
