@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		390BB76A2BBCA51F0052257E /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BB7692BBCA51F0052257E /* SplashView.swift */; };
+		390BB76D2BBCA8BE0052257E /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BB76C2BBCA8BE0052257E /* SplashViewModel.swift */; };
+		390BB76F2BBCA9D30052257E /* SplashWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BB76E2BBCA9D30052257E /* SplashWireFrame.swift */; };
 		39228FDD2BAC701F00C91F40 /* DoggysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39228FDC2BAC701F00C91F40 /* DoggysApp.swift */; };
 		39228FDF2BAC701F00C91F40 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39228FDE2BAC701F00C91F40 /* LoginView.swift */; };
 		39228FE12BAC702100C91F40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39228FE02BAC702100C91F40 /* Assets.xcassets */; };
@@ -84,6 +86,8 @@
 
 /* Begin PBXFileReference section */
 		390BB7692BBCA51F0052257E /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		390BB76C2BBCA8BE0052257E /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		390BB76E2BBCA9D30052257E /* SplashWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWireFrame.swift; sourceTree = "<group>"; };
 		39228FD92BAC701F00C91F40 /* Doggys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doggys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39228FDC2BAC701F00C91F40 /* DoggysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoggysApp.swift; sourceTree = "<group>"; };
 		39228FDE2BAC701F00C91F40 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				390BB7692BBCA51F0052257E /* SplashView.swift */,
+				390BB76C2BBCA8BE0052257E /* SplashViewModel.swift */,
+				390BB76E2BBCA9D30052257E /* SplashWireFrame.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -551,8 +557,10 @@
 				A932073F2BB48FB40068D9C2 /* User.swift in Sources */,
 				A9EDD0CD2BBBF9250052D03C /* RegisterView.swift in Sources */,
 				A973E23F2BB182F900BDF917 /* ColorsApp.swift in Sources */,
+				390BB76F2BBCA9D30052257E /* SplashWireFrame.swift in Sources */,
 				399BE5332BB9791B00AC323C /* LoginViewModel.swift in Sources */,
 				A93207472BB4A9E30068D9C2 /* LogProtocol.swift in Sources */,
+				390BB76D2BBCA8BE0052257E /* SplashViewModel.swift in Sources */,
 				A9EDD0D32BBC16470052D03C /* RecoveryPasswordView.swift in Sources */,
 				A932073C2BB48F860068D9C2 /* AuthProtocol.swift in Sources */,
 				390BB76A2BBCA51F0052257E /* SplashView.swift in Sources */,
