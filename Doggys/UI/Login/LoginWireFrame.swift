@@ -8,20 +8,12 @@
 import SwiftUI
 
 final class LoginWireFrame {
-    //MARK: Properties
-    private let authViewModel: AuthProtocol
-    private let logViewModel: LogProtocol
-    
-    //MARK: Init
-    init(authViewModel: AuthProtocol, logViewModel: LogProtocol) {
-        self.authViewModel = authViewModel
-        self.logViewModel = logViewModel
-    }
-    
     //MARK: Public Methods
     var viewController: AnyView {
-        let apiClient = LoginAPIClient()
+        let apiClient: LoginAPIClient = LoginAPIClient()
         let dataManager: LoginDataManager = createDataManager(apiClient: apiClient)
+        let authViewModel: AuthProtocol = createAutViewModel()
+        let logViewModel: LogProtocol = createLogViewModel()
         let viewModel: LoginViewModel = createViewModel(with: dataManager,
                                                          authViewModel: authViewModel,
                                                          logViewModel: logViewModel)
@@ -43,5 +35,13 @@ final class LoginWireFrame {
     private func createDataManager(apiClient: LoginAPIClient) -> LoginDataManager {
         let dataManager = LoginDataManager(apiClient: apiClient)
         return dataManager
+    }
+    
+    private func createAutViewModel() -> AuthProtocol {
+        return FirebaseAuthViewModel()
+    }
+    
+    private func createLogViewModel() -> LogProtocol {
+        return FirebaseLogViewModel()
     }
 }
