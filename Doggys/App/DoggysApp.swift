@@ -20,17 +20,10 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct DoggysApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    let authViewModel: AuthProtocol
-    let logViewModel: LogProtocol
-    
-    init() {
-        self.authViewModel = FirebaseAuthViewModel()
-        self.logViewModel = FirebaseLogViewModel()
-    }
     
     var body: some Scene {
         WindowGroup {
-            LoginWireFrame(authViewModel: authViewModel, logViewModel: logViewModel).viewController
+            LoginWireFrame().viewController
         }
     }
 }
