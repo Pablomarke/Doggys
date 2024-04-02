@@ -14,6 +14,7 @@ struct RegisterView: View {
     @State private var password = "password"
     @Environment(\.authViewModel) private var authViewModel: AuthProtocol
     @Environment(\.logViewModel) private var logViewModel: LogProtocol
+    @Environment(\.presentationMode) var presentationMode
     @State private var showAlert: Bool = false
     private static var viewName: String = "RegisterView"
     @State private var alertMessage: String = ""
@@ -50,6 +51,13 @@ struct RegisterView: View {
                 .padding(.top, 20)
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: Button(action: {
+            presentationMode.wrappedValue.dismiss()
+        }) {
+            Image(systemName: "arrow.left")
+            Text("Atrás")
+        })
     }
 }
 

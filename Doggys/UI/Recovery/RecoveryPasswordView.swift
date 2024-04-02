@@ -13,6 +13,7 @@ struct RecoveryPasswordView: View {
     @State private var email = "e-mail"
     @Environment(\.authViewModel) private var authViewModel: AuthProtocol
     @Environment(\.logViewModel) private var logViewModel: LogProtocol
+    @Environment(\.presentationMode) var presentationMode
     @State private var showAlert: Bool = false
     private static var viewName: String = "RecoveryPasswordView"
     @State private var alertMessage: String = ""
@@ -47,9 +48,17 @@ struct RecoveryPasswordView: View {
                         .padding()
                 })
             }
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                Image(systemName: "arrow.left")
+                Text("Atrás")
+            })
         }
     }
 }
+    
 
 private extension RecoveryPasswordView{
     //MARK: Private Methods

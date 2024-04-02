@@ -77,12 +77,15 @@ struct LoginView: View {
                 checkIfUserIsLoggedIn()
             })
         }
+       .onTapGesture {
+           UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }
     }
 }
 
 //MARK: Private Methods
 private extension LoginView {
-    // TODO: To viewmodel
+    // TODO: To View Model
     
     func checkIfUserIsLoggedIn() {
         authViewModel.isUserLoggedIn(
