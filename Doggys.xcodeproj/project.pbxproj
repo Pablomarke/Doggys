@@ -30,6 +30,9 @@
 		A932074F2BB4AC100068D9C2 /* LogViewModelEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A932074E2BB4AC100068D9C2 /* LogViewModelEnvironmentKey.swift */; };
 		A973E23F2BB182F900BDF917 /* ColorsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A973E23E2BB182F900BDF917 /* ColorsApp.swift */; };
 		A9EDD0CD2BBBF9250052D03C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0CC2BBBF9250052D03C /* RegisterView.swift */; };
+		A9EDD0D02BBC153E0052D03C /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0CF2BBC153E0052D03C /* RegisterViewModel.swift */; };
+		A9EDD0D32BBC16470052D03C /* RecoveryPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0D22BBC16470052D03C /* RecoveryPasswordView.swift */; };
+		A9EDD0D52BBC19310052D03C /* RecoveryPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0D42BBC19310052D03C /* RecoveryPasswordViewModel.swift */; };
 		A9F98C912BB34C22004E9451 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A9F98C902BB34C22004E9451 /* FirebaseAnalytics */; };
 		A9F98C932BB34C22004E9451 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = A9F98C922BB34C22004E9451 /* FirebaseAnalyticsOnDeviceConversion */; };
 		A9F98C952BB34C22004E9451 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A9F98C942BB34C22004E9451 /* FirebaseAnalyticsSwift */; };
@@ -104,6 +107,9 @@
 		A932074E2BB4AC100068D9C2 /* LogViewModelEnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewModelEnvironmentKey.swift; sourceTree = "<group>"; };
 		A973E23E2BB182F900BDF917 /* ColorsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsApp.swift; sourceTree = "<group>"; };
 		A9EDD0CC2BBBF9250052D03C /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		A9EDD0CF2BBC153E0052D03C /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		A9EDD0D22BBC16470052D03C /* RecoveryPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordView.swift; sourceTree = "<group>"; };
+		A9EDD0D42BBC19310052D03C /* RecoveryPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordViewModel.swift; sourceTree = "<group>"; };
 		A9F98CC62BB34CD6004E9451 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -250,6 +256,8 @@
 		39D9D83C2BB7114100B5331A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A9EDD0D12BBC16310052D03C /* Recovery */,
+				A9EDD0CE2BBC150C0052D03C /* Register */,
 				A9B53B902BB336AC000AD215 /* Login */,
 			);
 			path = UI;
@@ -331,9 +339,26 @@
 				399BE5382BB979CF00AC323C /* LoginDataManager.swift */,
 				399BE5362BB979B900AC323C /* LoginAPIClient.swift */,
 				399BE5342BB979A600AC323C /* LoginWireFrame.swift */,
-				A9EDD0CC2BBBF9250052D03C /* RegisterView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		A9EDD0CE2BBC150C0052D03C /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				A9EDD0CC2BBBF9250052D03C /* RegisterView.swift */,
+				A9EDD0CF2BBC153E0052D03C /* RegisterViewModel.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		A9EDD0D12BBC16310052D03C /* Recovery */ = {
+			isa = PBXGroup;
+			children = (
+				A9EDD0D22BBC16470052D03C /* RecoveryPasswordView.swift */,
+				A9EDD0D42BBC19310052D03C /* RecoveryPasswordViewModel.swift */,
+			);
+			path = Recovery;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -507,16 +532,19 @@
 				397B93DA2BB353C20030D77E /* TextFieldView.swift in Sources */,
 				397B93DC2BB3560C0030D77E /* SecureTextFieldView.swift in Sources */,
 				399BE5372BB979B900AC323C /* LoginAPIClient.swift in Sources */,
+				A9EDD0D02BBC153E0052D03C /* RegisterViewModel.swift in Sources */,
 				A932073F2BB48FB40068D9C2 /* User.swift in Sources */,
 				A9EDD0CD2BBBF9250052D03C /* RegisterView.swift in Sources */,
 				A973E23F2BB182F900BDF917 /* ColorsApp.swift in Sources */,
 				399BE5332BB9791B00AC323C /* LoginViewModel.swift in Sources */,
 				A93207472BB4A9E30068D9C2 /* LogProtocol.swift in Sources */,
+				A9EDD0D32BBC16470052D03C /* RecoveryPasswordView.swift in Sources */,
 				A932073C2BB48F860068D9C2 /* AuthProtocol.swift in Sources */,
 				A932074F2BB4AC100068D9C2 /* LogViewModelEnvironmentKey.swift in Sources */,
 				399BE5352BB979A600AC323C /* LoginWireFrame.swift in Sources */,
 				A932073A2BB48E170068D9C2 /* FirebaseAuthViewModel.swift in Sources */,
 				399BE5392BB979CF00AC323C /* LoginDataManager.swift in Sources */,
+				A9EDD0D52BBC19310052D03C /* RecoveryPasswordViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

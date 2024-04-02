@@ -54,13 +54,12 @@ struct LoginView: View {
                     .padding(.top,
                              40)
                     
-                    Button {
-                        recoveryPassword()
+                    NavigationLink {
+                        RecoveryPasswordView()
                     } label: {
                         Text("Recuperar Contraseña")
                             .padding(.top, 25)
                             .foregroundStyle(.gray)
-                        
                     }
                     .padding(.bottom, 60)
                     
@@ -105,17 +104,6 @@ private extension LoginView {
             alertMessage = error.localizedDescription
             showAlert = true
         })
-    }
-    
-    func recoveryPassword(){
-        authViewModel.recoverPassword(email: email) {
-            logViewModel.log(screen: LoginView.viewName, action: "PASSWORD_RECOVERED")
-            alertMessage = "Password recovery initiated"
-        } onFailure: { error in
-            alertMessage = error.localizedDescription
-            showAlert = true
-        }
-        
     }
 }
 

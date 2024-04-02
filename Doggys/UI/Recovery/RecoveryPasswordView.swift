@@ -1,5 +1,5 @@
 //
-//  RegisterView.swift
+//  RecoveryPasswordView.swift
 //  Doggys
 //
 //  Created by Marco Muñoz on 2/4/24.
@@ -7,68 +7,62 @@
 
 import SwiftUI
 
-struct RegisterView: View {
+struct RecoveryPasswordView: View {
     //MARK: Properties
     
     @State private var email = "e-mail"
-    @State private var password = "password"
     @Environment(\.authViewModel) private var authViewModel: AuthProtocol
     @Environment(\.logViewModel) private var logViewModel: LogProtocol
     @State private var showAlert: Bool = false
-    private static var viewName: String = "RegisterView"
+    private static var viewName: String = "RecoveryPasswordView"
     @State private var alertMessage: String = ""
     
     //MARK: View
     var body: some View {
         ZStack{
-            Color.customGreenblue.ignoresSafeArea()
+            Color.customGreen.ignoresSafeArea()
             VStack{
-                Image(.text)
+                Image(.logoEars)
                     .resizable()
-                    .frame(width: 150, height: 50)
-                    .padding(.top, -30)
-                
+                    .frame(width: 400, height: 250)
+                    .padding(.top, -150)
                 TextFieldView(text: $email)
-                    .padding(.top, 100)
-                SecureTextFieldView(text: $password)
-                    .padding(.top, 25)
-                
+                    .padding()
                 Button(action: {
-                    registerUser()
+                    recoveryPassword()
                 }, label: {
-                    Text("Registrar")
+                    Text("Enviar")
                         .font(.title3)
                         .foregroundStyle(.white)
                         .frame(width: 150,
                                height: 40)
-                        .background(Color.customGreen)
+                        .background(Color.customLightGreen)
                         .cornerRadius(15)
                         .shadow(radius: 15,
                                 x: 0,
                                 y: 10)
+                        .padding()
                 })
-                .padding(.top, 60)
             }
         }
     }
 }
 
-private extension RegisterView {
+private extension RecoveryPasswordView{
     //MARK: Private Methods
-    func registerUser() {
-        authViewModel.register(email: email,
-                               password: password,
-                               onSuccess: { user in
-            logViewModel.log(screen: RegisterView.viewName,
-                             action: "USER_REGISTERED")
-        },
-                               onFailure: { error in
+    
+    // TODO: To ViewModel
+    func recoveryPassword(){
+        authViewModel.recoverPassword(email: email) {
+            logViewModel.log(screen: RecoveryPasswordView.viewName, action: "PASSWORD_RECOVERED")
+            alertMessage = "Password recovery initiated"
+        } onFailure: { error in
             alertMessage = error.localizedDescription
             showAlert = true
-        })
+        }
     }
 }
 
 #Preview {
-    RegisterView()
+    RecoveryPasswordView()
 }
