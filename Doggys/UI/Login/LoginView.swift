@@ -32,20 +32,22 @@ struct LoginView: View {
     var body: some View {
         NavigationView{
             ZStack {
-                Color.customLightGreen.ignoresSafeArea()
+                Color.customGreenblue.ignoresSafeArea()
                 VStack(spacing: 5) {
-                    LogoView()
+                    LogoAppDetailView()
+                        .padding()
                     TextFieldView(text: $email)
+                        .padding(.top, 60)
                     SecureTextFieldView(text: $password)
                     Button(action: {
-                        //                    TODO
+                        //MARK: TODO
                     }, label: {
                         Text("Login")
                             .font(.title2)
                             .foregroundStyle(.white)
                             .frame(width: 150,
                                    height: 40)
-                            .background(Color.customGreen)
+                            .background(Color.customLightGreen)
                             .cornerRadius(15)
                             .shadow(radius: 15,
                                     x: 0,
@@ -61,7 +63,7 @@ struct LoginView: View {
                             .padding(.top, 25)
                             .foregroundStyle(.gray)
                     }
-                    .padding(.bottom, 60)
+                    .padding(.bottom, 80)
                     
                     NavigationLink{
                         RegisterView()

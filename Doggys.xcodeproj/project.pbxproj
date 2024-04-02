@@ -33,6 +33,7 @@
 		A9EDD0D02BBC153E0052D03C /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0CF2BBC153E0052D03C /* RegisterViewModel.swift */; };
 		A9EDD0D32BBC16470052D03C /* RecoveryPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0D22BBC16470052D03C /* RecoveryPasswordView.swift */; };
 		A9EDD0D52BBC19310052D03C /* RecoveryPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0D42BBC19310052D03C /* RecoveryPasswordViewModel.swift */; };
+		A9EDD0D72BBC21620052D03C /* LogoAppDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0D62BBC21620052D03C /* LogoAppDetailView.swift */; };
 		A9F98C912BB34C22004E9451 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A9F98C902BB34C22004E9451 /* FirebaseAnalytics */; };
 		A9F98C932BB34C22004E9451 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = A9F98C922BB34C22004E9451 /* FirebaseAnalyticsOnDeviceConversion */; };
 		A9F98C952BB34C22004E9451 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A9F98C942BB34C22004E9451 /* FirebaseAnalyticsSwift */; };
@@ -110,6 +111,7 @@
 		A9EDD0CF2BBC153E0052D03C /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		A9EDD0D22BBC16470052D03C /* RecoveryPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordView.swift; sourceTree = "<group>"; };
 		A9EDD0D42BBC19310052D03C /* RecoveryPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordViewModel.swift; sourceTree = "<group>"; };
+		A9EDD0D62BBC21620052D03C /* LogoAppDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoAppDetailView.swift; sourceTree = "<group>"; };
 		A9F98CC62BB34CD6004E9451 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -228,6 +230,7 @@
 				397B93D92BB353C20030D77E /* TextFieldView.swift */,
 				397B93DB2BB3560C0030D77E /* SecureTextFieldView.swift */,
 				399BE53A2BBA8A7600AC323C /* LogoView.swift */,
+				A9EDD0D62BBC21620052D03C /* LogoAppDetailView.swift */,
 			);
 			path = ToolViews;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				A932074D2BB4ABE40068D9C2 /* AuthViewModelEnvironmentKey.swift in Sources */,
 				39228FDF2BAC701F00C91F40 /* LoginView.swift in Sources */,
 				A93207452BB4A9C90068D9C2 /* FireBaseLogViewModel.swift in Sources */,
+				A9EDD0D72BBC21620052D03C /* LogoAppDetailView.swift in Sources */,
 				39228FDD2BAC701F00C91F40 /* DoggysApp.swift in Sources */,
 				397B93DA2BB353C20030D77E /* TextFieldView.swift in Sources */,
 				397B93DC2BB3560C0030D77E /* SecureTextFieldView.swift in Sources */,
@@ -708,7 +712,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Doggys/Preview Content\"";
-				DEVELOPMENT_TEAM = D35BGERC28;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -737,7 +741,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Doggys/Preview Content\"";
-				DEVELOPMENT_TEAM = D35BGERC28;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
