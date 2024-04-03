@@ -58,7 +58,7 @@ struct LoginView: View {
                              80)
                     
                     NavigationLink{
-                        RegisterView()
+                        RegisterWireFrame().viewController
                     }
                 label: { Text("¿Aún no tienes cuenta?")
                     .font(.title3)}
