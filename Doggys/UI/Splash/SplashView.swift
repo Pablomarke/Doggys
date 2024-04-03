@@ -51,5 +51,5 @@ struct SplashView: View {
 }
 
 #Preview {
-    SplashView(viewModel: SplashViewModel())
+    SplashWireFrame().viewController
 }

@@ -50,11 +50,11 @@ struct LoginView: View {
                         RecoveryPasswordView()
                     } label: {
                         Text("Recuperar Contraseña")
-                            .padding(.top, 
+                            .padding(.top,
                                      25)
                             .foregroundStyle(.gray)
                     }
-                    .padding(.bottom, 
+                    .padding(.bottom,
                              80)
                     
                     NavigationLink{
@@ -70,11 +70,12 @@ struct LoginView: View {
                 viewModel.checkIfUserIsLoggedIn()
             })
         }
-       .onTapGesture {
-           UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), 
-                                           to: nil,
-                                           from: nil,
-                                           for: nil)
+        .navigationBarBackButtonHidden(true)
+        .onTapGesture {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
+                                            to: nil,
+                                            from: nil,
+                                            for: nil)
         }
     }
     mutating func set(viewModel: LoginViewModel) {
@@ -86,8 +87,7 @@ struct LoginView: View {
 private extension LoginView {
 }
 
-/*
+
 #Preview {
-    LoginWireFrame(authViewModel: AuthProtocol as! AuthProtocol,
-                   logViewModel: LogProtocol as! LogProtocol).viewController
-}*/
+    LoginWireFrame().viewController
+}
