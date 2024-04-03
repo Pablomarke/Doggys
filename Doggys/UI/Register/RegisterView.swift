@@ -10,14 +10,13 @@ import SwiftUI
 struct RegisterView: View {
     //MARK: Properties
     
-    @State private var email = "e-mail"
-    @State private var password = "password"
-    @Environment(\.authViewModel) private var authViewModel: AuthProtocol
-    @Environment(\.logViewModel) private var logViewModel: LogProtocol
+    static var viewName: String = "RegisterView"
+    @ObservedObject var viewModel: RegisterViewModel
     @Environment(\.presentationMode) var presentationMode
-    @State private var showAlert: Bool = false
-    private static var viewName: String = "RegisterView"
-    @State private var alertMessage: String = ""
+   
+    public init(viewModel: RegisterViewModel) {
+        self.viewModel = viewModel
+    }
     
     //MARK: View
     var body: some View {
@@ -31,11 +30,11 @@ struct RegisterView: View {
                 Text("Registrar")
                     .font(.system(size: 40, weight: .light, design: .monospaced))
                     .padding(.top, -70)
-                TextFieldView(text: $email)
+                TextFieldView(text: $viewModel.email)
                     .padding(.top, 30)
-                SecureTextFieldView(text: $password)
+                SecureTextFieldView(text: $viewModel.password)
                 Button(action: {
-                    registerUser()
+                    viewModel.registerUser()
                 }, label: {
                     Text("Registrar")
                         .font(.title3)
@@ -59,26 +58,11 @@ struct RegisterView: View {
             Text("Atrás")
         })
     }
-}
-
-private extension RegisterView {
-    //MARK: Private Methods
-    
-    // TODO: To ViewModel
-    func registerUser() {
-        authViewModel.register(email: email,
-                               password: password,
-                               onSuccess: { user in
-            logViewModel.log(screen: RegisterView.viewName,
-                             action: "USER_REGISTERED")
-        },
-                               onFailure: { error in
-            alertMessage = error.localizedDescription
-            showAlert = true
-        })
+    mutating func set(viewModel: RegisterViewModel) {
+        self.viewModel = viewModel
     }
 }
 
 #Preview {
-    RegisterView()
+    RegisterWireFrame().viewController
 }
