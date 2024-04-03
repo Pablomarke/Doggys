@@ -20,10 +20,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct DoggysApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    
     var body: some Scene {
         WindowGroup {
-            LoginWireFrame().viewController
+            SplashWireFrame().viewController
         }
     }
 }

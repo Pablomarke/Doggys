@@ -8,9 +8,6 @@
 import SwiftUI
 
 final class LoginWireFrame {
-    //MARK: Properties
-    
-        
     //MARK: Public Methods
     var viewController: AnyView {
         let apiClient: LoginAPIClient = LoginAPIClient()
