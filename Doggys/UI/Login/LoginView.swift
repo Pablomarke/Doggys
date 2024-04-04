@@ -47,7 +47,7 @@ struct LoginView: View {
                              40)
                     
                     NavigationLink {
-                        RecoveryPasswordView()
+                        RecoveryWireFrame().viewController
                     } label: {
                         Text("Recuperar Contraseña")
                             .padding(.top,

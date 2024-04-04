@@ -22,8 +22,6 @@ final class RegisterViewModel: ObservableObject {
         self.authViewModel = authViewModel
     }
     
-    
-    
     // MARK: - Public methods
     func registerUser() {
         authViewModel.register(email: email,
