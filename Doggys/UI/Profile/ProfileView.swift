@@ -13,19 +13,21 @@ struct ProfileView: View {
     //TODO: Enum
     let dogBreed = ["Mestizo","Dobermán","Labrador","Rottweiler","Siba-Inu","Yorkshire","Bulldog", "Teckel"]
     
-    @State private var selectedBreed = 0
+    @State var selectedBreed = "Mestizo"
     
     var body: some View {
-        ZStack{
-            Color.customLightBlue.ignoresSafeArea()
-            VStack{
-                Picker("Selecione una raza", selection: $selectedBreed) {
-                    ForEach(0..<dogBreed.count) {
-                        Text(self.dogBreed[$0])
+        NavigationStack{
+            Form() { 
+                Section {
+                    Picker(selection: $selectedBreed) {
+                        ForEach(dogBreed, id: \.self){
+                            Text($0)
+                        }
+                    } label: {
+                        Text("Seleccione raza")
                     }
+                    .pickerStyle(.menu)
                 }
-                .pickerStyle(InlinePickerStyle())
-                .padding()
             }
         }
     }
