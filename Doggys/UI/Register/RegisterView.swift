@@ -29,16 +29,7 @@ struct RegisterView: View {
                 Button(action: {
                     viewModel.registerUser()
                 }, label: {
-                    Text("Registrar")
-                        .font(.title3)
-                        .foregroundStyle(.white)
-                        .frame(width: 150,
-                               height: 40)
-                        .background(Color.customLightGreen)
-                        .cornerRadius(15)
-                        .shadow(radius: 15,
-                                x: 0,
-                                y: 10)
+                    ButtonLabel(word: "Registrar")
                 })
                 .padding(.top, 20)
             }

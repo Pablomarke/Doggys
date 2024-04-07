@@ -12,7 +12,8 @@ final class RegisterWireFrame {
     var viewController: AnyView {
         let authViewModel: AuthProtocol = createAutViewModel()
         let logViewModel: LogProtocol = createLogViewModel()
-        let viewModel: RegisterViewModel = createViewModel(authViewModel: authViewModel, logViewModel: logViewModel)
+        let viewModel: RegisterViewModel = createViewModel(authViewModel: authViewModel, 
+                                                           logViewModel: logViewModel)
         var viewController = RegisterView(viewModel: viewModel)
         viewController.set(viewModel: viewModel)
         
@@ -21,7 +22,8 @@ final class RegisterWireFrame {
     
     //MARK: Private Methods
     private func createViewModel(authViewModel: AuthProtocol, logViewModel: LogProtocol) -> RegisterViewModel {
-        return RegisterViewModel(logViewModel: logViewModel, authViewModel: authViewModel)
+        return RegisterViewModel(logViewModel: logViewModel, 
+                                 authViewModel: authViewModel)
     }
     
     private func createAutViewModel() -> AuthProtocol {
