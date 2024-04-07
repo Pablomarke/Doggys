@@ -76,11 +76,6 @@ struct LoginView: View {
     }
 }
 
-//MARK: Private Methods
-private extension LoginView {
-}
-
-
 #Preview {
     LoginWireFrame().viewController
 }
