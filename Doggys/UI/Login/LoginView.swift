@@ -17,7 +17,7 @@ struct LoginView: View {
     public init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
     }
-
+    
     //MARK: View
     var body: some View {
         NavigationView {
@@ -32,16 +32,7 @@ struct LoginView: View {
                     Button(action: {
                         viewModel.checkIfUserIsLoggedIn()
                     }, label: {
-                        Text("Login")
-                            .font(.title2)
-                            .foregroundStyle(.white)
-                            .frame(width: 150,
-                                   height: 40)
-                            .background(Color.customLightGreen)
-                            .cornerRadius(15)
-                            .shadow(radius: 15,
-                                    x: 0,
-                                    y: 10)
+                        ButtonLabel(word: "Login")
                     })
                     .padding(.top,
                              40)
@@ -60,8 +51,10 @@ struct LoginView: View {
                     NavigationLink{
                         RegisterWireFrame().viewController
                     }
-                label: { Text("¿Aún no tienes cuenta?")
-                    .font(.title3)}
+                label: {
+                    Text("¿Aún no tienes cuenta?")
+                        .font(.title3)
+                }
                 }
             }
             // MARK: - Life cycle -
@@ -82,11 +75,6 @@ struct LoginView: View {
         self.viewModel = viewModel
     }
 }
-
-//MARK: Private Methods
-private extension LoginView {
-}
-
 
 #Preview {
     LoginWireFrame().viewController

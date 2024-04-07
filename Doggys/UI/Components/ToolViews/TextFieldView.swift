@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TextFieldView: View {
     @Binding var text: String
+    var colorBackgroud: Color = .customLightBlue
     
     var body: some View {
         TextField(text,
@@ -16,7 +17,7 @@ struct TextFieldView: View {
             .padding()
             .frame(width:280)
             .foregroundColor(.white)
-            .background(Color.customLightBlue)
+            .background(colorBackgroud)
             .cornerRadius(20)
             .shadow(radius: 10, x: 5, y: 10)
             .textInputAutocapitalization(.never)
