@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LogoHeader: View {
     var text: String
+    var toTop: CGFloat = -160
     
     var body: some View {
         Image(.logoEars)
@@ -16,7 +17,8 @@ struct LogoHeader: View {
             .frame(width: 400,
                    height: 250,
                    alignment: .center)
-            .padding(.top, -160)
+            .padding(.top,
+                     toTop)
         Text(text)
             .font(.system(size: 40,
                           weight: .light,
