@@ -9,7 +9,6 @@ import SwiftUI
 
 struct RegisterView: View {
     //MARK: Properties
-    
     static var viewName: String = "RegisterView"
     @ObservedObject var viewModel: RegisterViewModel
     @Environment(\.presentationMode) var presentationMode
@@ -23,13 +22,7 @@ struct RegisterView: View {
         ZStack{
             Color.customGreen.ignoresSafeArea()
             VStack{
-                Image(.logoEars)
-                    .resizable()
-                    .frame(width: 400, height: 250, alignment: .center)
-                    .padding(.top, -160)
-                Text("Registrar")
-                    .font(.system(size: 40, weight: .light, design: .monospaced))
-                    .padding(.top, -70)
+                LogoHeader(text: "Registrar")
                 TextFieldView(text: $viewModel.email)
                     .padding(.top, 30)
                 SecureTextFieldView(text: $viewModel.password)

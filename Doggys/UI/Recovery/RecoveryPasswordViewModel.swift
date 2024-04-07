@@ -24,7 +24,8 @@ final class RecoveryPasswordViewModel: ObservableObject {
     //MARK: - Public methods
     func recoveryPassword(){
         authViewModel.recoverPassword(email: email) {
-            self.logViewModel.log(screen: RecoveryPasswordView.viewName, action: "PASSWORD_RECOVERED")
+            self.logViewModel.log(screen: RecoveryPasswordView.viewName, 
+                                  action: "PASSWORD_RECOVERED")
             self.alertMessage = "Password recovery initiated"
         } onFailure: { [weak self] error in
             self?.alertMessage = error.localizedDescription

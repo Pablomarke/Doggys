@@ -21,7 +21,8 @@ final class RecoveryWireFrame {
     
     //MARK: Private Methods
     private func createViewModel(authViewModel: AuthProtocol, logViewModel: LogProtocol) -> RecoveryPasswordViewModel {
-        return RecoveryPasswordViewModel(logViewModel: logViewModel, authViewModel: authViewModel)
+        return RecoveryPasswordViewModel(logViewModel: logViewModel, 
+                                         authViewModel: authViewModel)
     }
     
     private func createAutViewModel() -> AuthProtocol {
@@ -32,6 +33,3 @@ final class RecoveryWireFrame {
         return FirebaseLogViewModel()
     }
 }
-
-
-
