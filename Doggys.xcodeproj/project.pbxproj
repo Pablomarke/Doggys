@@ -39,6 +39,10 @@
 		A9C47F002BBDE03E0044ED5F /* RegisterWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C47EFF2BBDE03E0044ED5F /* RegisterWireFrame.swift */; };
 		A9C47F022BBE93FC0044ED5F /* RecoveryWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C47F012BBE93FC0044ED5F /* RecoveryWireFrame.swift */; };
 		A9C47F052BBFE9B90044ED5F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C47F042BBFE9B90044ED5F /* ProfileView.swift */; };
+		A9CC34932BC3DFDA00E1599A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC34922BC3DFDA00E1599A /* MapView.swift */; };
+		A9CC34952BC3DFE800E1599A /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC34942BC3DFE800E1599A /* MapViewModel.swift */; };
+		A9CC34972BC3DFF400E1599A /* MapViewWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC34962BC3DFF400E1599A /* MapViewWireFrame.swift */; };
+		A9CC34992BC3E3C200E1599A /* MarkerMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC34982BC3E3C200E1599A /* MarkerMap.swift */; };
 		A9EDD0CD2BBBF9250052D03C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0CC2BBBF9250052D03C /* RegisterView.swift */; };
 		A9EDD0D02BBC153E0052D03C /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0CF2BBC153E0052D03C /* RegisterViewModel.swift */; };
 		A9EDD0D32BBC16470052D03C /* RecoveryPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0D22BBC16470052D03C /* RecoveryPasswordView.swift */; };
@@ -127,6 +131,10 @@
 		A9C47EFF2BBDE03E0044ED5F /* RegisterWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWireFrame.swift; sourceTree = "<group>"; };
 		A9C47F012BBE93FC0044ED5F /* RecoveryWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryWireFrame.swift; sourceTree = "<group>"; };
 		A9C47F042BBFE9B90044ED5F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		A9CC34922BC3DFDA00E1599A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		A9CC34942BC3DFE800E1599A /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		A9CC34962BC3DFF400E1599A /* MapViewWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewWireFrame.swift; sourceTree = "<group>"; };
+		A9CC34982BC3E3C200E1599A /* MarkerMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerMap.swift; sourceTree = "<group>"; };
 		A9EDD0CC2BBBF9250052D03C /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		A9EDD0CF2BBC153E0052D03C /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		A9EDD0D22BBC16470052D03C /* RecoveryPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordView.swift; sourceTree = "<group>"; };
@@ -305,6 +313,7 @@
 				A9EDD0CE2BBC150C0052D03C /* Register */,
 				A9B53B902BB336AC000AD215 /* Login */,
 				A9C47F032BBFE9AA0044ED5F /* Profile */,
+				A9CC34912BC3DFC000E1599A /* Map */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -322,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				A932073E2BB48FB40068D9C2 /* User.swift */,
+				A9CC34982BC3E3C200E1599A /* MarkerMap.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -396,6 +406,16 @@
 				A92BF8D22BC073C2004AA875 /* ProfileWireFrame.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		A9CC34912BC3DFC000E1599A /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				A9CC34922BC3DFDA00E1599A /* MapView.swift */,
+				A9CC34942BC3DFE800E1599A /* MapViewModel.swift */,
+				A9CC34962BC3DFF400E1599A /* MapViewWireFrame.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		A9EDD0CE2BBC150C0052D03C /* Register */ = {
@@ -583,8 +603,10 @@
 			files = (
 				39ADE25B2BC299D8007A6702 /* ButtonLabel.swift in Sources */,
 				399BE53B2BBA8A7600AC323C /* LogoView.swift in Sources */,
+				A9CC34972BC3DFF400E1599A /* MapViewWireFrame.swift in Sources */,
 				A932074D2BB4ABE40068D9C2 /* AuthViewModelEnvironmentKey.swift in Sources */,
 				A92BF8D12BC073B3004AA875 /* ProfileViewModel.swift in Sources */,
+				A9CC34992BC3E3C200E1599A /* MarkerMap.swift in Sources */,
 				39228FDF2BAC701F00C91F40 /* LoginView.swift in Sources */,
 				39ADE2582BC29863007A6702 /* LogoHeader.swift in Sources */,
 				A93207452BB4A9C90068D9C2 /* FireBaseLogViewModel.swift in Sources */,
@@ -594,6 +616,7 @@
 				397B93DC2BB3560C0030D77E /* SecureTextFieldView.swift in Sources */,
 				399BE5372BB979B900AC323C /* LoginAPIClient.swift in Sources */,
 				A92BF8D32BC073C2004AA875 /* ProfileWireFrame.swift in Sources */,
+				A9CC34952BC3DFE800E1599A /* MapViewModel.swift in Sources */,
 				A9EDD0D02BBC153E0052D03C /* RegisterViewModel.swift in Sources */,
 				A932073F2BB48FB40068D9C2 /* User.swift in Sources */,
 				A9C47F002BBDE03E0044ED5F /* RegisterWireFrame.swift in Sources */,
@@ -606,6 +629,7 @@
 				390BB76D2BBCA8BE0052257E /* SplashViewModel.swift in Sources */,
 				A9EDD0D32BBC16470052D03C /* RecoveryPasswordView.swift in Sources */,
 				A932073C2BB48F860068D9C2 /* AuthProtocol.swift in Sources */,
+				A9CC34932BC3DFDA00E1599A /* MapView.swift in Sources */,
 				A9C47F022BBE93FC0044ED5F /* RecoveryWireFrame.swift in Sources */,
 				390BB76A2BBCA51F0052257E /* SplashView.swift in Sources */,
 				A932074F2BB4AC100068D9C2 /* LogViewModelEnvironmentKey.swift in Sources */,

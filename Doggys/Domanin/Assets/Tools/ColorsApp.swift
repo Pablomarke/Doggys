@@ -8,7 +8,7 @@
 import SwiftUI
 
 //Colores App
-
+/*
 extension Color {
     static func hex(_ hex: String) -> Color {
         let scanner = Scanner(string: hex)
@@ -24,12 +24,12 @@ extension Color {
         
         return Color(red: red, green: green, blue: blue)
     }
-    /*
+   
      static let customBlue = Color.hex("1647CC")
      static let customLightBlue = Color.hex("65A8D6")
      static let customGreenBlue = Color.hex("4CB5BF")
      static let customGreen = Color.hex("4DBB9F")
      static let customLightGreen = Color.hex("61CC8C")
      
-     }*/
-}
+     }
+}*/

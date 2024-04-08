@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct LoginView: View {
     //MARK: Properties
@@ -13,6 +14,8 @@ struct LoginView: View {
     @Environment(\.logViewModel) private var logViewModel: LogProtocol
     @ObservedObject var viewModel: LoginViewModel
     static var viewName: String = "LoginView"
+    @State private var cancellables: Set<AnyCancellable> = []
+    @State private var shouldNavigateToHome = false
     
     public init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
@@ -27,41 +30,46 @@ struct LoginView: View {
                     LogoAppDetailView()
                         .padding()
                     TextFieldView(text: $viewModel.email)
-                        .padding(.top, 60)
+                        .padding(.top, 
+                                 60)
                     SecureTextFieldView(text: $viewModel.password)
                     Button(action: {
                         viewModel.checkIfUserIsLoggedIn()
                     }, label: {
                         ButtonLabel(word: "Login")
                     })
-                    .padding(.top,
+                    .padding(.top, 
                              40)
                     
                     NavigationLink {
                         RecoveryWireFrame().viewController
                     } label: {
                         Text("Recuperar Contraseña")
-                            .padding(.top,
+                            .padding(.top, 
                                      25)
                             .foregroundStyle(.gray)
                     }
-                    .padding(.bottom,
+                    .padding(.bottom, 
                              80)
                     
-                    NavigationLink{
-                        RegisterWireFrame().viewController
+                    NavigationLink(destination: RegisterWireFrame().viewController) {
+                        Text("¿Aún no tienes cuenta?")
+                            .font(.title3)
                     }
-                label: {
-                    Text("¿Aún no tienes cuenta?")
-                        .font(.title3)
-                }
+                    
+                    NavigationLink(destination: MapViewWireFrame().viewController, 
+                                   isActive: $shouldNavigateToHome) {
+                        EmptyView()
+                    }
+                    .hidden()
                 }
             }
             // MARK: - Life cycle -
-            .onAppear(perform: {
+            .onAppear {
                 viewModel.initAnalyticsFirebase()
                 viewModel.checkIfUserIsLoggedIn()
-            })
+                responseViewModel()
+            }
         }
         .navigationBarBackButtonHidden(true)
         .onTapGesture {
@@ -71,6 +79,16 @@ struct LoginView: View {
                                             for: nil)
         }
     }
+    
+    // MARK: - Functions
+    func responseViewModel() {
+        viewModel.navigateToHome
+            .sink { _ in
+                shouldNavigateToHome = true
+            }
+            .store(in: &cancellables)
+    }
+    
     mutating func set(viewModel: LoginViewModel) {
         self.viewModel = viewModel
     }

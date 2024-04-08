@@ -8,13 +8,14 @@
 import Foundation
 
 protocol AuthProtocol {
-    func register(email: String, 
+    func register(email: String,
                   password: String,
-                  onSuccess: @escaping (User) -> Void, 
+                  onSuccess: @escaping (User) -> Void,
                   onFailure: @escaping (Error) -> Void)
     
     func login(email: String,
-               password: String, onSuccess: @escaping (User) -> Void,
+               password: String, 
+               onSuccess: @escaping (User) -> Void,
                onFailure: @escaping (Error) -> Void)
     
     func isUserLoggedIn(onSuccess: @escaping (Bool) -> Void,

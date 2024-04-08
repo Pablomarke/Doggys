@@ -15,7 +15,7 @@ struct ButtonLabel: View {
             .foregroundStyle(.white)
             .frame(width: 150,
                    height: 40)
-            .background(Color.customLightGreen)
+            .background(.customLightGreen)
             .cornerRadius(15)
             .shadow(radius: 15,
                     x: 0,

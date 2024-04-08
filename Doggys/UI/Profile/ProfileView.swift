@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct ProfileView: View {
     @Environment(\.presentationMode) var presentationMode
     
@@ -18,7 +17,9 @@ struct ProfileView: View {
     @State private var selectedGender = ""
     
     //TODO: Enum
-    let dogBreed = ["Mestizo","Dobermán","Labrador","Rottweiler","Siba-Inu","Yorkshire","Bulldog", "Teckel"]
+    let dogBreed = ["Mestizo",
+                    "Dobermán",
+                    "Labrador","Rottweiler","Siba-Inu","Yorkshire","Bulldog", "Teckel"]
     
     let dogGender = ["Hembra", "Macho"]
    
