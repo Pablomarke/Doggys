@@ -42,6 +42,7 @@
 		A9CC34932BC3DFDA00E1599A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC34922BC3DFDA00E1599A /* MapView.swift */; };
 		A9CC34952BC3DFE800E1599A /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC34942BC3DFE800E1599A /* MapViewModel.swift */; };
 		A9CC34972BC3DFF400E1599A /* MapWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC34962BC3DFF400E1599A /* MapWireFrame.swift */; };
+		A9CC34992BC3E3C200E1599A /* MarkerMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC34982BC3E3C200E1599A /* MarkerMap.swift */; };
 		A9EDD0CD2BBBF9250052D03C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0CC2BBBF9250052D03C /* RegisterView.swift */; };
 		A9EDD0D02BBC153E0052D03C /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0CF2BBC153E0052D03C /* RegisterViewModel.swift */; };
 		A9EDD0D32BBC16470052D03C /* RecoveryPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0D22BBC16470052D03C /* RecoveryPasswordView.swift */; };
@@ -133,6 +134,7 @@
 		A9CC34922BC3DFDA00E1599A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A9CC34942BC3DFE800E1599A /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		A9CC34962BC3DFF400E1599A /* MapWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWireFrame.swift; sourceTree = "<group>"; };
+		A9CC34982BC3E3C200E1599A /* MarkerMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerMap.swift; sourceTree = "<group>"; };
 		A9EDD0CC2BBBF9250052D03C /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		A9EDD0CF2BBC153E0052D03C /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		A9EDD0D22BBC16470052D03C /* RecoveryPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordView.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				A932073E2BB48FB40068D9C2 /* User.swift */,
+				A9CC34982BC3E3C200E1599A /* MarkerMap.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				A9CC34972BC3DFF400E1599A /* MapWireFrame.swift in Sources */,
 				A932074D2BB4ABE40068D9C2 /* AuthViewModelEnvironmentKey.swift in Sources */,
 				A92BF8D12BC073B3004AA875 /* ProfileViewModel.swift in Sources */,
+				A9CC34992BC3E3C200E1599A /* MarkerMap.swift in Sources */,
 				39228FDF2BAC701F00C91F40 /* LoginView.swift in Sources */,
 				39ADE2582BC29863007A6702 /* LogoHeader.swift in Sources */,
 				A93207452BB4A9C90068D9C2 /* FireBaseLogViewModel.swift in Sources */,
