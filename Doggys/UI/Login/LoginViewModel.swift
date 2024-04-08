@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseAnalytics
+import Combine
 
 final class LoginViewModel: ObservableObject {
     //MARK: Properties
@@ -18,6 +19,8 @@ final class LoginViewModel: ObservableObject {
     @Published var isLoggedIn: Bool = false
     @Published var showAlert: Bool = false
     @Published var alertMessage: String = ""
+    var navigateToHome = PassthroughSubject<Void, Never>()
+    var cancellables: Set<AnyCancellable> = []
 
     init(dataManager: LoginDataManager, authViewModel: AuthProtocol, logViewModel: LogProtocol) {
         self.dataManager = dataManager
@@ -35,6 +38,7 @@ final class LoginViewModel: ObservableObject {
         authViewModel.isUserLoggedIn(
             onSuccess: { [weak self] loggedIn in
                 self?.isLoggedIn = loggedIn
+                self?.navigateToHome.send()
             },
             onFailure: { [weak self] error in
                 self?.logViewModel.crash(screen: LoginView.viewName,

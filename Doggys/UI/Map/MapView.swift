@@ -24,6 +24,9 @@ struct MapView: View {
                 .ignoresSafeArea()
         }
     }
+    mutating func set(viewModel: MapViewModel) {
+        self.viewModel = viewModel
+    }
 }
 
 #Preview {
