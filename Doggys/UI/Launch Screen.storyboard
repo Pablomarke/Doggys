@@ -15,30 +15,8 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoEars" translatesAutoresizingMaskIntoConstraints="NO" id="fAT-4I-rSd">
-                                <rect key="frame" x="-3.6666666666666572" y="199" width="400.33333333333326" height="250"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="400" id="KQS-FP-3w2"/>
-                                    <constraint firstAttribute="height" constant="250" id="asd-oh-YhJ"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doggys" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6R-rg-u9U">
-                                <rect key="frame" x="0.0" y="389" width="393" height="45.666666666666686"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                         <color key="backgroundColor" name="customGreenblue"/>
-                        <constraints>
-                            <constraint firstItem="fAT-4I-rSd" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="140" id="3Qq-Le-cXK"/>
-                            <constraint firstItem="fAT-4I-rSd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="43O-Mz-0iL"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="P6R-rg-u9U" secondAttribute="trailing" id="6WX-oe-fzy"/>
-                            <constraint firstItem="P6R-rg-u9U" firstAttribute="top" secondItem="fAT-4I-rSd" secondAttribute="bottom" constant="-60" id="76A-Ns-XZ9"/>
-                            <constraint firstItem="P6R-rg-u9U" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="AjI-6K-MTM"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -47,7 +25,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logoEars" width="782" height="439"/>
         <namedColor name="customGreenblue">
             <color red="0.29803921568627451" green="0.70980392156862748" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
