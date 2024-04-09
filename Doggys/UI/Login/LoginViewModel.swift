@@ -7,7 +7,6 @@
 
 import Foundation
 import FirebaseAnalytics
-import Combine
 
 final class LoginViewModel: ObservableObject {
     //MARK: Properties
@@ -19,8 +18,6 @@ final class LoginViewModel: ObservableObject {
     @Published var isLoggedIn: Bool = false
     @Published var showAlert: Bool = false
     @Published var alertMessage: String = ""
-    var navigateToHome = PassthroughSubject<Void, Never>()
-    var cancellables: Set<AnyCancellable> = []
 
     init(dataManager: LoginDataManager, authViewModel: AuthProtocol, logViewModel: LogProtocol) {
         self.dataManager = dataManager
@@ -37,8 +34,10 @@ final class LoginViewModel: ObservableObject {
     func checkIfUserIsLoggedIn() {
         authViewModel.isUserLoggedIn(
             onSuccess: { [weak self] loggedIn in
-                self?.isLoggedIn = loggedIn
-                self?.navigateToHome.send()
+               //TODO: This is the real way to navigate and pass the data
+                // self?.isLoggedIn = loggedIn
+               // print(loggedIn)
+                self?.isLoggedIn = true
             },
             onFailure: { [weak self] error in
                 self?.logViewModel.crash(screen: LoginView.viewName,

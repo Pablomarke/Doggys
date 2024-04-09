@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Combine
 
 struct LoginView: View {
     //MARK: Properties
@@ -14,9 +13,7 @@ struct LoginView: View {
     @Environment(\.logViewModel) private var logViewModel: LogProtocol
     @ObservedObject var viewModel: LoginViewModel
     static var viewName: String = "LoginView"
-    @State private var cancellables: Set<AnyCancellable> = []
-    @State private var shouldNavigateToHome = false
-    
+   
     public init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
     }
@@ -30,7 +27,7 @@ struct LoginView: View {
                     LogoAppDetailView()
                         .padding()
                     TextFieldView(text: $viewModel.email)
-                        .padding(.top, 
+                        .padding(.top,
                                  60)
                     SecureTextFieldView(text: $viewModel.password)
                     Button(action: {
@@ -38,37 +35,31 @@ struct LoginView: View {
                     }, label: {
                         ButtonLabel(word: "Login")
                     })
-                    .padding(.top, 
+                    .padding(.top,
                              40)
-                    
                     NavigationLink {
                         RecoveryWireFrame().viewController
                     } label: {
                         Text("Recuperar Contraseña")
-                            .padding(.top, 
+                            .padding(.top,
                                      25)
                             .foregroundStyle(.gray)
                     }
-                    .padding(.bottom, 
+                    .padding(.bottom,
                              80)
-                    
                     NavigationLink(destination: RegisterWireFrame().viewController) {
                         Text("¿Aún no tienes cuenta?")
                             .font(.title3)
                     }
-                    
-                    NavigationLink(destination: MapViewWireFrame().viewController, 
-                                   isActive: $shouldNavigateToHome) {
+                    NavigationLink(destination: MapViewWireFrame().viewController,
+                                   isActive: $viewModel.isLoggedIn) {
                         EmptyView()
                     }
-                    .hidden()
                 }
             }
             // MARK: - Life cycle -
             .onAppear {
                 viewModel.initAnalyticsFirebase()
-                viewModel.checkIfUserIsLoggedIn()
-                responseViewModel()
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -81,14 +72,6 @@ struct LoginView: View {
     }
     
     // MARK: - Functions
-    func responseViewModel() {
-        viewModel.navigateToHome
-            .sink { _ in
-                shouldNavigateToHome = true
-            }
-            .store(in: &cancellables)
-    }
-    
     mutating func set(viewModel: LoginViewModel) {
         self.viewModel = viewModel
     }
