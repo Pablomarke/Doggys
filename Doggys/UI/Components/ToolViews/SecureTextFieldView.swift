@@ -33,6 +33,7 @@ struct SecureTextFieldView: View {
             .padding()
             .frame(width: 280)
             .foregroundColor(.white)
+            // TODO: Change colour for custom in future
             .background(Color.customLightBlue)
             .cornerRadius(20)
             .shadow(radius: 10, x: 5, y: 10)
