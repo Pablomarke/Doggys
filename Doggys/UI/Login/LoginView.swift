@@ -66,7 +66,10 @@ struct LoginView: View {
                                    isActive: $shouldNavigateToHome) {
                         EmptyView()
                     }
-                                   .hidden()
+                    .hidden()
+                    .onDisappear {
+                        isLoading = false
+                    }
                 }
             }
             .overlay(
