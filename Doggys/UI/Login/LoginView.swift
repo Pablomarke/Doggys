@@ -32,7 +32,7 @@ struct LoginView: View {
                     TextFieldView(text: $viewModel.email)
                         .padding(.top, 
                                  60)
-                    SecureTextFieldView(text: $viewModel.password)
+                    SecureTextFieldView("Password", text: $viewModel.password)
                     Button(action: {
                         viewModel.checkIfUserIsLoggedIn()
                     }, label: {
