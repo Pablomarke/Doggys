@@ -23,8 +23,11 @@ struct SecureTextFieldView: View {
             Group {
                 if isSecured {
                     SecureField(title, text: $text)
+                        .padding(.trailing, 24)
                 } else {
                     TextField(title, text: $text)
+                        .padding(.trailing, 24)
+
                 }
             }
             .padding()
