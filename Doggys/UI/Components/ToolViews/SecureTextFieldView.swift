@@ -22,5 +22,6 @@ struct SecureTextFieldView: View {
             .textInputAutocapitalization(.never)
             .autocorrectionDisabled()
             .opacity(0.9)
-            .padding()    }
+            .padding()   
+    }
 }

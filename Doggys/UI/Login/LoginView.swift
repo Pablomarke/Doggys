@@ -16,6 +16,7 @@ struct LoginView: View {
     static var viewName: String = "LoginView"
     @State private var cancellables: Set<AnyCancellable> = []
     @State private var shouldNavigateToHome = false
+    @State private var isLoading = false
     
     public init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
@@ -30,11 +31,15 @@ struct LoginView: View {
                     LogoAppDetailView()
                         .padding()
                     TextFieldView(text: $viewModel.email)
-                        .padding(.top, 
+                        .padding(.top,
                                  60)
                     SecureTextFieldView(text: $viewModel.password)
                     Button(action: {
-                        viewModel.checkIfUserIsLoggedIn()
+                        isLoading = true
+                        // TODO: Simula una llamada a la API, cuando esté implementado eliminar
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            viewModel.checkIfUserIsLoggedIn()
+                        }
                     }, label: {
                         ButtonLabel(word: "Login")
                     })
@@ -61,14 +66,18 @@ struct LoginView: View {
                                    isActive: $shouldNavigateToHome) {
                         EmptyView()
                     }
-                    .hidden()
+                                   .hidden()
                 }
             }
-            // MARK: - Life cycle -
-            .onAppear {
-                viewModel.initAnalyticsFirebase()
-                viewModel.checkIfUserIsLoggedIn()
-                responseViewModel()
+            .overlay(
+                isLoading ? LoadingView() : nil
+            )
+            .disabled(isLoading)
+            .onTapGesture {
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
+                                                to: nil,
+                                                from: nil,
+                                                for: nil)
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -77,6 +86,9 @@ struct LoginView: View {
                                             to: nil,
                                             from: nil,
                                             for: nil)
+        }
+        .onReceive(viewModel.navigateToHome) { _ in
+            shouldNavigateToHome = true
         }
     }
     
