@@ -28,6 +28,7 @@
 		39ADE25B2BC299D8007A6702 /* ButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ADE25A2BC299D8007A6702 /* ButtonLabel.swift */; };
 		5D16A5192BC458A8004EE58F /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */; };
 		5D4EFD7E2BC5B3A3007E7366 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4EFD7D2BC5B3A3007E7366 /* LoadingView.swift */; };
+		A9286A312BC6E55C003FC58A /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9286A302BC6E55C003FC58A /* AppTabView.swift */; };
 		A92BF8D12BC073B3004AA875 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92BF8D02BC073B3004AA875 /* ProfileViewModel.swift */; };
 		A92BF8D32BC073C2004AA875 /* ProfileWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92BF8D22BC073C2004AA875 /* ProfileWireFrame.swift */; };
 		A932073A2BB48E170068D9C2 /* FirebaseAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93207392BB48E170068D9C2 /* FirebaseAuthViewModel.swift */; };
@@ -122,6 +123,7 @@
 		39ADE25A2BC299D8007A6702 /* ButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabel.swift; sourceTree = "<group>"; };
 		5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		5D4EFD7D2BC5B3A3007E7366 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		A9286A302BC6E55C003FC58A /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		A92BF8D02BC073B3004AA875 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		A92BF8D22BC073C2004AA875 /* ProfileWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWireFrame.swift; sourceTree = "<group>"; };
 		A93207392BB48E170068D9C2 /* FirebaseAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthViewModel.swift; sourceTree = "<group>"; };
@@ -318,10 +320,19 @@
 				A9EDD0D12BBC16310052D03C /* Recovery */,
 				A9EDD0CE2BBC150C0052D03C /* Register */,
 				A9B53B902BB336AC000AD215 /* Login */,
+				A9286A2F2BC6E533003FC58A /* TabView */,
 				A9C47F032BBFE9AA0044ED5F /* Profile */,
 				A9CC34912BC3DFC000E1599A /* Map */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		A9286A2F2BC6E533003FC58A /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				A9286A302BC6E55C003FC58A /* AppTabView.swift */,
+			);
+			path = TabView;
 			sourceTree = "<group>";
 		};
 		A93207382BB48E000068D9C2 /* Firebase */ = {
@@ -631,6 +642,7 @@
 				A9C47F052BBFE9B90044ED5F /* ProfileView.swift in Sources */,
 				A9EDD0CD2BBBF9250052D03C /* RegisterView.swift in Sources */,
 				A973E23F2BB182F900BDF917 /* ColorsApp.swift in Sources */,
+				A9286A312BC6E55C003FC58A /* AppTabView.swift in Sources */,
 				390BB76F2BBCA9D30052257E /* SplashWireFrame.swift in Sources */,
 				399BE5332BB9791B00AC323C /* LoginViewModel.swift in Sources */,
 				A93207472BB4A9E30068D9C2 /* LogProtocol.swift in Sources */,

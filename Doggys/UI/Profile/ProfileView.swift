@@ -71,7 +71,6 @@ struct ProfileView: View {
                     ButtonLabel(word: "enviar")
                 })
             }
-            .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading:
                                     Button(action: {
                 presentationMode.wrappedValue.dismiss()

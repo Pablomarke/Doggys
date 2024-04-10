@@ -56,7 +56,7 @@ struct LoginView: View {
                         Text("¿Aún no tienes cuenta?")
                             .font(.title3)
                     }
-                    NavigationLink(destination: MapViewWireFrame().viewController,
+                    NavigationLink(destination: AppTabView(),
                                    isActive: $viewModel.isLoggedIn) {
                         EmptyView()
                     }
