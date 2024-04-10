@@ -17,7 +17,7 @@ final class MapViewWireFrame {
     }
     
     //MARK: Private Methods
-    private func createViewModel() -> SplashViewModel {
-        return SplashViewModel()
+    private func createViewModel() -> MapViewModel {
+        return MapViewModel()
     }
 }
