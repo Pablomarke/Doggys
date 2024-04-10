@@ -12,9 +12,13 @@ struct SecureTextFieldView: View {
     @Binding private var text: String
     @State private var isSecured: Bool = true
     private var title: String
+    private var placeholder: String
     
-    init(_ title: String, text: Binding<String>) {
+    init(_ title: String,
+         placeholder: String,
+         text: Binding<String>) {
         self.title = title
+        self.placeholder = placeholder
         self._text = text
     }
     

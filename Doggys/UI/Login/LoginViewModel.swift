@@ -14,7 +14,7 @@ final class LoginViewModel: ObservableObject {
     private var authViewModel: AuthProtocol
     private var logViewModel: LogProtocol
     @Published var email = "e-mail"
-    @Published var password = "password"
+    @Published var password = ""
     @Published var isLoggedIn: Bool = false
     @Published var showAlert: Bool = false
     @Published var alertMessage: String = ""

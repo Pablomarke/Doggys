@@ -24,9 +24,9 @@ struct RegisterView: View {
             VStack{
                 LogoHeader(text: "Registrar")
                 TextFieldView(text: $viewModel.email)
-                SecureTextFieldView("Password", text: $viewModel.password)
+                SecureTextFieldView("Password", placeholder: "Password", text: $viewModel.password)
                     .padding(.top, 8)
-                SecureTextFieldView("Password", text: $viewModel.repeatPassword)
+                SecureTextFieldView("Repeat Password", placeholder: "Repeat Password", text: $viewModel.repeatPassword)
                 Button(action: {
                     viewModel.registerUser()
                 }, label: {

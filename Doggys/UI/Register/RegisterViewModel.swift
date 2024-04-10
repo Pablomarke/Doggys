@@ -12,9 +12,9 @@ final class RegisterViewModel: ObservableObject {
     //MARK: - Properties
     private var logViewModel: LogProtocol
     private var authViewModel: AuthProtocol
-    @Published var email = "e-mail"
-    @Published var password = "password"
-    @Published var repeatPassword = "repeatPassword"
+    @Published var email = ""
+    @Published var password = ""
+    @Published var repeatPassword = ""
     @Published var alertMessage: String = ""
     @Published var showAlert: Bool = false
     
