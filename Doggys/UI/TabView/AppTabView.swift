@@ -23,7 +23,7 @@ struct AppTabView: View {
                 }
                 .padding(.bottom, 70)
                 .ignoresSafeArea()
-        }
+        }                .navigationBarBackButtonHidden(true)
     }
 }
 
