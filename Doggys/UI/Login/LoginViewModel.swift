@@ -13,6 +13,7 @@ final class LoginViewModel: ObservableObject {
     private var dataManager: LoginDataManager
     private var authViewModel: AuthProtocol
     private var logViewModel: LogProtocol
+    private var keyChain: KeyChainDataProvider
     @Published var email: String = "e-mail"
     @Published var password: String = "password"
     @Published var isLoggedIn: Bool = false
@@ -20,10 +21,14 @@ final class LoginViewModel: ObservableObject {
     @Published var alertMessage: String = ""
     @Published var rememberLogin: Bool = false
     
-    init(dataManager: LoginDataManager, authViewModel: AuthProtocol, logViewModel: LogProtocol) {
+    init(dataManager: LoginDataManager,
+         authViewModel: AuthProtocol,
+         logViewModel: LogProtocol,
+         keyChain: KeyChainDataProvider) {
         self.dataManager = dataManager
         self.authViewModel = authViewModel
         self.logViewModel = logViewModel
+        self.keyChain = keyChain
     }
     
     //MARK: Publics Methods
@@ -52,10 +57,10 @@ final class LoginViewModel: ObservableObject {
     
     func rememberLoginAndPassword() {
         if rememberLogin {
-            KeyChainDataProvider().setStringKey(value: email,
-                                                key: KeyChainEnum.user)
-            KeyChainDataProvider().setStringKey(value: password,
-                                                key: KeyChainEnum.password)
+            keyChain.setStringKey(value: email,
+                                  key: KeyChainEnum.user)
+            keyChain.setStringKey(value: password,
+                                  key: KeyChainEnum.password)
             UserDefaults.standard.set(rememberLogin,
                                       forKey: Preferences.rememberLogin)
         } else {

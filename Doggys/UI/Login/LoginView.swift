@@ -76,7 +76,6 @@ struct LoginView: View {
                 }
             }
             // MARK: - Life cycle -
-            
             .onAppear {
                 viewModel.initAnalyticsFirebase()
             }
