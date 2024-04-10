@@ -20,9 +20,7 @@ struct MapView: View {
                     Image(systemName: "mappin")
                         .foregroundColor(.orange)
                     Text(marker.name)
-                        
                 }
-                
             }
                 .navigationBarBackButtonHidden(true)
         }
