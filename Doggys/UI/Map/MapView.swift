@@ -14,16 +14,19 @@ struct MapView: View {
     
     var body: some View {
         ZStack{
-            Map(coordinateRegion: $viewModel.region, annotationItems: viewModel.markers) { marker in
+            Map(coordinateRegion: $viewModel.region,
+                annotationItems: viewModel.markers) { marker in
                 MapAnnotation(coordinate: marker.coordinate) {
                     Image(systemName: "mappin")
                         .foregroundColor(.orange)
                     Text(marker.name)
                 }
             }
+                .navigationBarBackButtonHidden(true)
                 .ignoresSafeArea()
         }
     }
+    
     mutating func set(viewModel: MapViewModel) {
         self.viewModel = viewModel
     }
