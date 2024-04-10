@@ -8,20 +8,51 @@
 import SwiftUI
 
 struct SecureTextFieldView: View {
-    @Binding var text: String
+    
+    @Binding private var text: String
+    @State private var isSecured: Bool = true
+    private var title: String
+    
+    init(_ title: String, text: Binding<String>) {
+        self.title = title
+        self._text = text
+    }
     
     var body: some View {
-        SecureField(text,
-                    text: $text)
+        ZStack(alignment: .trailing) {
+            Group {
+                if isSecured {
+                    SecureField(title, text: $text)
+                        .padding(.trailing, 24)
+                } else {
+                    TextField(title, text: $text)
+                        .padding(.trailing, 24)
+
+                }
+            }
             .padding()
             .frame(width: 280)
             .foregroundColor(.white)
+            // TODO: Change colour for custom in future
             .background(Color.customLightBlue)
             .cornerRadius(20)
             .shadow(radius: 10, x: 5, y: 10)
             .textInputAutocapitalization(.never)
             .autocorrectionDisabled()
             .opacity(0.9)
-            .padding()   
+//<<<<<<< HEAD
+//            .padding()   
+//=======
+            .padding()
+            
+            Button(action: {
+                isSecured.toggle()
+            }) {
+                Image(systemName: self.isSecured ? "eye.slash" : "eye")
+                    .accentColor(Color.customGreen)
+                    .padding(.trailing, 24)
+            }
+        }
+//>>>>>>> develop
     }
 }

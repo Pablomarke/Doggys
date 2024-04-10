@@ -25,7 +25,7 @@ struct RegisterView: View {
                 LogoHeader(text: "Registrar")
                 TextFieldView(text: $viewModel.email)
                     .padding(.top, 30)
-                SecureTextFieldView(text: $viewModel.password)
+                SecureTextFieldView("Password", text: $viewModel.password)
                 Button(action: {
                     viewModel.registerUser()
                 }, label: {
