@@ -22,8 +22,6 @@ struct MapView: View {
                     Text(marker.name)
                 }
             }
-                .navigationBarBackButtonHidden(true)
-                .ignoresSafeArea()
         }
     }
     
