@@ -13,12 +13,13 @@ final class LoginViewModel: ObservableObject {
     private var dataManager: LoginDataManager
     private var authViewModel: AuthProtocol
     private var logViewModel: LogProtocol
-    @Published var email = "e-mail"
-    @Published var password = "password"
+    @Published var email: String = "e-mail"
+    @Published var password: String = "password"
     @Published var isLoggedIn: Bool = false
     @Published var showAlert: Bool = false
     @Published var alertMessage: String = ""
-
+    @Published var rememberLogin: Bool = false
+    
     init(dataManager: LoginDataManager, authViewModel: AuthProtocol, logViewModel: LogProtocol) {
         self.dataManager = dataManager
         self.authViewModel = authViewModel
@@ -34,16 +35,33 @@ final class LoginViewModel: ObservableObject {
     func checkIfUserIsLoggedIn() {
         authViewModel.isUserLoggedIn(
             onSuccess: { [weak self] loggedIn in
-               //TODO: This is the real way to navigate and pass the data
+                //TODO: This is the real way to navigate and pass the data
                 // self?.isLoggedIn = loggedIn
-               // print(loggedIn)
+                // print(loggedIn)
                 self?.isLoggedIn = true
+                if loggedIn {
+                    self?.rememberLoginAndPassword()
+                }
             },
             onFailure: { [weak self] error in
                 self?.logViewModel.crash(screen: LoginView.viewName,
-                                   exception: error)
+                                         exception: error)
             }
         )
+    }
+    
+    func rememberLoginAndPassword() {
+        if rememberLogin {
+            KeyChainDataProvider().setStringKey(value: email,
+                                                key: KeyChainEnum.user)
+            KeyChainDataProvider().setStringKey(value: password,
+                                                key: KeyChainEnum.password)
+            UserDefaults.standard.set(rememberLogin,
+                                      forKey: Preferences.rememberLogin)
+        } else {
+            UserDefaults.standard.set(rememberLogin,
+                                      forKey: Preferences.rememberLogin)
+        }
     }
     
     func registerUser() {
@@ -51,7 +69,7 @@ final class LoginViewModel: ObservableObject {
                                password: password,
                                onSuccess: { [weak self] user in
             self?.logViewModel.log(screen: LoginView.viewName,
-                             action: "USER_REGISTERED")
+                                   action: "USER_REGISTERED")
         },
                                onFailure: { [weak self] error in
             print(error.localizedDescription)

@@ -15,8 +15,10 @@ struct SwitchRemember: View {
             Toggle(isOn: $remember) {
                 Text("Recordar")
             }
-            .toggleStyle(SwitchToggleStyle(tint: remember ? Color.customBlue : Color.gray))
-
+            .toggleStyle(SwitchToggleStyle(tint: remember
+                                           ? Color.customBlue
+                                           : Color.gray)
+            )
         }
         .foregroundColor(.customWhite)
         .padding([.leading,
