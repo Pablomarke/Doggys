@@ -47,7 +47,7 @@ final class LoginViewModel: ObservableObject {
                 if loggedIn {
                     self?.initAnalyticsFirebase(text: "Enter app",
                                                 message: "Enter app")
-                    self?.rememberLoginAndPassword()
+                    self?.rememberLoginAndPasswordInKeyChainAndPreferences()
                 }
             },
             onFailure: { [weak self] error in
@@ -57,7 +57,7 @@ final class LoginViewModel: ObservableObject {
         )
     }
     
-    func rememberLoginAndPassword() {
+    func rememberLoginAndPasswordInKeyChainAndPreferences() {
         if rememberLogin {
             keyChain.setStringKey(value: email,
                                   key: KeyChainEnum.user)

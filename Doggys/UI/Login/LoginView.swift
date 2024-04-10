@@ -38,16 +38,16 @@ struct LoginView: View {
                         }
                         .toggleStyle(SwitchToggleStyle(tint: rememberLogin
                                                        ? Color.customBlue
-                                                       : Color.gray)
+                                                       : Color.customWhite)
                         )
                     }
                     .foregroundColor(.customWhite)
                     .padding([.leading,
-                                .trailing],
-                               130)                        
+                              .trailing],
+                             130)
                     .onChange(of: rememberLogin) { newValue in
                         viewModel.rememberLogin = newValue
-                        }
+                    }
                     Button(action: {
                         viewModel.checkIfUserIsLoggedIn()
                     }, label: {
