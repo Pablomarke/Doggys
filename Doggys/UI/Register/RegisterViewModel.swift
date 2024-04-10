@@ -14,6 +14,7 @@ final class RegisterViewModel: ObservableObject {
     private var authViewModel: AuthProtocol
     @Published var email = "e-mail"
     @Published var password = "password"
+    @Published var repeatPassword = "repeatPassword"
     @Published var alertMessage: String = ""
     @Published var showAlert: Bool = false
     
@@ -34,5 +35,9 @@ final class RegisterViewModel: ObservableObject {
             self?.alertMessage = error.localizedDescription
             self?.showAlert = true
         })
+    }
+    
+    func passwordsMatch() -> Bool {
+        return password == repeatPassword
     }
 }

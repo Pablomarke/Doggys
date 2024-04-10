@@ -24,14 +24,17 @@ struct RegisterView: View {
             VStack{
                 LogoHeader(text: "Registrar")
                 TextFieldView(text: $viewModel.email)
-                    .padding(.top, 30)
                 SecureTextFieldView("Password", text: $viewModel.password)
+                    .padding(.top, 8)
+                SecureTextFieldView("Password", text: $viewModel.repeatPassword)
                 Button(action: {
                     viewModel.registerUser()
                 }, label: {
                     ButtonLabel(word: "Registrar")
                 })
                 .padding(.top, 20)
+                .disabled(!viewModel.passwordsMatch())
+                .opacity(viewModel.passwordsMatch() ? 1.0 : 0.5)
             }
         }
         .navigationBarBackButtonHidden(true)
