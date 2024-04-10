@@ -32,9 +32,9 @@ final class LoginViewModel: ObservableObject {
     }
     
     //MARK: Publics Methods
-    func initAnalyticsFirebase() {
-        Analytics.logEvent("Entro a la app",
-                           parameters: ["message":"Arranca la app"])
+    func initAnalyticsFirebase(text: String, message: String) {
+        Analytics.logEvent(text,
+                           parameters: ["message":message])
     }
     
     func checkIfUserIsLoggedIn() {
@@ -45,6 +45,8 @@ final class LoginViewModel: ObservableObject {
                 // print(loggedIn)
                 self?.isLoggedIn = true
                 if loggedIn {
+                    self?.initAnalyticsFirebase(text: "Enter app",
+                                                message: "Enter app")
                     self?.rememberLoginAndPassword()
                 }
             },

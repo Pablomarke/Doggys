@@ -77,7 +77,8 @@ struct LoginView: View {
             }
             // MARK: - Life cycle -
             .onAppear {
-                viewModel.initAnalyticsFirebase()
+                viewModel.initAnalyticsFirebase(text: "App run",
+                                                message: "App run")
             }
         }
         .navigationBarBackButtonHidden(true)
