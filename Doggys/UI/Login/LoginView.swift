@@ -13,7 +13,8 @@ struct LoginView: View {
     @Environment(\.logViewModel) private var logViewModel: LogProtocol
     @ObservedObject var viewModel: LoginViewModel
     static var viewName: String = "LoginView"
-   
+    @State private var rememberLogin: Bool = false
+    
     public init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
     }
@@ -29,7 +30,24 @@ struct LoginView: View {
                     TextFieldView(text: $viewModel.email)
                         .padding(.top,
                                  60)
-                    SecureTextFieldView("Password", text: $viewModel.password)
+                    SecureTextFieldView("Password",
+                                        text: $viewModel.password)
+                    HStack {
+                        Toggle(isOn: $rememberLogin) {
+                            Text("Recordar")
+                        }
+                        .toggleStyle(SwitchToggleStyle(tint: rememberLogin
+                                                       ? Color.customBlue
+                                                       : Color.customWhite)
+                        )
+                    }
+                    .foregroundColor(.customWhite)
+                    .padding([.leading,
+                              .trailing],
+                             130)
+                    .onChange(of: rememberLogin) { newValue in
+                        viewModel.rememberLogin = newValue
+                    }
                     Button(action: {
                         viewModel.checkIfUserIsLoggedIn()
                     }, label: {
@@ -59,7 +77,8 @@ struct LoginView: View {
             }
             // MARK: - Life cycle -
             .onAppear {
-                viewModel.initAnalyticsFirebase()
+                viewModel.initAnalyticsFirebase(text: "App run",
+                                                message: "App run")
             }
         }
         .navigationBarBackButtonHidden(true)
