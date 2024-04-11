@@ -17,6 +17,11 @@
 		39228FEE2BAC702100C91F40 /* DoggysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39228FED2BAC702100C91F40 /* DoggysTests.swift */; };
 		39228FF82BAC702100C91F40 /* DoggysUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39228FF72BAC702100C91F40 /* DoggysUITests.swift */; };
 		39228FFA2BAC702100C91F40 /* DoggysUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39228FF92BAC702100C91F40 /* DoggysUITestsLaunchTests.swift */; };
+		392EECD32BC68204005409EA /* SwitchRemember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392EECD22BC68204005409EA /* SwitchRemember.swift */; };
+		392EECD62BC68BBA005409EA /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 392EECD52BC68BBA005409EA /* KeychainSwift */; };
+		392EECD92BC68C9E005409EA /* KeyChainDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392EECD82BC68C9E005409EA /* KeyChainDataProvider.swift */; };
+		392EECDB2BC68CEA005409EA /* KeyChainEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392EECDA2BC68CEA005409EA /* KeyChainEnum.swift */; };
+		392EECDE2BC68E68005409EA /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392EECDD2BC68E68005409EA /* Preferences.swift */; };
 		397B93DA2BB353C20030D77E /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B93D92BB353C20030D77E /* TextFieldView.swift */; };
 		397B93DC2BB3560C0030D77E /* SecureTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B93DB2BB3560C0030D77E /* SecureTextFieldView.swift */; };
 		399BE5332BB9791B00AC323C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BE5322BB9791B00AC323C /* LoginViewModel.swift */; };
@@ -30,6 +35,8 @@
 		A9286A352BC7E192003FC58A /* DogGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9286A342BC7E192003FC58A /* DogGender.swift */; };
 		A9286A372BC7E3D4003FC58A /* DogWalkLong.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9286A362BC7E3D4003FC58A /* DogWalkLong.swift */; };
 		A9286A392BC7E607003FC58A /* DogFriendly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9286A382BC7E607003FC58A /* DogFriendly.swift */; };
+		5D16A5192BC458A8004EE58F /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */; };
+		A9286A312BC6E55C003FC58A /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9286A302BC6E55C003FC58A /* AppTabView.swift */; };
 		A92BF8D12BC073B3004AA875 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92BF8D02BC073B3004AA875 /* ProfileViewModel.swift */; };
 		A92BF8D32BC073C2004AA875 /* ProfileWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92BF8D22BC073C2004AA875 /* ProfileWireFrame.swift */; };
 		A932073A2BB48E170068D9C2 /* FirebaseAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93207392BB48E170068D9C2 /* FirebaseAuthViewModel.swift */; };
@@ -43,6 +50,10 @@
 		A9C47F002BBDE03E0044ED5F /* RegisterWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C47EFF2BBDE03E0044ED5F /* RegisterWireFrame.swift */; };
 		A9C47F022BBE93FC0044ED5F /* RecoveryWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C47F012BBE93FC0044ED5F /* RecoveryWireFrame.swift */; };
 		A9C47F052BBFE9B90044ED5F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C47F042BBFE9B90044ED5F /* ProfileView.swift */; };
+		A9CC34932BC3DFDA00E1599A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC34922BC3DFDA00E1599A /* MapView.swift */; };
+		A9CC34952BC3DFE800E1599A /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC34942BC3DFE800E1599A /* MapViewModel.swift */; };
+		A9CC34972BC3DFF400E1599A /* MapViewWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC34962BC3DFF400E1599A /* MapViewWireFrame.swift */; };
+		A9CC34992BC3E3C200E1599A /* MarkerMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC34982BC3E3C200E1599A /* MarkerMap.swift */; };
 		A9EDD0CD2BBBF9250052D03C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0CC2BBBF9250052D03C /* RegisterView.swift */; };
 		A9EDD0D02BBC153E0052D03C /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0CF2BBC153E0052D03C /* RegisterViewModel.swift */; };
 		A9EDD0D32BBC16470052D03C /* RecoveryPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0D22BBC16470052D03C /* RecoveryPasswordView.swift */; };
@@ -109,6 +120,10 @@
 		39228FF32BAC702100C91F40 /* DoggysUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoggysUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39228FF72BAC702100C91F40 /* DoggysUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoggysUITests.swift; sourceTree = "<group>"; };
 		39228FF92BAC702100C91F40 /* DoggysUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoggysUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		392EECD22BC68204005409EA /* SwitchRemember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchRemember.swift; sourceTree = "<group>"; };
+		392EECD82BC68C9E005409EA /* KeyChainDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainDataProvider.swift; sourceTree = "<group>"; };
+		392EECDA2BC68CEA005409EA /* KeyChainEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainEnum.swift; sourceTree = "<group>"; };
+		392EECDD2BC68E68005409EA /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		397B93D92BB353C20030D77E /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		397B93DB2BB3560C0030D77E /* SecureTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextFieldView.swift; sourceTree = "<group>"; };
 		399BE5322BB9791B00AC323C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -122,6 +137,8 @@
 		A9286A342BC7E192003FC58A /* DogGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGender.swift; sourceTree = "<group>"; };
 		A9286A362BC7E3D4003FC58A /* DogWalkLong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogWalkLong.swift; sourceTree = "<group>"; };
 		A9286A382BC7E607003FC58A /* DogFriendly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFriendly.swift; sourceTree = "<group>"; };
+		5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		A9286A302BC6E55C003FC58A /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		A92BF8D02BC073B3004AA875 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		A92BF8D22BC073C2004AA875 /* ProfileWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWireFrame.swift; sourceTree = "<group>"; };
 		A93207392BB48E170068D9C2 /* FirebaseAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthViewModel.swift; sourceTree = "<group>"; };
@@ -135,6 +152,10 @@
 		A9C47EFF2BBDE03E0044ED5F /* RegisterWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWireFrame.swift; sourceTree = "<group>"; };
 		A9C47F012BBE93FC0044ED5F /* RecoveryWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryWireFrame.swift; sourceTree = "<group>"; };
 		A9C47F042BBFE9B90044ED5F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		A9CC34922BC3DFDA00E1599A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		A9CC34942BC3DFE800E1599A /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		A9CC34962BC3DFF400E1599A /* MapViewWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewWireFrame.swift; sourceTree = "<group>"; };
+		A9CC34982BC3E3C200E1599A /* MarkerMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerMap.swift; sourceTree = "<group>"; };
 		A9EDD0CC2BBBF9250052D03C /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		A9EDD0CF2BBC153E0052D03C /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		A9EDD0D22BBC16470052D03C /* RecoveryPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordView.swift; sourceTree = "<group>"; };
@@ -158,6 +179,7 @@
 				A9F98CAD2BB34C22004E9451 /* FirebaseFirestoreSwift in Frameworks */,
 				A9F98C992BB34C22004E9451 /* FirebaseAppCheck in Frameworks */,
 				A9F98C972BB34C22004E9451 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				392EECD62BC68BBA005409EA /* KeychainSwift in Frameworks */,
 				A9F98C9D2BB34C22004E9451 /* FirebaseAuth in Frameworks */,
 				A9F98CA12BB34C22004E9451 /* FirebaseCrashlytics in Frameworks */,
 				A9F98CC12BB34C22004E9451 /* FirebaseRemoteConfigSwift in Frameworks */,
@@ -262,6 +284,23 @@
 			path = DoggysUITests;
 			sourceTree = "<group>";
 		};
+		392EECD72BC68C80005409EA /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				392EECD82BC68C9E005409EA /* KeyChainDataProvider.swift */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		392EECDC2BC68D0E005409EA /* SharedPreferences */ = {
+			isa = PBXGroup;
+			children = (
+				392EECDA2BC68CEA005409EA /* KeyChainEnum.swift */,
+				392EECDD2BC68E68005409EA /* Preferences.swift */,
+			);
+			path = SharedPreferences;
+			sourceTree = "<group>";
+		};
 		397B93D82BB3539A0030D77E /* ToolViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +326,7 @@
 				39ADE2572BC29863007A6702 /* LogoHeader.swift */,
 				399BE53A2BBA8A7600AC323C /* LogoView.swift */,
 				39ADE25A2BC299D8007A6702 /* ButtonLabel.swift */,
+				392EECD22BC68204005409EA /* SwitchRemember.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -294,6 +334,8 @@
 		39D9D83B2BB710C900B5331A /* Domanin */ = {
 			isa = PBXGroup;
 			children = (
+				392EECDC2BC68D0E005409EA /* SharedPreferences */,
+				392EECD72BC68C80005409EA /* Security */,
 				399BE5312BB976B600AC323C /* Assets */,
 				39228FE02BAC702100C91F40 /* Assets.xcassets */,
 				A932073D2BB48FA90068D9C2 /* Models */,
@@ -307,14 +349,25 @@
 		39D9D83C2BB7114100B5331A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */,
 				39ADE2592BC298EB007A6702 /* Components */,
 				390BB76B2BBCA5260052257E /* Splash */,
 				A9EDD0D12BBC16310052D03C /* Recovery */,
 				A9EDD0CE2BBC150C0052D03C /* Register */,
 				A9B53B902BB336AC000AD215 /* Login */,
+				A9286A2F2BC6E533003FC58A /* TabView */,
 				A9C47F032BBFE9AA0044ED5F /* Profile */,
+				A9CC34912BC3DFC000E1599A /* Map */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		A9286A2F2BC6E533003FC58A /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				A9286A302BC6E55C003FC58A /* AppTabView.swift */,
+			);
+			path = TabView;
 			sourceTree = "<group>";
 		};
 		A93207382BB48E000068D9C2 /* Firebase */ = {
@@ -334,6 +387,7 @@
 				A9286A342BC7E192003FC58A /* DogGender.swift */,
 				A9286A362BC7E3D4003FC58A /* DogWalkLong.swift */,
 				A9286A382BC7E607003FC58A /* DogFriendly.swift */,
+				A9CC34982BC3E3C200E1599A /* MarkerMap.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -410,6 +464,16 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		A9CC34912BC3DFC000E1599A /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				A9CC34922BC3DFDA00E1599A /* MapView.swift */,
+				A9CC34942BC3DFE800E1599A /* MapViewModel.swift */,
+				A9CC34962BC3DFF400E1599A /* MapViewWireFrame.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		A9EDD0CE2BBC150C0052D03C /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,6 +538,7 @@
 				A9F98CC02BB34C22004E9451 /* FirebaseRemoteConfigSwift */,
 				A9F98CC22BB34C22004E9451 /* FirebaseStorage */,
 				A9F98CC42BB34C22004E9451 /* FirebaseStorageCombine-Community */,
+				392EECD52BC68BBA005409EA /* KeychainSwift */,
 			);
 			productName = Doggys;
 			productReference = 39228FD92BAC701F00C91F40 /* Doggys.app */;
@@ -549,6 +614,7 @@
 			mainGroup = 39228FD02BAC701E00C91F40;
 			packageReferences = (
 				A9F98C8F2BB34C22004E9451 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				392EECD42BC68BBA005409EA /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 39228FDA2BAC701F00C91F40 /* Products */;
 			projectDirPath = "";
@@ -568,6 +634,7 @@
 			files = (
 				39228FE42BAC702100C91F40 /* Preview Assets.xcassets in Resources */,
 				39228FE12BAC702100C91F40 /* Assets.xcassets in Resources */,
+				5D16A5192BC458A8004EE58F /* Launch Screen.storyboard in Resources */,
 				A9F98CC72BB34CD6004E9451 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -595,9 +662,11 @@
 			files = (
 				39ADE25B2BC299D8007A6702 /* ButtonLabel.swift in Sources */,
 				399BE53B2BBA8A7600AC323C /* LogoView.swift in Sources */,
+				A9CC34972BC3DFF400E1599A /* MapViewWireFrame.swift in Sources */,
 				A932074D2BB4ABE40068D9C2 /* AuthViewModelEnvironmentKey.swift in Sources */,
 				A9286A352BC7E192003FC58A /* DogGender.swift in Sources */,
 				A92BF8D12BC073B3004AA875 /* ProfileViewModel.swift in Sources */,
+				A9CC34992BC3E3C200E1599A /* MarkerMap.swift in Sources */,
 				39228FDF2BAC701F00C91F40 /* LoginView.swift in Sources */,
 				39ADE2582BC29863007A6702 /* LogoHeader.swift in Sources */,
 				A93207452BB4A9C90068D9C2 /* FireBaseLogViewModel.swift in Sources */,
@@ -609,19 +678,26 @@
 				399BE5372BB979B900AC323C /* LoginAPIClient.swift in Sources */,
 				A92BF8D32BC073C2004AA875 /* ProfileWireFrame.swift in Sources */,
 				A9286A392BC7E607003FC58A /* DogFriendly.swift in Sources */,
+				A9CC34952BC3DFE800E1599A /* MapViewModel.swift in Sources */,
 				A9EDD0D02BBC153E0052D03C /* RegisterViewModel.swift in Sources */,
+				392EECD32BC68204005409EA /* SwitchRemember.swift in Sources */,
 				A932073F2BB48FB40068D9C2 /* User.swift in Sources */,
 				A9C47F002BBDE03E0044ED5F /* RegisterWireFrame.swift in Sources */,
 				A9C47F052BBFE9B90044ED5F /* ProfileView.swift in Sources */,
 				A9EDD0CD2BBBF9250052D03C /* RegisterView.swift in Sources */,
 				A9286A332BC7DABD003FC58A /* DogBreed.swift in Sources */,
+				392EECDE2BC68E68005409EA /* Preferences.swift in Sources */,
+				392EECD92BC68C9E005409EA /* KeyChainDataProvider.swift in Sources */,
 				A973E23F2BB182F900BDF917 /* ColorsApp.swift in Sources */,
+				A9286A312BC6E55C003FC58A /* AppTabView.swift in Sources */,
 				390BB76F2BBCA9D30052257E /* SplashWireFrame.swift in Sources */,
 				399BE5332BB9791B00AC323C /* LoginViewModel.swift in Sources */,
 				A93207472BB4A9E30068D9C2 /* LogProtocol.swift in Sources */,
 				390BB76D2BBCA8BE0052257E /* SplashViewModel.swift in Sources */,
+				392EECDB2BC68CEA005409EA /* KeyChainEnum.swift in Sources */,
 				A9EDD0D32BBC16470052D03C /* RecoveryPasswordView.swift in Sources */,
 				A932073C2BB48F860068D9C2 /* AuthProtocol.swift in Sources */,
+				A9CC34932BC3DFDA00E1599A /* MapView.swift in Sources */,
 				A9C47F022BBE93FC0044ED5F /* RecoveryWireFrame.swift in Sources */,
 				390BB76A2BBCA51F0052257E /* SplashView.swift in Sources */,
 				A932074F2BB4AC100068D9C2 /* LogViewModelEnvironmentKey.swift in Sources */,
@@ -798,6 +874,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -827,6 +904,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -956,6 +1034,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		392EECD42BC68BBA005409EA /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 22.0.0;
+			};
+		};
 		A9F98C8F2BB34C22004E9451 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -967,6 +1053,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		392EECD52BC68BBA005409EA /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 392EECD42BC68BBA005409EA /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
 		A9F98C902BB34C22004E9451 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A9F98C8F2BB34C22004E9451 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

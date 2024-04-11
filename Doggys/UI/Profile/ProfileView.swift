@@ -87,7 +87,6 @@ struct ProfileView: View {
                     ButtonLabel(word: "Guardar")
                 })
             }
-            .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading:
                                     Button(action: {
                 presentationMode.wrappedValue.dismiss()
