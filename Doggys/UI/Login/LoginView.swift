@@ -12,8 +12,7 @@ struct LoginView: View {
     @Environment(\.authViewModel) private var authViewModel: AuthProtocol
     @Environment(\.logViewModel) private var logViewModel: LogProtocol
     @ObservedObject var viewModel: LoginViewModel
-    // TODO: Move to viewModel
-//    @State private var isLoading = false
+    
     static var viewName: String = "LoginView"
     
     public init(viewModel: LoginViewModel) {
@@ -33,8 +32,6 @@ struct LoginView: View {
                                  60)
                     SecureTextFieldView("Password", text: $viewModel.password)
                     Button(action: {
-//                        // TODO: Move to viewModel
-//                        isLoading = true
                         viewModel.checkIfUserIsLoggedIn()
                     }, label: {
                         ButtonLabel(word: "Login")
@@ -61,22 +58,14 @@ struct LoginView: View {
                         EmptyView()
                     }
                                    .hidden()
-                                   .onDisappear {
-                                       isLoading = false
-                                   }
                 }
             }
-            .overlay(
-                viewModel.isLoading ? LoadingView() : nil
-            )
-            .disabled(viewModel.isLoading)
-            .onTapGesture {
-                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
-                                                to: nil,
-                                                from: nil,
-                                                for: nil)
-            }
         }
+        .overlay(
+            viewModel.isLoading ?
+            LoadingView() : nil
+        )
+        .disabled(viewModel.isLoading)
         .navigationBarBackButtonHidden(true)
         .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),

@@ -14,8 +14,8 @@ final class LoginViewModel: ObservableObject {
     private var dataManager: LoginDataManager
     private var authViewModel: AuthProtocol
     private var logViewModel: LogProtocol
-    @Published var email = "e-mail"
-    @Published var password = "password"
+    @Published var email = ""
+    @Published var password = ""
     @Published var isLoggedIn: Bool = false
     @Published var showAlert: Bool = false
     @Published var alertMessage: String = ""
@@ -37,33 +37,21 @@ final class LoginViewModel: ObservableObject {
     func checkIfUserIsLoggedIn() {
         isLoading = true
         
-        authViewModel.isUserLoggedIn(
-            onSuccess: { [weak self] loggedIn in
-               //TODO: This is the real way to navigate and pass the data
-                // self?.isLoggedIn = loggedIn
-               // print(loggedIn)
-                self?.isLoggedIn = true
-                self?.isLoading = false
-            },
-            onFailure: { [weak self] error in
-                self?.logViewModel.crash(screen: LoginView.viewName,
-                                   exception: error)
-                self?.isLoading = false
-            }
-        )
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.authViewModel.isUserLoggedIn(
+                onSuccess: { [weak self] loggedIn in
+                    //TODO: This is the real way to navigate and pass the data
+                    // self?.isLoggedIn = loggedIn
+                    // print(loggedIn)
+                    self?.isLoggedIn = true
+                    self?.isLoading = false
+                },
+                onFailure: { [weak self] error in
+                    self?.logViewModel.crash(screen: LoginView.viewName,
+                                             exception: error)
+                    self?.isLoading = false
+                }
+            )
+        }
     }
-    
-//    func registerUser() {
-//        authViewModel.register(email: email,
-//                               password: password,
-//                               onSuccess: { [weak self] user in
-//            self?.logViewModel.log(screen: LoginView.viewName,
-//                             action: "USER_REGISTERED")
-//        },
-//                               onFailure: { [weak self] error in
-//            print(error.localizedDescription)
-//            self?.alertMessage = error.localizedDescription
-//            self?.showAlert = true
-//        })
-//    }
 }
