@@ -17,7 +17,7 @@ struct AppTabView: View {
                 .padding(.bottom, 90)
                 .ignoresSafeArea()
             
-            ProfileView()
+            ProfileView(viewModel: ProfileViewModel())
                 .tabItem {
                     Label("Perfil", systemImage: "person.fill")
                 }
