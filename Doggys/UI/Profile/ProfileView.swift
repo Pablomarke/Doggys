@@ -11,14 +11,9 @@ struct ProfileView: View {
     //MARK: - Properties
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel: ProfileViewModel
-    @State private var dogOwner = "Nombre del Humano"
-    @State private var nameOfDog = "Doggy Nombre"
-    @State var ageOfDog: String = "Doggy Años"
-    @State private var selectedBreed = ""
-    @State private var selectedGender = ""
     
     //TODO: Enum
-    let dogBreed = ["Mestizo","Dobermán","Labrador","Rottweiler","Siba-Inu","Yorkshire","Bulldog", "Teckel"]
+//    let dogBreed = ["Mestizo","Dobermán","Labrador","Rottweiler","Siba-Inu","Yorkshire","Bulldog", "Teckel"]
     
     let dogGender = ["Hembra", "Macho"]
    //MARK: - View
@@ -26,25 +21,23 @@ struct ProfileView: View {
         ZStack{
             Color.customLightBlue.ignoresSafeArea()
             VStack{
-                LogoHeader(text: "Perfil",
-                           toTop: -40)
-                TextFieldView(text: $dogOwner,
+                TextFieldView(text: $viewModel.dogOwner,
                               colorBackgroud: .gray)
                 .padding(10)
-                TextFieldView(text: $nameOfDog,
+                TextFieldView(text: $viewModel.nameOfDog,
                               colorBackgroud: .gray)
                 .padding(10)
-                TextFieldView(text: $ageOfDog,
+                TextFieldView(text: $viewModel.ageOfDog,
                               colorBackgroud: .gray)
                 .padding()
                 
                 Text("Seleccione una raza:")
                     .foregroundStyle(Color.white)
                     .font(.title3)
-                Picker(selection: $selectedBreed) {
-                    ForEach(dogBreed,
-                            id: \.self){
-                        Text($0)
+                Picker(selection: $viewModel.selectedBreed) {
+                    ForEach(RazaPerro.allCases,
+                            id: \.self){ breed in
+                        Text(breed.rawValue.capitalized)
                     }
                 } label: {
                     Text("")
@@ -54,7 +47,7 @@ struct ProfileView: View {
                 Text("Seleccione género:")
                     .foregroundStyle(Color.white)
                     .font(.title3)
-                Picker(selection: $selectedBreed) {
+                Picker(selection: $viewModel.selectedGender) {
                     ForEach(dogGender,
                             id: \.self){
                         Text($0)
