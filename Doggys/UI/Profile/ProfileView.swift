@@ -17,6 +17,11 @@ struct ProfileView: View {
         ZStack{
             Color.customLightBlue.ignoresSafeArea()
             VStack{
+                Text("Perfil")
+                    .font(.system(size: 40,
+                                  weight: .light,
+                                  design: .monospaced))
+                    .padding()
                 TextFieldView(text: $viewModel.dogOwner,
                               colorBackgroud: .gray)
                 .padding(10)
@@ -54,7 +59,7 @@ struct ProfileView: View {
                 Text("Seleccione tipo de paseo:")
                     .foregroundStyle(Color.white)
                     .font(.title3)
-                Picker(selection: $viewModel.selectedGender) {
+                Picker(selection: $viewModel.selectedWalk) {
                     ForEach(PaseoPerro.allCases,
                             id: \.self){ walk in
                         Text(walk.rawValue.capitalized)
@@ -63,6 +68,19 @@ struct ProfileView: View {
                     Text("")
                 }
                 .pickerStyle(.menu)
+                Text("¿Soy Amigable con otros perros?")
+                    .foregroundStyle(Color.white)
+                    .font(.title3)
+                Picker(selection: $viewModel.dofFriendly) {
+                    ForEach(PerroAmigable.allCases,
+                            id: \.self){ friendly in
+                        Text(friendly.rawValue.capitalized)
+                    }
+                } label: {
+                    Text("")
+                }
+                .pickerStyle(.menu)
+
                 Button(action: {
                     // TODO
                 }, label: {
