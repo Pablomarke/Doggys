@@ -27,6 +27,8 @@
 		39ADE2582BC29863007A6702 /* LogoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ADE2572BC29863007A6702 /* LogoHeader.swift */; };
 		39ADE25B2BC299D8007A6702 /* ButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ADE25A2BC299D8007A6702 /* ButtonLabel.swift */; };
 		A9286A332BC7DABD003FC58A /* DogBreed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9286A322BC7DABD003FC58A /* DogBreed.swift */; };
+		A9286A352BC7E192003FC58A /* DogGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9286A342BC7E192003FC58A /* DogGender.swift */; };
+		A9286A372BC7E3D4003FC58A /* DogWalkLong.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9286A362BC7E3D4003FC58A /* DogWalkLong.swift */; };
 		A92BF8D12BC073B3004AA875 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92BF8D02BC073B3004AA875 /* ProfileViewModel.swift */; };
 		A92BF8D32BC073C2004AA875 /* ProfileWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92BF8D22BC073C2004AA875 /* ProfileWireFrame.swift */; };
 		A932073A2BB48E170068D9C2 /* FirebaseAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93207392BB48E170068D9C2 /* FirebaseAuthViewModel.swift */; };
@@ -116,6 +118,8 @@
 		39ADE2572BC29863007A6702 /* LogoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoHeader.swift; sourceTree = "<group>"; };
 		39ADE25A2BC299D8007A6702 /* ButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabel.swift; sourceTree = "<group>"; };
 		A9286A322BC7DABD003FC58A /* DogBreed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreed.swift; sourceTree = "<group>"; };
+		A9286A342BC7E192003FC58A /* DogGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGender.swift; sourceTree = "<group>"; };
+		A9286A362BC7E3D4003FC58A /* DogWalkLong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogWalkLong.swift; sourceTree = "<group>"; };
 		A92BF8D02BC073B3004AA875 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		A92BF8D22BC073C2004AA875 /* ProfileWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWireFrame.swift; sourceTree = "<group>"; };
 		A93207392BB48E170068D9C2 /* FirebaseAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthViewModel.swift; sourceTree = "<group>"; };
@@ -325,6 +329,8 @@
 			children = (
 				A932073E2BB48FB40068D9C2 /* User.swift */,
 				A9286A322BC7DABD003FC58A /* DogBreed.swift */,
+				A9286A342BC7E192003FC58A /* DogGender.swift */,
+				A9286A362BC7E3D4003FC58A /* DogWalkLong.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -587,6 +593,7 @@
 				39ADE25B2BC299D8007A6702 /* ButtonLabel.swift in Sources */,
 				399BE53B2BBA8A7600AC323C /* LogoView.swift in Sources */,
 				A932074D2BB4ABE40068D9C2 /* AuthViewModelEnvironmentKey.swift in Sources */,
+				A9286A352BC7E192003FC58A /* DogGender.swift in Sources */,
 				A92BF8D12BC073B3004AA875 /* ProfileViewModel.swift in Sources */,
 				39228FDF2BAC701F00C91F40 /* LoginView.swift in Sources */,
 				39ADE2582BC29863007A6702 /* LogoHeader.swift in Sources */,
@@ -595,6 +602,7 @@
 				39228FDD2BAC701F00C91F40 /* DoggysApp.swift in Sources */,
 				397B93DA2BB353C20030D77E /* TextFieldView.swift in Sources */,
 				397B93DC2BB3560C0030D77E /* SecureTextFieldView.swift in Sources */,
+				A9286A372BC7E3D4003FC58A /* DogWalkLong.swift in Sources */,
 				399BE5372BB979B900AC323C /* LoginAPIClient.swift in Sources */,
 				A92BF8D32BC073C2004AA875 /* ProfileWireFrame.swift in Sources */,
 				A9EDD0D02BBC153E0052D03C /* RegisterViewModel.swift in Sources */,

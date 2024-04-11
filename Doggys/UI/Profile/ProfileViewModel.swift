@@ -13,6 +13,7 @@ final class ProfileViewModel: ObservableObject {
     @Published var nameOfDog: String = "Doggy Nombre"
     @Published var ageOfDog: String = "Doggy Años"
     @Published var selectedBreed: RazaPerro = .mestizo
-    @Published var selectedGender = ""
+    @Published var selectedGender: GeneroPerro = .hembra
+    @Published var selectedWalk: PaseoPerro = .corto
     
 }

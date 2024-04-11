@@ -12,10 +12,6 @@ struct ProfileView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel: ProfileViewModel
     
-    //TODO: Enum
-//    let dogBreed = ["Mestizo","Dobermán","Labrador","Rottweiler","Siba-Inu","Yorkshire","Bulldog", "Teckel"]
-    
-    let dogGender = ["Hembra", "Macho"]
    //MARK: - View
     var body: some View {
         ZStack{
@@ -29,11 +25,11 @@ struct ProfileView: View {
                 .padding(10)
                 TextFieldView(text: $viewModel.ageOfDog,
                               colorBackgroud: .gray)
-                .padding()
-                
+                .padding(10)
                 Text("Seleccione una raza:")
                     .foregroundStyle(Color.white)
                     .font(.title3)
+                    .padding(.top, 20)
                 Picker(selection: $viewModel.selectedBreed) {
                     ForEach(RazaPerro.allCases,
                             id: \.self){ breed in
@@ -43,20 +39,30 @@ struct ProfileView: View {
                     Text("")
                 }
                 .pickerStyle(.menu)
-                
                 Text("Seleccione género:")
                     .foregroundStyle(Color.white)
                     .font(.title3)
                 Picker(selection: $viewModel.selectedGender) {
-                    ForEach(dogGender,
-                            id: \.self){
-                        Text($0)
+                    ForEach(GeneroPerro.allCases,
+                            id: \.self){ gender in
+                        Text(gender.rawValue.capitalized)
                     }
                 } label: {
                     Text("")
                 }
                 .pickerStyle(.menu)
-                .padding()
+                Text("Seleccione tipo de paseo:")
+                    .foregroundStyle(Color.white)
+                    .font(.title3)
+                Picker(selection: $viewModel.selectedGender) {
+                    ForEach(PaseoPerro.allCases,
+                            id: \.self){ walk in
+                        Text(walk.rawValue.capitalized)
+                    }
+                } label: {
+                    Text("")
+                }
+                .pickerStyle(.menu)
                 Button(action: {
                     // TODO
                 }, label: {
@@ -73,6 +79,7 @@ struct ProfileView: View {
             })
         }
     }
+    
     //MARK: Public Methods
     mutating func set(viewModel: ProfileViewModel) {
         self.viewModel = viewModel
