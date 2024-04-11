@@ -12,7 +12,8 @@ struct LoginView: View {
     @Environment(\.authViewModel) private var authViewModel: AuthProtocol
     @Environment(\.logViewModel) private var logViewModel: LogProtocol
     @ObservedObject var viewModel: LoginViewModel
-    @State private var isLoading = false
+    // TODO: Move to viewModel
+//    @State private var isLoading = false
     static var viewName: String = "LoginView"
     
     public init(viewModel: LoginViewModel) {
@@ -32,14 +33,13 @@ struct LoginView: View {
                                  60)
                     SecureTextFieldView("Password", text: $viewModel.password)
                     Button(action: {
-                        isLoading = true
-                        // TODO: Simula una llamada a la API, cuando esté implementado eliminar
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            viewModel.checkIfUserIsLoggedIn()
-                        }
+//                        // TODO: Move to viewModel
+//                        isLoading = true
+                        viewModel.checkIfUserIsLoggedIn()
                     }, label: {
                         ButtonLabel(word: "Login")
                     })
+                    .disabled(viewModel.isLoading)
                     .padding(.top,
                              40)
                     NavigationLink {
@@ -67,9 +67,9 @@ struct LoginView: View {
                 }
             }
             .overlay(
-                isLoading ? LoadingView() : nil
+                viewModel.isLoading ? LoadingView() : nil
             )
-            .disabled(isLoading)
+            .disabled(viewModel.isLoading)
             .onTapGesture {
                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
                                                 to: nil,
