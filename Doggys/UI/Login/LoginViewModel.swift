@@ -14,17 +14,17 @@ final class LoginViewModel: ObservableObject {
     private var dataManager: LoginDataManager
     private var authViewModel: AuthProtocol
     private var logViewModel: LogProtocol
-//<<<<<<< HEAD
-//    @Published var email = ""
-//    @Published var password = ""
-//    @Published var isLoggedIn: Bool = false
-//    @Published var showAlert: Bool = false
-//    @Published var alertMessage: String = ""
-//    @Published var isLoading: Bool = false
-//    
-//    //MARK: Init
-//    init(dataManager: LoginDataManager, authViewModel: AuthProtocol, logViewModel: LogProtocol) {
-//=======
+    //<<<<<<< HEAD
+    //    @Published var email = ""
+    //    @Published var password = ""
+    //    @Published var isLoggedIn: Bool = false
+    //    @Published var showAlert: Bool = false
+    //    @Published var alertMessage: String = ""
+    //    @Published var isLoading: Bool = false
+    //
+    //    //MARK: Init
+    //    init(dataManager: LoginDataManager, authViewModel: AuthProtocol, logViewModel: LogProtocol) {
+    //=======
     private var keyChain: KeyChainDataProvider
     @Published var email: String = ""
     @Published var password: String = ""
@@ -32,14 +32,14 @@ final class LoginViewModel: ObservableObject {
     @Published var showAlert: Bool = false
     @Published var alertMessage: String = ""
     @Published var rememberLogin: Bool = false
-        @Published var isLoading: Bool = false
-
+    @Published var isLoading: Bool = false
+    
     
     init(dataManager: LoginDataManager,
          authViewModel: AuthProtocol,
          logViewModel: LogProtocol,
          keyChain: KeyChainDataProvider) {
-//>>>>>>> develop
+        //>>>>>>> develop
         self.dataManager = dataManager
         self.authViewModel = authViewModel
         self.logViewModel = logViewModel
@@ -61,27 +61,27 @@ final class LoginViewModel: ObservableObject {
                 // self?.isLoggedIn = loggedIn
                 // print(loggedIn)
                 self?.isLoggedIn = true
-//<<<<<<< HEAD
+                //<<<<<<< HEAD
                 self?.isLoading = false
-//=======
+                //=======
                 if loggedIn {
                     self?.initAnalyticsFirebase(text: "Enter app",
                                                 message: "Enter app")
                     self?.rememberLoginAndPasswordInKeyChainAndPreferences()
                 }
-//>>>>>>> develop
+                //>>>>>>> develop
             },
             onFailure: { [weak self] error in
                 self?.logViewModel.crash(screen: LoginView.viewName,
                                          exception: error)
-//<<<<<<< HEAD
+                //<<<<<<< HEAD
                 self?.isLoading = false
             }
         )
         
-//=======
-//            }
-//        )
+        //=======
+        //            }
+        //        )
     }
     
     func rememberLoginAndPasswordInKeyChainAndPreferences() {
@@ -97,7 +97,7 @@ final class LoginViewModel: ObservableObject {
                                       forKey: Preferences.rememberLogin)
         }
     }
-    
+}
 //    func registerUser() {
 //        authViewModel.register(email: email,
 //                               password: password,
@@ -111,5 +111,5 @@ final class LoginViewModel: ObservableObject {
 //            self?.showAlert = true
 //        })
 //>>>>>>> develop
-    }
-}
+//    }
+//}
