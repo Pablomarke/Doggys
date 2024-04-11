@@ -14,6 +14,10 @@ struct LoginView: View {
     @ObservedObject var viewModel: LoginViewModel
     
     static var viewName: String = "LoginView"
+//<<<<<<< HEAD
+//=======
+    @State private var rememberLogin: Bool = false
+//>>>>>>> develop
     
     public init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
@@ -30,7 +34,24 @@ struct LoginView: View {
                     TextFieldView(text: $viewModel.email)
                         .padding(.top,
                                  60)
-                    SecureTextFieldView("Password", text: $viewModel.password)
+                    SecureTextFieldView("Password",
+                                        text: $viewModel.password)
+                    HStack {
+                        Toggle(isOn: $rememberLogin) {
+                            Text("Recordar")
+                        }
+                        .toggleStyle(SwitchToggleStyle(tint: rememberLogin
+                                                       ? Color.customBlue
+                                                       : Color.customWhite)
+                        )
+                    }
+                    .foregroundColor(.customWhite)
+                    .padding([.leading,
+                              .trailing],
+                             130)
+                    .onChange(of: rememberLogin) { newValue in
+                        viewModel.rememberLogin = newValue
+                    }
                     Button(action: {
                         viewModel.checkIfUserIsLoggedIn()
                     }, label: {
@@ -60,6 +81,14 @@ struct LoginView: View {
                                    .hidden()
                 }
             }
+//<<<<<<< HEAD
+//=======
+            // MARK: - Life cycle -
+            .onAppear {
+                viewModel.initAnalyticsFirebase(text: "App run",
+                                                message: "App run")
+            }
+//>>>>>>> develop
         }
         .overlay(
             viewModel.isLoading ?

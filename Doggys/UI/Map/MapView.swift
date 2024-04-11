@@ -17,8 +17,10 @@ struct MapView: View {
             Map(coordinateRegion: $viewModel.region,
                 annotationItems: viewModel.markers) { marker in
                 MapAnnotation(coordinate: marker.coordinate) {
-                    Image(systemName: "mappin")
-                        .foregroundColor(.orange)
+                    Image(.logoIcon)
+                        .resizable()
+                        .frame(width: 30, height: 30, alignment: .center)
+                        .clipShape(.circle)
                     Text(marker.name)
                 }
             }

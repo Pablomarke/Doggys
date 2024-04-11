@@ -14,9 +14,11 @@ final class LoginWireFrame {
         let dataManager: LoginDataManager = createDataManager(apiClient: apiClient)
         let authViewModel: AuthProtocol = createAutViewModel()
         let logViewModel: LogProtocol = createLogViewModel()
+        let keyChain: KeyChainDataProvider = createkeyChain()
         let viewModel: LoginViewModel = createViewModel(with: dataManager,
                                                          authViewModel: authViewModel,
-                                                         logViewModel: logViewModel)
+                                                        logViewModel: logViewModel, 
+                                                        keyChain: keyChain)
         var viewController = LoginView(viewModel: viewModel)
         viewController.set(viewModel: viewModel)
         
@@ -26,10 +28,16 @@ final class LoginWireFrame {
     //MARK: Private Methods
     private func createViewModel(with dataManager: LoginDataManager,
                                  authViewModel: AuthProtocol,
-                                 logViewModel: LogProtocol) -> LoginViewModel {
+                                 logViewModel: LogProtocol,
+                                 keyChain: KeyChainDataProvider) -> LoginViewModel {
         return LoginViewModel(dataManager: dataManager,
                               authViewModel: authViewModel,
-                              logViewModel: logViewModel)
+                              logViewModel: logViewModel, 
+                              keyChain: keyChain)
+    }
+    
+    private func createkeyChain() -> KeyChainDataProvider {
+        return KeyChainDataProvider()
     }
     
     private func createDataManager(apiClient: LoginAPIClient) -> LoginDataManager {
