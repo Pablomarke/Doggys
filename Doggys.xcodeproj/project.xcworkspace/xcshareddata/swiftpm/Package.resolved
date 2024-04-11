@@ -1,4 +1,5 @@
 {
+  "originHash" : "08a4c5195a90c3455b87e63a26ed48962763df613bfdb73db906ea558c6cbf9c",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -82,6 +83,15 @@
       }
     },
     {
+      "identity" : "keychain-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/evgenyneu/keychain-swift.git",
+      "state" : {
+        "revision" : "75677d8be3c50898c8ffd0d107f88aa2740301fc",
+        "version" : "22.0.0"
+      }
+    },
+    {
       "identity" : "leveldb",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/leveldb.git",
@@ -118,5 +128,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
