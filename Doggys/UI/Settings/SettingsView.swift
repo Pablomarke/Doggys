@@ -17,9 +17,25 @@ struct SettingsView: View {
     }
     // MARK: - View -
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            Color.customGreenblue.ignoresSafeArea()
+            VStack{
+                LogoHeader(text: "Ajustes")
+                    .padding(.top, 60)
+                Button(action: {
+                    viewModel.disconnect()
+                }, label: {
+                    ButtonLabel(word: "Desconectar")
+                })
+            }
+            
+            
+            NavigationLink(destination: LoginWireFrame().viewController,
+                           isActive: $viewModel.isLogOut) {
+                EmptyView()
+            }
+        }
     }
-    
     // MARK: - Public methods -
     mutating func set(viewModel: SettingsViewModel) {
         self.viewModel = viewModel
@@ -28,5 +44,5 @@ struct SettingsView: View {
 
 
 #Preview {
-    SettingsWireframe().viewController
+    AppTabView()
 }
