@@ -84,7 +84,7 @@ struct ProfileView: View {
                 Button(action: {
                     // TODO
                 }, label: {
-                    ButtonLabel(word: "enviar")
+                    ButtonLabel(word: "Guardar")
                 })
             }
             .navigationBarBackButtonHidden(true)
