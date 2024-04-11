@@ -68,7 +68,7 @@ struct ProfileView: View {
                     Text("")
                 }
                 .pickerStyle(.menu)
-                Text("¿Soy Amigable con otros perros?")
+                Text("¿Soy amigable con otros perros?")
                     .foregroundStyle(Color.white)
                     .font(.title3)
                 Picker(selection: $viewModel.dofFriendly) {
