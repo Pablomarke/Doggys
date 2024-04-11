@@ -20,7 +20,7 @@ final class LoginViewModel: ObservableObject {
     @Published var showAlert: Bool = false
     @Published var alertMessage: String = ""
     @Published var isLoading: Bool = false
-
+    
     //MARK: Init
     init(dataManager: LoginDataManager, authViewModel: AuthProtocol, logViewModel: LogProtocol) {
         self.dataManager = dataManager
@@ -37,21 +37,20 @@ final class LoginViewModel: ObservableObject {
     func checkIfUserIsLoggedIn() {
         isLoading = true
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.authViewModel.isUserLoggedIn(
-                onSuccess: { [weak self] loggedIn in
-                    //TODO: This is the real way to navigate and pass the data
-                    // self?.isLoggedIn = loggedIn
-                    // print(loggedIn)
-                    self?.isLoggedIn = true
-                    self?.isLoading = false
-                },
-                onFailure: { [weak self] error in
-                    self?.logViewModel.crash(screen: LoginView.viewName,
-                                             exception: error)
-                    self?.isLoading = false
-                }
-            )
-        }
+        self.authViewModel.isUserLoggedIn(
+            onSuccess: { [weak self] loggedIn in
+                //TODO: This is the real way to navigate and pass the data
+                // self?.isLoggedIn = loggedIn
+                // print(loggedIn)
+                self?.isLoggedIn = true
+                self?.isLoading = false
+            },
+            onFailure: { [weak self] error in
+                self?.logViewModel.crash(screen: LoginView.viewName,
+                                         exception: error)
+                self?.isLoading = false
+            }
+        )
+        
     }
 }
