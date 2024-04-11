@@ -8,67 +8,83 @@
 import SwiftUI
 
 struct ProfileView: View {
+    //MARK: - Properties
     @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var viewModel: ProfileViewModel
     
-    @State private var dogOwner = "Nombre del Humano"
-    @State private var nameOfDog = "Doggy Nombre"
-    @State var ageOfDog: String = "Doggy Años"
-    @State private var selectedBreed = ""
-    @State private var selectedGender = ""
-    
-    //TODO: Enum
-    let dogBreed = ["Mestizo",
-                    "Dobermán",
-                    "Labrador","Rottweiler","Siba-Inu","Yorkshire","Bulldog", "Teckel"]
-    
-    let dogGender = ["Hembra", "Macho"]
-   
+   //MARK: - View
     var body: some View {
         ZStack{
             Color.customLightBlue.ignoresSafeArea()
             VStack{
-                LogoHeader(text: "Perfil",
-                           toTop: -40)
-                TextFieldView(text: $dogOwner,
+                Text("Perfil")
+                    .font(.system(size: 40,
+                                  weight: .light,
+                                  design: .monospaced))
+                    .padding()
+                TextFieldView(text: $viewModel.dogOwner,
                               colorBackgroud: .gray)
                 .padding(10)
-                TextFieldView(text: $nameOfDog,
+                TextFieldView(text: $viewModel.nameOfDog,
                               colorBackgroud: .gray)
                 .padding(10)
-                TextFieldView(text: $ageOfDog,
+                TextFieldView(text: $viewModel.ageOfDog,
                               colorBackgroud: .gray)
-                .padding()
-                
+                .padding(10)
                 Text("Seleccione una raza:")
                     .foregroundStyle(Color.white)
                     .font(.title3)
-                Picker(selection: $selectedBreed) {
-                    ForEach(dogBreed,
-                            id: \.self){
-                        Text($0)
+                    .padding(.top, 20)
+                Picker(selection: $viewModel.selectedBreed) {
+                    ForEach(RazaPerro.allCases,
+                            id: \.self){ breed in
+                        Text(breed.rawValue.capitalized)
                     }
                 } label: {
                     Text("")
                 }
                 .pickerStyle(.menu)
-                
                 Text("Seleccione género:")
                     .foregroundStyle(Color.white)
                     .font(.title3)
-                Picker(selection: $selectedBreed) {
-                    ForEach(dogGender,
-                            id: \.self){
-                        Text($0)
+                Picker(selection: $viewModel.selectedGender) {
+                    ForEach(GeneroPerro.allCases,
+                            id: \.self){ gender in
+                        Text(gender.rawValue.capitalized)
                     }
                 } label: {
                     Text("")
                 }
                 .pickerStyle(.menu)
-                .padding()
+                Text("Seleccione tipo de paseo:")
+                    .foregroundStyle(Color.white)
+                    .font(.title3)
+                Picker(selection: $viewModel.selectedWalk) {
+                    ForEach(PaseoPerro.allCases,
+                            id: \.self){ walk in
+                        Text(walk.rawValue.capitalized)
+                    }
+                } label: {
+                    Text("")
+                }
+                .pickerStyle(.menu)
+                Text("¿Soy amigable con otros perros?")
+                    .foregroundStyle(Color.white)
+                    .font(.title3)
+                Picker(selection: $viewModel.dofFriendly) {
+                    ForEach(PerroAmigable.allCases,
+                            id: \.self){ friendly in
+                        Text(friendly.rawValue.capitalized)
+                    }
+                } label: {
+                    Text("")
+                }
+                .pickerStyle(.menu)
+
                 Button(action: {
                     // TODO
                 }, label: {
-                    ButtonLabel(word: "enviar")
+                    ButtonLabel(word: "Guardar")
                 })
             }
             .navigationBarItems(leading:
@@ -80,8 +96,13 @@ struct ProfileView: View {
             })
         }
     }
+    
+    //MARK: Public Methods
+    mutating func set(viewModel: ProfileViewModel) {
+        self.viewModel = viewModel
+    }
 }
 
 #Preview {
-    ProfileView()
+    ProfileWireFrame().viewController
 }
