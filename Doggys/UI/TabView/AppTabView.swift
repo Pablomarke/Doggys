@@ -12,18 +12,30 @@ struct AppTabView: View {
         TabView {
             MapView()
                 .tabItem {
-                    Label("Mapa", systemImage: "map")
+                    Label("Mapa", 
+                          systemImage: "map")
                 }
                 .padding(.bottom, 90)
                 .ignoresSafeArea()
             
             ProfileView()
                 .tabItem {
-                    Label("Perfil", systemImage: "person.fill")
+                    Label("Perfil", 
+                          systemImage: "person.fill")
                 }
                 .padding(.bottom, 70)
                 .ignoresSafeArea()
-        }                .navigationBarBackButtonHidden(true)
+            
+            SettingsWireframe().viewController
+                .tabItem {
+                    Label("Ajustes",
+                          systemImage: "gear")
+                }
+                .padding(.bottom, 70)
+                .ignoresSafeArea()
+            
+        }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
