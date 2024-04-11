@@ -8,7 +8,7 @@
 import Foundation
 
 final class SettingsViewModel: ObservableObject {
-    //MARK: Properties
+    //MARK: - Properties -
     private var keyChain: KeyChainDataProvider
     @Published var isLogOut: Bool = false
 
@@ -16,7 +16,7 @@ final class SettingsViewModel: ObservableObject {
         self.keyChain = keyChain
     }
     
-    //MARK: Publics Methods
+    //MARK: - Publics Methods -
     func disconnect() {
         keyChain.allKeysDelete()
         UserDefaults.standard.set(false,

@@ -17,19 +17,18 @@ struct SettingsView: View {
     }
     // MARK: - View -
     var body: some View {
-        ZStack{
+        ZStack {
             Color.customGreenblue.ignoresSafeArea()
-            VStack{
+            VStack {
                 LogoHeader(text: "Ajustes")
-                    .padding(.top, 60)
+                    .padding(.top, 
+                             60)
                 Button(action: {
                     viewModel.disconnect()
                 }, label: {
                     ButtonLabel(word: "Desconectar")
                 })
             }
-            
-            
             NavigationLink(destination: LoginWireFrame().viewController,
                            isActive: $viewModel.isLogOut) {
                 EmptyView()
@@ -41,7 +40,6 @@ struct SettingsView: View {
         self.viewModel = viewModel
     }
 }
-
 
 #Preview {
     AppTabView()
