@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-
 struct ProfileView: View {
+    //MARK: - Properties
     @Environment(\.presentationMode) var presentationMode
-    
+    @ObservedObject var viewModel: ProfileViewModel
     @State private var dogOwner = "Nombre del Humano"
     @State private var nameOfDog = "Doggy Nombre"
     @State var ageOfDog: String = "Doggy Años"
@@ -21,7 +21,7 @@ struct ProfileView: View {
     let dogBreed = ["Mestizo","Dobermán","Labrador","Rottweiler","Siba-Inu","Yorkshire","Bulldog", "Teckel"]
     
     let dogGender = ["Hembra", "Macho"]
-   
+   //MARK: - View
     var body: some View {
         ZStack{
             Color.customLightBlue.ignoresSafeArea()
@@ -80,8 +80,12 @@ struct ProfileView: View {
             })
         }
     }
+    //MARK: Public Methods
+    mutating func set(viewModel: ProfileViewModel) {
+        self.viewModel = viewModel
+    }
 }
 
 #Preview {
-    ProfileView()
+    ProfileWireFrame().viewController
 }
