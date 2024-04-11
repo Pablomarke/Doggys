@@ -37,7 +37,15 @@ final class RegisterViewModel: ObservableObject {
         })
     }
     
-    func passwordsMatch() -> Bool {
-        return password == repeatPassword && !password.isEmpty
+    func passwordVerify() -> Bool {
+        return passwordNotEmpty() && passwordMatch()
+    }
+    
+    func passwordNotEmpty() -> Bool {
+        return !password.isEmpty
+    }
+    
+    func passwordMatch() -> Bool {
+        return password == repeatPassword
     }
 }
