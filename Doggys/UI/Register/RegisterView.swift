@@ -9,7 +9,6 @@ import SwiftUI
 
 struct RegisterView: View {
     //MARK: Properties
-    
     static var viewName: String = "RegisterView"
     @ObservedObject var viewModel: RegisterViewModel
     @Environment(\.presentationMode) var presentationMode
@@ -23,31 +22,19 @@ struct RegisterView: View {
         ZStack{
             Color.customGreen.ignoresSafeArea()
             VStack{
-                Image(.logoEars)
-                    .resizable()
-                    .frame(width: 400, height: 250, alignment: .center)
-                    .padding(.top, -160)
-                Text("Registrar")
-                    .font(.system(size: 40, weight: .light, design: .monospaced))
-                    .padding(.top, -70)
+                LogoHeader(text: "Registrar")
                 TextFieldView(text: $viewModel.email)
-                    .padding(.top, 30)
-                SecureTextFieldView(text: $viewModel.password)
+                SecureTextFieldView("Password", placeholder: "Password", text: $viewModel.password)
+                    .padding(.top, 8)
+                SecureTextFieldView("Repeat Password", placeholder: "Repeat Password", text: $viewModel.repeatPassword)
                 Button(action: {
                     viewModel.registerUser()
                 }, label: {
-                    Text("Registrar")
-                        .font(.title3)
-                        .foregroundStyle(.white)
-                        .frame(width: 150,
-                               height: 40)
-                        .background(Color.customLightGreen)
-                        .cornerRadius(15)
-                        .shadow(radius: 15,
-                                x: 0,
-                                y: 10)
+                    ButtonLabel(word: "Registrar")
                 })
                 .padding(.top, 20)
+                .disabled(!viewModel.passwordVerify())
+                .opacity(viewModel.passwordVerify() ? 1.0 : 0.5)
             }
         }
         .navigationBarBackButtonHidden(true)

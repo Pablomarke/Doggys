@@ -26,7 +26,8 @@ struct SplashView: View {
                     Spacer()
                     LogoView().background(Color.customGreenblue)
                     Spacer()
-                    ProgressView()                    .scaleEffect(3.0)
+                    ProgressView()                    
+                        .scaleEffect(3.0)
                     Spacer()
                 }
             }
