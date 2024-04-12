@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class ProfileViewModel: ObservableObject {
     //MARK: Properties

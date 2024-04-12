@@ -18,11 +18,6 @@ struct ProfileView: View {
         ZStack{
             Color.customLightBlue.ignoresSafeArea()
             VStack {
-                //                Text("Perfil")
-                //                    .font(.system(size: 40,
-                //                                  weight: .light,
-                //                                  design: .monospaced))
-                //                    .padding()
                 if let image = selectedImage {
                     Button(action: {
                         self.isShowingImagePicker = true
