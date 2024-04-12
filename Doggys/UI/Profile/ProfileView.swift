@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct ProfileView: View {
-    //MARK: - Properties
+    //MARK: - Properties -
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel: ProfileViewModel
     
-   //MARK: - View
+   //MARK: - View -
     var body: some View {
         ZStack{
             Color.customLightBlue.ignoresSafeArea()
-            VStack{
+            VStack {
                 Text("Perfil")
                     .font(.system(size: 40,
                                   weight: .light,
@@ -37,7 +37,7 @@ struct ProfileView: View {
                     .padding(.top, 20)
                 Picker(selection: $viewModel.selectedBreed) {
                     ForEach(RazaPerro.allCases,
-                            id: \.self){ breed in
+                            id: \.self) { breed in
                         Text(breed.rawValue.capitalized)
                     }
                 } label: {
@@ -49,7 +49,7 @@ struct ProfileView: View {
                     .font(.title3)
                 Picker(selection: $viewModel.selectedGender) {
                     ForEach(GeneroPerro.allCases,
-                            id: \.self){ gender in
+                            id: \.self) { gender in
                         Text(gender.rawValue.capitalized)
                     }
                 } label: {
@@ -61,7 +61,7 @@ struct ProfileView: View {
                     .font(.title3)
                 Picker(selection: $viewModel.selectedWalk) {
                     ForEach(PaseoPerro.allCases,
-                            id: \.self){ walk in
+                            id: \.self) { walk in
                         Text(walk.rawValue.capitalized)
                     }
                 } label: {
@@ -73,31 +73,31 @@ struct ProfileView: View {
                     .font(.title3)
                 Picker(selection: $viewModel.dofFriendly) {
                     ForEach(PerroAmigable.allCases,
-                            id: \.self){ friendly in
+                            id: \.self) { friendly in
                         Text(friendly.rawValue.capitalized)
                     }
                 } label: {
                     Text("")
                 }
                 .pickerStyle(.menu)
-
+                
                 Button(action: {
                     // TODO
                 }, label: {
                     ButtonLabel(word: "Guardar")
                 })
             }
-            .navigationBarItems(leading:
+                 /* .navigationBarItems(leading:
                                     Button(action: {
                 presentationMode.wrappedValue.dismiss()
             }) {
                 Image(systemName: "arrow.left")
                 Text("Atrás")
-            })
+            })*/
         }
     }
     
-    //MARK: Public Methods
+    //MARK: - Public Methods -
     mutating func set(viewModel: ProfileViewModel) {
         self.viewModel = viewModel
     }
