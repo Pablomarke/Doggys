@@ -9,19 +9,38 @@ import SwiftUI
 
 struct ProfileView: View {
     //MARK: - Properties -
-    @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel: ProfileViewModel
+    @State var selectedImage: UIImage?
+    @State var isShowingImagePicker = false
     
-   //MARK: - View -
+    //MARK: - View -
     var body: some View {
         ZStack{
             Color.customLightBlue.ignoresSafeArea()
             VStack {
-                Text("Perfil")
-                    .font(.system(size: 40,
-                                  weight: .light,
-                                  design: .monospaced))
+                //                Text("Perfil")
+                //                    .font(.system(size: 40,
+                //                                  weight: .light,
+                //                                  design: .monospaced))
+                //                    .padding()
+                if let image = selectedImage {
+                    Button(action: {
+                        self.isShowingImagePicker = true
+                    }) {
+                        Image(uiImage: image)
+                            .resizable()
+                            .cornerRadius(15)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 200, height: 200)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                } else {
+                    Button("Seleccionar Imagen") {
+                        self.isShowingImagePicker = true
+                    }
+                    .font(.title2)
                     .padding()
+                }
                 TextFieldView(text: $viewModel.dogOwner,
                               colorBackgroud: .gray)
                 .padding(10)
@@ -31,31 +50,35 @@ struct ProfileView: View {
                 TextFieldView(text: $viewModel.ageOfDog,
                               colorBackgroud: .gray)
                 .padding(10)
-                Text("Seleccione una raza:")
-                    .foregroundStyle(Color.white)
-                    .font(.title3)
-                    .padding(.top, 20)
-                Picker(selection: $viewModel.selectedBreed) {
-                    ForEach(RazaPerro.allCases,
-                            id: \.self) { breed in
-                        Text(breed.rawValue.capitalized)
+                HStack{
+                    VStack{
+                        Text("Raza:")
+                            .foregroundStyle(Color.white)
+                            .font(.title3)
+                        Picker(selection: $viewModel.selectedBreed) {
+                            ForEach(RazaPerro.allCases,
+                                    id: \.self) { breed in
+                                Text(breed.rawValue.capitalized)
+                            }
+                        } label: {
+                            Text("")
+                        }
                     }
-                } label: {
-                    Text("")
-                }
-                .pickerStyle(.menu)
-                Text("Seleccione género:")
-                    .foregroundStyle(Color.white)
-                    .font(.title3)
-                Picker(selection: $viewModel.selectedGender) {
-                    ForEach(GeneroPerro.allCases,
-                            id: \.self) { gender in
-                        Text(gender.rawValue.capitalized)
+                    VStack{
+                        Text("Género:")
+                            .foregroundStyle(Color.white)
+                            .font(.title3)
+                        Picker(selection: $viewModel.selectedGender) {
+                            ForEach(GeneroPerro.allCases,
+                                    id: \.self) { gender in
+                                Text(gender.rawValue.capitalized)
+                            }
+                        } label: {
+                            Text("")
+                        }
                     }
-                } label: {
-                    Text("")
                 }
-                .pickerStyle(.menu)
+                .padding()
                 Text("Seleccione tipo de paseo:")
                     .foregroundStyle(Color.white)
                     .font(.title3)
@@ -87,13 +110,9 @@ struct ProfileView: View {
                     ButtonLabel(word: "Guardar")
                 })
             }
-                 /* .navigationBarItems(leading:
-                                    Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }) {
-                Image(systemName: "arrow.left")
-                Text("Atrás")
-            })*/
+            .sheet(isPresented: $isShowingImagePicker, content: {
+                ImagePicker(image: self.$selectedImage)
+            })
         }
     }
     
