@@ -16,5 +16,4 @@ final class ProfileViewModel: ObservableObject {
     @Published var selectedGender: GeneroPerro = .hembra
     @Published var selectedWalk: PaseoPerro = .corto
     @Published var dofFriendly: PerroAmigable = .si
-    
 }

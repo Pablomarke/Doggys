@@ -59,6 +59,9 @@
 		5D627BCE2BC82A110050950B /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5D627BCD2BC82A110050950B /* FirebaseRemoteConfigSwift */; };
 		5D627BD02BC82A110050950B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5D627BCF2BC82A110050950B /* FirebaseStorage */; };
 		5D627BD22BC82A110050950B /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 5D627BD12BC82A110050950B /* FirebaseStorageCombine-Community */; };
+		5D7ED1B72BC9237500C876B8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7ED1B32BC9237500C876B8 /* SettingsView.swift */; };
+		5D7ED1B82BC9237500C876B8 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7ED1B42BC9237500C876B8 /* SettingsViewModel.swift */; };
+		5D7ED1B92BC9237500C876B8 /* SettingsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7ED1B52BC9237500C876B8 /* SettingsWireframe.swift */; };
 		A9286A312BC6E55C003FC58A /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9286A302BC6E55C003FC58A /* AppTabView.swift */; };
 		A9286A332BC7DABD003FC58A /* DogBreed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9286A322BC7DABD003FC58A /* DogBreed.swift */; };
 		A9286A352BC7E192003FC58A /* DogGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9286A342BC7E192003FC58A /* DogGender.swift */; };
@@ -134,6 +137,9 @@
 		39ADE2572BC29863007A6702 /* LogoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoHeader.swift; sourceTree = "<group>"; };
 		39ADE25A2BC299D8007A6702 /* ButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabel.swift; sourceTree = "<group>"; };
 		5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		5D7ED1B32BC9237500C876B8 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5D7ED1B42BC9237500C876B8 /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		5D7ED1B52BC9237500C876B8 /* SettingsWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsWireframe.swift; sourceTree = "<group>"; };
 		A9286A302BC6E55C003FC58A /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		A9286A322BC7DABD003FC58A /* DogBreed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreed.swift; sourceTree = "<group>"; };
 		A9286A342BC7E192003FC58A /* DogGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGender.swift; sourceTree = "<group>"; };
@@ -357,6 +363,7 @@
 				A9EDD0CE2BBC150C0052D03C /* Register */,
 				A9B53B902BB336AC000AD215 /* Login */,
 				A9286A2F2BC6E533003FC58A /* TabView */,
+				5D7ED1B62BC9237500C876B8 /* Settings */,
 				A9C47F032BBFE9AA0044ED5F /* Profile */,
 				A9CC34912BC3DFC000E1599A /* Map */,
 			);
@@ -368,6 +375,16 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D7ED1B62BC9237500C876B8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5D7ED1B32BC9237500C876B8 /* SettingsView.swift */,
+				5D7ED1B42BC9237500C876B8 /* SettingsViewModel.swift */,
+				5D7ED1B52BC9237500C876B8 /* SettingsWireframe.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		A9286A2F2BC6E533003FC58A /* TabView */ = {
@@ -669,9 +686,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				39ADE25B2BC299D8007A6702 /* ButtonLabel.swift in Sources */,
+				5D7ED1B72BC9237500C876B8 /* SettingsView.swift in Sources */,
 				399BE53B2BBA8A7600AC323C /* LogoView.swift in Sources */,
 				A9CC34972BC3DFF400E1599A /* MapViewWireFrame.swift in Sources */,
 				A932074D2BB4ABE40068D9C2 /* AuthViewModelEnvironmentKey.swift in Sources */,
+				5D7ED1B92BC9237500C876B8 /* SettingsWireframe.swift in Sources */,
 				A9286A352BC7E192003FC58A /* DogGender.swift in Sources */,
 				A92BF8D12BC073B3004AA875 /* ProfileViewModel.swift in Sources */,
 				A9CC34992BC3E3C200E1599A /* MarkerMap.swift in Sources */,
@@ -687,6 +706,7 @@
 				A92BF8D32BC073C2004AA875 /* ProfileWireFrame.swift in Sources */,
 				A9286A392BC7E607003FC58A /* DogFriendly.swift in Sources */,
 				A9CC34952BC3DFE800E1599A /* MapViewModel.swift in Sources */,
+				5D7ED1B82BC9237500C876B8 /* SettingsViewModel.swift in Sources */,
 				A9EDD0D02BBC153E0052D03C /* RegisterViewModel.swift in Sources */,
 				392EECD32BC68204005409EA /* SwitchRemember.swift in Sources */,
 				A932073F2BB48FB40068D9C2 /* User.swift in Sources */,
