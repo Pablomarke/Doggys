@@ -49,7 +49,7 @@ struct LoginView: View {
                         viewModel.rememberLogin = newValue
                     }
                     Button(action: {
-                        viewModel.checkIfUserIsLoggedIn()
+                        viewModel.loginUser()
                     }, label: {
                         ButtonLabel(word: "Login")
                     })
