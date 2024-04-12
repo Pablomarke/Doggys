@@ -25,6 +25,12 @@
 		392EECE12BC7C723005409EA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392EECE02BC7C723005409EA /* SettingsView.swift */; };
 		392EECE32BC7C73E005409EA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392EECE22BC7C73E005409EA /* SettingsViewModel.swift */; };
 		392EECE52BC7C796005409EA /* SettingsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392EECE42BC7C796005409EA /* SettingsWireframe.swift */; };
+		3979A3952BC95C0300F5C3B1 /* Jost-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3979A3942BC95C0300F5C3B1 /* Jost-Black.ttf */; };
+		3979A3972BC95CAF00F5C3B1 /* Jost-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3979A3962BC95CAF00F5C3B1 /* Jost-ExtraLight.ttf */; };
+		3979A3992BC95D8A00F5C3B1 /* Jost-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3979A3982BC95D8A00F5C3B1 /* Jost-Thin.ttf */; };
+		3979A39B2BC95DBA00F5C3B1 /* Jost-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3979A39A2BC95DBA00F5C3B1 /* Jost-Light.ttf */; };
+		3979A39D2BC95DEB00F5C3B1 /* Jost-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3979A39C2BC95DEB00F5C3B1 /* Jost-VariableFont_wght.ttf */; };
+		3979A39F2BC95E4F00F5C3B1 /* Jost-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3979A39E2BC95E4E00F5C3B1 /* Jost-Medium.ttf */; };
 		397B93DA2BB353C20030D77E /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B93D92BB353C20030D77E /* TextFieldView.swift */; };
 		397B93DC2BB3560C0030D77E /* SecureTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B93DB2BB3560C0030D77E /* SecureTextFieldView.swift */; };
 		399BE5332BB9791B00AC323C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BE5322BB9791B00AC323C /* LoginViewModel.swift */; };
@@ -129,6 +135,13 @@
 		392EECE02BC7C723005409EA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		392EECE22BC7C73E005409EA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		392EECE42BC7C796005409EA /* SettingsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWireframe.swift; sourceTree = "<group>"; };
+		3979A3922BC958DD00F5C3B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3979A3942BC95C0300F5C3B1 /* Jost-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-Black.ttf"; sourceTree = "<group>"; };
+		3979A3962BC95CAF00F5C3B1 /* Jost-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-ExtraLight.ttf"; sourceTree = "<group>"; };
+		3979A3982BC95D8A00F5C3B1 /* Jost-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-Thin.ttf"; sourceTree = "<group>"; };
+		3979A39A2BC95DBA00F5C3B1 /* Jost-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-Light.ttf"; sourceTree = "<group>"; };
+		3979A39C2BC95DEB00F5C3B1 /* Jost-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		3979A39E2BC95E4E00F5C3B1 /* Jost-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-Medium.ttf"; sourceTree = "<group>"; };
 		397B93D92BB353C20030D77E /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		397B93DB2BB3560C0030D77E /* SecureTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextFieldView.swift; sourceTree = "<group>"; };
 		399BE5322BB9791B00AC323C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -255,6 +268,7 @@
 		39228FDB2BAC701F00C91F40 /* Doggys */ = {
 			isa = PBXGroup;
 			children = (
+				3979A3922BC958DD00F5C3B1 /* Info.plist */,
 				A9B53B8F2BB336A3000AD215 /* App */,
 				39D9D83B2BB710C900B5331A /* Domanin */,
 				39D9D83C2BB7114100B5331A /* UI */,
@@ -315,6 +329,19 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		3979A3932BC95BB500F5C3B1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3979A39E2BC95E4E00F5C3B1 /* Jost-Medium.ttf */,
+				3979A39C2BC95DEB00F5C3B1 /* Jost-VariableFont_wght.ttf */,
+				3979A3982BC95D8A00F5C3B1 /* Jost-Thin.ttf */,
+				3979A39A2BC95DBA00F5C3B1 /* Jost-Light.ttf */,
+				3979A3962BC95CAF00F5C3B1 /* Jost-ExtraLight.ttf */,
+				3979A3942BC95C0300F5C3B1 /* Jost-Black.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		397B93D82BB3539A0030D77E /* ToolViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +355,7 @@
 		399BE5312BB976B600AC323C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				3979A3932BC95BB500F5C3B1 /* Fonts */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -638,10 +666,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3979A3972BC95CAF00F5C3B1 /* Jost-ExtraLight.ttf in Resources */,
 				39228FE42BAC702100C91F40 /* Preview Assets.xcassets in Resources */,
+				3979A3992BC95D8A00F5C3B1 /* Jost-Thin.ttf in Resources */,
+				3979A39F2BC95E4F00F5C3B1 /* Jost-Medium.ttf in Resources */,
+				3979A3952BC95C0300F5C3B1 /* Jost-Black.ttf in Resources */,
 				39228FE12BAC702100C91F40 /* Assets.xcassets in Resources */,
 				5D16A5192BC458A8004EE58F /* Launch Screen.storyboard in Resources */,
 				A9F98CC72BB34CD6004E9451 /* GoogleService-Info.plist in Resources */,
+				3979A39B2BC95DBA00F5C3B1 /* Jost-Light.ttf in Resources */,
+				3979A39D2BC95DEB00F5C3B1 /* Jost-VariableFont_wght.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -879,6 +913,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Doggys/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -909,6 +944,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Doggys/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
