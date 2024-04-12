@@ -77,6 +77,7 @@ struct LoginView: View {
             }
             // MARK: - Life cycle -
             .onAppear {
+                viewModel.checkIfUserIsLoggedIn()
                 viewModel.initAnalyticsFirebase(text: "App run",
                                                 message: "App run")
             }

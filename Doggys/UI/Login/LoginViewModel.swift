@@ -41,7 +41,6 @@ final class LoginViewModel: ObservableObject {
         authViewModel.isUserLoggedIn(
             onSuccess: { [weak self] loggedIn in
                 self?.isLoggedIn = loggedIn
-                print(loggedIn)
                 if loggedIn {
                     self?.initAnalyticsFirebase(text: "Enter app",
                                                 message: "Enter app")
