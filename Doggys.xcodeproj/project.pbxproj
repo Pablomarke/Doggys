@@ -90,6 +90,7 @@
 		A9F98CC32BB34C22004E9451 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A9F98CC22BB34C22004E9451 /* FirebaseStorage */; };
 		A9F98CC52BB34C22004E9451 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = A9F98CC42BB34C22004E9451 /* FirebaseStorageCombine-Community */; };
 		A9F98CC72BB34CD6004E9451 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9F98CC62BB34CD6004E9451 /* GoogleService-Info.plist */; };
+		A9FE0ECB2BC9B520008564AB /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FE0ECA2BC9B520008564AB /* UserProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +169,7 @@
 		A9EDD0D42BBC19310052D03C /* RecoveryPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordViewModel.swift; sourceTree = "<group>"; };
 		A9EDD0D62BBC21620052D03C /* LogoAppDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoAppDetailView.swift; sourceTree = "<group>"; };
 		A9F98CC62BB34CD6004E9451 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A9FE0ECA2BC9B520008564AB /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,6 +407,7 @@
 				A9286A362BC7E3D4003FC58A /* DogWalkLong.swift */,
 				A9286A382BC7E607003FC58A /* DogFriendly.swift */,
 				A9CC34982BC3E3C200E1599A /* MarkerMap.swift */,
+				A9FE0ECA2BC9B520008564AB /* UserProfile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -679,6 +682,7 @@
 			files = (
 				39ADE25B2BC299D8007A6702 /* ButtonLabel.swift in Sources */,
 				399BE53B2BBA8A7600AC323C /* LogoView.swift in Sources */,
+				A9FE0ECB2BC9B520008564AB /* UserProfile.swift in Sources */,
 				A9CC34972BC3DFF400E1599A /* MapViewWireFrame.swift in Sources */,
 				A932074D2BB4ABE40068D9C2 /* AuthViewModelEnvironmentKey.swift in Sources */,
 				A9286A352BC7E192003FC58A /* DogGender.swift in Sources */,
