@@ -23,7 +23,8 @@ struct LoginView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.customGreenblue.ignoresSafeArea()
+                Color.customMain
+                    .ignoresSafeArea()
                 VStack(spacing: 5) {
                     LogoAppDetailView()
                         .padding()

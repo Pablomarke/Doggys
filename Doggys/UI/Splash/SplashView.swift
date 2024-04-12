@@ -20,16 +20,9 @@ struct SplashView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.customGreenblue
+                Color.customMain
                     .edgesIgnoringSafeArea(.all)
-                VStack {
-                    Spacer()
-                    LogoView().background(Color.customGreenblue)
-                    Spacer()
-                    ProgressView()                    
-                        .scaleEffect(3.0)
-                    Spacer()
-                }
+                    LogoView()
             }
             // MARK: - Life cycle -
             .onAppear {

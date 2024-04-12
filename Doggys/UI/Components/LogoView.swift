@@ -8,23 +8,29 @@
 import SwiftUI
 
 struct LogoView: View {
+    @State private var textOpacity = 0.0
+    
     var body: some View {
         VStack {
-            Image(decorative: "logoEars")
+            Spacer()
+            Image(.logoWhite)
                 .resizable()
-                .frame(width: 400,
-                       height: 250)
-            Image(decorative: "text")
-                .resizable()
-                .frame(width: 160,
-                       height: 50,
-                       alignment: .center)
-                .padding(.top, -60)
-                .padding(.bottom, 50)
+                .frame(width: 306,
+                       height: 222)
+            Text("Doggys")
+                .font(.custom("Jost-Light",
+                              size: 90))
+                .foregroundStyle(Color.customWhite)
+            /* .opacity(textOpacity)
+                .onAppear {
+                    withAnimation(.easeInOut(duration: 1.0)) {
+                        textOpacity = 1.0
+                    }
+                }*/
+            Spacer()
         }
     }
 }
-
-#Preview {
-    LogoView()
-}
+    #Preview {
+        LogoView().background(Color.customMain)
+    }
