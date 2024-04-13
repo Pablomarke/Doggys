@@ -5,4 +5,18 @@
 //  Created by Marco Muñoz on 12/4/24.
 //
 
-import Foundation
+import FirebaseFirestore
+
+extension UserProfile {
+    var dictionary: [String: Any] {
+        return [
+            "humanName": humanName,
+            "dogName": dogName,
+            "dogYears": dogYears,
+            "dogGender": dogGender.rawValue,
+            "dogWalk": dogWalk.rawValue,
+            "dogFriendly": dogFriendly.rawValue,
+            "coordenates": coordenates.coordinate
+        ]
+    }
+}
