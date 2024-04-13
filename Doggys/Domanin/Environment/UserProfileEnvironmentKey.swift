@@ -1,5 +1,5 @@
 //
-//  UserProfileEnvironmentKey.swift
+//  UserViewModelEnvironmentKey.swift
 //  Doggys
 //
 //  Created by Marco Muñoz on 12/4/24.
@@ -7,9 +7,13 @@
 
 import SwiftUI
 
-struct UserProfileEnvironmentKey: EnvironmentKey {
+struct UserViewModelEnvironmentKey: EnvironmentKey {
     static let defaultValue: UserProfileProtocol = FirebaseUserProfileViewModel()
 }
 
 extension EnvironmentValues {
-    var userProfileViewModel
+    var userViewModel: UserProfileProtocol {
+        get { self[UserViewModelEnvironmentKey.self]}
+        set { self[UserViewModelEnvironmentKey.self] = newValue }
+    }
+}
