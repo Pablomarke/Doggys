@@ -12,12 +12,8 @@ struct LoginView: View {
     @Environment(\.authViewModel) private var authViewModel: AuthProtocol
     @Environment(\.logViewModel) private var logViewModel: LogProtocol
     @ObservedObject var viewModel: LoginViewModel
-    
     static var viewName: String = "LoginView"
-//<<<<<<< HEAD
-//=======
     @State private var rememberLogin: Bool = false
-//>>>>>>> develop
     
     public init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
@@ -53,11 +49,10 @@ struct LoginView: View {
                         viewModel.rememberLogin = newValue
                     }
                     Button(action: {
-                        viewModel.checkIfUserIsLoggedIn()
+                        viewModel.loginUser()
                     }, label: {
                         ButtonLabel(word: "Login")
                     })
-                    .disabled(viewModel.isLoading)
                     .padding(.top,
                              40)
                     NavigationLink {
@@ -81,14 +76,12 @@ struct LoginView: View {
                                    .hidden()
                 }
             }
-//<<<<<<< HEAD
-//=======
             // MARK: - Life cycle -
             .onAppear {
+                viewModel.checkIfUserIsLoggedIn()
                 viewModel.initAnalyticsFirebase(text: "App run",
                                                 message: "App run")
             }
-//>>>>>>> develop
         }
         .overlay(
             viewModel.isLoading ?

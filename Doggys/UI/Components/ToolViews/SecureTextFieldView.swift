@@ -40,9 +40,6 @@ struct SecureTextFieldView: View {
             .textInputAutocapitalization(.never)
             .autocorrectionDisabled()
             .opacity(0.9)
-//<<<<<<< HEAD
-//            .padding()   
-//=======
             .padding()
             
             Button(action: {
@@ -53,6 +50,5 @@ struct SecureTextFieldView: View {
                     .padding(.trailing, 24)
             }
         }
-//>>>>>>> develop
     }
 }

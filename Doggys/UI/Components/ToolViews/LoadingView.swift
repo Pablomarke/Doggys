@@ -12,7 +12,7 @@ struct LoadingView: View {
         Color.white.opacity(0.5)
             .ignoresSafeArea()
             .overlay(
-                ProgressView() 
+                ProgressView()
                     .progressViewStyle(CircularProgressViewStyle())
             )
     }
