@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct LogoView: View {
-    @State private var textOpacity = 0.0
-    
     var body: some View {
         VStack {
             Spacer()
@@ -21,16 +19,12 @@ struct LogoView: View {
                 .font(.custom("Jost-Light",
                               size: 90))
                 .foregroundStyle(Color.customWhite)
-            /* .opacity(textOpacity)
-                .onAppear {
-                    withAnimation(.easeInOut(duration: 1.0)) {
-                        textOpacity = 1.0
-                    }
-                }*/
+                .fadeInAnimation()
             Spacer()
         }
     }
 }
-    #Preview {
-        LogoView().background(Color.customMain)
-    }
+
+#Preview {
+    LogoView().background(Color.customMain)
+}

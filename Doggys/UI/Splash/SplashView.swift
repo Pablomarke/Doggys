@@ -18,27 +18,33 @@ struct SplashView: View {
     
     // MARK: - View -
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ZStack {
                 Color.customMain
                     .edgesIgnoringSafeArea(.all)
+                VStack {
+                    Spacer()
                     LogoView()
+                    Spacer()
+                }
             }
+            
             // MARK: - Life cycle -
             .onAppear {
                 viewModel.initView()
             }
+            
             // MARK: - Navigation -
             .background(
                 NavigationLink(
                     destination: LoginWireFrame().viewController,
-                    isActive: $viewModel.isActive
-                ) {
+                    isActive: $viewModel.isActive) {
                     EmptyView()
                 }
             )
         }
     }
+    
     mutating func set(viewModel: SplashViewModel) {
         self.viewModel = viewModel
     }
