@@ -13,7 +13,7 @@ struct LoginView: View {
     @Environment(\.logViewModel) private var logViewModel: LogProtocol
     @ObservedObject var viewModel: LoginViewModel
     static var viewName: String = "LoginView"
-    @State private var rememberLogin: Bool = false
+    @State private var rememberLogin: Bool = UserDefaults.standard.bool(forKey: Preferences.rememberLogin)
     
     public init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
@@ -61,7 +61,7 @@ struct LoginView: View {
                         ButtonLabel(word: "Login")
                             .padding(.bottom, 1)
                     })
-
+                    
                     NavigationLink {
                         RecoveryWireFrame().viewController
                     } label: {
@@ -79,9 +79,11 @@ struct LoginView: View {
                             .foregroundStyle(Color.customWhite)
                     }
                     
-                    NavigationLink(destination: AppTabView(),
-                                   isActive: $viewModel.isLoggedIn) {
-                        EmptyView()
+                    if viewModel.navigateToHome {
+                        NavigationLink(destination: AppTabView(),
+                                       isActive: $viewModel.isLoggedIn) {
+                            EmptyView()
+                        }
                     }
                 }
             }
