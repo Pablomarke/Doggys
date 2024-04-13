@@ -27,21 +27,23 @@ struct SecureTextFieldView: View {
                 } else {
                     TextField(title, text: $text)
                         .padding(.trailing, 24)
-
+                    
                 }
             }
+            .font(.custom("Jost-Light",
+                          size: 20))
             .padding()
             .frame(width: 280,
-                   height: 56)
+                   height: 60)
             .foregroundColor(.customBlue)
             .background(.customWhite40)
             .cornerRadius(20)
-            .textInputAutocapitalization(.never)
-            .autocorrectionDisabled()
             .background(RoundedRectangle(cornerRadius: 20)
                 .stroke(.customWhite,
                         lineWidth: 3))
             .padding()
+            .textInputAutocapitalization(.never)
+            .autocorrectionDisabled()
             
             Button(action: {
                 isSecured.toggle()

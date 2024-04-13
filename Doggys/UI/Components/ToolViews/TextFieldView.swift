@@ -14,17 +14,18 @@ struct TextFieldView: View {
     var body: some View {
         TextField(text,
                   text: $text)
-            .padding()
-            .background(RoundedRectangle(cornerRadius: 20)
-                .stroke(.customWhite,
-                        lineWidth: 4))
-
-            .frame(width:280,
-                   height: 56)
-            .foregroundColor(.customBlue)
-            .background(colorBackgroud)
-            .cornerRadius(20)
-            .textInputAutocapitalization(.never)
-            .autocorrectionDisabled()
+        .font(.custom("Jost-Light",
+                      size: 22))
+        .padding()
+        .frame(width:280,
+               height: 60)
+        .foregroundColor(.customBlue)
+        .background(colorBackgroud)
+        .cornerRadius(20)
+        .background(RoundedRectangle(cornerRadius: 20)
+            .stroke(.customWhite,
+                    lineWidth: 4))
+        .textInputAutocapitalization(.never)
+        .autocorrectionDisabled()
     }
 }

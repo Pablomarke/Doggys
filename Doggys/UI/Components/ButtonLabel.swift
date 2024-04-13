@@ -9,18 +9,21 @@ import SwiftUI
 
 struct ButtonLabel: View {
     var word: String
+    
     var body: some View {
         Text(word)
-            .font(.title3)
-            .foregroundStyle(.white)
-            .frame(width: 150,
+            .font(.custom("Jost-Light",
+                          size: 24))
+            .foregroundStyle(.customWhite)
+            .frame(width: 160,
                    height: 40)
-            .background(.customLightGreen)
-            .cornerRadius(15)
-            .shadow(radius: 15,
-                    x: 0,
-                    y: 10)
-            .padding()    }
+            .background(.customLightBlue)
+            .cornerRadius(20)
+            .background(RoundedRectangle(cornerRadius: 20)
+                .stroke(.customWhite,
+                        lineWidth: 3))
+            .padding()
+    }
 }
 
 #Preview {
