@@ -411,8 +411,8 @@
 		39D9D83C2BB7114100B5331A /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				3979A3A32BCA864000F5C3B1 /* Animations */,
 				5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */,
+				3979A3A32BCA864000F5C3B1 /* Animations */,
 				39ADE2592BC298EB007A6702 /* Components */,
 				390BB76B2BBCA5260052257E /* Splash */,
 				A9EDD0D12BBC16310052D03C /* Recovery */,

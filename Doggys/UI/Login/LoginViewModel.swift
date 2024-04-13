@@ -14,8 +14,8 @@ final class LoginViewModel: ObservableObject {
     private var authViewModel: AuthProtocol
     private var logViewModel: LogProtocol
     private var keyChain: KeyChainDataProvider
-    @Published var email: String = "e-mail"
-    @Published var password: String = "password"
+    @Published var email: String = "E-mail"
+    @Published var password: String = "Contraseña"
     @Published var isLoggedIn: Bool = false
     @Published var showAlert: Bool = false
     @Published var alertMessage: String = ""
