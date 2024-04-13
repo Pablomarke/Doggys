@@ -25,9 +25,12 @@ struct LoginView: View {
             ZStack {
                 Color.customMain
                     .ignoresSafeArea()
-                VStack(spacing: 5) {
-                    LogoAppDetailView()
-                        .padding()
+                VStack() {
+                    Text("Doggys")
+                        .font(.custom("Jost-Light",
+                                      size: 90))
+                        .foregroundStyle(Color.customWhite)
+                  
                     TextFieldView(text: $viewModel.email)
                         .padding(.top,
                                  60)
@@ -49,6 +52,7 @@ struct LoginView: View {
                     .onChange(of: rememberLogin) { newValue in
                         viewModel.rememberLogin = newValue
                     }
+                    Spacer()
                     Button(action: {
                         viewModel.checkIfUserIsLoggedIn()
                     }, label: {

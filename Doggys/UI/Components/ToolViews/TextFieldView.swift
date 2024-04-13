@@ -15,10 +15,12 @@ struct TextFieldView: View {
         TextField(text,
                   text: $text)
             .padding()
-            .background(RoundedRectangle(cornerRadius: 20).stroke(.customWhite,
-                                                                 lineWidth: 4))
+            .background(RoundedRectangle(cornerRadius: 20)
+                .stroke(.customWhite,
+                        lineWidth: 4))
 
-            .frame(width:280)
+            .frame(width:280,
+                   height: 56)
             .foregroundColor(.customBlue)
             .background(colorBackgroud)
             .cornerRadius(20)
