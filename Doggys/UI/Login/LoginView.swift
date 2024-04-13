@@ -56,7 +56,7 @@ struct LoginView: View {
                     }
                     
                     Button(action: {
-                        viewModel.checkIfUserIsLoggedIn()
+                        viewModel.loginUser()
                     }, label: {
                         ButtonLabel(word: "Login")
                             .padding(.bottom, 1)
@@ -87,6 +87,7 @@ struct LoginView: View {
             }
             // MARK: - Life cycle -
             .onAppear {
+                viewModel.checkIfUserIsLoggedIn()
                 viewModel.initAnalyticsFirebase(text: "App run",
                                                 message: "App run")
             }
