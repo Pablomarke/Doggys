@@ -38,13 +38,12 @@ struct ProfileView: View {
                 }
                 TextFieldView(text: $viewModel.dogOwner,
                               colorBackgroud: .gray)
-                .padding(10)
+                .padding()
                 TextFieldView(text: $viewModel.nameOfDog,
                               colorBackgroud: .gray)
-                .padding(10)
                 TextFieldView(text: $viewModel.ageOfDog,
                               colorBackgroud: .gray)
-                .padding(10)
+                .padding()
                 HStack{
                     VStack{
                         Text("Raza:")
@@ -73,7 +72,6 @@ struct ProfileView: View {
                         }
                     }
                 }
-                .padding()
                 Text("Seleccione tipo de paseo:")
                     .foregroundStyle(Color.white)
                     .font(.title3)

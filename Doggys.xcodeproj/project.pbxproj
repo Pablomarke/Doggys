@@ -92,6 +92,10 @@
 		A9F98CC72BB34CD6004E9451 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9F98CC62BB34CD6004E9451 /* GoogleService-Info.plist */; };
 		A9FE0ECB2BC9B520008564AB /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FE0ECA2BC9B520008564AB /* UserProfile.swift */; };
 		A9FE0ECD2BC9B7B5008564AB /* UserProfileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FE0ECC2BC9B7B5008564AB /* UserProfileProtocol.swift */; };
+		A9FE0ECF2BC9BA54008564AB /* UserProfileEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FE0ECE2BC9BA54008564AB /* UserProfileEnvironmentKey.swift */; };
+		A9FE0ED12BC9BB01008564AB /* FirebaseUserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FE0ED02BC9BB01008564AB /* FirebaseUserProfileViewModel.swift */; };
+		A9FE0ED32BC9BC5F008564AB /* UserProfile+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FE0ED22BC9BC5F008564AB /* UserProfile+Firebase.swift */; };
+		A9FE0ED62BC9CA1E008564AB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FE0ED52BC9CA1E008564AB /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +176,10 @@
 		A9F98CC62BB34CD6004E9451 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9FE0ECA2BC9B520008564AB /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		A9FE0ECC2BC9B7B5008564AB /* UserProfileProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileProtocol.swift; sourceTree = "<group>"; };
+		A9FE0ECE2BC9BA54008564AB /* UserProfileEnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileEnvironmentKey.swift; sourceTree = "<group>"; };
+		A9FE0ED02BC9BB01008564AB /* FirebaseUserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserProfileViewModel.swift; sourceTree = "<group>"; };
+		A9FE0ED22BC9BC5F008564AB /* UserProfile+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProfile+Firebase.swift"; sourceTree = "<group>"; };
+		A9FE0ED52BC9CA1E008564AB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,6 +355,7 @@
 				399BE53A2BBA8A7600AC323C /* LogoView.swift */,
 				39ADE25A2BC299D8007A6702 /* ButtonLabel.swift */,
 				392EECD22BC68204005409EA /* SwitchRemember.swift */,
+				A9FE0ED52BC9CA1E008564AB /* ImagePicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -396,6 +405,7 @@
 			children = (
 				A93207392BB48E170068D9C2 /* FirebaseAuthViewModel.swift */,
 				A93207442BB4A9C90068D9C2 /* FireBaseLogViewModel.swift */,
+				A9FE0ED02BC9BB01008564AB /* FirebaseUserProfileViewModel.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -410,6 +420,7 @@
 				A9286A382BC7E607003FC58A /* DogFriendly.swift */,
 				A9CC34982BC3E3C200E1599A /* MarkerMap.swift */,
 				A9FE0ECA2BC9B520008564AB /* UserProfile.swift */,
+				A9FE0ED22BC9BC5F008564AB /* UserProfile+Firebase.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -429,6 +440,7 @@
 			children = (
 				A932074C2BB4ABE30068D9C2 /* AuthViewModelEnvironmentKey.swift */,
 				A932074E2BB4AC100068D9C2 /* LogViewModelEnvironmentKey.swift */,
+				A9FE0ECE2BC9BA54008564AB /* UserProfileEnvironmentKey.swift */,
 			);
 			path = Environment;
 			sourceTree = "<group>";
@@ -686,6 +698,7 @@
 				A9FE0ECD2BC9B7B5008564AB /* UserProfileProtocol.swift in Sources */,
 				39ADE25B2BC299D8007A6702 /* ButtonLabel.swift in Sources */,
 				399BE53B2BBA8A7600AC323C /* LogoView.swift in Sources */,
+				A9FE0ED62BC9CA1E008564AB /* ImagePicker.swift in Sources */,
 				A9FE0ECB2BC9B520008564AB /* UserProfile.swift in Sources */,
 				A9CC34972BC3DFF400E1599A /* MapViewWireFrame.swift in Sources */,
 				A932074D2BB4ABE40068D9C2 /* AuthViewModelEnvironmentKey.swift in Sources */,
@@ -693,6 +706,8 @@
 				A92BF8D12BC073B3004AA875 /* ProfileViewModel.swift in Sources */,
 				A9CC34992BC3E3C200E1599A /* MarkerMap.swift in Sources */,
 				39228FDF2BAC701F00C91F40 /* LoginView.swift in Sources */,
+				A9FE0ED32BC9BC5F008564AB /* UserProfile+Firebase.swift in Sources */,
+				A9FE0ED12BC9BB01008564AB /* FirebaseUserProfileViewModel.swift in Sources */,
 				39ADE2582BC29863007A6702 /* LogoHeader.swift in Sources */,
 				A93207452BB4A9C90068D9C2 /* FireBaseLogViewModel.swift in Sources */,
 				A9EDD0D72BBC21620052D03C /* LogoAppDetailView.swift in Sources */,
@@ -702,6 +717,7 @@
 				A9286A372BC7E3D4003FC58A /* DogWalkLong.swift in Sources */,
 				399BE5372BB979B900AC323C /* LoginAPIClient.swift in Sources */,
 				A92BF8D32BC073C2004AA875 /* ProfileWireFrame.swift in Sources */,
+				A9FE0ECF2BC9BA54008564AB /* UserProfileEnvironmentKey.swift in Sources */,
 				392EECE32BC7C73E005409EA /* SettingsViewModel.swift in Sources */,
 				A9286A392BC7E607003FC58A /* DogFriendly.swift in Sources */,
 				A9CC34952BC3DFE800E1599A /* MapViewModel.swift in Sources */,
