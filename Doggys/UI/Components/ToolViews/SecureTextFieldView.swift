@@ -27,9 +27,11 @@ struct SecureTextFieldView: View {
             Group {
                 if isSecured {
                     SecureField(title, text: $text)
+                        .textContentType(.oneTimeCode)
                         .padding(.trailing, 24)
                 } else {
                     TextField(title, text: $text)
+                        .textContentType(.oneTimeCode)
                         .padding(.trailing, 24)
 
                 }
