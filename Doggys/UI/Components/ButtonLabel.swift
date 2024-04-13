@@ -15,14 +15,14 @@ struct ButtonLabel: View {
             .font(.custom("Jost-Light",
                           size: 24))
             .foregroundStyle(.customWhite)
-            .frame(width: 160,
-                   height: 40)
+            .frame(width: 200,
+                   height: 56)
             .background(.customLightBlue)
             .cornerRadius(20)
             .background(RoundedRectangle(cornerRadius: 20)
                 .stroke(.customWhite,
                         lineWidth: 3))
-            .padding()
+           // .padding()
     }
 }
 
