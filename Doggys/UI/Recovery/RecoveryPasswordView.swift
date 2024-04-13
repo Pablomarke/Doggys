@@ -18,8 +18,7 @@ struct RecoveryPasswordView: View {
         ZStack{
             Color.customMain
                 .ignoresSafeArea()
-            VStack{
-                
+            VStack {
                 LogoHeader(text: "Recuperar")
                 TextFieldView(text: $viewModel.email)
                     .padding(.top, 30)
