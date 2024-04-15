@@ -84,4 +84,16 @@ final class LoginViewModel: ObservableObject {
             self?.showAlert = true
         })
     }
+    
+    func emailIsValid() -> Bool {
+        return email.contains("@")
+    }
+
+    func passwordIsValid() -> Bool {
+        return password.count >= 6
+    }
+
+    func loginIsValid() -> Bool {
+        return emailIsValid() && passwordIsValid()
+    }
 }
