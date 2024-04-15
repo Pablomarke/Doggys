@@ -21,6 +21,8 @@ final class SettingsViewModel: ObservableObject {
         keyChain.allKeysDelete()
         UserDefaults.standard.set(false,
                                   forKey: Preferences.rememberLogin)
+        UserDefaults.standard.set(false,
+                                  forKey: Preferences.userLoggedIn)
         isLogOut = true
     }
 }

@@ -13,7 +13,7 @@ struct LoginView: View {
     @Environment(\.logViewModel) private var logViewModel: LogProtocol
     @ObservedObject var viewModel: LoginViewModel
     static var viewName: String = "LoginView"
-    @State private var rememberLogin: Bool = false
+    @State private var rememberLogin: Bool = UserDefaults.standard.bool(forKey: Preferences.rememberLogin)
     
     public init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
@@ -23,55 +23,67 @@ struct LoginView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.customGreenblue.ignoresSafeArea()
-                VStack(spacing: 5) {
-                    LogoAppDetailView()
-                        .padding()
+                Color.customMain
+                    .ignoresSafeArea()
+                VStack() {
+                    Text("Doggys")
+                        .font(.custom("Jost-Light",
+                                      size: 90))
+                        .foregroundStyle(Color.customWhite)
+                    
                     TextFieldView(text: $viewModel.email)
                         .padding(.top,
-                                 60)
+                                 40)
                     SecureTextFieldView("Password",
                                         text: $viewModel.password)
+                    .padding(.top, 2)
                     HStack {
                         Toggle(isOn: $rememberLogin) {
                             Text("Recordar")
                         }
                         .toggleStyle(SwitchToggleStyle(tint: rememberLogin
-                                                       ? Color.customBlue
+                                                       ? Color.customLightBlue
                                                        : Color.customWhite)
                         )
                     }
                     .foregroundColor(.customWhite)
+                    .padding(.bottom, 60)
                     .padding([.leading,
                               .trailing],
                              130)
                     .onChange(of: rememberLogin) { newValue in
                         viewModel.rememberLogin = newValue
                     }
+                    
                     Button(action: {
                         viewModel.loginUser()
                     }, label: {
                         ButtonLabel(word: "Login")
+                            .padding(.bottom, 1)
                     })
-                    .padding(.top,
-                             40)
+                    
                     NavigationLink {
                         RecoveryWireFrame().viewController
                     } label: {
                         Text("Recuperar Contraseña")
-                            .padding(.top,
-                                     25)
-                            .foregroundStyle(.gray)
+                            .padding(.bottom, 80)
+                            .font(.custom("Jost-Light",
+                                          size: 18))
+                            .foregroundStyle(.customWhite)
                     }
-                    .padding(.bottom,
-                             80)
+                    
                     NavigationLink(destination: RegisterWireFrame().viewController) {
-                        Text("¿Aún no tienes cuenta?")
-                            .font(.title3)
+                        Text("No tengo Cuenta")
+                            .font(.custom("Jost-Light",
+                                          size: 24))
+                            .foregroundStyle(Color.customWhite)
                     }
-                    NavigationLink(destination: AppTabView(),
-                                   isActive: $viewModel.isLoggedIn) {
-                        EmptyView()
+                    
+                    if viewModel.navigateToHome {
+                        NavigationLink(destination: AppTabView(),
+                                       isActive: $viewModel.isLoggedIn) {
+                            EmptyView()
+                        }
                     }
                 }
             }
@@ -83,12 +95,6 @@ struct LoginView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        .onTapGesture {
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
-                                            to: nil,
-                                            from: nil,
-                                            for: nil)
-        }
     }
     
     // MARK: - Functions

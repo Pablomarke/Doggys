@@ -15,85 +15,40 @@ struct ProfileView: View {
    //MARK: - View -
     var body: some View {
         ZStack{
-            Color.customLightBlue.ignoresSafeArea()
-            VStack {
-                Text("Perfil")
-                    .font(.system(size: 40,
-                                  weight: .light,
-                                  design: .monospaced))
+            Color.customMain.ignoresSafeArea()
+            ScrollView {
+                VStack {
+                    LogoHeader(text: "Perfil")
+                    TextFieldView(text: $viewModel.dogOwner)
+                        .padding(5)
+                    TextFieldView(text: $viewModel.nameOfDog)
+                        .padding(5)
+                    TextFieldView(text: $viewModel.ageOfDog)
+                        .padding(5)
+                    
+                    TextPickerView(selectedItem: $viewModel.selectedBreed,
+                                text: "Seleccione una raza:",
+                                items: RazaPerro.allCases)
+                    
+                    TextPickerView(selectedItem: $viewModel.selectedGender,
+                                   text: "Seleccione género:",
+                                   items: GeneroPerro.allCases)
+                    
+                    TextPickerView(selectedItem: $viewModel.selectedWalk,
+                                   text: "Seleccione tipo de paseo:",
+                                   items: PaseoPerro.allCases)
+                    
+                    TextPickerView(selectedItem: $viewModel.dofFriendly,
+                                   text: "¿Soy amigable con otros perros?",
+                                   items: PerroAmigable.allCases)
                     .padding()
-                TextFieldView(text: $viewModel.dogOwner,
-                              colorBackgroud: .gray)
-                .padding(10)
-                TextFieldView(text: $viewModel.nameOfDog,
-                              colorBackgroud: .gray)
-                .padding(10)
-                TextFieldView(text: $viewModel.ageOfDog,
-                              colorBackgroud: .gray)
-                .padding(10)
-                Text("Seleccione una raza:")
-                    .foregroundStyle(Color.white)
-                    .font(.title3)
-                    .padding(.top, 20)
-                Picker(selection: $viewModel.selectedBreed) {
-                    ForEach(RazaPerro.allCases,
-                            id: \.self) { breed in
-                        Text(breed.rawValue.capitalized)
-                    }
-                } label: {
-                    Text("")
+                    Button(action: {
+                        // TODO
+                    }, label: {
+                        ButtonLabel(word: "Guardar")
+                    })
                 }
-                .pickerStyle(.menu)
-                Text("Seleccione género:")
-                    .foregroundStyle(Color.white)
-                    .font(.title3)
-                Picker(selection: $viewModel.selectedGender) {
-                    ForEach(GeneroPerro.allCases,
-                            id: \.self) { gender in
-                        Text(gender.rawValue.capitalized)
-                    }
-                } label: {
-                    Text("")
-                }
-                .pickerStyle(.menu)
-                Text("Seleccione tipo de paseo:")
-                    .foregroundStyle(Color.white)
-                    .font(.title3)
-                Picker(selection: $viewModel.selectedWalk) {
-                    ForEach(PaseoPerro.allCases,
-                            id: \.self) { walk in
-                        Text(walk.rawValue.capitalized)
-                    }
-                } label: {
-                    Text("")
-                }
-                .pickerStyle(.menu)
-                Text("¿Soy amigable con otros perros?")
-                    .foregroundStyle(Color.white)
-                    .font(.title3)
-                Picker(selection: $viewModel.dofFriendly) {
-                    ForEach(PerroAmigable.allCases,
-                            id: \.self) { friendly in
-                        Text(friendly.rawValue.capitalized)
-                    }
-                } label: {
-                    Text("")
-                }
-                .pickerStyle(.menu)
-                
-                Button(action: {
-                    // TODO
-                }, label: {
-                    ButtonLabel(word: "Guardar")
-                })
             }
-                 /* .navigationBarItems(leading:
-                                    Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }) {
-                Image(systemName: "arrow.left")
-                Text("Atrás")
-            })*/
         }
     }
     

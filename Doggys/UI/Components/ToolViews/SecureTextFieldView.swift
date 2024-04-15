@@ -27,26 +27,29 @@ struct SecureTextFieldView: View {
                 } else {
                     TextField(title, text: $text)
                         .padding(.trailing, 24)
-
+                    
                 }
             }
+            .font(.custom("Jost-Light",
+                          size: 20))
             .padding()
-            .frame(width: 280)
-            .foregroundColor(.white)
-            // TODO: Change colour for custom in future
-            .background(Color.customLightBlue)
+            .frame(width: 280,
+                   height: 60)
+            .foregroundColor(.customBlue)
+            .background(.customWhite40)
             .cornerRadius(20)
-            .shadow(radius: 10, x: 5, y: 10)
+            .background(RoundedRectangle(cornerRadius: 20)
+                .stroke(.customWhite,
+                        lineWidth: 3))
+            .padding()
             .textInputAutocapitalization(.never)
             .autocorrectionDisabled()
-            .opacity(0.9)
-            .padding()
             
             Button(action: {
                 isSecured.toggle()
             }) {
-                Image(systemName: self.isSecured ? "eye.slash" : "eye")
-                    .accentColor(Color.customGreen)
+                Image(systemName: isSecured ? "eye.slash" : "eye")
+                    .accentColor(.customBlue)
                     .padding(.trailing, 24)
             }
         }
