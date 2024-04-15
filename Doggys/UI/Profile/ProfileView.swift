@@ -10,7 +10,8 @@ import SwiftUI
 struct ProfileView: View {
     //MARK: - Properties -
     @ObservedObject var viewModel: ProfileViewModel
-    @State var selectedImage: UIImage?
+    static var viewName: String = "ProfileView"
+//    @State var selectedImage: UIImage?
     @State var isShowingImagePicker = false
     
     //MARK: - View -
@@ -18,7 +19,7 @@ struct ProfileView: View {
         ZStack{
             Color.customLightBlue.ignoresSafeArea()
             VStack {
-                if let image = selectedImage {
+                if let image = viewModel.selectedImage {
                     Button(action: {
                         self.isShowingImagePicker = true
                     }) {
@@ -98,13 +99,13 @@ struct ProfileView: View {
                 .pickerStyle(.menu)
                 
                 Button(action: {
-                    // TODO
+                    viewModel.sentDataToDB()
                 }, label: {
                     ButtonLabel(word: "Guardar")
                 })
             }
             .sheet(isPresented: $isShowingImagePicker, content: {
-                ImagePicker(image: self.$selectedImage)
+                ImagePicker(image: $viewModel.selectedImage)
             })
         }
     }
