@@ -33,8 +33,8 @@ struct RegisterView: View {
                     ButtonLabel(word: "Registrar")
                 })
                 .padding(.top, 20)
-                .disabled(!viewModel.passwordVerify())
-                .opacity(viewModel.passwordVerify() ? 1.0 : 0.5)
+                .disabled(!viewModel.registerValid())
+                .opacity(viewModel.registerValid() ? 1.0 : 0.5)
             }
         }
         .navigationBarBackButtonHidden(true)

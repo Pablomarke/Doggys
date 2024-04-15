@@ -37,8 +37,12 @@ final class RegisterViewModel: ObservableObject {
         })
     }
     
+    func registerValid() -> Bool {
+        return emailVerify() && passwordVerify()
+    }
+    
     func passwordVerify() -> Bool {
-        return passwordNotEmpty() && passwordMatch()
+        return passwordNotEmpty() && passwordMatch() && passwordLength()
     }
     
     func passwordNotEmpty() -> Bool {
@@ -48,4 +52,17 @@ final class RegisterViewModel: ObservableObject {
     func passwordMatch() -> Bool {
         return password == repeatPassword
     }
+    
+    func passwordLength() -> Bool {
+        return password.count >= 6
+    }
+    
+    func emailVerify() -> Bool {
+        return !email.isEmpty && emailValid()
+    }
+    
+    func emailValid() -> Bool {
+        return email.contains("@")
+    }
+    
 }
