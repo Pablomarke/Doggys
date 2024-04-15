@@ -13,14 +13,9 @@ final class LoginViewModel: ObservableObject {
     private var dataManager: LoginDataManager
     private var authViewModel: AuthProtocol
     private var logViewModel: LogProtocol
-//<<<<<<< HEAD
-//    @Published var email = "e-mail"
-//    @Published var password = ""
-//=======
     private var keyChain: KeyChainDataProvider
     @Published var email: String = ""
     @Published var password: String = ""
-//>>>>>>> develop
     @Published var isLoggedIn: Bool = false
     @Published var showAlert: Bool = false
     @Published var alertMessage: String = ""
@@ -45,10 +40,7 @@ final class LoginViewModel: ObservableObject {
     func checkIfUserIsLoggedIn() {
         authViewModel.isUserLoggedIn(
             onSuccess: { [weak self] loggedIn in
-                //TODO: This is the real way to navigate and pass the data
-                // self?.isLoggedIn = loggedIn
-                // print(loggedIn)
-                self?.isLoggedIn = true
+                self?.isLoggedIn = loggedIn
                 if loggedIn {
                     self?.initAnalyticsFirebase(text: "Enter app",
                                                 message: "Enter app")
@@ -58,6 +50,20 @@ final class LoginViewModel: ObservableObject {
             onFailure: { [weak self] error in
                 self?.logViewModel.crash(screen: LoginView.viewName,
                                          exception: error)
+            }
+        )
+    }
+    
+    func loginUser() {
+        authViewModel.login(email: email, password: password,
+            onSuccess: { [weak self] user in
+            self?.logViewModel.log(screen: LoginView.viewName, action: "USER_LOGGED_IN")
+            self?.isLoggedIn = true
+            },
+            onFailure: { [weak self] error in
+            self?.logViewModel.crash(screen: LoginView.viewName, exception: error)
+            self?.alertMessage = error.localizedDescription
+            self?.showAlert = true
             }
         )
     }

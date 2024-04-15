@@ -30,12 +30,8 @@ struct LoginView: View {
                     TextFieldView(text: $viewModel.email)
                         .padding(.top,
                                  60)
-//<<<<<<< HEAD
-                    SecureTextFieldView("Password", placeholder: "Password", 
+                    SecureTextFieldView("Password", placeholder: "Password",
                                         text: $viewModel.password)
-//=======
-//                    SecureTextFieldView("Password",
-//                                        text: $viewModel.password)
                     HStack {
                         Toggle(isOn: $rememberLogin) {
                             Text("Recordar")
@@ -52,9 +48,8 @@ struct LoginView: View {
                     .onChange(of: rememberLogin) { newValue in
                         viewModel.rememberLogin = newValue
                     }
-//>>>>>>> develop
                     Button(action: {
-                        viewModel.checkIfUserIsLoggedIn()
+                        viewModel.loginUser()
                     }, label: {
                         ButtonLabel(word: "Login")
                     })
@@ -82,6 +77,7 @@ struct LoginView: View {
             }
             // MARK: - Life cycle -
             .onAppear {
+                viewModel.checkIfUserIsLoggedIn()
                 viewModel.initAnalyticsFirebase(text: "App run",
                                                 message: "App run")
             }
