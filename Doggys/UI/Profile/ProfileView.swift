@@ -106,6 +106,13 @@ struct ProfileView: View {
             .sheet(isPresented: $isShowingImagePicker, content: {
                 ImagePicker(image: self.$selectedImage)
             })
+
+        }
+        .onTapGesture {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
+                                            to: nil,
+                                            from: nil,
+                                            for: nil)
         }
     }
     
