@@ -87,13 +87,6 @@ struct ProfileView: View {
                     ButtonLabel(word: "Guardar")
                 })
             }
-                 /* .navigationBarItems(leading:
-                                    Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }) {
-                Image(systemName: "arrow.left")
-                Text("Atrás")
-            })*/
         }
     }
     

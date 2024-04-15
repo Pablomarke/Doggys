@@ -30,7 +30,7 @@ struct LoginView: View {
                     TextFieldView(text: $viewModel.email)
                         .padding(.top,
                                  60)
-                    SecureTextFieldView("Password",
+                    SecureTextFieldView("Password", placeholder: "Password",
                                         text: $viewModel.password)
                     HStack {
                         Toggle(isOn: $rememberLogin) {
