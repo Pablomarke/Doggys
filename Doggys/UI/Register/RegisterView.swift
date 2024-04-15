@@ -41,6 +41,12 @@ struct RegisterView: View {
             Image(systemName: "arrow.left")
             Text("Atrás")
         })
+        .onTapGesture {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
+                                            to: nil,
+                                            from: nil,
+                                            for: nil)
+        }
     }
     mutating func set(viewModel: RegisterViewModel) {
         self.viewModel = viewModel
