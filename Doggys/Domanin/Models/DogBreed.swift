@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum RazaPerro: String, CaseIterable {
+enum RazaPerro: String, CaseIterable, CustomStringConvertible {
     case mestizo = "Mestizo"
     case akita = "Akita"
     case bassetHound = "Basset Hound"
@@ -38,4 +38,8 @@ enum RazaPerro: String, CaseIterable {
     case staffordshireBullTerrier = "Staffordshire Bull Terrier"
     case westHighlandWhiteTerrier = "West Highland White Terrier"
     case otraRaza = "Otra Raza"
+    
+    var description: String {
+        return rawValue
+    }
 }

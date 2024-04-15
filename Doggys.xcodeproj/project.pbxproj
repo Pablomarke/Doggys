@@ -42,6 +42,7 @@
 		399BE53B2BBA8A7600AC323C /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BE53A2BBA8A7600AC323C /* LogoView.swift */; };
 		39ADE2582BC29863007A6702 /* LogoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ADE2572BC29863007A6702 /* LogoHeader.swift */; };
 		39ADE25B2BC299D8007A6702 /* ButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ADE25A2BC299D8007A6702 /* ButtonLabel.swift */; };
+		39DA4CAE2BCD11F500717DCD /* TextPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA4CAD2BCD11F500717DCD /* TextPickerView.swift */; };
 		5D16A5192BC458A8004EE58F /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */; };
 		A9286A312BC6E55C003FC58A /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9286A302BC6E55C003FC58A /* AppTabView.swift */; };
 		A9286A332BC7DABD003FC58A /* DogBreed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9286A322BC7DABD003FC58A /* DogBreed.swift */; };
@@ -155,6 +156,7 @@
 		399BE53A2BBA8A7600AC323C /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		39ADE2572BC29863007A6702 /* LogoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoHeader.swift; sourceTree = "<group>"; };
 		39ADE25A2BC299D8007A6702 /* ButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabel.swift; sourceTree = "<group>"; };
+		39DA4CAD2BCD11F500717DCD /* TextPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPickerView.swift; sourceTree = "<group>"; };
 		5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A9286A302BC6E55C003FC58A /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		A9286A322BC7DABD003FC58A /* DogBreed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreed.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 				397B93D92BB353C20030D77E /* TextFieldView.swift */,
 				397B93DB2BB3560C0030D77E /* SecureTextFieldView.swift */,
 				A9EDD0D62BBC21620052D03C /* LogoAppDetailView.swift */,
+				39DA4CAD2BCD11F500717DCD /* TextPickerView.swift */,
 			);
 			path = ToolViews;
 			sourceTree = "<group>";
@@ -771,6 +774,7 @@
 				A932073A2BB48E170068D9C2 /* FirebaseAuthViewModel.swift in Sources */,
 				399BE5392BB979CF00AC323C /* LoginDataManager.swift in Sources */,
 				A9EDD0D52BBC19310052D03C /* RecoveryPasswordViewModel.swift in Sources */,
+				39DA4CAE2BCD11F500717DCD /* TextPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
