@@ -37,6 +37,13 @@ struct ProfileView: View {
                     .font(.title2)
                     .padding()
                 }
+                if !isShowingImagePicker {
+                    Button(action: {
+                        viewModel.searchImageOnRB()
+                    }, label: {
+                        Text("Cargar")
+                    })
+                }
                 TextFieldView(text: $viewModel.dogOwner,
                               colorBackgroud: .gray)
                 .padding()

@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-import Firebase
+import FirebaseStorage
 import FirebaseFirestore
 
 final class ProfileViewModel: ObservableObject {
@@ -22,12 +22,12 @@ final class ProfileViewModel: ObservableObject {
     @Published var selectedWalk: PaseoPerro = .corto
     @Published var dofFriendly: PerroAmigable = .si
     @Published var selectedImage: UIImage?
+    @Published var urlImage: URL?
     
     init(userViewModel: UserProfileProtocol, logViewModel:LogProtocol) {
         self.userViewModel = userViewModel
         self.logViewModel = logViewModel
     }
-    
     
 //    func sentDataToDB() {
 //        guard let image = self.selectedImage else { return }
@@ -46,24 +46,44 @@ final class ProfileViewModel: ObservableObject {
 //        }
 //    }
     
+    func searchImageOnRB() {
+        let storageRef = Storage.storage().reference().child("images").child("userImage.jpg")
+        guard let selectedImage = selectedImage else { return }
+        guard let imageData = selectedImage.jpegData(compressionQuality: 0.1) else { return }
+        
+        storageRef.putData(imageData, metadata: nil) { (metadata, error) in
+            guard error == nil else { return }
+        }
+        storageRef.downloadURL { (url, error) in
+            if error != nil {
+                print("Error al obtener URL")
+                return
+            }
+            guard let downloadURL = url else { return }
+            self.urlImage = downloadURL
+        }
+    }
+    
     func searchDataOnDB() {
         let db = Firestore.firestore()
-        let exampleModel = UserProfile(id: UUID().uuidString, humanName: self.dogOwner, dogName: self.nameOfDog, dogYears: self.ageOfDog, dogGender: self.selectedGender, dogWalk: self.selectedWalk, dogFriendly: self.dofFriendly)
-        db.collection("example").addDocument(data: [
-            "id": exampleModel.id,
-            "name": exampleModel.humanName,
-            "dogName": exampleModel.dogName,
-            "dogYears": exampleModel.dogYears,
-            "dogGender": exampleModel.dogGender.rawValue,
-            "dogWalk": exampleModel.dogWalk.rawValue,
-            "dogFriendly": exampleModel.dogFriendly.rawValue
+        
+        let data = UserProfile(id: UUID().uuidString, imageProfile: self.urlImage, humanName: self.dogOwner, dogName: self.nameOfDog, dogYears: self.ageOfDog, dogGender: self.selectedGender, dogWalk: self.selectedWalk, dogFriendly: self.dofFriendly)
+        
+        db.collection("UserData").addDocument(data: [
+            "id": data.id,
+            "imageProfile": data.imageProfile?.absoluteString ?? "",
+            "name": data.humanName,
+            "dogName": data.dogName,
+            "dogYears": data.dogYears,
+            "dogGender": data.dogGender.rawValue,
+            "dogWalk": data.dogWalk.rawValue,
+            "dogFriendly": data.dogFriendly.rawValue
         ]) { error in
             if let error = error {
                 print("Error: \(error)")
             } else {
                 print("Document added succesfully")
             }
-            
         }
     }
 }
