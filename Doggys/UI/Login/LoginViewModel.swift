@@ -38,40 +38,19 @@ final class LoginViewModel: ObservableObject {
         Analytics.logEvent(text,
                            parameters: ["message":message])
     }
-    
-    func checkIfUserIsLoggedIn() {
-        // self.navigateToHome = false
-        authViewModel.isUserLoggedIn(
-            onSuccess: { [weak self] loggedIn in
-                self?.navigateToHome = loggedIn
-                if loggedIn {
-                    self?.initAnalyticsFirebase(text: "Enter app",
-                                                message: "Enter app")
-                    self?.rememberLoginAndPasswordInKeyChainAndPreferences()
-                }
-            },
-            onFailure: { [weak self] error in
-                self?.logViewModel.crash(screen: LoginView.viewName,
-                                         exception: error)
-            }
-        )
-    }
-    
+
     func loginUser() {
         authViewModel.login(email: email,
                             password: password,
                             onSuccess: { [weak self] user in
-            print(user)
-            
             self?.navigateToHome = true
             self?.initAnalyticsFirebase(text: "Enter app",
                                         message: "Enter app")
-            self?.rememberLoginAndPasswordInKeyChainAndPreferences()
-            
-            
             self?.logViewModel.log(screen: LoginView.viewName,
                                    action: "USER_LOGGED_IN")
             self?.isLoggedIn = true
+            self?.rememberLoginAndPasswordInKeyChainAndPreferences()
+
         },
                             onFailure: { [weak self] error in
             self?.logViewModel.crash(screen: LoginView.viewName,
@@ -83,34 +62,19 @@ final class LoginViewModel: ObservableObject {
     }
     
     func rememberLoginAndPasswordInKeyChainAndPreferences() {
-        rememberLoginAndPassword(remember: rememberLogin)
-        if rememberLogin {
-            keyChain.setLoginAndPassword(user: email,
-                                         password: password)
-        }
+        rememberLoginAndPassword(remember: UserDefaults.standard.bool(forKey: Preferences.rememberLogin))
     }
-    
-    /*
-     func registerUser() {
-     authViewModel.register(email: email,
-     password: password,
-     onSuccess: { [weak self] user in
-     self?.logViewModel.log(screen: LoginView.viewName,
-     action: "USER_REGISTERED")
-     },
-     onFailure: { [weak self] error in
-     print(error.localizedDescription)
-     self?.alertMessage = error.localizedDescription
-     self?.showAlert = true
-     })
-     }*/
 }
 
 private extension LoginViewModel {
     func rememberLoginAndPassword(remember: Bool) {
         UserDefaults.standard.set(remember,
                                   forKey: Preferences.rememberLogin)
-        UserDefaults.standard.set(remember,
-                                  forKey: Preferences.userLoggedIn)
+        if remember {
+            keyChain.setLoginAndPassword(user: email,
+                                         password: password)
+            UserDefaults.standard.set(rememberLogin,
+                                      forKey: Preferences.userLoggedIn)
+        }
     }
 }

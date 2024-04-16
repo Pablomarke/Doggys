@@ -9,8 +9,6 @@ import SwiftUI
 
 struct LoginView: View {
     //MARK: Properties
-    @Environment(\.authViewModel) private var authViewModel: AuthProtocol
-    @Environment(\.logViewModel) private var logViewModel: LogProtocol
     @ObservedObject var viewModel: LoginViewModel
     static var viewName: String = "LoginView"
     @State private var rememberLogin: Bool = UserDefaults.standard.bool(forKey: Preferences.rememberLogin)
@@ -52,6 +50,8 @@ struct LoginView: View {
                               .trailing], 130)
                     .onChange(of: rememberLogin) { newValue in
                         viewModel.rememberLogin = newValue
+                        UserDefaults.standard.set(newValue,
+                                                  forKey: Preferences.rememberLogin)
                     }
                     
                     Button(action: {
@@ -80,7 +80,7 @@ struct LoginView: View {
                     
                     if viewModel.navigateToHome {
                         NavigationLink(destination: AppTabView(),
-                                       isActive: $viewModel.isLoggedIn) {
+                                       isActive: $viewModel.navigateToHome) {
                             EmptyView()
                         }
                     }

@@ -9,12 +9,49 @@ import Foundation
 
 final class SplashViewModel: ObservableObject {
     // MARK: - Properties -
-    @Published var isActive = false
-
+    @Published var navigateToLogin = false
+    @Published var navigateToHome = false
+    private var authViewModel: AuthProtocol
+    private var keyChain: KeyChainDataProvider
+   
+    init(authViewModel: AuthProtocol, keyChain: KeyChainDataProvider) {
+        self.authViewModel = authViewModel
+        self.keyChain = keyChain
+    }
+    
+    
     // MARK: - Public methods -
     func initView() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            self.isActive = true
+        userRememberLogin()
+    }
+}
+
+private extension SplashViewModel {
+    func userRememberLogin() {
+        if UserDefaults.standard.bool(forKey: Preferences.rememberLogin) {
+            self.checkIfUserIsLoggedIn()
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
+                self?.navigateToLogin = true
+            }
         }
+    }
+    
+    func checkIfUserIsLoggedIn() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
+            self?.authViewModel.isUserLoggedIn(
+            onSuccess: { [weak self] loggedIn in
+                    self?.navigateToHome = loggedIn
+                if !loggedIn {
+                    self?.navigateToLogin = true
+                }
+                
+            },
+            onFailure: { [weak self] error in
+                // self?.logViewModel.crash(screen: LoginView.viewName,
+                //                       exception: error)
+            }
+        )
+    }
     }
 }
