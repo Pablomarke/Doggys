@@ -49,8 +49,7 @@ struct LoginView: View {
                     .foregroundColor(.customWhite)
                     .padding(.bottom, 60)
                     .padding([.leading,
-                              .trailing],
-                             130)
+                              .trailing], 130)
                     .onChange(of: rememberLogin) { newValue in
                         viewModel.rememberLogin = newValue
                     }
@@ -89,7 +88,6 @@ struct LoginView: View {
             }
             // MARK: - Life cycle -
             .onAppear {
-                viewModel.checkIfUserIsLoggedIn()
                 viewModel.initAnalyticsFirebase(text: "App run",
                                                 message: "App run")
             }
