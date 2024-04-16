@@ -10,6 +10,7 @@ import FirebaseFirestore
 extension UserProfile {
     var dictionary: [String: Any] {
         return [
+            "imageProfile": imageProfile,
             "humanName": humanName,
             "dogName": dogName,
             "dogYears": dogYears,
