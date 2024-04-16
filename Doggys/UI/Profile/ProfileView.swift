@@ -99,7 +99,7 @@ struct ProfileView: View {
                 .pickerStyle(.menu)
                 
                 Button(action: {
-                    viewModel.sentDataToDB()
+                    viewModel.searchDataOnDB()
                 }, label: {
                     ButtonLabel(word: "Guardar")
                 })

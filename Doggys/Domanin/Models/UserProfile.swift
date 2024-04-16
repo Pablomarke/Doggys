@@ -11,7 +11,7 @@ import SwiftUI
 
 class UserProfile: Identifiable {
     let id: String
-    let imageProfile: UIImage
+//    let imageProfile: UIImage
     let humanName: String
     let dogName: String
     let dogYears: String
@@ -22,7 +22,7 @@ class UserProfile: Identifiable {
     
     init() {
         self.id = ""
-        self.imageProfile = UIImage()
+//        self.imageProfile = UIImage()
         self.humanName = ""
         self.dogName = ""
         self.dogYears = ""
@@ -32,9 +32,9 @@ class UserProfile: Identifiable {
 //        self.coordenates = MarkerMap(name: String(), coordinate: CLLocationCoordinate2D())
     }
     
-    init(id: String, imageProfile: UIImage, humanName: String, dogName: String, dogYears: String, dogGender: GeneroPerro, dogWalk: PaseoPerro, dogFriendly: PerroAmigable) {
+    init(id: String, humanName: String, dogName: String, dogYears: String, dogGender: GeneroPerro, dogWalk: PaseoPerro, dogFriendly: PerroAmigable) {
         self.id = id
-        self.imageProfile = imageProfile
+//        self.imageProfile = imageProfile
         self.humanName = humanName
         self.dogName = dogName
         self.dogYears = dogYears
