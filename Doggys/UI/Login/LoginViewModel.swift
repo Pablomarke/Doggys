@@ -82,4 +82,31 @@ private extension LoginViewModel {
                                       forKey: Preferences.userLoggedIn)
         }
     }
+
+    
+    func registerUser() {
+        authViewModel.register(email: email,
+                               password: password,
+                               onSuccess: { [weak self] user in
+            self?.logViewModel.log(screen: LoginView.viewName,
+                                   action: "USER_REGISTERED")
+        },
+                               onFailure: { [weak self] error in
+            print(error.localizedDescription)
+            self?.alertMessage = error.localizedDescription
+            self?.showAlert = true
+        })
+    }
+    
+    func emailIsValid() -> Bool {
+        return email.contains("@")
+    }
+
+    func passwordIsValid() -> Bool {
+        return password.count >= 6
+    }
+
+    func loginIsValid() -> Bool {
+        return emailIsValid() && passwordIsValid()
+    }
 }

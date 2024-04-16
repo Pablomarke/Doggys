@@ -58,6 +58,9 @@ struct LoginView: View {
                         ButtonLabel(word: "Login")
                             .padding(.bottom, 1)
                     })
+
+                    .disabled(!viewModel.loginIsValid())
+                    .opacity(viewModel.loginIsValid() ? 1.0 : 0.5)
                     
                     NavigationLink {
                         RecoveryWireFrame().viewController
