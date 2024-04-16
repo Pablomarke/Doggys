@@ -54,14 +54,14 @@ final class ProfileViewModel: ObservableObject {
             "name": exampleModel.humanName,
             "dogName": exampleModel.dogName,
             "dogYears": exampleModel.dogYears,
-            "dogGender": exampleModel.dogGender,
-            "dogWalk": exampleModel.dogWalk,
-            "dogFriendly": exampleModel.dogFriendly
+            "dogGender": exampleModel.dogGender.rawValue,
+            "dogWalk": exampleModel.dogWalk.rawValue,
+            "dogFriendly": exampleModel.dogFriendly.rawValue
         ]) { error in
             if let error = error {
                 print("Error: \(error)")
             } else {
-                print("Document added succesfull")
+                print("Document added succesfully")
             }
             
         }
