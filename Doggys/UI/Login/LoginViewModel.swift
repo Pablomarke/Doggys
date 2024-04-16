@@ -34,23 +34,17 @@ final class LoginViewModel: ObservableObject {
     }
     
     //MARK: Publics Methods
-    func initAnalyticsFirebase(text: String, message: String) {
-        Analytics.logEvent(text,
-                           parameters: ["message":message])
-    }
-
     func loginUser() {
         authViewModel.login(email: email,
                             password: password,
                             onSuccess: { [weak self] user in
             self?.navigateToHome = true
+            self?.isLoggedIn = true
+            self?.rememberLoginAndPasswordInKeyChainAndPreferences()
             self?.initAnalyticsFirebase(text: "Enter app",
                                         message: "Enter app")
             self?.logViewModel.log(screen: LoginView.viewName,
                                    action: "USER_LOGGED_IN")
-            self?.isLoggedIn = true
-            self?.rememberLoginAndPasswordInKeyChainAndPreferences()
-
         },
                             onFailure: { [weak self] error in
             self?.logViewModel.crash(screen: LoginView.viewName,
@@ -61,12 +55,23 @@ final class LoginViewModel: ObservableObject {
         )
     }
     
-    func rememberLoginAndPasswordInKeyChainAndPreferences() {
-        rememberLoginAndPassword(remember: UserDefaults.standard.bool(forKey: Preferences.rememberLogin))
+    func rememberLogin(remember: Bool) {
+        rememberLogin = remember
+        UserDefaults.standard.set(remember,
+                                  forKey: Preferences.rememberLogin)
+    }
+    
+    func initAnalyticsFirebase(text: String, message: String) {
+        Analytics.logEvent(text,
+                           parameters: ["message":message])
     }
 }
 
 private extension LoginViewModel {
+    
+    func rememberLoginAndPasswordInKeyChainAndPreferences() {
+        rememberLoginAndPassword(remember: UserDefaults.standard.bool(forKey: Preferences.rememberLogin))
+    }
     func rememberLoginAndPassword(remember: Bool) {
         UserDefaults.standard.set(remember,
                                   forKey: Preferences.rememberLogin)

@@ -12,13 +12,12 @@ final class SplashViewModel: ObservableObject {
     @Published var navigateToLogin = false
     @Published var navigateToHome = false
     private var authViewModel: AuthProtocol
-    private var keyChain: KeyChainDataProvider
+    private var logViewModel: LogProtocol
    
-    init(authViewModel: AuthProtocol, keyChain: KeyChainDataProvider) {
+    init(authViewModel: AuthProtocol, logViewModel: LogProtocol) {
         self.authViewModel = authViewModel
-        self.keyChain = keyChain
+        self.logViewModel = logViewModel
     }
-    
     
     // MARK: - Public methods -
     func initView() {
@@ -48,8 +47,8 @@ private extension SplashViewModel {
                 
             },
             onFailure: { [weak self] error in
-                // self?.logViewModel.crash(screen: LoginView.viewName,
-                //                       exception: error)
+                 self?.logViewModel.crash(screen: LoginView.viewName,
+                                       exception: error)
             }
         )
     }

@@ -49,9 +49,7 @@ struct LoginView: View {
                     .padding([.leading,
                               .trailing], 130)
                     .onChange(of: rememberLogin) { newValue in
-                        viewModel.rememberLogin = newValue
-                        UserDefaults.standard.set(newValue,
-                                                  forKey: Preferences.rememberLogin)
+                        viewModel.rememberLogin(remember: newValue)
                     }
                     
                     Button(action: {
