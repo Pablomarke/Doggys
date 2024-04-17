@@ -14,6 +14,7 @@ final class ProfileViewModel: ObservableObject {
     //MARK: Properties
     private var userViewModel: UserProfileProtocol
     private var logViewModel: LogProtocol
+    private var storageViewModel: StorageProtocol
     @Published var dogOwner: String = "Nombre del Humano"
     @Published var nameOfDog: String = "Doggy Nombre"
     @Published var ageOfDog: String = "Doggy Años"
@@ -24,9 +25,10 @@ final class ProfileViewModel: ObservableObject {
     @Published var selectedImage: UIImage?
     @Published var urlImage: URL?
     
-    init(userViewModel: UserProfileProtocol, logViewModel:LogProtocol) {
+    init(userViewModel: UserProfileProtocol, logViewModel:LogProtocol, storageViewModel: StorageProtocol) {
         self.userViewModel = userViewModel
         self.logViewModel = logViewModel
+        self.storageViewModel = storageViewModel
     }
     
 //    func sentDataToDB() {
@@ -47,21 +49,22 @@ final class ProfileViewModel: ObservableObject {
 //    }
     
     func searchImageOnRB() {
-        let storageRef = Storage.storage().reference().child("images").child("userImage.jpg")
+//        let storageRef = Storage.storage().reference().child("images").child("userImage.jpg")
         guard let selectedImage = selectedImage else { return }
         guard let imageData = selectedImage.jpegData(compressionQuality: 0.1) else { return }
+        guard let compressedImage = UIImage(data: imageData) else {return}
         
-        storageRef.putData(imageData, metadata: nil) { (metadata, error) in
-            guard error == nil else { return }
-        }
-        storageRef.downloadURL { (url, error) in
-            if error != nil {
-                print("Error al obtener URL")
-                return
-            }
-            guard let downloadURL = url else { return }
-            self.urlImage = downloadURL
-        }
+//        storageRef.putData(imageData, metadata: nil) { (metadata, error) in
+//            guard error == nil else { return }
+//        }
+//        storageRef.downloadURL { (url, error) in
+//            if let error = error {
+//                print("Error al obtener URL,", error.localizedDescription)
+//                return
+//            }
+//            guard let downloadURL = url else { return }
+//            self.urlImage = downloadURL
+//        }
     }
     
     func searchDataOnDB() {
@@ -71,7 +74,7 @@ final class ProfileViewModel: ObservableObject {
         
         db.collection("UserData").addDocument(data: [
             "id": data.id,
-            "imageProfile": data.imageProfile?.absoluteString ?? "",
+            "imageProfile": data.imageProfile?.absoluteString ?? "No image",
             "name": data.humanName,
             "dogName": data.dogName,
             "dogYears": data.dogYears,

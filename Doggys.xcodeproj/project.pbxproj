@@ -49,6 +49,8 @@
 		A93207472BB4A9E30068D9C2 /* LogProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93207462BB4A9E30068D9C2 /* LogProtocol.swift */; };
 		A932074D2BB4ABE40068D9C2 /* AuthViewModelEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A932074C2BB4ABE30068D9C2 /* AuthViewModelEnvironmentKey.swift */; };
 		A932074F2BB4AC100068D9C2 /* LogViewModelEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A932074E2BB4AC100068D9C2 /* LogViewModelEnvironmentKey.swift */; };
+		A946A8072BCFF0550088ADE0 /* FirebaseStorageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A946A8062BCFF0550088ADE0 /* FirebaseStorageViewModel.swift */; };
+		A946A8092BCFF07F0088ADE0 /* StorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A946A8082BCFF07F0088ADE0 /* StorageProtocol.swift */; };
 		A973E23F2BB182F900BDF917 /* ColorsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A973E23E2BB182F900BDF917 /* ColorsApp.swift */; };
 		A9C47F002BBDE03E0044ED5F /* RegisterWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C47EFF2BBDE03E0044ED5F /* RegisterWireFrame.swift */; };
 		A9C47F022BBE93FC0044ED5F /* RecoveryWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C47F012BBE93FC0044ED5F /* RecoveryWireFrame.swift */; };
@@ -160,6 +162,8 @@
 		A93207462BB4A9E30068D9C2 /* LogProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogProtocol.swift; sourceTree = "<group>"; };
 		A932074C2BB4ABE30068D9C2 /* AuthViewModelEnvironmentKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewModelEnvironmentKey.swift; sourceTree = "<group>"; };
 		A932074E2BB4AC100068D9C2 /* LogViewModelEnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewModelEnvironmentKey.swift; sourceTree = "<group>"; };
+		A946A8062BCFF0550088ADE0 /* FirebaseStorageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageViewModel.swift; sourceTree = "<group>"; };
+		A946A8082BCFF07F0088ADE0 /* StorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProtocol.swift; sourceTree = "<group>"; };
 		A973E23E2BB182F900BDF917 /* ColorsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsApp.swift; sourceTree = "<group>"; };
 		A9C47EFF2BBDE03E0044ED5F /* RegisterWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWireFrame.swift; sourceTree = "<group>"; };
 		A9C47F012BBE93FC0044ED5F /* RecoveryWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryWireFrame.swift; sourceTree = "<group>"; };
@@ -406,6 +410,7 @@
 				A93207392BB48E170068D9C2 /* FirebaseAuthViewModel.swift */,
 				A93207442BB4A9C90068D9C2 /* FireBaseLogViewModel.swift */,
 				A9FE0ED02BC9BB01008564AB /* FirebaseUserProfileViewModel.swift */,
+				A946A8062BCFF0550088ADE0 /* FirebaseStorageViewModel.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -431,6 +436,7 @@
 				A932073B2BB48F860068D9C2 /* AuthProtocol.swift */,
 				A93207462BB4A9E30068D9C2 /* LogProtocol.swift */,
 				A9FE0ECC2BC9B7B5008564AB /* UserProfileProtocol.swift */,
+				A946A8082BCFF07F0088ADE0 /* StorageProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -718,7 +724,9 @@
 				399BE5372BB979B900AC323C /* LoginAPIClient.swift in Sources */,
 				A92BF8D32BC073C2004AA875 /* ProfileWireFrame.swift in Sources */,
 				A9FE0ECF2BC9BA54008564AB /* UserProfileEnvironmentKey.swift in Sources */,
+				A946A8092BCFF07F0088ADE0 /* StorageProtocol.swift in Sources */,
 				392EECE32BC7C73E005409EA /* SettingsViewModel.swift in Sources */,
+				A946A8072BCFF0550088ADE0 /* FirebaseStorageViewModel.swift in Sources */,
 				A9286A392BC7E607003FC58A /* DogFriendly.swift in Sources */,
 				A9CC34952BC3DFE800E1599A /* MapViewModel.swift in Sources */,
 				A9EDD0D02BBC153E0052D03C /* RegisterViewModel.swift in Sources */,
