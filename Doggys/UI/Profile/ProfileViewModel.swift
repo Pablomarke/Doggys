@@ -44,25 +44,12 @@ final class ProfileViewModel: ObservableObject {
     }
     
     func searchDataOnDB() {
-        let db = Firestore.firestore()
-        
         let data = UserProfile(id: UUID().uuidString, imageProfile: self.urlImage, humanName: self.dogOwner, dogName: self.nameOfDog, dogYears: self.ageOfDog, dogGender: self.selectedGender, dogWalk: self.selectedWalk, dogFriendly: self.dofFriendly)
         
-        db.collection("UserData").addDocument(data: [
-            "id": data.id,
-            "imageProfile": data.imageProfile,
-            "name": data.humanName,
-            "dogName": data.dogName,
-            "dogYears": data.dogYears,
-            "dogGender": data.dogGender.rawValue,
-            "dogWalk": data.dogWalk.rawValue,
-            "dogFriendly": data.dogFriendly.rawValue
-        ]) { error in
-            if let error = error {
-                print("Error: \(error)")
-            } else {
-                print("Document added succesfully")
-            }
+        userViewModel.searchData(userProfile: data) {
+            print("Document added succesfully")
+        } onFailure: { error in
+            print("Error: \(error)")
         }
     }
 }
