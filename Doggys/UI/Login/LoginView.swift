@@ -84,6 +84,7 @@ struct LoginView: View {
                                        isActive: $viewModel.isLoggedIn) {
                             EmptyView()
                         }
+                                       .hidden()
                     }
                 }
             }
@@ -94,6 +95,11 @@ struct LoginView: View {
                                                 message: "App run")
             }
         }
+        .overlay(
+            viewModel.isLoading ?
+            LoadingView() : nil
+        )
+        .disabled(viewModel.isLoading)
         .navigationBarBackButtonHidden(true)
     }
     

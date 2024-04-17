@@ -44,6 +44,7 @@
 		39ADE25B2BC299D8007A6702 /* ButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ADE25A2BC299D8007A6702 /* ButtonLabel.swift */; };
 		39DA4CAE2BCD11F500717DCD /* TextPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA4CAD2BCD11F500717DCD /* TextPickerView.swift */; };
 		5D16A5192BC458A8004EE58F /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */; };
+		5D24D97D2BCFE8EB007294E2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D24D97C2BCFE8EB007294E2 /* LoadingView.swift */; };
 		A9286A312BC6E55C003FC58A /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9286A302BC6E55C003FC58A /* AppTabView.swift */; };
 		A9286A332BC7DABD003FC58A /* DogBreed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9286A322BC7DABD003FC58A /* DogBreed.swift */; };
 		A9286A352BC7E192003FC58A /* DogGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9286A342BC7E192003FC58A /* DogGender.swift */; };
@@ -158,6 +159,7 @@
 		39ADE25A2BC299D8007A6702 /* ButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabel.swift; sourceTree = "<group>"; };
 		39DA4CAD2BCD11F500717DCD /* TextPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPickerView.swift; sourceTree = "<group>"; };
 		5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		5D24D97C2BCFE8EB007294E2 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A9286A302BC6E55C003FC58A /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		A9286A322BC7DABD003FC58A /* DogBreed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreed.swift; sourceTree = "<group>"; };
 		A9286A342BC7E192003FC58A /* DogGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGender.swift; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 				397B93DB2BB3560C0030D77E /* SecureTextFieldView.swift */,
 				A9EDD0D62BBC21620052D03C /* LogoAppDetailView.swift */,
 				39DA4CAD2BCD11F500717DCD /* TextPickerView.swift */,
+				5D24D97C2BCFE8EB007294E2 /* LoadingView.swift */,
 			);
 			path = ToolViews;
 			sourceTree = "<group>";
@@ -763,6 +766,7 @@
 				A93207472BB4A9E30068D9C2 /* LogProtocol.swift in Sources */,
 				390BB76D2BBCA8BE0052257E /* SplashViewModel.swift in Sources */,
 				392EECDB2BC68CEA005409EA /* KeyChainEnum.swift in Sources */,
+				5D24D97D2BCFE8EB007294E2 /* LoadingView.swift in Sources */,
 				A9EDD0D32BBC16470052D03C /* RecoveryPasswordView.swift in Sources */,
 				3979A3A52BCA866300F5C3B1 /* FadeinModifier.swift in Sources */,
 				A932073C2BB48F860068D9C2 /* AuthProtocol.swift in Sources */,

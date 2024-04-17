@@ -15,13 +15,14 @@ final class LoginViewModel: ObservableObject {
     private var logViewModel: LogProtocol
     private var keyChain: KeyChainDataProvider
     
-    @Published var email: String = "e-mail"
-    @Published var password: String = "password"
+    @Published var email: String = ""
+    @Published var password: String = ""
     @Published var isLoggedIn: Bool = UserDefaults.standard.bool(forKey: Preferences.userLoggedIn)
     @Published var showAlert: Bool = false
     @Published var alertMessage: String = ""
     @Published var rememberLogin: Bool = false
     @Published var navigateToHome: Bool = false
+    @Published var isLoading: Bool = false
     
     init(dataManager: LoginDataManager,
          authViewModel: AuthProtocol,
@@ -40,6 +41,8 @@ final class LoginViewModel: ObservableObject {
     }
     
     func checkIfUserIsLoggedIn() {
+//        isLoading = true
+
         // self.navigateToHome = false
         authViewModel.isUserLoggedIn(
             onSuccess: { [weak self] loggedIn in
@@ -48,29 +51,38 @@ final class LoginViewModel: ObservableObject {
                     self?.initAnalyticsFirebase(text: "Enter app",
                                                 message: "Enter app")
                     self?.rememberLoginAndPasswordInKeyChainAndPreferences()
+//                    self?.isLoading = false
                 }
             },
             onFailure: { [weak self] error in
                 self?.logViewModel.crash(screen: LoginView.viewName,
                                          exception: error)
+//                self?.isLoading = false
+
             }
         )
     }
     
     func loginUser() {
-        authViewModel.login(email: email, password: password,
-                            onSuccess: { [weak self] user in
-            self?.logViewModel.log(screen: LoginView.viewName,
-                                   action: "USER_LOGGED_IN")
-            self?.isLoggedIn = true
-        },
-                            onFailure: { [weak self] error in
-            self?.logViewModel.crash(screen: LoginView.viewName,
-                                     exception: error)
-            self?.alertMessage = error.localizedDescription
-            self?.showAlert = true
+        isLoading = true
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.authViewModel.login(email: self.email, password: self.password,
+                                onSuccess: { [weak self] user in
+                self?.logViewModel.log(screen: LoginView.viewName,
+                                       action: "USER_LOGGED_IN")
+                self?.isLoggedIn = true
+                self?.isLoading = false
+            },
+                                onFailure: { [weak self] error in
+                self?.logViewModel.crash(screen: LoginView.viewName,
+                                         exception: error)
+                self?.alertMessage = error.localizedDescription
+                self?.showAlert = true
+                self?.isLoading = false
+            }
+            )
         }
-        )
     }
     
     func rememberLoginAndPasswordInKeyChainAndPreferences() {
