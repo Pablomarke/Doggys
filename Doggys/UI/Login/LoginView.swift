@@ -9,8 +9,6 @@ import SwiftUI
 
 struct LoginView: View {
     //MARK: Properties
-    @Environment(\.authViewModel) private var authViewModel: AuthProtocol
-    @Environment(\.logViewModel) private var logViewModel: LogProtocol
     @ObservedObject var viewModel: LoginViewModel
     static var viewName: String = "LoginView"
     @State private var rememberLogin: Bool = UserDefaults.standard.bool(forKey: Preferences.rememberLogin)
@@ -32,6 +30,7 @@ struct LoginView: View {
                         .foregroundStyle(Color.customWhite)
                     
                     TextFieldView(text: $viewModel.email, placeholder: "E-mail")
+
                         .padding(.top,
                                  40)
                     SecureTextFieldView("Password",
@@ -49,10 +48,9 @@ struct LoginView: View {
                     .foregroundColor(.customWhite)
                     .padding(.bottom, 60)
                     .padding([.leading,
-                              .trailing],
-                             130)
+                              .trailing], 130)
                     .onChange(of: rememberLogin) { newValue in
-                        viewModel.rememberLogin = newValue
+                        viewModel.rememberLogin(remember: newValue)
                     }
                     
                     Button(action: {
@@ -61,6 +59,8 @@ struct LoginView: View {
                         ButtonLabel(word: "Login")
                             .padding(.bottom, 1)
                     })
+                    .disabled(!viewModel.loginIsValid())
+                    .opacity(viewModel.loginIsValid() ? 1.0 : 0.5)
                     
                     NavigationLink {
                         RecoveryWireFrame().viewController
@@ -81,16 +81,14 @@ struct LoginView: View {
                     
                     if viewModel.navigateToHome {
                         NavigationLink(destination: AppTabView(),
-                                       isActive: $viewModel.isLoggedIn) {
+                                       isActive: $viewModel.navigateToHome) {
                             EmptyView()
                         }
-                                       .hidden()
                     }
                 }
             }
             // MARK: - Life cycle -
             .onAppear {
-                viewModel.checkIfUserIsLoggedIn()
                 viewModel.initAnalyticsFirebase(text: "App run",
                                                 message: "App run")
             }

@@ -38,9 +38,16 @@ struct SplashView: View {
             .background(
                 NavigationLink(
                     destination: LoginWireFrame().viewController,
-                    isActive: $viewModel.isActive) {
-                    EmptyView()
-                }
+                    isActive: $viewModel.navigateToLogin) {
+                        EmptyView()
+                    }
+            )
+            .background(
+                NavigationLink(
+                    destination: AppTabView(),
+                    isActive: $viewModel.navigateToHome) {
+                        EmptyView()
+                    }
             )
         }
     }

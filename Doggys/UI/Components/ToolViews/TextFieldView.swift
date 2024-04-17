@@ -16,7 +16,6 @@ struct TextFieldView: View {
             if let placeholder = placeholder {
                 Text(placeholder)
                     .font(.custom("Jost-Light", size: 22))
-                // TODO: Establecer el color de los placehodler
                     .foregroundStyle(.customBlue)
                     .padding(.leading, 16)
                     .opacity(text.isEmpty ? 1 : 0)
