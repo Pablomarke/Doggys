@@ -23,7 +23,7 @@ final class ProfileViewModel: ObservableObject {
     @Published var selectedWalk: PaseoPerro = .corto
     @Published var dofFriendly: PerroAmigable = .si
     @Published var selectedImage: UIImage?
-    @Published var urlImage: URL?
+    @Published var urlImage: String = ""
     
     init(userViewModel: UserProfileProtocol, logViewModel:LogProtocol, storageViewModel: StorageProtocol) {
         self.userViewModel = userViewModel
@@ -31,40 +31,16 @@ final class ProfileViewModel: ObservableObject {
         self.storageViewModel = storageViewModel
     }
     
-//    func sentDataToDB() {
-//        guard let image = self.selectedImage else { return }
-//            let data = UserProfile(id: UUID().uuidString,
-//                                   imageProfile: image,
-//                                   humanName: self.dogOwner,
-//                                   dogName: self.nameOfDog,
-//                                   dogYears: self.ageOfDog,
-//                                   dogGender: self.selectedGender,
-//                                   dogWalk: self.selectedWalk,
-//                                   dogFriendly: self.dofFriendly)
-//        userViewModel.searchData(userProfile: data) {
-//            self.logViewModel.log(screen: ProfileView.viewName, action: "SEARCH_DATA")
-//        } onFailure: { error in
-//            self.logViewModel.crash(screen: ProfileView.viewName, exception: error)
-//        }
-//    }
-    
     func searchImageOnRB() {
-//        let storageRef = Storage.storage().reference().child("images").child("userImage.jpg")
         guard let selectedImage = selectedImage else { return }
-        guard let imageData = selectedImage.jpegData(compressionQuality: 0.1) else { return }
+        guard let imageData = selectedImage.jpegData(compressionQuality: 0.75) else { return }
         guard let compressedImage = UIImage(data: imageData) else {return}
         
-//        storageRef.putData(imageData, metadata: nil) { (metadata, error) in
-//            guard error == nil else { return }
-//        }
-//        storageRef.downloadURL { (url, error) in
-//            if let error = error {
-//                print("Error al obtener URL,", error.localizedDescription)
-//                return
-//            }
-//            guard let downloadURL = url else { return }
-//            self.urlImage = downloadURL
-//        }
+        storageViewModel.uploadImage(image: compressedImage) { url in
+            self.urlImage = url
+        } onFailure: { error in
+            print("Error: \(error)")
+        }
     }
     
     func searchDataOnDB() {
@@ -74,7 +50,7 @@ final class ProfileViewModel: ObservableObject {
         
         db.collection("UserData").addDocument(data: [
             "id": data.id,
-            "imageProfile": data.imageProfile?.absoluteString ?? "No image",
+            "imageProfile": data.imageProfile,
             "name": data.humanName,
             "dogName": data.dogName,
             "dogYears": data.dogYears,
