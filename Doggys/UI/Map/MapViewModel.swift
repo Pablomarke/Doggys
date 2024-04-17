@@ -37,4 +37,8 @@ class MapViewModel: ObservableObject {
         let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         region = MKCoordinateRegion(center: center, span: span)
     }
+    
+    func centerMapOnInitialPosition() {
+        updateRegion()
+    }
 }

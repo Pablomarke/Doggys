@@ -22,8 +22,21 @@ struct MapView: View {
                     Text(marker.name)
                 }
             }
-                .navigationBarBackButtonHidden(true)
-                .ignoresSafeArea()
+            VStack {
+                Spacer()
+                Button(action: {
+                    viewModel.centerMapOnInitialPosition()
+                }, label: {
+                    Text("Centrar en Posición Inicial")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                        .padding()
+                })
+            }
+            .navigationBarBackButtonHidden(true)
+            .ignoresSafeArea()
         }
     }
     
