@@ -10,7 +10,7 @@ import FirebaseStorage
 
 class FirebaseStorageViewModel: StorageProtocol{
     func uploadImage(image: UIImage, onSuccess: @escaping (String) -> Void, onFailure: @escaping (Error) -> Void) {
-        guard let imageData = image.pngData() else {
+        guard let imageData = image.jpegData(compressionQuality: 0.1) else {
             onFailure(NSError(domain: "Error", code: -1, userInfo: [NSLocalizedDescriptionKey: "Unable to comvert image to data"]))
             return
         }

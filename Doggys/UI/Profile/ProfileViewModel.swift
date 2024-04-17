@@ -33,7 +33,7 @@ final class ProfileViewModel: ObservableObject {
     
     func searchImageOnRB() {
         guard let selectedImage = selectedImage else { return }
-        guard let imageData = selectedImage.jpegData(compressionQuality: 0.75) else { return }
+        guard let imageData = selectedImage.jpegData(compressionQuality: 0.1) else { return }
         guard let compressedImage = UIImage(data: imageData) else {return}
         
         storageViewModel.uploadImage(image: compressedImage) { url in
