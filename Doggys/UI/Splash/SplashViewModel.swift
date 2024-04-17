@@ -13,7 +13,7 @@ final class SplashViewModel: ObservableObject {
 
     // MARK: - Public methods -
     func initView() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             self.isActive = true
         }
     }

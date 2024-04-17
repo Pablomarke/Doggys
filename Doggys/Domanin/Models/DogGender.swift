@@ -7,7 +7,11 @@
 
 import Foundation
 
-enum GeneroPerro: String, CaseIterable {
+enum GeneroPerro: String, CaseIterable, CustomStringConvertible {
     case hembra = "Hembra"
     case macho = "Macho"
+    
+    var description: String {
+        return rawValue
+    }
 }
