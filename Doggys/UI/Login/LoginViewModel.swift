@@ -15,13 +15,15 @@ final class LoginViewModel: ObservableObject {
     private var logViewModel: LogProtocol
     private var keyChain: KeyChainDataProvider
     
-    @Published var email: String = "e-mail"
-    @Published var password: String = "password"
+    @Published var email: String = ""
+    @Published var password: String = ""
+
     @Published var isLoggedIn: Bool = UserDefaults.standard.bool(forKey: Preferences.userLoggedIn)
     @Published var showAlert: Bool = false
     @Published var alertMessage: String = ""
     @Published var rememberLogin: Bool = false
     @Published var navigateToHome: Bool = false
+    @Published var isLoading: Bool = false
     
     init(dataManager: LoginDataManager,
          authViewModel: AuthProtocol,
@@ -34,75 +36,67 @@ final class LoginViewModel: ObservableObject {
     }
     
     //MARK: Publics Methods
-    func initAnalyticsFirebase(text: String, message: String) {
-        Analytics.logEvent(text,
-                           parameters: ["message":message])
-    }
-    
-    func checkIfUserIsLoggedIn() {
-        // self.navigateToHome = false
-        authViewModel.isUserLoggedIn(
-            onSuccess: { [weak self] loggedIn in
-                self?.navigateToHome = loggedIn
-                if loggedIn {
-                    self?.initAnalyticsFirebase(text: "Enter app",
-                                                message: "Enter app")
-                    self?.rememberLoginAndPasswordInKeyChainAndPreferences()
-                }
-            },
-            onFailure: { [weak self] error in
-                self?.logViewModel.crash(screen: LoginView.viewName,
-                                         exception: error)
-            }
-        )
-    }
-    
     func loginUser() {
-        authViewModel.login(email: email, password: password,
+        isLoading = true
+
+        authViewModel.login(email: email,
+                            password: password,
                             onSuccess: { [weak self] user in
+            self?.navigateToHome = true
+            self?.isLoggedIn = true
+            self?.rememberLoginAndPasswordInKeyChainAndPreferences()
+            self?.initAnalyticsFirebase(text: "Enter app",
+                                        message: "Enter app")
             self?.logViewModel.log(screen: LoginView.viewName,
                                    action: "USER_LOGGED_IN")
-            self?.isLoggedIn = true
+            self?.isLoading = false
         },
                             onFailure: { [weak self] error in
             self?.logViewModel.crash(screen: LoginView.viewName,
                                      exception: error)
             self?.alertMessage = error.localizedDescription
             self?.showAlert = true
+            self?.isLoading = false
         }
         )
     }
     
-    func rememberLoginAndPasswordInKeyChainAndPreferences() {
-        if rememberLogin {
-            UserDefaults.standard.set(rememberLogin,
-                                      forKey: Preferences.userLoggedIn)
-            keyChain.setStringKey(value: email,
-                                  key: KeyChainEnum.user)
-            keyChain.setStringKey(value: password,
-                                  key: KeyChainEnum.password)
-            UserDefaults.standard.set(rememberLogin,
-                                      forKey: Preferences.rememberLogin)
-        } else {
-            UserDefaults.standard.set(rememberLogin,
-                                      forKey: Preferences.rememberLogin)
-            UserDefaults.standard.set(rememberLogin,
-                                      forKey: Preferences.userLoggedIn)
-            
-        }
+    func rememberLogin(remember: Bool) {
+        rememberLogin = remember
+        UserDefaults.standard.set(remember,
+                                  forKey: Preferences.rememberLogin)
     }
     
-    func registerUser() {
-        authViewModel.register(email: email,
-                               password: password,
-                               onSuccess: { [weak self] user in
-            self?.logViewModel.log(screen: LoginView.viewName,
-                                   action: "USER_REGISTERED")
-        },
-                               onFailure: { [weak self] error in
-            print(error.localizedDescription)
-            self?.alertMessage = error.localizedDescription
-            self?.showAlert = true
-        })
+    func initAnalyticsFirebase(text: String, message: String) {
+        Analytics.logEvent(text,
+                           parameters: ["message":message])
+    }
+    
+    func emailIsValid() -> Bool {
+        return email.contains("@")
+    }
+
+    func passwordIsValid() -> Bool {
+        return password.count >= 6
+    }
+
+    func loginIsValid() -> Bool {
+        return emailIsValid() && passwordIsValid()
+    }
+}
+
+private extension LoginViewModel {
+    func rememberLoginAndPasswordInKeyChainAndPreferences() {
+        rememberLoginAndPassword(remember: UserDefaults.standard.bool(forKey: Preferences.rememberLogin))
+    }
+    func rememberLoginAndPassword(remember: Bool) {
+        UserDefaults.standard.set(remember,
+                                  forKey: Preferences.rememberLogin)
+        if remember {
+            keyChain.setLoginAndPassword(user: email,
+                                         password: password)
+            UserDefaults.standard.set(rememberLogin,
+                                      forKey: Preferences.userLoggedIn)
+        }
     }
 }
