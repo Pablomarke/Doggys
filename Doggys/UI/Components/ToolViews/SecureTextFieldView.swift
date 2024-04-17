@@ -27,7 +27,6 @@ struct SecureTextFieldView: View {
                 } else {
                     TextField(title, text: $text)
                         .padding(.trailing, 24)
-                    
                 }
             }
             .font(.custom("Jost-Light",
@@ -35,7 +34,7 @@ struct SecureTextFieldView: View {
             .padding()
             .frame(width: 280,
                    height: 60)
-            .foregroundColor(.customBlue)
+            .foregroundStyle(.customBlue)
             .background(.customWhite40)
             .cornerRadius(20)
             .background(RoundedRectangle(cornerRadius: 20)

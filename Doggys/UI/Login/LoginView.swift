@@ -31,7 +31,7 @@ struct LoginView: View {
                                       size: 90))
                         .foregroundStyle(Color.customWhite)
                     
-                    TextFieldView(text: $viewModel.email)
+                    TextFieldView(text: $viewModel.email, placeholder: "E-mail")
                         .padding(.top,
                                  40)
                     SecureTextFieldView("Password",
