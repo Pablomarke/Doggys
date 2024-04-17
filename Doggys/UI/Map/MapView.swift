@@ -24,16 +24,23 @@ struct MapView: View {
             }
             VStack {
                 Spacer()
-                Button(action: {
-                    viewModel.centerMapOnInitialPosition()
-                }, label: {
-                    Text("Centrar en Posición Inicial")
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                        .padding()
-                })
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        viewModel.centerMapOnInitialPosition()
+                    }, label: {
+                        Image(systemName: "location.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 24, height: 24)
+                            .foregroundStyle(.customLightBlue)
+                            .padding()
+                            .background(Color.white)
+                            .clipShape(Circle())
+                    })
+                    .padding()
+                    .padding(.bottom, 24)
+                }
             }
             .navigationBarBackButtonHidden(true)
             .ignoresSafeArea()
