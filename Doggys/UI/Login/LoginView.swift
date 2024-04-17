@@ -9,11 +9,9 @@ import SwiftUI
 
 struct LoginView: View {
     //MARK: Properties
-    @Environment(\.authViewModel) private var authViewModel: AuthProtocol
-    @Environment(\.logViewModel) private var logViewModel: LogProtocol
     @ObservedObject var viewModel: LoginViewModel
     static var viewName: String = "LoginView"
-    @State private var rememberLogin: Bool = false
+    @State private var rememberLogin: Bool = UserDefaults.standard.bool(forKey: Preferences.rememberLogin)
     
     public init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
@@ -49,18 +47,18 @@ struct LoginView: View {
                     .foregroundColor(.customWhite)
                     .padding(.bottom, 60)
                     .padding([.leading,
-                              .trailing],
-                             130)
+                              .trailing], 130)
                     .onChange(of: rememberLogin) { newValue in
-                        viewModel.rememberLogin = newValue
+                        viewModel.rememberLogin(remember: newValue)
                     }
                     
                     Button(action: {
-                        viewModel.checkIfUserIsLoggedIn()
+                        viewModel.loginUser()
                     }, label: {
                         ButtonLabel(word: "Login")
                             .padding(.bottom, 1)
                     })
+
                     .disabled(!viewModel.loginIsValid())
                     .opacity(viewModel.loginIsValid() ? 1.0 : 0.5)
                     
@@ -81,9 +79,11 @@ struct LoginView: View {
                             .foregroundStyle(Color.customWhite)
                     }
                     
-                    NavigationLink(destination: AppTabView(),
-                                   isActive: $viewModel.isLoggedIn) {
-                        EmptyView()
+                    if viewModel.navigateToHome {
+                        NavigationLink(destination: AppTabView(),
+                                       isActive: $viewModel.navigateToHome) {
+                            EmptyView()
+                        }
                     }
                 }
             }
@@ -94,12 +94,6 @@ struct LoginView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        .onTapGesture {
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
-                                            to: nil,
-                                            from: nil,
-                                            for: nil)
-        }
     }
     
     // MARK: - Functions

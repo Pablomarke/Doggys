@@ -33,5 +33,5 @@ struct MapView: View {
 }
 
 #Preview {
-    MapView()
+    AppTabView()
 }
