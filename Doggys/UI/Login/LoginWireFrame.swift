@@ -10,13 +10,10 @@ import SwiftUI
 final class LoginWireFrame: BaseWireframe {
     //MARK: Public Methods
     var viewController: AnyView {
-        let apiClient: LoginAPIClient = LoginAPIClient()
-        let dataManager: LoginDataManager = createDataManager(apiClient: apiClient)
         let authViewModel: AuthProtocol = createAutViewModel()
         let logViewModel: LogProtocol = createLogViewModel()
         let keyChain: KeyChainDataProvider = createkeyChain()
-        let viewModel: LoginViewModel = createViewModel(with: dataManager,
-                                                         authViewModel: authViewModel,
+        let viewModel: LoginViewModel = createViewModel(with: authViewModel,
                                                         logViewModel: logViewModel, 
                                                         keyChain: keyChain)
         var viewController = LoginView(viewModel: viewModel)
@@ -26,18 +23,11 @@ final class LoginWireFrame: BaseWireframe {
     }
     
     //MARK: Private Methods
-    private func createViewModel(with dataManager: LoginDataManager,
-                                 authViewModel: AuthProtocol,
+    private func createViewModel(with authViewModel: AuthProtocol,
                                  logViewModel: LogProtocol,
                                  keyChain: KeyChainDataProvider) -> LoginViewModel {
-        return LoginViewModel(dataManager: dataManager,
-                              authViewModel: authViewModel,
+        return LoginViewModel(authViewModel: authViewModel,
                               logViewModel: logViewModel, 
                               keyChain: keyChain)
-    }
-    
-    private func createDataManager(apiClient: LoginAPIClient) -> LoginDataManager {
-        let dataManager = LoginDataManager(apiClient: apiClient)
-        return dataManager
     }
 }

@@ -57,6 +57,7 @@ struct LoginView: View {
                     .opacity(viewModel.loginIsValid(email: viewModel.email, 
                                                     password: viewModel.password) ? 1.0 : 0.5)
                     
+                    // MARK: - Navigation -
                     NavigationLink {
                         RecoveryWireFrame().viewController
                     } label: {

@@ -44,7 +44,6 @@ private extension SplashViewModel {
                     if !loggedIn {
                         self?.navigateToLogin = true
                     }
-                    
                 },
                 onFailure: { [weak self] error in
                     self?.logViewModel.crash(screen: LoginView.viewName,
