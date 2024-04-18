@@ -9,7 +9,6 @@ import Foundation
 
 final class LoginViewModel: BaseViewModel {
     //MARK: Properties
-    private var dataManager: LoginDataManager
     private var authViewModel: AuthProtocol
     private var logViewModel: LogProtocol
     private var keyChain: KeyChainDataProvider
@@ -23,11 +22,9 @@ final class LoginViewModel: BaseViewModel {
     @Published var navigateToHome: Bool = false
     @Published var isLoading: Bool = false
     
-    init(dataManager: LoginDataManager,
-         authViewModel: AuthProtocol,
+    init(authViewModel: AuthProtocol,
          logViewModel: LogProtocol,
          keyChain: KeyChainDataProvider) {
-        self.dataManager = dataManager
         self.authViewModel = authViewModel
         self.logViewModel = logViewModel
         self.keyChain = keyChain
