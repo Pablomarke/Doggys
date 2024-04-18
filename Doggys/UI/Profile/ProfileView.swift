@@ -19,32 +19,32 @@ struct ProfileView: View {
             Color.customMain.ignoresSafeArea()
             ScrollView {
                 VStack {
-                  if let image = viewModel.selectedImage {
-                    Button(action: {
-                        self.isShowingImagePicker = true
-                    }) {
-                        Image(uiImage: image)
-                            .resizable()
-                            .cornerRadius(15)
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 200, height: 200)
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                } else {
-                    Button("Seleccionar Imagen") {
-                        self.isShowingImagePicker = true
-                    }
-                    .font(.title2)
-                    .padding()
-                }
-                if !isShowingImagePicker {
-                    Button(action: {
-                        viewModel.searchImageOnRB()
-                    }, label: {
-                        Text("Cargar")
-                    })
-                }
                     LogoHeader(text: "Perfil")
+                    if let image = viewModel.selectedImage {
+                        Button(action: {
+                            self.isShowingImagePicker = true
+                        }) {
+                            Image(uiImage: image)
+                                .resizable()
+                                .cornerRadius(15)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 200, height: 200)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                    } else {
+                        Button("Seleccionar Imagen") {
+                            self.isShowingImagePicker = true
+                        }
+                        .font(.title2)
+                        .padding()
+                    }
+                    if !isShowingImagePicker {
+                        Button(action: {
+                            viewModel.searchImageOnRB()
+                        }, label: {
+                            Text("Cargar")
+                        })
+                    }
                     TextFieldView(text: $viewModel.dogOwner)
                         .padding(5)
                     TextFieldView(text: $viewModel.nameOfDog)
@@ -53,8 +53,8 @@ struct ProfileView: View {
                         .padding(5)
                     
                     TextPickerView(selectedItem: $viewModel.selectedBreed,
-                                text: "Seleccione una raza:",
-                                items: RazaPerro.allCases)
+                                   text: "Seleccione una raza:",
+                                   items: RazaPerro.allCases)
                     
                     TextPickerView(selectedItem: $viewModel.selectedGender,
                                    text: "Seleccione género:",
@@ -74,12 +74,12 @@ struct ProfileView: View {
                         ButtonLabel(word: "Guardar")
                     })
                 }
-              .sheet(isPresented: $isShowingImagePicker, content: {
-                ImagePicker(image: $viewModel.selectedImage)
-            })
+                .sheet(isPresented: $isShowingImagePicker, content: {
+                    ImagePicker(image: $viewModel.selectedImage)
+                })
+            }
         }
     }
-    
     //MARK: - Public Methods -
     mutating func set(viewModel: ProfileViewModel) {
         self.viewModel = viewModel
