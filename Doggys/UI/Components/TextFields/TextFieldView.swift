@@ -24,11 +24,14 @@ struct TextFieldView: View {
             TextField("", text: $text)
                 .font(.custom("Jost-Light", size: 22))
                 .padding()
-                .frame(width:280, height: 60)
+                .frame(width:280, 
+                       height: 60)
                 .foregroundColor(.customBlue)
                 .background(colorBackgroud)
                 .cornerRadius(20)
-                .background(RoundedRectangle(cornerRadius: 20).stroke(.customWhite, lineWidth: 4))
+                .background(RoundedRectangle(cornerRadius: 20)
+                    .stroke(.customWhite,
+                            lineWidth: 4))
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled()
         }

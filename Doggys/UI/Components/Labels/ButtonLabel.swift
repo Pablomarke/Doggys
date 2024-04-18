@@ -22,7 +22,6 @@ struct ButtonLabel: View {
             .background(RoundedRectangle(cornerRadius: 20)
                 .stroke(.customWhite,
                         lineWidth: 3))
-           // .padding()
     }
 }
 
