@@ -69,7 +69,7 @@ struct ProfileView: View {
                                    items: PerroAmigable.allCases)
                     .padding()
                     Button(action: {
-                        // TODO
+                        viewModel.searchDataOnDB()
                     }, label: {
                         ButtonLabel(word: "Guardar")
                     })
