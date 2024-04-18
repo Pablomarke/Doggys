@@ -77,7 +77,8 @@ struct ProfileView: View {
                     })
                     .padding()
                 }
-                .sheet(isPresented: $isShowingImagePicker, content: {
+                .sheet(isPresented: $isShowingImagePicker, 
+                       content: {
                     ImagePicker(image: $viewModel.selectedImage)
                 })
             }
