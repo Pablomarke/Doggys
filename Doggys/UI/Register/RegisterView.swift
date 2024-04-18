@@ -23,7 +23,8 @@ struct RegisterView: View {
             Color.customMain.ignoresSafeArea()
             VStack {
                 LogoHeader(text: "Registro")
-                TextFieldView(text: $viewModel.email)
+                TextFieldView(text: $viewModel.email,
+                              placeholder: "E-mail")
                 SecureTextFieldView("Password",
                                     placeholder: "Password",
                                     text: $viewModel.password)
