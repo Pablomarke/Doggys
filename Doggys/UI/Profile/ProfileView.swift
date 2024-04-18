@@ -20,15 +20,18 @@ struct ProfileView: View {
             ScrollView {
                 VStack {
                     LogoHeader(text: "Perfil")
+                        .padding(.top, 50)
                     if let image = viewModel.selectedImage {
                         Button(action: {
                             self.isShowingImagePicker = true
                         }) {
                             Image(uiImage: image)
                                 .resizable()
-                                .cornerRadius(15)
+                                .clipShape(Circle())
+                                .overlay(Circle().stroke(Color.white, lineWidth: 2))
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 200, height: 200)
+                                .frame(width: 250, height: 250)
+                                .padding(.top, -50)
                         }
                         .buttonStyle(PlainButtonStyle())
                     } else {
@@ -36,7 +39,6 @@ struct ProfileView: View {
                             self.isShowingImagePicker = true
                         }
                         .font(.title2)
-                        .padding()
                     }
                     if !isShowingImagePicker {
                         Button(action: {
@@ -44,6 +46,7 @@ struct ProfileView: View {
                         }, label: {
                             Text("Cargar")
                         })
+                        .padding()
                     }
                     TextFieldView(text: $viewModel.dogOwner)
                         .padding(5)
