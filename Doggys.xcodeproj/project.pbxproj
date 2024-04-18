@@ -47,6 +47,7 @@
 		39AF65EF2BD1800C00FC602C /* RegisterText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65EE2BD1800C00FC602C /* RegisterText.swift */; };
 		39AF65F12BD187F400FC602C /* BackArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65F02BD187F400FC602C /* BackArrow.swift */; };
 		39AF65F42BD1A56700FC602C /* MapMarkerIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65F32BD1A56700FC602C /* MapMarkerIcon.swift */; };
+		39AF65F62BD1A7EE00FC602C /* MapViewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65F52BD1A7EE00FC602C /* MapViewDataManager.swift */; };
 		39DA4CAE2BCD11F500717DCD /* TextPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA4CAD2BCD11F500717DCD /* TextPickerView.swift */; };
 		5D16A5192BC458A8004EE58F /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */; };
 		5D24D97D2BCFE8EB007294E2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D24D97C2BCFE8EB007294E2 /* LoadingView.swift */; };
@@ -174,6 +175,7 @@
 		39AF65EE2BD1800C00FC602C /* RegisterText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterText.swift; sourceTree = "<group>"; };
 		39AF65F02BD187F400FC602C /* BackArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackArrow.swift; sourceTree = "<group>"; };
 		39AF65F32BD1A56700FC602C /* MapMarkerIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMarkerIcon.swift; sourceTree = "<group>"; };
+		39AF65F52BD1A7EE00FC602C /* MapViewDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewDataManager.swift; sourceTree = "<group>"; };
 		39DA4CAD2BCD11F500717DCD /* TextPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPickerView.swift; sourceTree = "<group>"; };
 		5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		5D24D97C2BCFE8EB007294E2 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -631,6 +633,7 @@
 			children = (
 				A9CC34922BC3DFDA00E1599A /* MapView.swift */,
 				A9CC34942BC3DFE800E1599A /* MapViewModel.swift */,
+				39AF65F52BD1A7EE00FC602C /* MapViewDataManager.swift */,
 				A9CC34962BC3DFF400E1599A /* MapViewWireFrame.swift */,
 			);
 			path = Map;
@@ -861,6 +864,7 @@
 				A9CC34952BC3DFE800E1599A /* MapViewModel.swift in Sources */,
 				A9EDD0D02BBC153E0052D03C /* RegisterViewModel.swift in Sources */,
 				392EECD32BC68204005409EA /* SwitchRemember.swift in Sources */,
+				39AF65F62BD1A7EE00FC602C /* MapViewDataManager.swift in Sources */,
 				A932073F2BB48FB40068D9C2 /* User.swift in Sources */,
 				A9C47F002BBDE03E0044ED5F /* RegisterWireFrame.swift in Sources */,
 				A9C47F052BBFE9B90044ED5F /* ProfileView.swift in Sources */,

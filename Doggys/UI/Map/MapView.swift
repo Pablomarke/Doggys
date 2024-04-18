@@ -10,8 +10,8 @@ import MapKit
 
 struct MapView: View {
     
-    @ObservedObject var viewModel: MapViewModel = MapViewModel()
-    
+    @ObservedObject var viewModel: MapViewModel
+    // MARK: - View -
     var body: some View {
         ZStack{
             Map(coordinateRegion: $viewModel.region,
@@ -20,6 +20,10 @@ struct MapView: View {
                     MapMarkerIcon(name: marker.name)
                 }
             }
+        }
+        // MARK: - Lifecycle -
+        .onAppear {
+            viewModel.chargeData()
         }
     }
     
