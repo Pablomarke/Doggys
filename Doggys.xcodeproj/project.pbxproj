@@ -45,6 +45,7 @@
 		39AF65EA2BD17E5D00FC602C /* TextTitleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65E92BD17E5D00FC602C /* TextTitleHeader.swift */; };
 		39AF65ED2BD17FED00FC602C /* RecoveryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65EC2BD17FED00FC602C /* RecoveryText.swift */; };
 		39AF65EF2BD1800C00FC602C /* RegisterText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65EE2BD1800C00FC602C /* RegisterText.swift */; };
+		39AF65F12BD187F400FC602C /* BackArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65F02BD187F400FC602C /* BackArrow.swift */; };
 		39DA4CAE2BCD11F500717DCD /* TextPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA4CAD2BCD11F500717DCD /* TextPickerView.swift */; };
 		5D16A5192BC458A8004EE58F /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */; };
 		5D24D97D2BCFE8EB007294E2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D24D97C2BCFE8EB007294E2 /* LoadingView.swift */; };
@@ -170,6 +171,7 @@
 		39AF65E92BD17E5D00FC602C /* TextTitleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTitleHeader.swift; sourceTree = "<group>"; };
 		39AF65EC2BD17FED00FC602C /* RecoveryText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryText.swift; sourceTree = "<group>"; };
 		39AF65EE2BD1800C00FC602C /* RegisterText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterText.swift; sourceTree = "<group>"; };
+		39AF65F02BD187F400FC602C /* BackArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackArrow.swift; sourceTree = "<group>"; };
 		39DA4CAD2BCD11F500717DCD /* TextPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPickerView.swift; sourceTree = "<group>"; };
 		5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		5D24D97C2BCFE8EB007294E2 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 			children = (
 				39ADE2572BC29863007A6702 /* LogoHeader.swift */,
 				39AF65E92BD17E5D00FC602C /* TextTitleHeader.swift */,
+				39AF65F02BD187F400FC602C /* BackArrow.swift */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -872,6 +875,7 @@
 				390BB76A2BBCA51F0052257E /* SplashView.swift in Sources */,
 				A932074F2BB4AC100068D9C2 /* LogViewModelEnvironmentKey.swift in Sources */,
 				399BE5352BB979A600AC323C /* LoginWireFrame.swift in Sources */,
+				39AF65F12BD187F400FC602C /* BackArrow.swift in Sources */,
 				A932073A2BB48E170068D9C2 /* FirebaseAuthViewModel.swift in Sources */,
 				A9EDD0D52BBC19310052D03C /* RecoveryPasswordViewModel.swift in Sources */,
 				39DA4CAE2BCD11F500717DCD /* TextPickerView.swift in Sources */,

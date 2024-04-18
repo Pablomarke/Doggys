@@ -30,12 +30,7 @@ struct RecoveryPasswordView: View {
                 Spacer()
             }
             .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }) {
-                Image(systemName: "arrow.left")
-                Text("Atrás")
-            })
+            .navigationBarItems(leading: BackArrow())
         }
     }
     
