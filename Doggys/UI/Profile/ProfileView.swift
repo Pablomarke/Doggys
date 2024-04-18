@@ -11,15 +11,15 @@ struct ProfileView: View {
     //MARK: - Properties -
     @ObservedObject var viewModel: ProfileViewModel
     static var viewName: String = "ProfileView"
-//    @State var selectedImage: UIImage?
     @State var isShowingImagePicker = false
     
     //MARK: - View -
     var body: some View {
         ZStack{
-            Color.customLightBlue.ignoresSafeArea()
-            VStack {
-                if let image = viewModel.selectedImage {
+            Color.customMain.ignoresSafeArea()
+            ScrollView {
+                VStack {
+                  if let image = viewModel.selectedImage {
                     Button(action: {
                         self.isShowingImagePicker = true
                     }) {
@@ -44,83 +44,39 @@ struct ProfileView: View {
                         Text("Cargar")
                     })
                 }
-                TextFieldView(text: $viewModel.dogOwner,
-                              colorBackgroud: .gray)
-                .padding()
-                TextFieldView(text: $viewModel.nameOfDog,
-                              colorBackgroud: .gray)
-                TextFieldView(text: $viewModel.ageOfDog,
-                              colorBackgroud: .gray)
-                .padding()
-                HStack{
-                    VStack{
-                        Text("Raza:")
-                            .foregroundStyle(Color.white)
-                            .font(.title3)
-                        Picker(selection: $viewModel.selectedBreed) {
-                            ForEach(RazaPerro.allCases,
-                                    id: \.self) { breed in
-                                Text(breed.rawValue.capitalized)
-                            }
-                        } label: {
-                            Text("")
-                        }
-                    }
-                    VStack{
-                        Text("Género:")
-                            .foregroundStyle(Color.white)
-                            .font(.title3)
-                        Picker(selection: $viewModel.selectedGender) {
-                            ForEach(GeneroPerro.allCases,
-                                    id: \.self) { gender in
-                                Text(gender.rawValue.capitalized)
-                            }
-                        } label: {
-                            Text("")
-                        }
-                    }
+                    LogoHeader(text: "Perfil")
+                    TextFieldView(text: $viewModel.dogOwner)
+                        .padding(5)
+                    TextFieldView(text: $viewModel.nameOfDog)
+                        .padding(5)
+                    TextFieldView(text: $viewModel.ageOfDog)
+                        .padding(5)
+                    
+                    TextPickerView(selectedItem: $viewModel.selectedBreed,
+                                text: "Seleccione una raza:",
+                                items: RazaPerro.allCases)
+                    
+                    TextPickerView(selectedItem: $viewModel.selectedGender,
+                                   text: "Seleccione género:",
+                                   items: GeneroPerro.allCases)
+                    
+                    TextPickerView(selectedItem: $viewModel.selectedWalk,
+                                   text: "Seleccione tipo de paseo:",
+                                   items: PaseoPerro.allCases)
+                    
+                    TextPickerView(selectedItem: $viewModel.dofFriendly,
+                                   text: "¿Soy amigable con otros perros?",
+                                   items: PerroAmigable.allCases)
+                    .padding()
+                    Button(action: {
+                        // TODO
+                    }, label: {
+                        ButtonLabel(word: "Guardar")
+                    })
                 }
-                Text("Seleccione tipo de paseo:")
-                    .foregroundStyle(Color.white)
-                    .font(.title3)
-                Picker(selection: $viewModel.selectedWalk) {
-                    ForEach(PaseoPerro.allCases,
-                            id: \.self) { walk in
-                        Text(walk.rawValue.capitalized)
-                    }
-                } label: {
-                    Text("")
-                }
-                .pickerStyle(.menu)
-                Text("¿Soy amigable con otros perros?")
-                    .foregroundStyle(Color.white)
-                    .font(.title3)
-                Picker(selection: $viewModel.dofFriendly) {
-                    ForEach(PerroAmigable.allCases,
-                            id: \.self) { friendly in
-                        Text(friendly.rawValue.capitalized)
-                    }
-                } label: {
-                    Text("")
-                }
-                .pickerStyle(.menu)
-                
-                Button(action: {
-                    viewModel.searchDataOnDB()
-                }, label: {
-                    ButtonLabel(word: "Guardar")
-                })
-            }
-            .sheet(isPresented: $isShowingImagePicker, content: {
+              .sheet(isPresented: $isShowingImagePicker, content: {
                 ImagePicker(image: $viewModel.selectedImage)
             })
-
-        }
-        .onTapGesture {
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
-                                            to: nil,
-                                            from: nil,
-                                            for: nil)
         }
     }
     

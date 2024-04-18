@@ -18,34 +18,40 @@ struct SplashView: View {
     
     // MARK: - View -
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ZStack {
-                Color.customGreenblue
+                Color.customMain
                     .edgesIgnoringSafeArea(.all)
                 VStack {
                     Spacer()
-                    LogoView().background(Color.customGreenblue)
-                    Spacer()
-                    ProgressView()                    
-                        .scaleEffect(3.0)
+                    LogoView()
                     Spacer()
                 }
             }
+            
             // MARK: - Life cycle -
             .onAppear {
                 viewModel.initView()
             }
+            
             // MARK: - Navigation -
             .background(
                 NavigationLink(
                     destination: LoginWireFrame().viewController,
-                    isActive: $viewModel.isActive
-                ) {
-                    EmptyView()
-                }
+                    isActive: $viewModel.navigateToLogin) {
+                        EmptyView()
+                    }
+            )
+            .background(
+                NavigationLink(
+                    destination: AppTabView(),
+                    isActive: $viewModel.navigateToHome) {
+                        EmptyView()
+                    }
             )
         }
     }
+    
     mutating func set(viewModel: SplashViewModel) {
         self.viewModel = viewModel
     }

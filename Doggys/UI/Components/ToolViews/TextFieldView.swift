@@ -4,24 +4,33 @@
 //
 //  Created by Pablo Márquez Marín on 26/3/24.
 //
-
 import SwiftUI
 
 struct TextFieldView: View {
     @Binding var text: String
-    var colorBackgroud: Color = .customLightBlue
+    var placeholder: String?
+    var colorBackgroud: Color = .customWhite40
     
     var body: some View {
-        TextField(text,
-                  text: $text)
-            .padding()
-            .frame(width:280)
-            .foregroundColor(.white)
-            .background(colorBackgroud)
-            .cornerRadius(20)
-            .shadow(radius: 10, x: 5, y: 10)
-            .textInputAutocapitalization(.never)
-            .autocorrectionDisabled()
-            .opacity(0.9)
+        ZStack(alignment: .leading) {
+            if let placeholder = placeholder {
+                Text(placeholder)
+                    .font(.custom("Jost-Light", size: 22))
+                    .foregroundStyle(.customBlue)
+                    .padding(.leading, 16)
+                    .opacity(text.isEmpty ? 1 : 0)
+            }
+            
+            TextField("", text: $text)
+                .font(.custom("Jost-Light", size: 22))
+                .padding()
+                .frame(width:280, height: 60)
+                .foregroundColor(.customBlue)
+                .background(colorBackgroud)
+                .cornerRadius(20)
+                .background(RoundedRectangle(cornerRadius: 20).stroke(.customWhite, lineWidth: 4))
+                .textInputAutocapitalization(.never)
+                .autocorrectionDisabled()
+        }
     }
 }

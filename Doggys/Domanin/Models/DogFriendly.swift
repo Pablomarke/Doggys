@@ -7,10 +7,13 @@
 
 import Foundation
 
-enum PerroAmigable: String, CaseIterable {
-    case si = "Si"
+enum PerroAmigable: String, CaseIterable, CustomStringConvertible {
+    case si = "Sí"
     case no = "No"
-    case siMale = "Si, sólo con Machos"
-    case siFemale = "Si, sólo con Hembras"
+    case siMale = "Sí, sólo con Machos"
+    case siFemale = "Sí, sólo con Hembras"
     
+    var description: String {
+        return rawValue
+    }
 }
