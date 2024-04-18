@@ -16,14 +16,14 @@ struct SwitchRemember: View {
                 Text("Recordar")
             }
             .toggleStyle(SwitchToggleStyle(tint: remember
-                                           ? Color.customBlue
-                                           : Color.gray)
+                                           ? Color.customLightBlue
+                                           : Color.customWhite)
             )
         }
         .foregroundColor(.customWhite)
+        .padding(.bottom, 60)
         .padding([.leading,
-                    .trailing],
-                   130)
+                    .trailing], 130)
     }
 }
 
