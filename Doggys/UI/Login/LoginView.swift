@@ -24,15 +24,10 @@ struct LoginView: View {
                 Color.customMain
                     .ignoresSafeArea()
                 VStack() {
-                    Text("Doggys")
-                        .font(.custom("Jost-Light",
-                                      size: 90))
-                        .foregroundStyle(Color.customWhite)
-                    
-                    TextFieldView(text: $viewModel.email, placeholder: "E-mail")
-
-                        .padding(.top,
-                                 60)
+                    TextTitleHeader()
+                    TextFieldView(text: $viewModel.email,
+                                  placeholder: "E-mail")
+                        .padding(.top, 60)
                     SecureTextFieldView("Password",
                                         placeholder: "Password",
                                         text: $viewModel.password)
@@ -58,7 +53,6 @@ struct LoginView: View {
                         viewModel.loginUser()
                     }, label: {
                         ButtonLabel(word: "Login")
-                            .padding(.bottom, 1)
                     })
                     .disabled(!viewModel.loginIsValid(email: viewModel.email,
                                                       password: viewModel.password))
@@ -68,25 +62,16 @@ struct LoginView: View {
                     NavigationLink {
                         RecoveryWireFrame().viewController
                     } label: {
-                        Text("Recuperar Contraseña")
-                            .padding(.bottom, 80)
-                            .font(.custom("Jost-Light",
-                                          size: 18))
-                            .foregroundStyle(.customWhite)
+                        RecoveryText()
                     }
                     
                     NavigationLink(destination: RegisterWireFrame().viewController) {
-                        Text("No tengo Cuenta")
-                            .font(.custom("Jost-Light",
-                                          size: 24))
-                            .foregroundStyle(Color.customWhite)
+                        RegisterText()
                     }
                     
                     if viewModel.navigateToHome {
                         NavigationLink(destination: AppTabView(),
-                                       isActive: $viewModel.navigateToHome) {
-                            EmptyView()
-                        }
+                                       isActive: $viewModel.navigateToHome) { }
                     }
                 }
             }
@@ -97,8 +82,7 @@ struct LoginView: View {
             }
         }
         .overlay(
-            viewModel.isLoading ?
-            LoadingView() : nil
+            viewModel.isLoading ? LoadingView() : nil
         )
         .disabled(viewModel.isLoading)
         .navigationBarBackButtonHidden(true)

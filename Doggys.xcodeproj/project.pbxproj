@@ -44,6 +44,9 @@
 		39ADE25B2BC299D8007A6702 /* ButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ADE25A2BC299D8007A6702 /* ButtonLabel.swift */; };
 		39AF65E62BD13DCF00FC602C /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65E52BD13DCF00FC602C /* BaseWireframe.swift */; };
 		39AF65E82BD13F8500FC602C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65E72BD13F8500FC602C /* BaseViewModel.swift */; };
+		39AF65EA2BD17E5D00FC602C /* TextTitleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65E92BD17E5D00FC602C /* TextTitleHeader.swift */; };
+		39AF65ED2BD17FED00FC602C /* RecoveryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65EC2BD17FED00FC602C /* RecoveryText.swift */; };
+		39AF65EF2BD1800C00FC602C /* RegisterText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65EE2BD1800C00FC602C /* RegisterText.swift */; };
 		39DA4CAE2BCD11F500717DCD /* TextPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA4CAD2BCD11F500717DCD /* TextPickerView.swift */; };
 		5D16A5192BC458A8004EE58F /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */; };
 		5D24D97D2BCFE8EB007294E2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D24D97C2BCFE8EB007294E2 /* LoadingView.swift */; };
@@ -168,6 +171,9 @@
 		39ADE25A2BC299D8007A6702 /* ButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabel.swift; sourceTree = "<group>"; };
 		39AF65E52BD13DCF00FC602C /* BaseWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
 		39AF65E72BD13F8500FC602C /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		39AF65E92BD17E5D00FC602C /* TextTitleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTitleHeader.swift; sourceTree = "<group>"; };
+		39AF65EC2BD17FED00FC602C /* RecoveryText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryText.swift; sourceTree = "<group>"; };
+		39AF65EE2BD1800C00FC602C /* RegisterText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterText.swift; sourceTree = "<group>"; };
 		39DA4CAD2BCD11F500717DCD /* TextPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPickerView.swift; sourceTree = "<group>"; };
 		5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		5D24D97C2BCFE8EB007294E2 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -407,6 +413,7 @@
 				39AF65E32BD13BA100FC602C /* switch */,
 				39AF65E22BD13B1700FC602C /* Pickers */,
 				39AF65DF2BD13AB700FC602C /* Headers */,
+				39AF65EB2BD17FD900FC602C /* Footers */,
 				39AF65E02BD13AD700FC602C /* Labels */,
 				39AF65E12BD13AE400FC602C /* TextFields */,
 				397B93D82BB3539A0030D77E /* ToolViews */,
@@ -418,6 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				39ADE2572BC29863007A6702 /* LogoHeader.swift */,
+				39AF65E92BD17E5D00FC602C /* TextTitleHeader.swift */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -463,6 +471,15 @@
 				39AF65E72BD13F8500FC602C /* BaseViewModel.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		39AF65EB2BD17FD900FC602C /* Footers */ = {
+			isa = PBXGroup;
+			children = (
+				39AF65EC2BD17FED00FC602C /* RecoveryText.swift */,
+				39AF65EE2BD1800C00FC602C /* RegisterText.swift */,
+			);
+			path = Footers;
 			sourceTree = "<group>";
 		};
 		39D9D83B2BB710C900B5331A /* Domanin */ = {
@@ -803,6 +820,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39AF65EF2BD1800C00FC602C /* RegisterText.swift in Sources */,
 				A9FE0ECD2BC9B7B5008564AB /* UserProfileProtocol.swift in Sources */,
 				39ADE25B2BC299D8007A6702 /* ButtonLabel.swift in Sources */,
 				399BE53B2BBA8A7600AC323C /* LogoView.swift in Sources */,
@@ -812,6 +830,7 @@
 				A932074D2BB4ABE40068D9C2 /* AuthViewModelEnvironmentKey.swift in Sources */,
 				A9286A352BC7E192003FC58A /* DogGender.swift in Sources */,
 				A92BF8D12BC073B3004AA875 /* ProfileViewModel.swift in Sources */,
+				39AF65EA2BD17E5D00FC602C /* TextTitleHeader.swift in Sources */,
 				3979A3A22BCA793E00F5C3B1 /* ViewExtension.swift in Sources */,
 				A9CC34992BC3E3C200E1599A /* MarkerMap.swift in Sources */,
 				39228FDF2BAC701F00C91F40 /* LoginView.swift in Sources */,
@@ -851,6 +870,7 @@
 				390BB76D2BBCA8BE0052257E /* SplashViewModel.swift in Sources */,
 				392EECDB2BC68CEA005409EA /* KeyChainEnum.swift in Sources */,
 				5D24D97D2BCFE8EB007294E2 /* LoadingView.swift in Sources */,
+				39AF65ED2BD17FED00FC602C /* RecoveryText.swift in Sources */,
 				A9EDD0D32BBC16470052D03C /* RecoveryPasswordView.swift in Sources */,
 				3979A3A52BCA866300F5C3B1 /* FadeinModifier.swift in Sources */,
 				A932073C2BB48F860068D9C2 /* AuthProtocol.swift in Sources */,
