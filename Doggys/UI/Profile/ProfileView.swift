@@ -57,19 +57,19 @@ struct ProfileView: View {
                     
                     TextPickerView(selectedItem: $viewModel.selectedBreed,
                                    text: "Seleccione una raza:",
-                                   items: RazaPerro.allCases)
+                                   items: DogBreed.allCases)
                     
                     TextPickerView(selectedItem: $viewModel.selectedGender,
                                    text: "Seleccione género:",
-                                   items: GeneroPerro.allCases)
+                                   items: DogGender.allCases)
                     
                     TextPickerView(selectedItem: $viewModel.selectedWalk,
                                    text: "Seleccione tipo de paseo:",
-                                   items: PaseoPerro.allCases)
+                                   items: DogWalkLong.allCases)
                     
                     TextPickerView(selectedItem: $viewModel.dofFriendly,
                                    text: "¿Soy amigable con otros perros?",
-                                   items: PerroAmigable.allCases)
+                                   items: DogFriendly.allCases)
                     .padding()
                     Button(action: {
                         viewModel.searchDataOnDB()

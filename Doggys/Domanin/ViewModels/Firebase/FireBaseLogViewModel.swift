@@ -18,5 +18,6 @@ class FirebaseLogViewModel: LogProtocol {
     }
     
     func crash(screen: String, exception: Error) {
+        // TODO: create crash
     }
 }
