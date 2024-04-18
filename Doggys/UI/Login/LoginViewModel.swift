@@ -6,9 +6,8 @@
 //
 
 import Foundation
-import FirebaseAnalytics
 
-final class LoginViewModel: ObservableObject {
+final class LoginViewModel: BaseViewModel {
     //MARK: Properties
     private var dataManager: LoginDataManager
     private var authViewModel: AuthProtocol
@@ -37,7 +36,7 @@ final class LoginViewModel: ObservableObject {
     //MARK: Publics Methods
     func loginUser() {
         isLoading = true
-
+        
         authViewModel.login(email: email,
                             password: password,
                             onSuccess: { [weak self] user in
@@ -64,23 +63,6 @@ final class LoginViewModel: ObservableObject {
         rememberLogin = remember
         UserDefaults.standard.set(remember,
                                   forKey: Preferences.rememberLogin)
-    }
-    
-    func initAnalyticsFirebase(text: String, message: String) {
-        Analytics.logEvent(text,
-                           parameters: ["message":message])
-    }
-    
-    func emailIsValid() -> Bool {
-        return email.contains("@")
-    }
-
-    func passwordIsValid() -> Bool {
-        return password.count >= 6
-    }
-
-    func loginIsValid() -> Bool {
-        return emailIsValid() && passwordIsValid()
     }
 }
 

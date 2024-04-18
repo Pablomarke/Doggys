@@ -1,0 +1,28 @@
+//
+//  BaseViewModel.swift
+//  Doggys
+//
+//  Created by Pablo Márquez Marín on 18/4/24.
+//
+
+import Foundation
+import FirebaseAnalytics
+
+class BaseViewModel: ObservableObject {
+    func emailIsValid(email: String) -> Bool {
+        return email.contains("@")
+    }
+
+    func passwordIsValid(password: String) -> Bool {
+        return password.count >= 6
+    }
+
+    func loginIsValid(email: String, password: String) -> Bool {
+        return emailIsValid(email: email) && passwordIsValid(password: password)
+    }
+    
+    func initAnalyticsFirebase(text: String, message: String) {
+        Analytics.logEvent(text,
+                           parameters: ["message":message])
+    }
+}
