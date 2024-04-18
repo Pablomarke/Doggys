@@ -12,8 +12,9 @@ final class RegisterViewModel: ObservableObject {
     //MARK: - Properties
     private var logViewModel: LogProtocol
     private var authViewModel: AuthProtocol
-    @Published var email = "e-mail"
-    @Published var password = "password"
+    @Published var email = ""
+    @Published var password = ""
+    @Published var repeatPassword = ""
     @Published var alertMessage: String = ""
     @Published var showAlert: Bool = false
     
@@ -35,4 +36,33 @@ final class RegisterViewModel: ObservableObject {
             self?.showAlert = true
         })
     }
+    
+    func registerValid() -> Bool {
+        return emailVerify() && passwordVerify()
+    }
+    
+    func passwordVerify() -> Bool {
+        return passwordNotEmpty() && passwordMatch() && passwordLength()
+    }
+    
+    func passwordNotEmpty() -> Bool {
+        return !password.isEmpty
+    }
+    
+    func passwordMatch() -> Bool {
+        return password == repeatPassword
+    }
+    
+    func passwordLength() -> Bool {
+        return password.count >= 6
+    }
+    
+    func emailVerify() -> Bool {
+        return !email.isEmpty && emailValid()
+    }
+    
+    func emailValid() -> Bool {
+        return email.contains("@")
+    }
+    
 }

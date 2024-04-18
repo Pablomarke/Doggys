@@ -32,8 +32,9 @@ struct LoginView: View {
                     TextFieldView(text: $viewModel.email, placeholder: "E-mail")
 
                         .padding(.top,
-                                 40)
+                                 60)
                     SecureTextFieldView("Password",
+                                        placeholder: "Password",
                                         text: $viewModel.password)
                     .padding(.top, 2)
                     HStack {

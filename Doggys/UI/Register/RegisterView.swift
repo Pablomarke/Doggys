@@ -23,16 +23,24 @@ struct RegisterView: View {
             Color.customMain.ignoresSafeArea()
             VStack {
                 LogoHeader(text: "Registro")
-                TextFieldView(text: $viewModel.email)
-                    .padding(.top, 30)
+                TextFieldView(text: $viewModel.email,
+                              placeholder: "E-mail")
                 SecureTextFieldView("Password",
+                                    placeholder: "Password",
                                     text: $viewModel.password)
+                    .padding(.top, 8)
+                SecureTextFieldView("Repeat Password", 
+                                    placeholder: "Repeat Password",
+                                    text: $viewModel.repeatPassword)
+
                 Button(action: {
                     viewModel.registerUser()
                 }, label: {
                     ButtonLabel(word: "Registrar")
                 })
                 .padding(.top, 20)
+                .disabled(!viewModel.registerValid())
+                .opacity(viewModel.registerValid() ? 1.0 : 0.5)
                 Spacer()
             }
         }
@@ -43,6 +51,12 @@ struct RegisterView: View {
             Image(systemName: "arrow.left")
             Text("Atrás")
         })
+        .onTapGesture {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
+                                            to: nil,
+                                            from: nil,
+                                            for: nil)
+        }
     }
     
     //MARK: - Publics methods -

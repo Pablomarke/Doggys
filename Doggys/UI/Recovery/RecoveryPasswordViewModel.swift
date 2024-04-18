@@ -12,7 +12,7 @@ final class RecoveryPasswordViewModel: ObservableObject {
     //MARK: Properties
     private var logViewModel: LogProtocol
     private var authViewModel: AuthProtocol
-    @Published var email = "E-mail"
+    @Published var email = ""
     @Published var alertMessage: String = ""
     @Published var showAlert: Bool = false
     

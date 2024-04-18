@@ -17,7 +17,6 @@ final class LoginViewModel: ObservableObject {
     
     @Published var email: String = ""
     @Published var password: String = ""
-
     @Published var isLoggedIn: Bool = UserDefaults.standard.bool(forKey: Preferences.userLoggedIn)
     @Published var showAlert: Bool = false
     @Published var alertMessage: String = ""
