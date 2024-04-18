@@ -76,6 +76,7 @@ struct ProfileView: View {
                     }, label: {
                         ButtonLabel(word: "Guardar")
                     })
+                    .padding()
                 }
                 .sheet(isPresented: $isShowingImagePicker, content: {
                     ImagePicker(image: $viewModel.selectedImage)
