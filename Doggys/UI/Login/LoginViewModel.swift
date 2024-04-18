@@ -36,18 +36,12 @@ final class LoginViewModel: BaseViewModel {
     //MARK: Publics Methods
     func loginUser() {
         isLoading = true
-        
         authViewModel.login(email: email,
                             password: password,
                             onSuccess: { [weak self] user in
-            self?.navigateToHome = true
-            self?.isLoggedIn = true
-            self?.rememberLoginAndPasswordInKeyChainAndPreferences()
-            self?.initAnalyticsFirebase(text: "Enter app",
-                                        message: "Enter app")
             self?.logViewModel.log(screen: LoginView.viewName,
                                    action: "USER_LOGGED_IN")
-            self?.isLoading = false
+            self?.navigateToHomeWithLogin()
         },
                             onFailure: { [weak self] error in
             self?.logViewModel.crash(screen: LoginView.viewName,
@@ -70,6 +64,16 @@ private extension LoginViewModel {
     func rememberLoginAndPasswordInKeyChainAndPreferences() {
         rememberLoginAndPassword(remember: UserDefaults.standard.bool(forKey: Preferences.rememberLogin))
     }
+    
+    func navigateToHomeWithLogin() {
+        navigateToHome = true
+        isLoggedIn = true
+        isLoading = false
+        rememberLoginAndPasswordInKeyChainAndPreferences()
+        initAnalyticsFirebase(text: "Enter app",
+                                    message: "Enter app")
+    }
+    
     func rememberLoginAndPassword(remember: Bool) {
         UserDefaults.standard.set(remember,
                                   forKey: Preferences.rememberLogin)
