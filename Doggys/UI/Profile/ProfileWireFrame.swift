@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-final class ProfileWireFrame {
+final class ProfileWireFrame: BaseWireframe {
     //MARK: - Properties
     var viewController: AnyView {
         let userViewModel: UserProfileProtocol = createUserViewModel()
@@ -20,14 +20,13 @@ final class ProfileWireFrame {
     }
     
     //MARK: - Private Methods
-    private func createViewModel(userViewModel: UserProfileProtocol, logViewModel: LogProtocol, storageViewModel: StorageProtocol) -> ProfileViewModel {
-        return ProfileViewModel(userViewModel: userViewModel, logViewModel: logViewModel, storageViewModel: storageViewModel)
+    private func createViewModel(userViewModel: UserProfileProtocol, 
+                                 logViewModel: LogProtocol, storageViewModel: StorageProtocol) -> ProfileViewModel {
+        return ProfileViewModel(userViewModel: userViewModel, 
+                                logViewModel: logViewModel, storageViewModel: storageViewModel)
     }
     private func createUserViewModel() -> UserProfileProtocol {
         return FirebaseUserProfileViewModel()
-    }
-    private func createLogViewModel() -> LogProtocol {
-        return FirebaseLogViewModel()
     }
     private func createStorageViewModel() -> StorageProtocol {
         return FirebaseStorageViewModel()

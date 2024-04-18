@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-final class RegisterWireFrame {
+final class RegisterWireFrame: BaseWireframe {
     //MARK: Public Methods
     var viewController: AnyView {
         let authViewModel: AuthProtocol = createAutViewModel()
@@ -21,16 +21,9 @@ final class RegisterWireFrame {
     }
     
     //MARK: Private Methods
-    private func createViewModel(authViewModel: AuthProtocol, logViewModel: LogProtocol) -> RegisterViewModel {
-        return RegisterViewModel(logViewModel: logViewModel, 
+    private func createViewModel(authViewModel: AuthProtocol, 
+                                 logViewModel: LogProtocol) -> RegisterViewModel {
+        return RegisterViewModel(logViewModel: logViewModel,
                                  authViewModel: authViewModel)
-    }
-    
-    private func createAutViewModel() -> AuthProtocol {
-        return FirebaseAuthViewModel()
-    }
-    
-    private func createLogViewModel() -> LogProtocol {
-        return FirebaseLogViewModel()
     }
 }

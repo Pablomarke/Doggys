@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-final class LoginWireFrame {
+final class LoginWireFrame: BaseWireframe {
     //MARK: Public Methods
     var viewController: AnyView {
         let apiClient: LoginAPIClient = LoginAPIClient()
@@ -36,20 +36,8 @@ final class LoginWireFrame {
                               keyChain: keyChain)
     }
     
-    private func createkeyChain() -> KeyChainDataProvider {
-        return KeyChainDataProvider()
-    }
-    
     private func createDataManager(apiClient: LoginAPIClient) -> LoginDataManager {
         let dataManager = LoginDataManager(apiClient: apiClient)
         return dataManager
-    }
-    
-    private func createAutViewModel() -> AuthProtocol {
-        return FirebaseAuthViewModel()
-    }
-    
-    private func createLogViewModel() -> LogProtocol {
-        return FirebaseLogViewModel()
     }
 }

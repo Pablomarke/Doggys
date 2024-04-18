@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-final class SplashWireFrame {
+final class SplashWireFrame: BaseWireframe {
     //MARK: Public Methods
     var viewController: AnyView {
         let authViewModel: AuthProtocol = createAutViewModel()
@@ -24,13 +24,5 @@ final class SplashWireFrame {
                                  authViewModel: AuthProtocol) -> SplashViewModel {
         return SplashViewModel(authViewModel: authViewModel,
                                logViewModel: logViewModel)
-    }
-    
-    private func createAutViewModel() -> AuthProtocol {
-        return FirebaseAuthViewModel()
-    }
-    
-    private func createLogViewModel() -> LogProtocol {
-        return FirebaseLogViewModel()
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 import SwiftUI
 
-final class SettingsWireframe {
+final class SettingsWireframe: BaseWireframe {
     //MARK: Public Methods
     var viewController: AnyView {
         let keyChain: KeyChainDataProvider = createkeyChain()
@@ -22,9 +22,5 @@ final class SettingsWireframe {
     //MARK: Private Methods
     private func createViewModel(with keyChain: KeyChainDataProvider) -> SettingsViewModel {
         return SettingsViewModel(keyChain: keyChain)
-    }
-    
-    private func createkeyChain() -> KeyChainDataProvider {
-        return KeyChainDataProvider()
     }
 }
