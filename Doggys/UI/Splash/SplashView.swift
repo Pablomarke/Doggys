@@ -19,14 +19,12 @@ struct SplashView: View {
     // MARK: - View -
     var body: some View {
         NavigationView {
-            ZStack {
-                Color.customMain
-                    .edgesIgnoringSafeArea(.all)
-                VStack {
-                    Spacer()
-                    LogoView()
-                    Spacer()
-                }
+                appMainBackground {
+                    VStack {
+                        Spacer()
+                        LogoView()
+                        Spacer()
+                    }
             }
             
             // MARK: - Life cycle -

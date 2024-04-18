@@ -20,9 +20,7 @@ struct LoginView: View {
     //MARK: View
     var body: some View {
         NavigationView {
-            ZStack {
-                Color.customMain
-                    .ignoresSafeArea()
+            appMainBackground {
                 VStack() {
                     TextTitleHeader()
                     TextFieldView(text: $viewModel.email,

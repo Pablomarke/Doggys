@@ -15,8 +15,7 @@ struct ProfileView: View {
     
     //MARK: - View -
     var body: some View {
-        ZStack{
-            Color.customMain.ignoresSafeArea()
+        appMainBackground {
             ScrollView {
                 VStack {
                     LogoHeader(text: "Perfil")

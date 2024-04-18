@@ -12,15 +12,14 @@ struct RegisterView: View {
     static var viewName: String = "RegisterView"
     @ObservedObject var viewModel: RegisterViewModel
     @Environment(\.presentationMode) var presentationMode
-   
+    
     public init(viewModel: RegisterViewModel) {
         self.viewModel = viewModel
     }
     
     //MARK: - View -
     var body: some View {
-        ZStack{
-            Color.customMain.ignoresSafeArea()
+        appMainBackground {
             VStack {
                 LogoHeader(text: "Registro")
                 TextFieldView(text: $viewModel.email,
@@ -28,11 +27,11 @@ struct RegisterView: View {
                 SecureTextFieldView("Password",
                                     placeholder: "Password",
                                     text: $viewModel.password)
-                    .padding(.top, 8)
+                .padding(.top, 8)
                 SecureTextFieldView("Repeat Password", 
                                     placeholder: "Repeat Password",
                                     text: $viewModel.repeatPassword)
-
+                
                 Button(action: {
                     viewModel.registerUser()
                 }, label: {

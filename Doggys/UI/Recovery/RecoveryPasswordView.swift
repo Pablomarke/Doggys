@@ -15,14 +15,12 @@ struct RecoveryPasswordView: View {
     
     //MARK: View
     var body: some View {
-        ZStack{
-            Color.customMain
-                .ignoresSafeArea()
+        appMainBackground {
             VStack {
                 LogoHeader(text: "Recuperar")
                 TextFieldView(text: $viewModel.email,
                               placeholder: "E-mail")
-                    .padding(.top, 30)
+                .padding(.top, 30)
                 Button(action: {
                     viewModel.recoveryPassword()
                 }, label: {
