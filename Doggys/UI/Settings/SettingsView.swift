@@ -18,7 +18,8 @@ struct SettingsView: View {
     // MARK: - View -
     var body: some View {
         ZStack {
-            Color.customGreenblue.ignoresSafeArea()
+            Color.customMain
+                .ignoresSafeArea()
             VStack {
                 LogoHeader(text: "Ajustes")
                     .padding(.top, 

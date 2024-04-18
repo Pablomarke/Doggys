@@ -9,24 +9,24 @@ import SwiftUI
 
 struct LogoHeader: View {
     var text: String
-    var toTop: CGFloat = -160
+    var toTop: CGFloat = -60
     
     var body: some View {
-        Image(.logoEars)
-            .resizable()
-            .frame(width: 400,
-                   height: 250,
-                   alignment: .center)
-            .padding(.top,
-                     toTop)
-        Text(text)
-            .font(.system(size: 40,
-                          weight: .light,
-                          design: .monospaced))
-            .padding(.top, -70)
+        VStack {
+            Image(.logoWhite)
+                .resizable()
+                .frame(width: 306,
+                       height: 222)
+                .padding(.bottom, 40)
+            Text(text)
+                .font(.custom("Jost-Light",
+                              size: 60))
+                .foregroundStyle(.customWhite)
+                .padding(.top, -70)
+        }
     }
 }
 
 #Preview {
-    LogoHeader(text: "Registrar")
+    LogoHeader(text: "Registrar").background(Color.customMain)
 }

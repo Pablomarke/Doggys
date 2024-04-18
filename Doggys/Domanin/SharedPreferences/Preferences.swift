@@ -9,4 +9,5 @@ import Foundation
 
 enum Preferences {
     static let rememberLogin: String = "REMEMBER"
+    static let userLoggedIn: String = "LOGGEDUSER"
 }

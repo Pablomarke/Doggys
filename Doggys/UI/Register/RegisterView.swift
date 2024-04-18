@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RegisterView: View {
-    //MARK: Properties
+    //MARK: - Properties -
     static var viewName: String = "RegisterView"
     @ObservedObject var viewModel: RegisterViewModel
     @Environment(\.presentationMode) var presentationMode
@@ -17,16 +17,21 @@ struct RegisterView: View {
         self.viewModel = viewModel
     }
     
-    //MARK: View
+    //MARK: - View -
     var body: some View {
         ZStack{
-            Color.customGreen.ignoresSafeArea()
-            VStack{
-                LogoHeader(text: "Registrar")
+            Color.customMain.ignoresSafeArea()
+            VStack {
+                LogoHeader(text: "Registro")
                 TextFieldView(text: $viewModel.email)
-                SecureTextFieldView("Password", placeholder: "Password", text: $viewModel.password)
+                SecureTextFieldView("Password",
+                                    placeholder: "Password",
+                                    text: $viewModel.password)
                     .padding(.top, 8)
-                SecureTextFieldView("Repeat Password", placeholder: "Repeat Password", text: $viewModel.repeatPassword)
+                SecureTextFieldView("Repeat Password", 
+                                    placeholder: "Repeat Password",
+                                    text: $viewModel.repeatPassword)
+
                 Button(action: {
                     viewModel.registerUser()
                 }, label: {
@@ -35,6 +40,7 @@ struct RegisterView: View {
                 .padding(.top, 20)
                 .disabled(!viewModel.registerValid())
                 .opacity(viewModel.registerValid() ? 1.0 : 0.5)
+                Spacer()
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -51,6 +57,8 @@ struct RegisterView: View {
                                             for: nil)
         }
     }
+    
+    //MARK: - Publics methods -
     mutating func set(viewModel: RegisterViewModel) {
         self.viewModel = viewModel
     }

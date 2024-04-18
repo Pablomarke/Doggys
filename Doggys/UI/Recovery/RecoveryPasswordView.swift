@@ -16,16 +16,19 @@ struct RecoveryPasswordView: View {
     //MARK: View
     var body: some View {
         ZStack{
-            Color.customGreen.ignoresSafeArea()
-            VStack{
+            Color.customMain
+                .ignoresSafeArea()
+            VStack {
                 LogoHeader(text: "Recuperar")
                 TextFieldView(text: $viewModel.email)
-                    .padding(.top, 60)
+                    .padding(.top, 30)
                 Button(action: {
                     viewModel.recoveryPassword()
                 }, label: {
                     ButtonLabel(word: "enviar")
+                        .padding()
                 })
+                Spacer()
             }
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: Button(action: {
