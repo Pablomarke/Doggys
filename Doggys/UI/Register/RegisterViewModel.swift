@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class RegisterViewModel: ObservableObject {
+final class RegisterViewModel: BaseViewModel{
     
     //MARK: - Properties
     private var logViewModel: LogProtocol
@@ -38,31 +38,14 @@ final class RegisterViewModel: ObservableObject {
     }
     
     func registerValid() -> Bool {
-        return emailVerify() && passwordVerify()
+        return emailVerify(email: email) && passwordVerify()
     }
     
     func passwordVerify() -> Bool {
-        return passwordNotEmpty() && passwordMatch() && passwordLength()
-    }
-    
-    func passwordNotEmpty() -> Bool {
-        return !password.isEmpty
+        return !password.isEmpty && passwordMatch() && passwordIsValid(password: password)
     }
     
     func passwordMatch() -> Bool {
         return password == repeatPassword
     }
-    
-    func passwordLength() -> Bool {
-        return password.count >= 6
-    }
-    
-    func emailVerify() -> Bool {
-        return !email.isEmpty && emailValid()
-    }
-    
-    func emailValid() -> Bool {
-        return email.contains("@")
-    }
-    
 }

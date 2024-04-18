@@ -25,4 +25,8 @@ class BaseViewModel: ObservableObject {
         Analytics.logEvent(text,
                            parameters: ["message":message])
     }
+    
+    func emailVerify(email: String) -> Bool {
+        return !email.isEmpty && emailIsValid(email: email)
+    }
 }

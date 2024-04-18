@@ -24,5 +24,6 @@ final class SettingsViewModel: ObservableObject {
         UserDefaults.standard.set(false,
                                   forKey: Preferences.userLoggedIn)
         isLogOut = true
+        //TODO: Logout
     }
 }

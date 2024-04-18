@@ -20,7 +20,8 @@ struct RecoveryPasswordView: View {
                 .ignoresSafeArea()
             VStack {
                 LogoHeader(text: "Recuperar")
-                TextFieldView(text: $viewModel.email)
+                TextFieldView(text: $viewModel.email,
+                              placeholder: "E-mail")
                     .padding(.top, 30)
                 Button(action: {
                     viewModel.recoveryPassword()

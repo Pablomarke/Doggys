@@ -32,9 +32,17 @@ final class ProfileViewModel: ObservableObject {
     }
     
     func searchImageOnRB() {
-        guard let selectedImage = selectedImage else { return }
-        guard let imageData = selectedImage.jpegData(compressionQuality: 0.1) else { return }
-        guard let compressedImage = UIImage(data: imageData) else {return}
+        guard let selectedImage = selectedImage else {
+            return
+        }
+        
+        guard let imageData = selectedImage.jpegData(compressionQuality: 0.1) else {
+            return
+        }
+        
+        guard let compressedImage = UIImage(data: imageData) else {
+            return
+        }
         
         storageViewModel.uploadImage(image: compressedImage) { url in
             self.urlImage = url
@@ -44,7 +52,14 @@ final class ProfileViewModel: ObservableObject {
     }
     
     func searchDataOnDB() {
-        let data = UserProfile(id: UUID().uuidString, imageProfile: self.urlImage, humanName: self.dogOwner, dogName: self.nameOfDog, dogYears: self.ageOfDog, dogGender: self.selectedGender, dogWalk: self.selectedWalk, dogFriendly: self.dofFriendly)
+        let data = UserProfile(id: UUID().uuidString, 
+                               imageProfile: self.urlImage,
+                               humanName: self.dogOwner,
+                               dogName: self.nameOfDog,
+                               dogYears: self.ageOfDog,
+                               dogGender: self.selectedGender,
+                               dogWalk: self.selectedWalk, 
+                               dogFriendly: self.dofFriendly)
         
         userViewModel.searchData(userProfile: data) {
             print("Document added succesfully")
