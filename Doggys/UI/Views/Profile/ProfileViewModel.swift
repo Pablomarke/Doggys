@@ -15,9 +15,9 @@ final class ProfileViewModel: ObservableObject {
     private var userViewModel: UserProfileProtocol
     private var logViewModel: LogProtocol
     private var storageViewModel: StorageProtocol
-    @Published var dogOwner: String = "Nombre del Humano"
-    @Published var nameOfDog: String = "Doggy Nombre"
-    @Published var ageOfDog: String = "Doggy Años"
+    @Published var dogOwner: String = ""
+    @Published var nameOfDog: String = ""
+    @Published var ageOfDog: String = ""
     @Published var selectedBreed: DogBreed = .mestizo
     @Published var selectedGender: DogGender = .female
     @Published var selectedWalk: DogWalkLong = .short

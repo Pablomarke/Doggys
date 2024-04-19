@@ -37,14 +37,15 @@ struct ProfileView: View {
                         Button("Seleccionar Imagen") {
                             self.isShowingImagePicker = true
                         }
+                        .padding(10)
                         .font(.title2)
                     }
-                    TextFieldView(text: $viewModel.dogOwner)
-                        .padding(5)
-                    TextFieldView(text: $viewModel.nameOfDog)
-                        .padding(5)
-                    TextFieldView(text: $viewModel.ageOfDog)
-                        .padding(5)
+                    TextFieldView(text: $viewModel.dogOwner, placeholder: "Nombre del Humano")
+                        .padding(10)
+                    TextFieldView(text: $viewModel.nameOfDog, placeholder: "Doggy Nombre")
+                        .padding(10)
+                    TextFieldView(text: $viewModel.ageOfDog, placeholder: "Doggy Edad")
+                        .padding(10)
                     
                     TextPickerView(selectedItem: $viewModel.selectedBreed,
                                    text: "Seleccione una raza:",
