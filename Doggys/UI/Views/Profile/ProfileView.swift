@@ -12,6 +12,7 @@ struct ProfileView: View {
     @ObservedObject var viewModel: ProfileViewModel
     static var viewName: String = "ProfileView"
     @State var isShowingImagePicker = false
+    @State private var showAlert = false
     
     //MARK: - View -
     var body: some View {
@@ -65,16 +66,22 @@ struct ProfileView: View {
                     .padding()
                     Button(action: {
                         viewModel.searchImageOnRB()
+                        self.showAlert = true
                     }, label: {
                         ButtonLabel(word: "Guardar")
                     })
                     .padding()
                 }
-                .sheet(isPresented: $isShowingImagePicker, 
+                .sheet(isPresented: $isShowingImagePicker,
                        content: {
                     ImagePicker(image: $viewModel.selectedImage)
                 })
             }
+            .alert(isPresented: $showAlert) {
+                       Alert(title: Text("Perfil"),
+                             message: Text("Datos guardados con éxito"),
+                             dismissButton: .default(Text("OK")))
+                   }
         }
         .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
