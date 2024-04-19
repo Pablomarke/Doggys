@@ -32,6 +32,9 @@ struct RecoveryPasswordView: View {
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: BackArrow())
         }
+        .onTapGesture {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+         }
     }
     
     mutating func set(viewModel: RecoveryPasswordViewModel) {

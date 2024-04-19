@@ -83,6 +83,12 @@ struct ProfileView: View {
                 })
             }
         }
+        .onTapGesture {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
+                                            to: nil,
+                                            from: nil,
+                                            for: nil)
+        }
     }
     //MARK: - Public Methods -
     mutating func set(viewModel: ProfileViewModel) {
