@@ -32,7 +32,7 @@ struct SettingsView: View {
                     if self.viewModel.isMailAvailable{
                         self.showMailView.toggle()
                     } else {
-                        print("Not registered mail")
+                        print("Not registered mail, not available in simulator")
                     }
                 }, label: {
                     ButtonLabel(word: "Contacto")
