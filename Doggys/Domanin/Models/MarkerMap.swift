@@ -7,6 +7,8 @@
 
 import MapKit
 
+typealias MarkerMapList = [MarkerMap]
+
 struct MarkerMap: Identifiable {
     let id = UUID()
     let name: String

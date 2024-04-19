@@ -15,9 +15,9 @@ class UserProfile: Identifiable {
     let humanName: String
     let dogName: String
     let dogYears: String
-    let dogGender: GeneroPerro
-    let dogWalk: PaseoPerro
-    let dogFriendly: PerroAmigable
+    let dogGender: DogGender
+    let dogWalk: DogWalkLong
+    let dogFriendly: DogFriendly
 //    let coordenates : MarkerMap
     
     init() {
@@ -26,13 +26,13 @@ class UserProfile: Identifiable {
         self.humanName = ""
         self.dogName = ""
         self.dogYears = ""
-        self.dogGender = .macho
-        self.dogWalk = .corto
-        self.dogFriendly = .si
+        self.dogGender = .male
+        self.dogWalk = .short
+        self.dogFriendly = .yes
 //        self.coordenates = MarkerMap(name: String(), coordinate: CLLocationCoordinate2D())
     }
     
-    init(id: String, imageProfile: String, humanName: String, dogName: String, dogYears: String, dogGender: GeneroPerro, dogWalk: PaseoPerro, dogFriendly: PerroAmigable) {
+    init(id: String, imageProfile: String, humanName: String, dogName: String, dogYears: String, dogGender: DogGender, dogWalk: DogWalkLong, dogFriendly: DogFriendly) {
         self.id = id
         self.imageProfile = imageProfile
         self.humanName = humanName
