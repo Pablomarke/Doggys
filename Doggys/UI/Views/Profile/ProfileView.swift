@@ -75,9 +75,6 @@ struct ProfileView: View {
                     ImagePicker(image: $viewModel.selectedImage)
                 })
             }
-            .onTapGesture {
-                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-             }
         }
         .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
