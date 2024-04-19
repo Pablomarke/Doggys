@@ -57,6 +57,7 @@ final class ProfileViewModel: ObservableObject {
                                humanName: self.dogOwner,
                                dogName: self.nameOfDog,
                                dogYears: self.ageOfDog,
+                               dogBreed: self.selectedBreed,
                                dogGender: self.selectedGender,
                                dogWalk: self.selectedWalk, 
                                dogFriendly: self.dofFriendly)

@@ -37,6 +37,7 @@ enum DogBreed: String, CaseIterable, CustomStringConvertible {
     case shihTzu = "Shih Tzu"
     case staffordshireBullTerrier = "Staffordshire Bull Terrier"
     case westHighlandWhiteTerrier = "West Highland White Terrier"
+    case podenco = "Podenco"
     case otraRaza = "Otra Raza"
     
     var description: String {

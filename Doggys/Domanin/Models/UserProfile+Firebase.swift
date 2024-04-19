@@ -14,6 +14,7 @@ extension UserProfile {
             "humanName": humanName,
             "dogName": dogName,
             "dogYears": dogYears,
+            "dogBreed": dogBreed.rawValue,
             "dogGender": dogGender.rawValue,
             "dogWalk": dogWalk.rawValue,
             "dogFriendly": dogFriendly.rawValue,
