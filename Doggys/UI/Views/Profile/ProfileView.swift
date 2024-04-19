@@ -39,14 +39,6 @@ struct ProfileView: View {
                         }
                         .font(.title2)
                     }
-                    if !isShowingImagePicker {
-                        Button(action: {
-                            viewModel.searchImageOnRB()
-                        }, label: {
-                            Text("Cargar")
-                        })
-                        .padding()
-                    }
                     TextFieldView(text: $viewModel.dogOwner)
                         .padding(5)
                     TextFieldView(text: $viewModel.nameOfDog)
@@ -71,7 +63,7 @@ struct ProfileView: View {
                                    items: DogFriendly.allCases)
                     .padding()
                     Button(action: {
-                        viewModel.searchDataOnDB()
+                        viewModel.searchImageOnRB()
                     }, label: {
                         ButtonLabel(word: "Guardar")
                     })

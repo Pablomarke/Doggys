@@ -46,6 +46,7 @@ final class ProfileViewModel: ObservableObject {
         
         storageViewModel.uploadImage(image: compressedImage) { url in
             self.urlImage = url
+            self.searchDataOnDB()
         } onFailure: { error in
             print("Error: \(error)")
         }
