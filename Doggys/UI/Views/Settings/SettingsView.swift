@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     //MARK: - Properties -
     @ObservedObject var viewModel: SettingsViewModel
+    @State private var showMailView = false
     static var viewName: String = "SettingsView"
     
     public init(viewModel: SettingsViewModel) {
@@ -20,18 +21,33 @@ struct SettingsView: View {
         appMainBackground {
             VStack {
                 LogoHeader(text: "Ajustes")
-                    .padding(.top, 
-                             60)
+                    .padding(.bottom, 100)
                 Button(action: {
                     viewModel.disconnect()
                 }, label: {
                     ButtonLabel(word: "Desconectar")
                 })
+                .padding(.bottom, 50)
+                Button(action: {
+                    if self.viewModel.isMailAvailable{
+                        self.showMailView.toggle()
+                    } else {
+                        print("Not registered mail")
+                    }
+                }, label: {
+                    ButtonLabel(word: "Contacto")
+                })
+                .sheet(isPresented: $showMailView) {
+                    MailView(isShowing: self.$showMailView)
+                }
             }
             NavigationLink(destination: LoginWireFrame().viewController,
                            isActive: $viewModel.isLogOut) {
                 EmptyView()
             }
+        }
+        .onAppear{
+            self.viewModel.checkMailAvailability()
         }
     }
     // MARK: - Public methods -
@@ -41,5 +57,5 @@ struct SettingsView: View {
 }
 
 #Preview {
-    AppTabView()
+    SettingsWireframe().viewController
 }

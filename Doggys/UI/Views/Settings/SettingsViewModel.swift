@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import MessageUI
 
 final class SettingsViewModel: ObservableObject {
     //MARK: - Properties -
     private var keyChain: KeyChainDataProvider
     @Published var isLogOut: Bool = false
-
+    @Published var isMailAvailable = false
+    
     init(keyChain: KeyChainDataProvider) {
         self.keyChain = keyChain
     }
@@ -26,4 +28,8 @@ final class SettingsViewModel: ObservableObject {
         isLogOut = true
         //TODO: Logout
     }
+    
+    func checkMailAvailability() {
+          self.isMailAvailable = MFMailComposeViewController.canSendMail()
+      }
 }

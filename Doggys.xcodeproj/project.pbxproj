@@ -67,6 +67,7 @@
 		A932074F2BB4AC100068D9C2 /* LogViewModelEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A932074E2BB4AC100068D9C2 /* LogViewModelEnvironmentKey.swift */; };
 		A946A8072BCFF0550088ADE0 /* FirebaseStorageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A946A8062BCFF0550088ADE0 /* FirebaseStorageViewModel.swift */; };
 		A946A8092BCFF07F0088ADE0 /* StorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A946A8082BCFF07F0088ADE0 /* StorageProtocol.swift */; };
+		A9ACAE312BD25B020035B6CF /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ACAE302BD25B020035B6CF /* MailView.swift */; };
 		A9C47F002BBDE03E0044ED5F /* RegisterWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C47EFF2BBDE03E0044ED5F /* RegisterWireFrame.swift */; };
 		A9C47F022BBE93FC0044ED5F /* RecoveryWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C47F012BBE93FC0044ED5F /* RecoveryWireFrame.swift */; };
 		A9C47F052BBFE9B90044ED5F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C47F042BBFE9B90044ED5F /* ProfileView.swift */; };
@@ -195,6 +196,7 @@
 		A932074E2BB4AC100068D9C2 /* LogViewModelEnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewModelEnvironmentKey.swift; sourceTree = "<group>"; };
 		A946A8062BCFF0550088ADE0 /* FirebaseStorageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageViewModel.swift; sourceTree = "<group>"; };
 		A946A8082BCFF07F0088ADE0 /* StorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProtocol.swift; sourceTree = "<group>"; };
+		A9ACAE302BD25B020035B6CF /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		A9C47EFF2BBDE03E0044ED5F /* RegisterWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWireFrame.swift; sourceTree = "<group>"; };
 		A9C47F012BBE93FC0044ED5F /* RecoveryWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryWireFrame.swift; sourceTree = "<group>"; };
 		A9C47F042BBFE9B90044ED5F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -505,6 +507,7 @@
 				A9EDD0CE2BBC150C0052D03C /* Register */,
 				A9EDD0D12BBC16310052D03C /* Recovery */,
 				392EECDF2BC7C6FD005409EA /* Settings */,
+				A9ACAE2F2BD25AE30035B6CF /* MailView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -598,6 +601,14 @@
 				A93207382BB48E000068D9C2 /* Firebase */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A9ACAE2F2BD25AE30035B6CF /* MailView */ = {
+			isa = PBXGroup;
+			children = (
+				A9ACAE302BD25B020035B6CF /* MailView.swift */,
+			);
+			path = MailView;
 			sourceTree = "<group>";
 		};
 		A9B53B8E2BB33687000AD215 /* Suporting Files */ = {
@@ -863,6 +874,7 @@
 				397B93DC2BB3560C0030D77E /* SecureTextFieldView.swift in Sources */,
 				A9286A372BC7E3D4003FC58A /* DogWalkLong.swift in Sources */,
 				A92BF8D32BC073C2004AA875 /* ProfileWireFrame.swift in Sources */,
+				A9ACAE312BD25B020035B6CF /* MailView.swift in Sources */,
 				A9FE0ECF2BC9BA54008564AB /* UserProfileEnvironmentKey.swift in Sources */,
 				A946A8092BCFF07F0088ADE0 /* StorageProtocol.swift in Sources */,
 				392EECE32BC7C73E005409EA /* SettingsViewModel.swift in Sources */,
