@@ -37,22 +37,15 @@ struct ProfileView: View {
                         Button("Seleccionar Imagen") {
                             self.isShowingImagePicker = true
                         }
+                        .padding(10)
                         .font(.title2)
                     }
-                    if !isShowingImagePicker {
-                        Button(action: {
-                            viewModel.searchImageOnRB()
-                        }, label: {
-                            Text("Cargar")
-                        })
-                        .padding()
-                    }
-                    TextFieldView(text: $viewModel.dogOwner)
-                        .padding(5)
-                    TextFieldView(text: $viewModel.nameOfDog)
-                        .padding(5)
-                    TextFieldView(text: $viewModel.ageOfDog)
-                        .padding(5)
+                    TextFieldView(text: $viewModel.dogOwner, placeholder: "Nombre del Humano")
+                        .padding(10)
+                    TextFieldView(text: $viewModel.nameOfDog, placeholder: "Doggy Nombre")
+                        .padding(10)
+                    TextFieldView(text: $viewModel.ageOfDog, placeholder: "Doggy Edad")
+                        .padding(10)
                     
                     TextPickerView(selectedItem: $viewModel.selectedBreed,
                                    text: "Seleccione una raza:",
@@ -71,7 +64,7 @@ struct ProfileView: View {
                                    items: DogFriendly.allCases)
                     .padding()
                     Button(action: {
-                        viewModel.searchDataOnDB()
+                        viewModel.searchImageOnRB()
                     }, label: {
                         ButtonLabel(word: "Guardar")
                     })
@@ -82,6 +75,9 @@ struct ProfileView: View {
                     ImagePicker(image: $viewModel.selectedImage)
                 })
             }
+            .onTapGesture {
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+             }
         }
         .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
