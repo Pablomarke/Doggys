@@ -12,6 +12,7 @@ struct LoginView: View {
     @ObservedObject var viewModel: LoginViewModel
     static var viewName: String = "LoginView"
     @State private var rememberLogin: Bool = UserDefaults.standard.bool(forKey: Preferences.rememberLogin)
+    @FocusState private var nameIsFocused: Bool
     
     public init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
@@ -25,10 +26,12 @@ struct LoginView: View {
                     TextTitleHeader()
                     TextFieldView(text: $viewModel.email,
                                   placeholder: "E-mail")
+                    .focused($nameIsFocused)
                         .padding(.top, 60)
                     SecureTextFieldView("Password",
                                         placeholder: "Password",
                                         text: $viewModel.password)
+                    .focused($nameIsFocused)
                     .padding(.top, 2)
                     HStack {
                         Toggle(isOn: $rememberLogin) {
@@ -74,6 +77,10 @@ struct LoginView: View {
                     }
                 }
             }
+            .onTapGesture {
+                nameIsFocused = false
+            }
+
             // MARK: - Life cycle -
             .onAppear {
                 viewModel.initAnalyticsFirebase(text: "App run",
@@ -92,6 +99,7 @@ struct LoginView: View {
         self.viewModel = viewModel
     }
 }
+
 
 #Preview {
     LoginWireFrame().viewController
