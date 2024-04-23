@@ -7,6 +7,7 @@
 
 import XCTest
 @testable import Doggys
+import SwiftUI
 
 final class DoggysTests: XCTestCase {
     
@@ -34,17 +35,14 @@ final class DoggysTests: XCTestCase {
     }
     
     // MARK: - Test Models -
-    
     func testModelUser() throws {
         let user1 = User(id: "123456abcde",
                          email: "doggys@doggys.com",
                          password: "unknown")
         
-        XCTAssertNotNil(user1)
         XCTAssertEqual(user1.id, "123456abcde")
         XCTAssertEqual(user1.email, "doggys@doggys.com")
         XCTAssertEqual(user1.password, "unknown")
-        
     }
     
     func testModelDogBreed() throws {
@@ -71,7 +69,6 @@ final class DoggysTests: XCTestCase {
         let mocksMap = MapViewDataManager()
         var mapsMarker = mocksMap.mockUsersData
         
-        XCTAssertNotNil(mapsMarker.first)
         XCTAssertEqual(mapsMarker.first?.name, "Rosco")
         XCTAssertEqual(mapsMarker.first?.coordinate.latitude, 40.411964)
     }
@@ -87,7 +84,6 @@ final class DoggysTests: XCTestCase {
                                        dogWalk: DogWalkLong.veryLong,
                                        dogFriendly: DogFriendly.yesFemale)
         
-        XCTAssertNotNil(userProfile1)
         XCTAssertEqual(userProfile1.dogBreed, DogBreed.boxer)
         XCTAssertEqual(userProfile1.dogYears, "4")
     }
@@ -95,65 +91,73 @@ final class DoggysTests: XCTestCase {
     // MARK: - Testing Views -
     func testLoginView() throws {
         let main = LoginWireFrame().viewController
-        let mainVM = LoginViewModel(authViewModel: FirebaseAuthViewModel(),
-                                    logViewModel: FirebaseLogViewModel(),
-                                    keyChain: KeyChainDataProvider())
-        let mainView = LoginView(viewModel: mainVM)
-        XCTAssertNotNil(main.fadeInAnimation())
         XCTAssertNotNil(main)
-        XCTAssertNotNil(mainVM)
-        XCTAssertNotNil(mainView.body)
     }
     
-    func testSplashView() {
-        let splashvm = SplashViewModel(authViewModel: FirebaseAuthViewModel(),
-                                       logViewModel: FirebaseLogViewModel())
-        let splash = SplashView(viewModel: splashvm)
-        XCTAssertNotNil(splash)
-        XCTAssertNotNil(splashvm)
-        XCTAssertNotNil(splash.body)
-        XCTAssertNotNil(splash.viewModel)
+    func testSplashView() throws {
+        let splashw = SplashWireFrame().viewController
+        XCTAssertNotNil(splashw)
+    }
+    
+    func testMapView() throws {
+        let mapInit = MapViewWireFrame().viewController
+        XCTAssertNotNil(mapInit)
+    }
+    
+    func testProfile() throws {
+        let profile = ProfileWireFrame().viewController
+        XCTAssertNotNil(profile)
+    }
+    
+    func testRegister() throws {
+        let register = RegisterWireFrame()
+        XCTAssertNotNil(register)
+        
+    }
+    
+    func testRecovery() throws {
+        let recovery = RecoveryWireFrame()
+        XCTAssertNotNil(recovery)
+        
+    }
+    
+    func testSettings() throws {
+        let settings = SettingsWireframe()
+        XCTAssertNotNil(settings)
+        
     }
     
     // MARK: - Testing components -
     func testComponents() throws {
         let mapMarker = MapMarkerIcon(name: "test")
-        XCTAssertNotNil(mapMarker)
         XCTAssertNotNil(mapMarker.body)
         XCTAssertEqual(mapMarker.name, "test")
     }
     
     func testLogo() throws {
         let logo = LogoHeader(text: "Login")
-        XCTAssertNotNil(logo)
         XCTAssertNotNil(logo.body)
         XCTAssertEqual(logo.text, "Login")
     }
     
     func testLogoTitleHeader() throws {
         let header = TextTitleHeader()
-        XCTAssertNotNil(header)
         XCTAssertNotNil(header.body)
     }
     
     func testRecoveryText() throws {
         let rec = RecoveryText()
-        XCTAssertNotNil(rec)
         XCTAssertNotNil(rec.body)
     }
     
     func testRegisterText() throws {
         let register = RegisterText()
-        XCTAssertNotNil(register)
         XCTAssertNotNil(register.body)
     }
     
     func testButtonLabel() throws {
         let button = ButtonLabel(word: "test")
-        XCTAssertNotNil(button)
         XCTAssertNotNil(button.body)
         XCTAssertEqual(button.word, "test")
     }
-    
-   
 }
