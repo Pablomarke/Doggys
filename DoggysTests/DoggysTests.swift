@@ -105,6 +105,17 @@ final class DoggysTests: XCTestCase {
         XCTAssertNotNil(mainView.body)
     }
     
+    func testSplashView() {
+        let splashvm = SplashViewModel(authViewModel: FirebaseAuthViewModel(),
+                                       logViewModel: FirebaseLogViewModel())
+        let splash = SplashView(viewModel: splashvm)
+        XCTAssertNotNil(splash)
+        XCTAssertNotNil(splashvm)
+        XCTAssertNotNil(splash.body)
+        XCTAssertNotNil(splash.viewModel)
+    }
+    
+    // MARK: - Testing components -
     func testComponents() throws {
         let mapMarker = MapMarkerIcon(name: "test")
         XCTAssertNotNil(mapMarker)
@@ -118,4 +129,31 @@ final class DoggysTests: XCTestCase {
         XCTAssertNotNil(logo.body)
         XCTAssertEqual(logo.text, "Login")
     }
+    
+    func testLogoTitleHeader() throws {
+        let header = TextTitleHeader()
+        XCTAssertNotNil(header)
+        XCTAssertNotNil(header.body)
+    }
+    
+    func testRecoveryText() throws {
+        let rec = RecoveryText()
+        XCTAssertNotNil(rec)
+        XCTAssertNotNil(rec.body)
+    }
+    
+    func testRegisterText() throws {
+        let register = RegisterText()
+        XCTAssertNotNil(register)
+        XCTAssertNotNil(register.body)
+    }
+    
+    func testButtonLabel() throws {
+        let button = ButtonLabel(word: "test")
+        XCTAssertNotNil(button)
+        XCTAssertNotNil(button.body)
+        XCTAssertEqual(button.word, "test")
+    }
+    
+   
 }
