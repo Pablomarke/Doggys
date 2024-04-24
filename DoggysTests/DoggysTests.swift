@@ -7,7 +7,6 @@
 
 import XCTest
 @testable import Doggys
-import SwiftUI
 
 final class DoggysTests: XCTestCase {
     
@@ -110,21 +109,18 @@ final class DoggysTests: XCTestCase {
     }
     
     func testRegister() throws {
-        let register = RegisterWireFrame()
+        let register = RegisterWireFrame().viewController
         XCTAssertNotNil(register)
-        
     }
     
     func testRecovery() throws {
-        let recovery = RecoveryWireFrame()
+        let recovery = RecoveryWireFrame().viewController
         XCTAssertNotNil(recovery)
-        
     }
     
     func testSettings() throws {
-        let settings = SettingsWireframe()
+        let settings = SettingsWireframe().viewController
         XCTAssertNotNil(settings)
-        
     }
     
     // MARK: - Testing components -

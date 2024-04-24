@@ -135,6 +135,7 @@
 		390BB7692BBCA51F0052257E /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		390BB76C2BBCA8BE0052257E /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		390BB76E2BBCA9D30052257E /* SplashWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWireFrame.swift; sourceTree = "<group>"; };
+		391AA3F72BD8E92A005280F4 /* Doggys.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Doggys.xctestplan; sourceTree = "<group>"; };
 		39228FD92BAC701F00C91F40 /* Doggys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doggys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39228FDC2BAC701F00C91F40 /* DoggysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoggysApp.swift; sourceTree = "<group>"; };
 		39228FDE2BAC701F00C91F40 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -281,6 +282,7 @@
 		39228FD02BAC701E00C91F40 = {
 			isa = PBXGroup;
 			children = (
+				391AA3F72BD8E92A005280F4 /* Doggys.xctestplan */,
 				39228FDB2BAC701F00C91F40 /* Doggys */,
 				A9B53B8E2BB33687000AD215 /* Suporting Files */,
 				39228FEC2BAC702100C91F40 /* DoggysTests */,

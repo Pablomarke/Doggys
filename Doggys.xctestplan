@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "D5ED9B57-83B4-4861-98A9-FD6315E67C38",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Doggys.xcodeproj",
+      "identifier" : "39228FD82BAC701F00C91F40",
+      "name" : "Doggys"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Doggys.xcodeproj",
+        "identifier" : "39228FE82BAC702100C91F40",
+        "name" : "DoggysTests"
+      }
+    }
+  ],
+  "version" : 1
+}
