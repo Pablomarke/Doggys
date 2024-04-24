@@ -13,6 +13,7 @@ struct LoadingView: View {
             .ignoresSafeArea()
             .overlay(
                 ProgressView()
+                    .id(0)
                     .progressViewStyle(CircularProgressViewStyle())
             )
     }

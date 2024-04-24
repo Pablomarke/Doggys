@@ -20,13 +20,15 @@ struct SettingsView: View {
         appMainBackground {
             VStack {
                 LogoHeader(text: "Ajustes")
-                    .padding(.top, 
+                    .id(0)
+                    .padding(.top,
                              60)
                 Button(action: {
                     viewModel.disconnect()
                 }, label: {
                     ButtonLabel(word: "Desconectar")
                 })
+                .id(1)
             }
             NavigationLink(destination: LoginWireFrame().viewController,
                            isActive: $viewModel.isLogOut) {

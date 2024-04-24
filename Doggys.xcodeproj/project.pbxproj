@@ -67,6 +67,8 @@
 		A932074F2BB4AC100068D9C2 /* LogViewModelEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A932074E2BB4AC100068D9C2 /* LogViewModelEnvironmentKey.swift */; };
 		A946A8072BCFF0550088ADE0 /* FirebaseStorageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A946A8062BCFF0550088ADE0 /* FirebaseStorageViewModel.swift */; };
 		A946A8092BCFF07F0088ADE0 /* StorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A946A8082BCFF07F0088ADE0 /* StorageProtocol.swift */; };
+		A99395862BD918A100A66E7C /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = A99395852BD918A100A66E7C /* ViewInspector */; };
+		A99395892BD918C100A66E7C /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = A99395882BD918C100A66E7C /* ViewInspector */; };
 		A9C47F002BBDE03E0044ED5F /* RegisterWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C47EFF2BBDE03E0044ED5F /* RegisterWireFrame.swift */; };
 		A9C47F022BBE93FC0044ED5F /* RecoveryWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C47F012BBE93FC0044ED5F /* RecoveryWireFrame.swift */; };
 		A9C47F052BBFE9B90044ED5F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C47F042BBFE9B90044ED5F /* ProfileView.swift */; };
@@ -233,6 +235,7 @@
 				A9F98C972BB34C22004E9451 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				392EECD62BC68BBA005409EA /* KeychainSwift in Frameworks */,
 				A9F98C9D2BB34C22004E9451 /* FirebaseAuth in Frameworks */,
+				A99395862BD918A100A66E7C /* ViewInspector in Frameworks */,
 				A9F98CA12BB34C22004E9451 /* FirebaseCrashlytics in Frameworks */,
 				A9F98CC12BB34C22004E9451 /* FirebaseRemoteConfigSwift in Frameworks */,
 				A9F98CB32BB34C22004E9451 /* FirebaseInAppMessaging-Beta in Frameworks */,
@@ -256,6 +259,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A99395892BD918C100A66E7C /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +292,7 @@
 				39228FEC2BAC702100C91F40 /* DoggysTests */,
 				39228FF62BAC702100C91F40 /* DoggysUITests */,
 				39228FDA2BAC701F00C91F40 /* Products */,
+				A99395872BD918C100A66E7C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -602,6 +607,13 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		A99395872BD918C100A66E7C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A9B53B8E2BB33687000AD215 /* Suporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -714,6 +726,7 @@
 				A9F98CC22BB34C22004E9451 /* FirebaseStorage */,
 				A9F98CC42BB34C22004E9451 /* FirebaseStorageCombine-Community */,
 				392EECD52BC68BBA005409EA /* KeychainSwift */,
+				A99395852BD918A100A66E7C /* ViewInspector */,
 			);
 			productName = Doggys;
 			productReference = 39228FD92BAC701F00C91F40 /* Doggys.app */;
@@ -733,6 +746,9 @@
 				39228FEB2BAC702100C91F40 /* PBXTargetDependency */,
 			);
 			name = DoggysTests;
+			packageProductDependencies = (
+				A99395882BD918C100A66E7C /* ViewInspector */,
+			);
 			productName = DoggysTests;
 			productReference = 39228FE92BAC702100C91F40 /* DoggysTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -790,6 +806,7 @@
 			packageReferences = (
 				A9F98C8F2BB34C22004E9451 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				392EECD42BC68BBA005409EA /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				A99395842BD918A100A66E7C /* XCRemoteSwiftPackageReference "ViewInspector" */,
 			);
 			productRefGroup = 39228FDA2BAC701F00C91F40 /* Products */;
 			projectDirPath = "";
@@ -1244,6 +1261,14 @@
 				minimumVersion = 22.0.0;
 			};
 		};
+		A99395842BD918A100A66E7C /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nalexn/ViewInspector";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.10;
+			};
+		};
 		A9F98C8F2BB34C22004E9451 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -1259,6 +1284,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 392EECD42BC68BBA005409EA /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
+		};
+		A99395852BD918A100A66E7C /* ViewInspector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A99395842BD918A100A66E7C /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			productName = ViewInspector;
+		};
+		A99395882BD918C100A66E7C /* ViewInspector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A99395842BD918A100A66E7C /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			productName = ViewInspector;
 		};
 		A9F98C902BB34C22004E9451 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

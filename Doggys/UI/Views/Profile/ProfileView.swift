@@ -19,6 +19,7 @@ struct ProfileView: View {
             ScrollView {
                 VStack {
                     LogoHeader(text: "Perfil")
+                        .id(0)
                         .padding(.top, 50)
                     if let image = viewModel.selectedImage {
                         Button(action: {
@@ -37,6 +38,7 @@ struct ProfileView: View {
                         Button("Seleccionar Imagen") {
                             self.isShowingImagePicker = true
                         }
+                        .id(1)
                         .font(.title2)
                     }
                     if !isShowingImagePicker {
@@ -48,33 +50,41 @@ struct ProfileView: View {
                         .padding()
                     }
                     TextFieldView(text: $viewModel.dogOwner)
+                        .id(2)
                         .padding(5)
                     TextFieldView(text: $viewModel.nameOfDog)
+                        .id(3)
                         .padding(5)
                     TextFieldView(text: $viewModel.ageOfDog)
+                        .id(4)
                         .padding(5)
                     
                     TextPickerView(selectedItem: $viewModel.selectedBreed,
                                    text: "Seleccione una raza:",
                                    items: DogBreed.allCases)
+                    .id(5)
                     
                     TextPickerView(selectedItem: $viewModel.selectedGender,
                                    text: "Seleccione género:",
                                    items: DogGender.allCases)
+                    .id(6)
                     
                     TextPickerView(selectedItem: $viewModel.selectedWalk,
                                    text: "Seleccione tipo de paseo:",
                                    items: DogWalkLong.allCases)
+                    .id(7)
                     
                     TextPickerView(selectedItem: $viewModel.dofFriendly,
                                    text: "¿Soy amigable con otros perros?",
                                    items: DogFriendly.allCases)
+                    .id(8)
                     .padding()
                     Button(action: {
                         viewModel.searchDataOnDB()
                     }, label: {
                         ButtonLabel(word: "Guardar")
                     })
+                    .id(9)
                     .padding()
                 }
                 .sheet(isPresented: $isShowingImagePicker, 
