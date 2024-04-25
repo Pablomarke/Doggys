@@ -20,7 +20,6 @@ struct MapView: View {
                     MapMarkerIcon(name: marker.name)
                 }
             }
-                .id(0)
         }
         // MARK: - Lifecycle -
         .onAppear {

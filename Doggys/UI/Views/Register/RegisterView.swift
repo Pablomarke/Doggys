@@ -23,19 +23,15 @@ struct RegisterView: View {
         appMainBackground {
             VStack {
                 LogoHeader(text: "Registro")
-                    .id(0)
                 TextFieldView(text: $viewModel.email,
                               placeholder: "E-mail")
-                .id(1)
                 SecureTextFieldView("Password",
                                     placeholder: "Password",
                                     text: $viewModel.password)
-                .id(2)
                 .padding(.top, 8)
                 SecureTextFieldView("Repeat Password", 
                                     placeholder: "Repeat Password",
                                     text: $viewModel.repeatPassword)
-                .id(3)
                 
                 Button(action: {
                     viewModel.registerUser()
@@ -43,7 +39,6 @@ struct RegisterView: View {
                 }, label: {
                     ButtonLabel(word: "Registrar")
                 })
-                .id(4)
                 .padding(.top, 20)
                 .disabled(!viewModel.registerValid())
                 .opacity(viewModel.registerValid() ? 1.0 : 0.5)

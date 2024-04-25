@@ -24,23 +24,19 @@ struct LoginView: View {
             appMainBackground {
                 VStack() {
                     TextTitleHeader()
-                        .id(0)
                     TextFieldView(text: $viewModel.email,
                                   placeholder: "E-mail")
-                    .id(1)
                     .focused($nameIsFocused)
                         .padding(.top, 60)
                     SecureTextFieldView("Password",
                                         placeholder: "Password",
                                         text: $viewModel.password)
-                    .id(2)
                     .focused($nameIsFocused)
                     .padding(.top, 2)
                     HStack {
                         Toggle(isOn: $rememberLogin) {
                             Text("Recordar")
                         }
-                        .id(3)
                         .toggleStyle(SwitchToggleStyle(tint: rememberLogin
                                                        ? Color.customLightBlue
                                                        : Color.customWhite)
@@ -59,7 +55,6 @@ struct LoginView: View {
                     }, label: {
                         ButtonLabel(word: "Login")
                     })
-                    .id(4)
                     .disabled(!viewModel.loginIsValid(email: viewModel.email,
                                                       password: viewModel.password))
                     .opacity(viewModel.loginIsValid(email: viewModel.email, 
