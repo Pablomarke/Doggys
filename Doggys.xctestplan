@@ -1,0 +1,54 @@
+{
+  "configurations" : [
+    {
+      "id" : "2B5D247B-E20B-46AC-AFF8-9B21A99D5551",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:Doggys.xcodeproj",
+          "identifier" : "39228FD82BAC701F00C91F40",
+          "name" : "Doggys"
+        },
+        {
+          "containerPath" : "container:Doggys.xcodeproj",
+          "identifier" : "39228FE82BAC702100C91F40",
+          "name" : "DoggysTests"
+        },
+        {
+          "containerPath" : "container:Doggys.xcodeproj",
+          "identifier" : "39228FF22BAC702100C91F40",
+          "name" : "DoggysUITests"
+        }
+      ]
+    },
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Doggys.xcodeproj",
+      "identifier" : "39228FD82BAC701F00C91F40",
+      "name" : "Doggys"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Doggys.xcodeproj",
+        "identifier" : "39228FE82BAC702100C91F40",
+        "name" : "DoggysTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Doggys.xcodeproj",
+        "identifier" : "39228FF22BAC702100C91F40",
+        "name" : "DoggysUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

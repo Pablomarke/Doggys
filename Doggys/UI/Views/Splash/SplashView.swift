@@ -23,6 +23,7 @@ struct SplashView: View {
                 VStack {
                     Spacer()
                     LogoView()
+                        .id(0)
                     Spacer()
                 }
             }

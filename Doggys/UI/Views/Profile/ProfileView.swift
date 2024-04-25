@@ -20,6 +20,7 @@ struct ProfileView: View {
             ScrollView {
                 VStack {
                     LogoHeader(text: "Perfil")
+                        .id(0)
                         .padding(.top, 50)
                     if let image = viewModel.selectedImage {
                         Button(action: {
@@ -38,31 +39,45 @@ struct ProfileView: View {
                         Button("Seleccionar Imagen") {
                             self.isShowingImagePicker = true
                         }
-                        .padding(10)
+                        .id(1)
                         .font(.title2)
                     }
-                    TextFieldView(text: $viewModel.dogOwner, placeholder: "Nombre del Humano")
-                        .padding(10)
-                    TextFieldView(text: $viewModel.nameOfDog, placeholder: "Doggy Nombre")
-                        .padding(10)
-                    TextFieldView(text: $viewModel.ageOfDog, placeholder: "Doggy Edad")
-                        .padding(10)
-                    
+                    if !isShowingImagePicker {
+                        Button(action: {
+                            viewModel.searchImageOnRB()
+                        }, label: {
+                            Text("Cargar")
+                        })
+                        .padding()
+                    }
+                    TextFieldView(text: $viewModel.dogOwner)
+                        .id(2)
+                        .padding(5)
+                    TextFieldView(text: $viewModel.nameOfDog)
+                        .id(3)
+                        .padding(5)
+                    TextFieldView(text: $viewModel.ageOfDog)
+                        .id(4)
+                        .padding(5)
                     TextPickerView(selectedItem: $viewModel.selectedBreed,
                                    text: "Seleccione una raza:",
                                    items: DogBreed.allCases)
+                    .id(5)
                     
                     TextPickerView(selectedItem: $viewModel.selectedGender,
                                    text: "Seleccione género:",
                                    items: DogGender.allCases)
+                    .id(6)
                     
                     TextPickerView(selectedItem: $viewModel.selectedWalk,
                                    text: "Seleccione tipo de paseo:",
                                    items: DogWalkLong.allCases)
+                    .id(7)
                     
                     TextPickerView(selectedItem: $viewModel.dofFriendly,
                                    text: "¿Soy amigable con otros perros?",
                                    items: DogFriendly.allCases)
+                    .id(8)
                     .padding()
                     Button(action: {
                         viewModel.searchImageOnRB()
@@ -70,6 +85,7 @@ struct ProfileView: View {
                     }, label: {
                         ButtonLabel(word: "Guardar")
                     })
+                    .id(9)
                     .padding()
                 }
                 .sheet(isPresented: $isShowingImagePicker,
