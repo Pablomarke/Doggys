@@ -274,6 +274,5 @@ final class DoggysTests: XCTestCase {
         
         let buttonProfile = try profileView.inspect().find(viewWithId: 9)
         XCTAssertNotNil(buttonProfile)
-        
     }
 }
