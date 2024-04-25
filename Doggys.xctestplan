@@ -9,7 +9,25 @@
     }
   ],
   "defaultOptions" : {
-    "codeCoverage" : false,
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:Doggys.xcodeproj",
+          "identifier" : "39228FD82BAC701F00C91F40",
+          "name" : "Doggys"
+        },
+        {
+          "containerPath" : "container:Doggys.xcodeproj",
+          "identifier" : "39228FE82BAC702100C91F40",
+          "name" : "DoggysTests"
+        },
+        {
+          "containerPath" : "container:Doggys.xcodeproj",
+          "identifier" : "39228FF22BAC702100C91F40",
+          "name" : "DoggysUITests"
+        }
+      ]
+    },
     "targetForVariableExpansion" : {
       "containerPath" : "container:Doggys.xcodeproj",
       "identifier" : "39228FD82BAC701F00C91F40",
