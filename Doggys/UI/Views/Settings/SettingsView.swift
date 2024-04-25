@@ -21,12 +21,14 @@ struct SettingsView: View {
         appMainBackground {
             VStack {
                 LogoHeader(text: "Ajustes")
+                    .id(0)
                     .padding(.bottom, 100)
                 Button(action: {
                     viewModel.disconnect()
                 }, label: {
                     ButtonLabel(word: "Desconectar")
                 })
+                .id(1)
                 .padding(.bottom, 50)
                 Button(action: {
                     if self.viewModel.isMailAvailable{

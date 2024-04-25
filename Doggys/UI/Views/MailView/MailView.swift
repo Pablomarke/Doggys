@@ -23,7 +23,8 @@ struct MailView: UIViewControllerRepresentable {
         return mailComposeVC
     }
     
-    func updateUIViewController(_ uiViewController: MFMailComposeViewController, context: Context) {
+    func updateUIViewController(_ uiViewController: MFMailComposeViewController, 
+                                context: Context) {
     }
     
     class Coordinator: NSObject, MFMailComposeViewControllerDelegate {
@@ -33,7 +34,9 @@ struct MailView: UIViewControllerRepresentable {
             self.parent = parent
         }
         
-        func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        func mailComposeController(_ controller: MFMailComposeViewController, 
+                                   didFinishWith result: MFMailComposeResult,
+                                   error: Error?) {
             parent.isShowing = false
         }
     }

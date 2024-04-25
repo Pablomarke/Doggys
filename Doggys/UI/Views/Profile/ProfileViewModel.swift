@@ -46,13 +46,13 @@ final class ProfileViewModel: ObservableObject {
         
         storageViewModel.uploadImage(image: compressedImage) { url in
             self.urlImage = url
-            self.searchDataOnDB()
+            self.searchDataOnDataBase()
         } onFailure: { error in
             print("Error: \(error)")
         }
     }
     
-    func searchDataOnDB() {
+    func searchDataOnDataBase() {
         let data = UserProfile(id: UUID().uuidString, 
                                imageProfile: self.urlImage,
                                humanName: self.dogOwner,

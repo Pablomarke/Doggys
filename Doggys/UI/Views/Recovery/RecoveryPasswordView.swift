@@ -19,8 +19,10 @@ struct RecoveryPasswordView: View {
         appMainBackground {
             VStack {
                 LogoHeader(text: "Recuperar")
+                    .id(0)
                 TextFieldView(text: $viewModel.email,
                               placeholder: "E-mail")
+                .id(1)
                 .padding(.top, 30)
                 Button(action: {
                     viewModel.recoveryPassword()
@@ -29,6 +31,7 @@ struct RecoveryPasswordView: View {
                     ButtonLabel(word: "enviar")
                         .padding()
                 })
+                .id(2)
                 Spacer()
             }
             .navigationBarBackButtonHidden(true)
