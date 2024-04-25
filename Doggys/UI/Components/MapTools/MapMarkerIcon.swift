@@ -13,8 +13,8 @@ struct MapMarkerIcon: View {
     var body: some View {
             Image(.logoIcon)
                 .resizable()
-                .frame(width: 30,
-                       height: 30,
+                .frame(width: 60,
+                       height: 60,
                        alignment: .center)
                 .clipShape(.circle)
         Text(name)

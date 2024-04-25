@@ -25,6 +25,9 @@
 		392EECE12BC7C723005409EA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392EECE02BC7C723005409EA /* SettingsView.swift */; };
 		392EECE32BC7C73E005409EA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392EECE22BC7C73E005409EA /* SettingsViewModel.swift */; };
 		392EECE52BC7C796005409EA /* SettingsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392EECE42BC7C796005409EA /* SettingsWireframe.swift */; };
+		39393DDB2BDA4E170078367F /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 39393DDA2BDA4E170078367F /* ViewInspector */; };
+		39393DDE2BDA4E300078367F /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 39393DDD2BDA4E300078367F /* ViewInspector */; };
+		39393DE02BDA4E390078367F /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 39393DDF2BDA4E390078367F /* ViewInspector */; };
 		3979A3952BC95C0300F5C3B1 /* Jost-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3979A3942BC95C0300F5C3B1 /* Jost-Black.ttf */; };
 		3979A3972BC95CAF00F5C3B1 /* Jost-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3979A3962BC95CAF00F5C3B1 /* Jost-ExtraLight.ttf */; };
 		3979A3992BC95D8A00F5C3B1 /* Jost-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3979A3982BC95D8A00F5C3B1 /* Jost-Thin.ttf */; };
@@ -67,8 +70,7 @@
 		A932074F2BB4AC100068D9C2 /* LogViewModelEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A932074E2BB4AC100068D9C2 /* LogViewModelEnvironmentKey.swift */; };
 		A946A8072BCFF0550088ADE0 /* FirebaseStorageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A946A8062BCFF0550088ADE0 /* FirebaseStorageViewModel.swift */; };
 		A946A8092BCFF07F0088ADE0 /* StorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A946A8082BCFF07F0088ADE0 /* StorageProtocol.swift */; };
-		A99395862BD918A100A66E7C /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = A99395852BD918A100A66E7C /* ViewInspector */; };
-		A99395892BD918C100A66E7C /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = A99395882BD918C100A66E7C /* ViewInspector */; };
+		A9ACAE312BD25B020035B6CF /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ACAE302BD25B020035B6CF /* MailView.swift */; };
 		A9C47F002BBDE03E0044ED5F /* RegisterWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C47EFF2BBDE03E0044ED5F /* RegisterWireFrame.swift */; };
 		A9C47F022BBE93FC0044ED5F /* RecoveryWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C47F012BBE93FC0044ED5F /* RecoveryWireFrame.swift */; };
 		A9C47F052BBFE9B90044ED5F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C47F042BBFE9B90044ED5F /* ProfileView.swift */; };
@@ -137,7 +139,6 @@
 		390BB7692BBCA51F0052257E /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		390BB76C2BBCA8BE0052257E /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		390BB76E2BBCA9D30052257E /* SplashWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWireFrame.swift; sourceTree = "<group>"; };
-		391AA3F92BD9139B005280F4 /* Doggys.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Doggys.xctestplan; sourceTree = "<group>"; };
 		39228FD92BAC701F00C91F40 /* Doggys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doggys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39228FDC2BAC701F00C91F40 /* DoggysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoggysApp.swift; sourceTree = "<group>"; };
 		39228FDE2BAC701F00C91F40 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -182,6 +183,7 @@
 		39DA4CAD2BCD11F500717DCD /* TextPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPickerView.swift; sourceTree = "<group>"; };
 		5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		5D24D97C2BCFE8EB007294E2 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		A919B15C2BDA432300A9FF08 /* Doggys.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Doggys.xctestplan; sourceTree = "<group>"; };
 		A9286A302BC6E55C003FC58A /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		A9286A322BC7DABD003FC58A /* DogBreed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreed.swift; sourceTree = "<group>"; };
 		A9286A342BC7E192003FC58A /* DogGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGender.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 		A932074E2BB4AC100068D9C2 /* LogViewModelEnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewModelEnvironmentKey.swift; sourceTree = "<group>"; };
 		A946A8062BCFF0550088ADE0 /* FirebaseStorageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageViewModel.swift; sourceTree = "<group>"; };
 		A946A8082BCFF07F0088ADE0 /* StorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProtocol.swift; sourceTree = "<group>"; };
+		A9ACAE302BD25B020035B6CF /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		A9C47EFF2BBDE03E0044ED5F /* RegisterWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWireFrame.swift; sourceTree = "<group>"; };
 		A9C47F012BBE93FC0044ED5F /* RecoveryWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryWireFrame.swift; sourceTree = "<group>"; };
 		A9C47F042BBFE9B90044ED5F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -235,7 +238,7 @@
 				A9F98C972BB34C22004E9451 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				392EECD62BC68BBA005409EA /* KeychainSwift in Frameworks */,
 				A9F98C9D2BB34C22004E9451 /* FirebaseAuth in Frameworks */,
-				A99395862BD918A100A66E7C /* ViewInspector in Frameworks */,
+				39393DDB2BDA4E170078367F /* ViewInspector in Frameworks */,
 				A9F98CA12BB34C22004E9451 /* FirebaseCrashlytics in Frameworks */,
 				A9F98CC12BB34C22004E9451 /* FirebaseRemoteConfigSwift in Frameworks */,
 				A9F98CB32BB34C22004E9451 /* FirebaseInAppMessaging-Beta in Frameworks */,
@@ -259,7 +262,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A99395892BD918C100A66E7C /* ViewInspector in Frameworks */,
+				39393DDE2BDA4E300078367F /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +270,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39393DE02BDA4E390078367F /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,13 +290,13 @@
 		39228FD02BAC701E00C91F40 = {
 			isa = PBXGroup;
 			children = (
-				391AA3F92BD9139B005280F4 /* Doggys.xctestplan */,
+				A919B15C2BDA432300A9FF08 /* Doggys.xctestplan */,
 				39228FDB2BAC701F00C91F40 /* Doggys */,
 				A9B53B8E2BB33687000AD215 /* Suporting Files */,
 				39228FEC2BAC702100C91F40 /* DoggysTests */,
 				39228FF62BAC702100C91F40 /* DoggysUITests */,
 				39228FDA2BAC701F00C91F40 /* Products */,
-				A99395872BD918C100A66E7C /* Frameworks */,
+				39393DDC2BDA4E300078367F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -368,6 +372,13 @@
 				392EECE42BC7C796005409EA /* SettingsWireframe.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		39393DDC2BDA4E300078367F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		3979A3932BC95BB500F5C3B1 /* Fonts */ = {
@@ -512,6 +523,7 @@
 				A9EDD0CE2BBC150C0052D03C /* Register */,
 				A9EDD0D12BBC16310052D03C /* Recovery */,
 				392EECDF2BC7C6FD005409EA /* Settings */,
+				A9ACAE2F2BD25AE30035B6CF /* MailView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -607,11 +619,12 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		A99395872BD918C100A66E7C /* Frameworks */ = {
+		A9ACAE2F2BD25AE30035B6CF /* MailView */ = {
 			isa = PBXGroup;
 			children = (
+				A9ACAE302BD25B020035B6CF /* MailView.swift */,
 			);
-			name = Frameworks;
+			path = MailView;
 			sourceTree = "<group>";
 		};
 		A9B53B8E2BB33687000AD215 /* Suporting Files */ = {
@@ -726,7 +739,7 @@
 				A9F98CC22BB34C22004E9451 /* FirebaseStorage */,
 				A9F98CC42BB34C22004E9451 /* FirebaseStorageCombine-Community */,
 				392EECD52BC68BBA005409EA /* KeychainSwift */,
-				A99395852BD918A100A66E7C /* ViewInspector */,
+				39393DDA2BDA4E170078367F /* ViewInspector */,
 			);
 			productName = Doggys;
 			productReference = 39228FD92BAC701F00C91F40 /* Doggys.app */;
@@ -747,7 +760,7 @@
 			);
 			name = DoggysTests;
 			packageProductDependencies = (
-				A99395882BD918C100A66E7C /* ViewInspector */,
+				39393DDD2BDA4E300078367F /* ViewInspector */,
 			);
 			productName = DoggysTests;
 			productReference = 39228FE92BAC702100C91F40 /* DoggysTests.xctest */;
@@ -767,6 +780,9 @@
 				39228FF52BAC702100C91F40 /* PBXTargetDependency */,
 			);
 			name = DoggysUITests;
+			packageProductDependencies = (
+				39393DDF2BDA4E390078367F /* ViewInspector */,
+			);
 			productName = DoggysUITests;
 			productReference = 39228FF32BAC702100C91F40 /* DoggysUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -806,7 +822,7 @@
 			packageReferences = (
 				A9F98C8F2BB34C22004E9451 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				392EECD42BC68BBA005409EA /* XCRemoteSwiftPackageReference "keychain-swift" */,
-				A99395842BD918A100A66E7C /* XCRemoteSwiftPackageReference "ViewInspector" */,
+				39393DD92BDA4E170078367F /* XCRemoteSwiftPackageReference "ViewInspector" */,
 			);
 			productRefGroup = 39228FDA2BAC701F00C91F40 /* Products */;
 			projectDirPath = "";
@@ -882,6 +898,7 @@
 				397B93DC2BB3560C0030D77E /* SecureTextFieldView.swift in Sources */,
 				A9286A372BC7E3D4003FC58A /* DogWalkLong.swift in Sources */,
 				A92BF8D32BC073C2004AA875 /* ProfileWireFrame.swift in Sources */,
+				A9ACAE312BD25B020035B6CF /* MailView.swift in Sources */,
 				A9FE0ECF2BC9BA54008564AB /* UserProfileEnvironmentKey.swift in Sources */,
 				A946A8092BCFF07F0088ADE0 /* StorageProtocol.swift in Sources */,
 				392EECE32BC7C73E005409EA /* SettingsViewModel.swift in Sources */,
@@ -1095,6 +1112,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1126,6 +1144,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1261,7 +1280,7 @@
 				minimumVersion = 22.0.0;
 			};
 		};
-		A99395842BD918A100A66E7C /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
+		39393DD92BDA4E170078367F /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/nalexn/ViewInspector";
 			requirement = {
@@ -1285,14 +1304,19 @@
 			package = 392EECD42BC68BBA005409EA /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
 		};
-		A99395852BD918A100A66E7C /* ViewInspector */ = {
+		39393DDA2BDA4E170078367F /* ViewInspector */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A99395842BD918A100A66E7C /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			package = 39393DD92BDA4E170078367F /* XCRemoteSwiftPackageReference "ViewInspector" */;
 			productName = ViewInspector;
 		};
-		A99395882BD918C100A66E7C /* ViewInspector */ = {
+		39393DDD2BDA4E300078367F /* ViewInspector */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A99395842BD918A100A66E7C /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			package = 39393DD92BDA4E170078367F /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			productName = ViewInspector;
+		};
+		39393DDF2BDA4E390078367F /* ViewInspector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 39393DD92BDA4E170078367F /* XCRemoteSwiftPackageReference "ViewInspector" */;
 			productName = ViewInspector;
 		};
 		A9F98C902BB34C22004E9451 /* FirebaseAnalytics */ = {
