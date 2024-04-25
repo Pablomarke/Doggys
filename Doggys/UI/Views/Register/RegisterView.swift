@@ -12,6 +12,7 @@ struct RegisterView: View {
     static var viewName: String = "RegisterView"
     @ObservedObject var viewModel: RegisterViewModel
     @Environment(\.presentationMode) var presentationMode
+    @State private var showAlert = false
     
     public init(viewModel: RegisterViewModel) {
         self.viewModel = viewModel
@@ -38,6 +39,7 @@ struct RegisterView: View {
                 
                 Button(action: {
                     viewModel.registerUser()
+                    self.showAlert = true
                 }, label: {
                     ButtonLabel(word: "Registrar")
                 })
@@ -46,6 +48,11 @@ struct RegisterView: View {
                 .disabled(!viewModel.registerValid())
                 .opacity(viewModel.registerValid() ? 1.0 : 0.5)
                 Spacer()
+            }
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text("Registro"),
+                      message: Text("Registro completado con éxito"),
+                      dismissButton: .default(Text("OK")))
             }
         }
         .navigationBarBackButtonHidden(true)

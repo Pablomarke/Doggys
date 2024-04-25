@@ -12,6 +12,7 @@ struct ProfileView: View {
     @ObservedObject var viewModel: ProfileViewModel
     static var viewName: String = "ProfileView"
     @State var isShowingImagePicker = false
+    @State private var showAlert = false
     
     //MARK: - View -
     var body: some View {
@@ -58,7 +59,6 @@ struct ProfileView: View {
                     TextFieldView(text: $viewModel.ageOfDog)
                         .id(4)
                         .padding(5)
-                    
                     TextPickerView(selectedItem: $viewModel.selectedBreed,
                                    text: "Seleccione una raza:",
                                    items: DogBreed.allCases)
@@ -80,18 +80,24 @@ struct ProfileView: View {
                     .id(8)
                     .padding()
                     Button(action: {
-                        viewModel.searchDataOnDB()
+                        viewModel.searchImageOnRB()
+                        self.showAlert = true
                     }, label: {
                         ButtonLabel(word: "Guardar")
                     })
                     .id(9)
                     .padding()
                 }
-                .sheet(isPresented: $isShowingImagePicker, 
+                .sheet(isPresented: $isShowingImagePicker,
                        content: {
                     ImagePicker(image: $viewModel.selectedImage)
                 })
             }
+            .alert(isPresented: $showAlert) {
+                       Alert(title: Text("Perfil"),
+                             message: Text("Datos guardados con éxito"),
+                             dismissButton: .default(Text("OK")))
+                   }
         }
         .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
