@@ -9,7 +9,6 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
-    
     @ObservedObject var viewModel: MapViewModel
     // MARK: - View -
     var body: some View {
