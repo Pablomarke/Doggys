@@ -1,12 +1,13 @@
 # Doggys para iOS
 
-App creada en swiftUI como proyecto final del Bootcamp mobile de keepcoding. 
-La app está siendo desarrollada en swift nativo y se encuentra en fase de desarrollo.
+La app está desarrollada en swift nativo y se encuentra en fase de desarrollo.
 
 ### Aviso importante !!
  La App está en proceso de desarrollo por lo que algunas funcionalidades no estan implementadas.
 
 # Instalación
+
+En desarrollo...
 
 # Información App
 
