@@ -16,7 +16,15 @@ struct MapView: View {
             Map(coordinateRegion: $viewModel.region,
                 annotationItems: viewModel.markers) { marker in
                 MapAnnotation(coordinate: marker.coordinate) {
-                    MapMarkerIcon(name: marker.name)
+                    CustomMapIcon()
+                        .frame(width: 100, height: 70)
+                        .foregroundColor(.customMain)
+                    
+                    Image(.logoIcon)
+                        .resizable()
+                        .frame(width: 35, height: 35)
+                        .clipShape(Circle())
+                        .offset(y: -73)
                 }
             }
                 .id(0)
