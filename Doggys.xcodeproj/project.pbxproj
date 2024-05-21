@@ -46,7 +46,6 @@
 		39AF65ED2BD17FED00FC602C /* RecoveryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65EC2BD17FED00FC602C /* RecoveryText.swift */; };
 		39AF65EF2BD1800C00FC602C /* RegisterText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65EE2BD1800C00FC602C /* RegisterText.swift */; };
 		39AF65F12BD187F400FC602C /* BackArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65F02BD187F400FC602C /* BackArrow.swift */; };
-		39AF65F42BD1A56700FC602C /* MapMarkerIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65F32BD1A56700FC602C /* MapMarkerIcon.swift */; };
 		39AF65F62BD1A7EE00FC602C /* MapViewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65F52BD1A7EE00FC602C /* MapViewDataManager.swift */; };
 		39DA4CAE2BCD11F500717DCD /* TextPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA4CAD2BCD11F500717DCD /* TextPickerView.swift */; };
 		5D16A5192BC458A8004EE58F /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */; };
@@ -105,6 +104,7 @@
 		A9CC34952BC3DFE800E1599A /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC34942BC3DFE800E1599A /* MapViewModel.swift */; };
 		A9CC34972BC3DFF400E1599A /* MapViewWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC34962BC3DFF400E1599A /* MapViewWireFrame.swift */; };
 		A9CC34992BC3E3C200E1599A /* MarkerMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC34982BC3E3C200E1599A /* MarkerMap.swift */; };
+		A9D748542BFC904C00031B43 /* CustomMapIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D748532BFC904C00031B43 /* CustomMapIcon.swift */; };
 		A9EDD0CD2BBBF9250052D03C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0CC2BBBF9250052D03C /* RegisterView.swift */; };
 		A9EDD0D02BBC153E0052D03C /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0CF2BBC153E0052D03C /* RegisterViewModel.swift */; };
 		A9EDD0D32BBC16470052D03C /* RecoveryPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0D22BBC16470052D03C /* RecoveryPasswordView.swift */; };
@@ -179,7 +179,6 @@
 		39AF65EC2BD17FED00FC602C /* RecoveryText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryText.swift; sourceTree = "<group>"; };
 		39AF65EE2BD1800C00FC602C /* RegisterText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterText.swift; sourceTree = "<group>"; };
 		39AF65F02BD187F400FC602C /* BackArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackArrow.swift; sourceTree = "<group>"; };
-		39AF65F32BD1A56700FC602C /* MapMarkerIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMarkerIcon.swift; sourceTree = "<group>"; };
 		39AF65F52BD1A7EE00FC602C /* MapViewDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewDataManager.swift; sourceTree = "<group>"; };
 		39DA4CAD2BCD11F500717DCD /* TextPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPickerView.swift; sourceTree = "<group>"; };
 		5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -209,6 +208,7 @@
 		A9CC34942BC3DFE800E1599A /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		A9CC34962BC3DFF400E1599A /* MapViewWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewWireFrame.swift; sourceTree = "<group>"; };
 		A9CC34982BC3E3C200E1599A /* MarkerMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerMap.swift; sourceTree = "<group>"; };
+		A9D748532BFC904C00031B43 /* CustomMapIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMapIcon.swift; sourceTree = "<group>"; };
 		A9EDD0CC2BBBF9250052D03C /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		A9EDD0CF2BBC153E0052D03C /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		A9EDD0D22BBC16470052D03C /* RecoveryPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordView.swift; sourceTree = "<group>"; };
@@ -515,7 +515,7 @@
 		39AF65F22BD1A54B00FC602C /* MapTools */ = {
 			isa = PBXGroup;
 			children = (
-				39AF65F32BD1A56700FC602C /* MapMarkerIcon.swift */,
+				A9D748532BFC904C00031B43 /* CustomMapIcon.swift */,
 			);
 			path = MapTools;
 			sourceTree = "<group>";
@@ -912,7 +912,6 @@
 				392EECE32BC7C73E005409EA /* SettingsViewModel.swift in Sources */,
 				A946A8072BCFF0550088ADE0 /* FirebaseStorageViewModel.swift in Sources */,
 				A9286A392BC7E607003FC58A /* DogFriendly.swift in Sources */,
-				39AF65F42BD1A56700FC602C /* MapMarkerIcon.swift in Sources */,
 				A9CC34952BC3DFE800E1599A /* MapViewModel.swift in Sources */,
 				A9EDD0D02BBC153E0052D03C /* RegisterViewModel.swift in Sources */,
 				392EECD32BC68204005409EA /* SwitchRemember.swift in Sources */,
@@ -938,6 +937,7 @@
 				A9EDD0D32BBC16470052D03C /* RecoveryPasswordView.swift in Sources */,
 				3979A3A52BCA866300F5C3B1 /* FadeinModifier.swift in Sources */,
 				A932073C2BB48F860068D9C2 /* AuthProtocol.swift in Sources */,
+				A9D748542BFC904C00031B43 /* CustomMapIcon.swift in Sources */,
 				A9CC34932BC3DFDA00E1599A /* MapView.swift in Sources */,
 				A9C47F022BBE93FC0044ED5F /* RecoveryWireFrame.swift in Sources */,
 				390BB76A2BBCA51F0052257E /* SplashView.swift in Sources */,
