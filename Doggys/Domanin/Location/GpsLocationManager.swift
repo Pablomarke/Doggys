@@ -11,6 +11,7 @@ class GpsLocationManager: NSObject {
     private var locationManager: CLLocationManager
     var locationUpdateHandler: ((CLLocationCoordinate2D) -> Void)?
     var errorHandler: ((Error) -> Void)?
+    var userHasLocation: Bool = false
     
     override init() {
         self.locationManager = CLLocationManager()
@@ -18,6 +19,14 @@ class GpsLocationManager: NSObject {
         
         self.locationManager.delegate = self
         self.locationManager.requestWhenInUseAuthorization()
+        self.checkUserAuthorization()
+    }
+    
+    func getLocation() -> CLLocationCoordinate2D {
+        if let location = locationManager.location?.coordinate {
+            return location
+        }
+        return CLLocationCoordinate2D()
     }
     
     func getCurrentLocation(completion: @escaping (CLLocationCoordinate2D?,
@@ -29,8 +38,23 @@ class GpsLocationManager: NSObject {
         self.errorHandler = { error in
             completion(nil, error)
         }
-        
+    
         self.locationManager.startUpdatingLocation()
+    }
+
+    
+    func checkUserAuthorization() {
+        let status = locationManager.authorizationStatus
+        switch status {
+            case .authorized, .authorizedAlways, .authorizedWhenInUse:
+                userHasLocation = true
+                break
+            case .denied, .notDetermined, .restricted:
+                print("User no ha autorizado mostrar su localización")
+                userHasLocation = false
+            @unknown default:
+                print("Unhandled state")
+        }
     }
 }
 
@@ -43,6 +67,10 @@ extension GpsLocationManager: CLLocationManagerDelegate {
         
         let coordinate = location.coordinate
         locationUpdateHandler?(coordinate)
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        checkUserAuthorization()
     }
     
     func locationManager(_ manager: CLLocationManager,
