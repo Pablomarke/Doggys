@@ -10,11 +10,12 @@ import MapKit
 
 struct MapView: View {
     @ObservedObject var viewModel: MapViewModel
-    
+   
     // MARK: - View -
     var body: some View {
-        ZStack{
+        ZStack {
             Map(coordinateRegion: $viewModel.region,
+                showsUserLocation: true,
                 annotationItems: viewModel.markers) { marker in
                 MapAnnotation(coordinate: marker.coordinate) {
                     CustomMapIcon()

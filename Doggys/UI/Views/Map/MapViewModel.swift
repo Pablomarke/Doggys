@@ -9,17 +9,14 @@ import Foundation
 import MapKit
 import Combine
 
-class MapViewModel: ObservableObject {
+final class MapViewModel: ObservableObject {
     // MARK: - Properties -
     private var locationManager: GpsLocationManager
-    private var locationName: String = ""
-    var dataManager: MapViewDataManager
-    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40.414315106259174,
-                                                                              longitude: -3.689848595545417),
-                                               span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-    @Published var markers: MarkerMapList = .init()
-    @Published var selfMarker = MarkerMap(name: "You",
-                                          coordinate: CLLocationCoordinate2D())
+    private var dataManager: MapViewDataManager
+    @Published var region: MKCoordinateRegion = .init()
+    
+    var markers: MarkerMapList = .init()
+    
     init(dataManager: MapViewDataManager, locationManager: GpsLocationManager) {
         self.dataManager = dataManager
         self.locationManager = locationManager
@@ -27,21 +24,29 @@ class MapViewModel: ObservableObject {
     
     // MARK: - Public methods -
     func chargeData() {
+        self.region.span = MKCoordinateSpan(latitudeDelta: 0.01,
+                                            longitudeDelta: 0.01)
         markers = dataManager.mockUsersData
-        self.gpsSelfLocation {
-            self.markers.append(self.selfMarker)
+        getLocationAndCenter()
+    }
+}
+
+private extension MapViewModel {
+    func getLocationAndCenter() {
+        let location = self.locationManager.getLocation()
+        DispatchQueue.main.async {
+            self.region.center = location
         }
     }
     
-    func gpsSelfLocation(completion: @escaping () -> ()) {
-        locationManager.getCurrentLocation { coordinate, error in
+    //TODO: Implement this
+    func getCurrentLocationAndCenter() {
+        locationManager.getCurrentLocation { [weak self] coordinate, error in
             if let coordinate = coordinate {
-                self.region.center = coordinate
-                self.selfMarker.coordinate = coordinate
-                self.locationName = "coordinates: \n \n - Latitude: \(coordinate.latitude)\n - Longitude: \(coordinate.longitude)"
-                completion()
+                DispatchQueue.main.async {
+                    self?.region.center = coordinate
+                }
             } else if let error = error {
-                self.locationName = "Error"
                 print("Error: \(error.localizedDescription)")
             }
         }
