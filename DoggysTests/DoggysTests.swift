@@ -82,7 +82,9 @@ final class DoggysTests: XCTestCase {
                                        dogBreed: DogBreed.boxer,
                                        dogGender: DogGender.male,
                                        dogWalk: DogWalkLong.veryLong,
-                                       dogFriendly: DogFriendly.yesFemale)
+                                       dogFriendly: DogFriendly.yesFemale,
+                                       selfLatitude: 20.00,
+                                       selfLongitude: 20.00)
         
         XCTAssertEqual(userProfile1.dogBreed, DogBreed.boxer)
         XCTAssertEqual(userProfile1.dogYears, "4")
