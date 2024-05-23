@@ -18,7 +18,8 @@ extension UserProfile {
             "dogGender": dogGender.rawValue,
             "dogWalk": dogWalk.rawValue,
             "dogFriendly": dogFriendly.rawValue,
-//            "coordenates": coordenates.coordinate
+            "selfLatitude" : selfLatitude,
+            "selfLongitude": selfLongitude
         ]
     }
 }

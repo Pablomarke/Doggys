@@ -24,6 +24,9 @@ final class ProfileViewModel: ObservableObject {
     @Published var dofFriendly: DogFriendly = .yes
     @Published var selectedImage: UIImage?
     @Published var urlImage: String = ""
+    @Published var selfLatitude: Double = 20.00
+    @Published var selfLongitude: Double = 20.00
+
     
     init(userViewModel: UserProfileProtocol, logViewModel:LogProtocol, storageViewModel: StorageProtocol) {
         self.userViewModel = userViewModel
@@ -61,7 +64,9 @@ final class ProfileViewModel: ObservableObject {
                                dogBreed: self.selectedBreed,
                                dogGender: self.selectedGender,
                                dogWalk: self.selectedWalk, 
-                               dogFriendly: self.dofFriendly)
+                               dogFriendly: self.dofFriendly,
+                               selfLatitude: self.selfLatitude,
+                               selfLongitude: self.selfLongitude)
         
         userViewModel.searchData(userProfile: data) {
             print("Document added succesfully")
