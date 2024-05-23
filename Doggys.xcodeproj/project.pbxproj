@@ -591,13 +591,13 @@
 			isa = PBXGroup;
 			children = (
 				A932073E2BB48FB40068D9C2 /* User.swift */,
+				A9FE0ECA2BC9B520008564AB /* UserProfile.swift */,
+				A9FE0ED22BC9BC5F008564AB /* UserProfile+Firebase.swift */,
 				A9286A322BC7DABD003FC58A /* DogBreed.swift */,
 				A9286A342BC7E192003FC58A /* DogGender.swift */,
 				A9286A362BC7E3D4003FC58A /* DogWalkLong.swift */,
 				A9286A382BC7E607003FC58A /* DogFriendly.swift */,
 				A9CC34982BC3E3C200E1599A /* MarkerMap.swift */,
-				A9FE0ECA2BC9B520008564AB /* UserProfile.swift */,
-				A9FE0ED22BC9BC5F008564AB /* UserProfile+Firebase.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
