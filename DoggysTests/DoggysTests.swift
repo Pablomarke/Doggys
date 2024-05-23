@@ -126,9 +126,8 @@ final class DoggysTests: XCTestCase {
     
     // MARK: - Testing components -
     func testComponents() throws {
-        let mapMarker = MapMarkerIcon(name: "test")
+        let mapMarker = CustomMapIcon()
         XCTAssertNotNil(mapMarker.body)
-        XCTAssertEqual(mapMarker.name, "test")
     }
     
     func testLogo() throws {

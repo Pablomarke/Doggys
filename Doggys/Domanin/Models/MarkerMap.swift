@@ -12,5 +12,5 @@ typealias MarkerMapList = [MarkerMap]
 struct MarkerMap: Identifiable {
     let id = UUID()
     let name: String
-    let coordinate: CLLocationCoordinate2D
+    var coordinate: CLLocationCoordinate2D
 }

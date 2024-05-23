@@ -10,10 +10,12 @@ import MapKit
 
 struct MapView: View {
     @ObservedObject var viewModel: MapViewModel
+   
     // MARK: - View -
     var body: some View {
-        ZStack{
-            Map(coordinateRegion: $viewModel.region,
+        ZStack {
+            Map(coordinateRegion: $viewModel.selfRegion,
+                showsUserLocation: true,
                 annotationItems: viewModel.markers) { marker in
                 MapAnnotation(coordinate: marker.coordinate) {
                     CustomMapIcon()
@@ -27,14 +29,23 @@ struct MapView: View {
                         .offset(y: -73)
                 }
             }
-                .id(0)
+            .id(0)
+            VStack {
+                Spacer()
+                HStack {
+                    CenterMapButton {
+                        viewModel.getLocationAndCenter()
+                    }
+                    Spacer()
+                }
+                .padding([.leading, .bottom], 16)
+            }
         }
-        // MARK: - Lifecycle -
         .onAppear {
             viewModel.chargeData()
         }
     }
-    
+
     mutating func set(viewModel: MapViewModel) {
         self.viewModel = viewModel
     }

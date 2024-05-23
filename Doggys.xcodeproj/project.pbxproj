@@ -24,6 +24,7 @@
 		392EECE12BC7C723005409EA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392EECE02BC7C723005409EA /* SettingsView.swift */; };
 		392EECE32BC7C73E005409EA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392EECE22BC7C73E005409EA /* SettingsViewModel.swift */; };
 		392EECE52BC7C796005409EA /* SettingsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392EECE42BC7C796005409EA /* SettingsWireframe.swift */; };
+		3966BD872BFF2E1F0087D7C3 /* CenterMapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3966BD862BFF2E1F0087D7C3 /* CenterMapButton.swift */; };
 		3979A3952BC95C0300F5C3B1 /* Jost-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3979A3942BC95C0300F5C3B1 /* Jost-Black.ttf */; };
 		3979A3972BC95CAF00F5C3B1 /* Jost-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3979A3962BC95CAF00F5C3B1 /* Jost-ExtraLight.ttf */; };
 		3979A3992BC95D8A00F5C3B1 /* Jost-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3979A3982BC95D8A00F5C3B1 /* Jost-Thin.ttf */; };
@@ -34,6 +35,7 @@
 		3979A3A52BCA866300F5C3B1 /* FadeinModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3979A3A42BCA866300F5C3B1 /* FadeinModifier.swift */; };
 		397B93DA2BB353C20030D77E /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B93D92BB353C20030D77E /* TextFieldView.swift */; };
 		397B93DC2BB3560C0030D77E /* SecureTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B93DB2BB3560C0030D77E /* SecureTextFieldView.swift */; };
+		3989ED6C2BFC856C007074A1 /* GpsLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3989ED6B2BFC856C007074A1 /* GpsLocationManager.swift */; };
 		399BE5332BB9791B00AC323C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BE5322BB9791B00AC323C /* LoginViewModel.swift */; };
 		399BE5352BB979A600AC323C /* LoginWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BE5342BB979A600AC323C /* LoginWireFrame.swift */; };
 		399BE53B2BBA8A7600AC323C /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BE53A2BBA8A7600AC323C /* LogoView.swift */; };
@@ -155,6 +157,7 @@
 		392EECE02BC7C723005409EA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		392EECE22BC7C73E005409EA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		392EECE42BC7C796005409EA /* SettingsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWireframe.swift; sourceTree = "<group>"; };
+		3966BD862BFF2E1F0087D7C3 /* CenterMapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterMapButton.swift; sourceTree = "<group>"; };
 		3979A3922BC958DD00F5C3B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3979A3942BC95C0300F5C3B1 /* Jost-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-Black.ttf"; sourceTree = "<group>"; };
 		3979A3962BC95CAF00F5C3B1 /* Jost-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -166,6 +169,7 @@
 		3979A3A42BCA866300F5C3B1 /* FadeinModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeinModifier.swift; sourceTree = "<group>"; };
 		397B93D92BB353C20030D77E /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		397B93DB2BB3560C0030D77E /* SecureTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextFieldView.swift; sourceTree = "<group>"; };
+		3989ED6B2BFC856C007074A1 /* GpsLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpsLocationManager.swift; sourceTree = "<group>"; };
 		399BE5322BB9791B00AC323C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		399BE5342BB979A600AC323C /* LoginWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWireFrame.swift; sourceTree = "<group>"; };
 		399BE53A2BBA8A7600AC323C /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
@@ -417,6 +421,14 @@
 			path = ToolViews;
 			sourceTree = "<group>";
 		};
+		3989ED6A2BFC853C007074A1 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				3989ED6B2BFC856C007074A1 /* GpsLocationManager.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		399BE5312BB976B600AC323C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,6 +518,7 @@
 			isa = PBXGroup;
 			children = (
 				A9D748532BFC904C00031B43 /* CustomMapIcon.swift */,
+				3966BD862BFF2E1F0087D7C3 /* CenterMapButton.swift */,
 			);
 			path = MapTools;
 			sourceTree = "<group>";
@@ -529,6 +542,7 @@
 		39D9D83B2BB710C900B5331A /* Domanin */ = {
 			isa = PBXGroup;
 			children = (
+				3989ED6A2BFC853C007074A1 /* Location */,
 				3979A3A02BCA792400F5C3B1 /* Extensions */,
 				392EECDC2BC68D0E005409EA /* SharedPreferences */,
 				392EECD72BC68C80005409EA /* Security */,
@@ -921,6 +935,7 @@
 				A93207472BB4A9E30068D9C2 /* LogProtocol.swift in Sources */,
 				390BB76D2BBCA8BE0052257E /* SplashViewModel.swift in Sources */,
 				392EECDB2BC68CEA005409EA /* KeyChainEnum.swift in Sources */,
+				3966BD872BFF2E1F0087D7C3 /* CenterMapButton.swift in Sources */,
 				5D24D97D2BCFE8EB007294E2 /* LoadingView.swift in Sources */,
 				39AF65ED2BD17FED00FC602C /* RecoveryText.swift in Sources */,
 				A9EDD0D32BBC16470052D03C /* RecoveryPasswordView.swift in Sources */,
@@ -932,6 +947,7 @@
 				390BB76A2BBCA51F0052257E /* SplashView.swift in Sources */,
 				A932074F2BB4AC100068D9C2 /* LogViewModelEnvironmentKey.swift in Sources */,
 				399BE5352BB979A600AC323C /* LoginWireFrame.swift in Sources */,
+				3989ED6C2BFC856C007074A1 /* GpsLocationManager.swift in Sources */,
 				39AF65F12BD187F400FC602C /* BackArrow.swift in Sources */,
 				A932073A2BB48E170068D9C2 /* FirebaseAuthViewModel.swift in Sources */,
 				A9EDD0D52BBC19310052D03C /* RecoveryPasswordViewModel.swift in Sources */,
@@ -1103,6 +1119,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Doggys/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "we need Gps to found you";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1115,7 +1132,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = pdcmdev.Doggys;
+				PRODUCT_BUNDLE_IDENTIFIER = Doggys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1135,6 +1152,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Doggys/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "we need Gps to found you";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1147,7 +1165,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = pdcmdev.Doggys;
+				PRODUCT_BUNDLE_IDENTIFIER = Doggys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
