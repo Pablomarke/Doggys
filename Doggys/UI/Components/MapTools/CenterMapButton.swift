@@ -27,7 +27,6 @@ struct CenterMapButton: View {
             }
             .buttonStyle(PlainButtonStyle())
         })
-        
     }
 }
 

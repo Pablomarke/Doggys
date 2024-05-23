@@ -30,7 +30,6 @@ struct MapView: View {
                 }
             }
             .id(0)
-            
             VStack {
                 Spacer()
                 HStack {
@@ -47,7 +46,6 @@ struct MapView: View {
         }
     }
 
-    
     mutating func set(viewModel: MapViewModel) {
         self.viewModel = viewModel
     }
