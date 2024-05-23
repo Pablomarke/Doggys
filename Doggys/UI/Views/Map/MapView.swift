@@ -14,7 +14,7 @@ struct MapView: View {
     // MARK: - View -
     var body: some View {
         ZStack {
-            Map(coordinateRegion: $viewModel.region,
+            Map(coordinateRegion: $viewModel.selfRegion,
                 showsUserLocation: true,
                 annotationItems: viewModel.markers) { marker in
                 MapAnnotation(coordinate: marker.coordinate) {

@@ -13,8 +13,9 @@ final class MapViewModel: ObservableObject {
     // MARK: - Properties -
     private var locationManager: GpsLocationManager
     private var dataManager: MapViewDataManager
-    @Published var region: MKCoordinateRegion = .init()
-    
+    @Published var selfRegion: MKCoordinateRegion = .init()
+    private var selfSpan: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.01,
+                                        longitudeDelta: 0.01)
     var markers: MarkerMapList = .init()
     
     init(dataManager: MapViewDataManager, locationManager: GpsLocationManager) {
@@ -24,8 +25,6 @@ final class MapViewModel: ObservableObject {
     
     // MARK: - Public methods -
     func chargeData() {
-        self.region.span = MKCoordinateSpan(latitudeDelta: 0.01,
-                                            longitudeDelta: 0.01)
         markers = dataManager.mockUsersData
         getLocationAndCenter()
     }
@@ -35,7 +34,8 @@ private extension MapViewModel {
     func getLocationAndCenter() {
         let location = self.locationManager.getLocation()
         DispatchQueue.main.async {
-            self.region.center = location
+            self.selfRegion.center = location
+            self.selfRegion.span = self.selfSpan
         }
     }
     
@@ -44,7 +44,7 @@ private extension MapViewModel {
         locationManager.getCurrentLocation { [weak self] coordinate, error in
             if let coordinate = coordinate {
                 DispatchQueue.main.async {
-                    self?.region.center = coordinate
+                    self?.selfRegion.center = coordinate
                 }
             } else if let error = error {
                 print("Error: \(error.localizedDescription)")
