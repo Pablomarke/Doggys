@@ -91,6 +91,9 @@ struct ProfileView: View {
                              message: Text("Datos guardados con éxito"),
                              dismissButton: .default(Text("OK")))
                    }
+            .onAppear {
+                viewModel.getLocation()
+            }
         }
         .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),

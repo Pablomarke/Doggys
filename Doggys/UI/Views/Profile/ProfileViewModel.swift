@@ -15,6 +15,8 @@ final class ProfileViewModel: ObservableObject {
     private var userViewModel: UserProfileProtocol
     private var logViewModel: LogProtocol
     private var storageViewModel: StorageProtocol
+    private var locationManager: GpsLocationManager
+
     @Published var dogOwner: String = ""
     @Published var nameOfDog: String = ""
     @Published var ageOfDog: String = ""
@@ -28,10 +30,11 @@ final class ProfileViewModel: ObservableObject {
     @Published var selfLongitude: Double = 20.00
 
     
-    init(userViewModel: UserProfileProtocol, logViewModel:LogProtocol, storageViewModel: StorageProtocol) {
+    init(userViewModel: UserProfileProtocol, logViewModel:LogProtocol, storageViewModel: StorageProtocol, locationManager: GpsLocationManager) {
         self.userViewModel = userViewModel
         self.logViewModel = logViewModel
         self.storageViewModel = storageViewModel
+        self.locationManager = locationManager
     }
     
     func searchImageOnRB() {
@@ -53,6 +56,12 @@ final class ProfileViewModel: ObservableObject {
         } onFailure: { error in
             print("Error: \(error)")
         }
+    }
+    
+    func getLocation() {
+        let location = self.locationManager.getLocation()
+        self.selfLatitude = location.latitude
+        self.selfLongitude = location.longitude
     }
     
     func searchDataOnDataBase() {

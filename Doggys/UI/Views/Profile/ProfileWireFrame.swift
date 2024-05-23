@@ -13,7 +13,11 @@ final class ProfileWireFrame: BaseWireframe {
         let userViewModel: UserProfileProtocol = createUserViewModel()
         let logViewModel: LogProtocol = createLogViewModel()
         let storageViewModel: StorageProtocol = createStorageViewModel()
-        let viewModel: ProfileViewModel = createViewModel(userViewModel: userViewModel, logViewModel: logViewModel, storageViewModel: storageViewModel)
+        let locationManager: GpsLocationManager = createGpsLocationManager()
+        let viewModel: ProfileViewModel = createViewModel(userViewModel: userViewModel,
+                                                          logViewModel: logViewModel,
+                                                          storageViewModel: storageViewModel,
+                                                          locationManager: locationManager)
         var viewController = ProfileView(viewModel: viewModel)
         viewController.set(viewModel: viewModel)
         return AnyView(viewController)
@@ -21,14 +25,22 @@ final class ProfileWireFrame: BaseWireframe {
     
     //MARK: - Private Methods
     private func createViewModel(userViewModel: UserProfileProtocol, 
-                                 logViewModel: LogProtocol, storageViewModel: StorageProtocol) -> ProfileViewModel {
-        return ProfileViewModel(userViewModel: userViewModel, 
-                                logViewModel: logViewModel, storageViewModel: storageViewModel)
+                                 logViewModel: LogProtocol,
+                                 storageViewModel: StorageProtocol,
+                                 locationManager: GpsLocationManager) -> ProfileViewModel {
+        return ProfileViewModel(userViewModel: userViewModel,
+                                logViewModel: logViewModel, storageViewModel: storageViewModel, locationManager: locationManager)
     }
+    
     private func createUserViewModel() -> UserProfileProtocol {
         return FirebaseUserProfileViewModel()
     }
+    
     private func createStorageViewModel() -> StorageProtocol {
         return FirebaseStorageViewModel()
+    }
+    
+    private func createGpsLocationManager() -> GpsLocationManager {
+        GpsLocationManager()
     }
 }
