@@ -29,13 +29,24 @@ struct MapView: View {
                         .offset(y: -73)
                 }
             }
-                .id(0)
+            .id(0)
+            
+            VStack {
+                Spacer()
+                HStack {
+                    CenterMapButton {
+                        viewModel.getLocationAndCenter()
+                    }
+                    Spacer()
+                }
+                .padding([.leading, .bottom], 16)
+            }
         }
-        // MARK: - Lifecycle -
         .onAppear {
             viewModel.chargeData()
         }
     }
+
     
     mutating func set(viewModel: MapViewModel) {
         self.viewModel = viewModel

@@ -24,6 +24,7 @@
 		392EECE12BC7C723005409EA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392EECE02BC7C723005409EA /* SettingsView.swift */; };
 		392EECE32BC7C73E005409EA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392EECE22BC7C73E005409EA /* SettingsViewModel.swift */; };
 		392EECE52BC7C796005409EA /* SettingsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392EECE42BC7C796005409EA /* SettingsWireframe.swift */; };
+		3966BD872BFF2E1F0087D7C3 /* CenterMapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3966BD862BFF2E1F0087D7C3 /* CenterMapButton.swift */; };
 		3979A3952BC95C0300F5C3B1 /* Jost-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3979A3942BC95C0300F5C3B1 /* Jost-Black.ttf */; };
 		3979A3972BC95CAF00F5C3B1 /* Jost-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3979A3962BC95CAF00F5C3B1 /* Jost-ExtraLight.ttf */; };
 		3979A3992BC95D8A00F5C3B1 /* Jost-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3979A3982BC95D8A00F5C3B1 /* Jost-Thin.ttf */; };
@@ -156,6 +157,7 @@
 		392EECE02BC7C723005409EA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		392EECE22BC7C73E005409EA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		392EECE42BC7C796005409EA /* SettingsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWireframe.swift; sourceTree = "<group>"; };
+		3966BD862BFF2E1F0087D7C3 /* CenterMapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterMapButton.swift; sourceTree = "<group>"; };
 		3979A3922BC958DD00F5C3B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3979A3942BC95C0300F5C3B1 /* Jost-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-Black.ttf"; sourceTree = "<group>"; };
 		3979A3962BC95CAF00F5C3B1 /* Jost-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -516,6 +518,7 @@
 			isa = PBXGroup;
 			children = (
 				A9D748532BFC904C00031B43 /* CustomMapIcon.swift */,
+				3966BD862BFF2E1F0087D7C3 /* CenterMapButton.swift */,
 			);
 			path = MapTools;
 			sourceTree = "<group>";
@@ -932,6 +935,7 @@
 				A93207472BB4A9E30068D9C2 /* LogProtocol.swift in Sources */,
 				390BB76D2BBCA8BE0052257E /* SplashViewModel.swift in Sources */,
 				392EECDB2BC68CEA005409EA /* KeyChainEnum.swift in Sources */,
+				3966BD872BFF2E1F0087D7C3 /* CenterMapButton.swift in Sources */,
 				5D24D97D2BCFE8EB007294E2 /* LoadingView.swift in Sources */,
 				39AF65ED2BD17FED00FC602C /* RecoveryText.swift in Sources */,
 				A9EDD0D32BBC16470052D03C /* RecoveryPasswordView.swift in Sources */,

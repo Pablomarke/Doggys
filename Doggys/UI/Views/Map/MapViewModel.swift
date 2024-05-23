@@ -28,9 +28,7 @@ final class MapViewModel: ObservableObject {
         markers = dataManager.mockUsersData
         getLocationAndCenter()
     }
-}
-
-private extension MapViewModel {
+    
     func getLocationAndCenter() {
         let location = self.locationManager.getLocation()
         DispatchQueue.main.async {
@@ -38,7 +36,9 @@ private extension MapViewModel {
             self.selfRegion.span = self.selfSpan
         }
     }
-    
+}
+
+private extension MapViewModel {
     //TODO: Implement this
     func getCurrentLocationAndCenter() {
         locationManager.getCurrentLocation { [weak self] coordinate, error in
