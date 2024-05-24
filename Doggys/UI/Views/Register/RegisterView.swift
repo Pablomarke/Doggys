@@ -32,7 +32,7 @@ struct RegisterView: View {
                                     text: $viewModel.password)
                 .id(2)
                 .padding(.top, 8)
-                SecureTextFieldView("Repeat Password", 
+                SecureTextFieldView("Repeat Password",
                                     placeholder: "Repeat Password",
                                     text: $viewModel.repeatPassword)
                 .id(3)
@@ -52,7 +52,10 @@ struct RegisterView: View {
             .alert(isPresented: $showAlert) {
                 Alert(title: Text("Registro"),
                       message: Text("Registro completado con éxito"),
-                      dismissButton: .default(Text("OK")))
+                      dismissButton: .default(Text("OK"),
+                                              action: {
+                    viewModel.navigateToProfile = true
+                }))
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -62,6 +65,10 @@ struct RegisterView: View {
                                             to: nil,
                                             from: nil,
                                             for: nil)
+        }
+        if viewModel.navigateToProfile {
+            NavigationLink(destination: ProfileWireFrame().viewController,
+                           isActive: $viewModel.navigateToProfile) { }
         }
     }
     

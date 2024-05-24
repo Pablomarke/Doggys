@@ -17,7 +17,7 @@ final class RegisterViewModel: BaseViewModel{
     @Published var repeatPassword = ""
     @Published var alertMessage: String = ""
     @Published var showAlert: Bool = false
-    
+    @Published var navigateToProfile: Bool = false
     init(logViewModel: LogProtocol, authViewModel: AuthProtocol) {
         self.logViewModel = logViewModel
         self.authViewModel = authViewModel
