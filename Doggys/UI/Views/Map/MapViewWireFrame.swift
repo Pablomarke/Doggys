@@ -12,17 +12,23 @@ final class MapViewWireFrame {
     var viewController: AnyView {
         let dataManager: MapViewDataManager = createDataManager()
         let locationManager: GpsLocationManager = createGpsLocationManager()
-        let viewModel: MapViewModel = MapViewModel(dataManager: dataManager, locationManager: locationManager)
+        let userProfileViewModel: UserProfileProtocol = createUserProfileViewModel()
+        
+        let viewModel: MapViewModel = MapViewModel(dataManager: dataManager,
+                                                   locationManager: locationManager,
+                                                   userProfileViewModel: userProfileViewModel)
         var viewController = MapView(viewModel: viewModel)
         viewController.set(viewModel: viewModel)
         return AnyView(viewController)
     }
     
-    //MARK: Private Methods
+    //MARK: - Private Methods -
     private func createViewModel(dataManager: MapViewDataManager,
-                                 locationManager: GpsLocationManager) -> MapViewModel {
+                                 locationManager: GpsLocationManager,
+                                 userProfileViewModel: UserProfileProtocol) -> MapViewModel {
         MapViewModel(dataManager: dataManager,
-                     locationManager: locationManager)
+                     locationManager: locationManager, 
+                     userProfileViewModel: userProfileViewModel)
     }
     
     private func createDataManager() -> MapViewDataManager {
@@ -31,5 +37,9 @@ final class MapViewWireFrame {
     
     private func createGpsLocationManager() -> GpsLocationManager {
         GpsLocationManager()
+    }
+    
+    private func createUserProfileViewModel() -> UserProfileProtocol {
+        return FirebaseUserProfileViewModel()
     }
 }

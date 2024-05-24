@@ -8,6 +8,9 @@
 import Foundation
 
 protocol UserProfileProtocol {
-    func fetchData(onSucces: @escaping ([UserProfile]) -> Void, onFailure: @escaping (Error) -> Void)
-    func searchData(userProfile: UserProfile, onSuccess: @escaping () -> Void, onFailure: @escaping (Error) -> Void)
+    func fetchData(onSucces: @escaping (UsersProfileList) -> Void, 
+                   onFailure: @escaping (Error) -> Void)
+    func searchData(userProfile: UserProfile, 
+                    onSuccess: @escaping () -> Void, 
+                    onFailure: @escaping (Error) -> Void)
 }
