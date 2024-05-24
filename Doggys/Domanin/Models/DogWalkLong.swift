@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum DogWalkLong: String, CaseIterable, CustomStringConvertible {
+enum DogWalkLong: String, CaseIterable, CustomStringConvertible, Decodable {
     case short = "Paseo corto / 20min Aprox."
     case medium = "Paseo Medio / 40min Aprox."
     case long = "Paseo Largo / 60min Aprox."

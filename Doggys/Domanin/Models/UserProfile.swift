@@ -7,8 +7,10 @@
 
 import Foundation
 
-class UserProfile: Identifiable {
-    let id: String
+typealias UsersProfileList = [UserProfile]
+
+class UserProfile: Identifiable, Decodable {
+   // let id: String
     let imageProfile: String
     let humanName: String
     let dogName: String
@@ -20,7 +22,7 @@ class UserProfile: Identifiable {
     let selfLatitude : Double
     let selfLongitude: Double
     
-    init(id: String, 
+    init(
          imageProfile: String,
          humanName: String,
          dogName: String, 
@@ -32,7 +34,7 @@ class UserProfile: Identifiable {
          selfLatitude : Double,
          selfLongitude: Double) {
         
-        self.id = id
+        //self.id = id
         self.imageProfile = imageProfile
         self.humanName = humanName
         self.dogName = dogName

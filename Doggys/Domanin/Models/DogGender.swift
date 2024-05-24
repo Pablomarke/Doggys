@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum DogGender: String, CaseIterable, CustomStringConvertible {
+enum DogGender: String, CaseIterable, CustomStringConvertible, Decodable {
     case female = "Hembra"
     case male = "Macho"
     
