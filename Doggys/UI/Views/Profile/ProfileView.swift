@@ -101,6 +101,7 @@ struct ProfileView: View {
                                             from: nil,
                                             for: nil)
         }
+        .navigationBarBackButtonHidden(true)
     }
     //MARK: - Public Methods -
     mutating func set(viewModel: ProfileViewModel) {
