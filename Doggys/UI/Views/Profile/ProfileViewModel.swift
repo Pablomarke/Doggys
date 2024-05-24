@@ -28,8 +28,9 @@ final class ProfileViewModel: ObservableObject {
     @Published var urlImage: String = ""
     @Published var selfLatitude: Double = 20.00
     @Published var selfLongitude: Double = 20.00
+    @Published var navigateToHome: Bool = false
+    @Published var isLoading: Bool = false
 
-    
     init(userViewModel: UserProfileProtocol, 
          logViewModel: LogProtocol,
          storageViewModel: StorageProtocol,
