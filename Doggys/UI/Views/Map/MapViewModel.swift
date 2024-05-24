@@ -17,6 +17,7 @@ final class MapViewModel: ObservableObject {
     @Published var selfRegion: MKCoordinateRegion = .init()
     private var selfSpan: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.01,
                                                               longitudeDelta: 0.01)
+    var userProfiles: UsersProfileList = .init()
     var markers: MarkerMapList = .init()
     
     init(dataManager: MapViewDataManager,
@@ -44,8 +45,7 @@ final class MapViewModel: ObservableObject {
     
     func getData() {
         userProfileViewModel.fetchData { profiles in
-            // TODO : - Implement data in map -
-            print(profiles.first?.humanName)
+            self.userProfiles.append(contentsOf: profiles)
         } onFailure: { error in
             print(error)
         }
