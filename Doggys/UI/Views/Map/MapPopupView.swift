@@ -9,10 +9,10 @@ import SwiftUI
 
 struct MapPopupView: View {
     var nameProfile: String
-    var gender: String = "Macho"
-    var years: String = "00"
-    var friendly: String = "Si"
-    var longWalk: String = "+30 min"
+    var gender: String
+    var years: String
+    var friendly: String
+    var longWalk: String
     @State var isFav: Bool = false
     
     var body: some View {
@@ -20,8 +20,9 @@ struct MapPopupView: View {
             Image(.logoEars)
                 .resizable()
                 .frame(width: 100, height: 60)
-                .padding(.bottom, -10)
+                .padding(.bottom, -1)
             Text(nameProfile)
+                .padding(.bottom, -1)
                 .font(.title3)
                 .bold()
             Text("Género: \(gender)")
@@ -34,10 +35,12 @@ struct MapPopupView: View {
             .padding(.top, -1)
             .foregroundStyle(isFav ? .yellow : .gray)
         }
+        .frame(width: 200, height: 250)
     }
 }
 
 #Preview {
-    MapPopupView(nameProfile: "User")
-        .frame(width: 300, height: 240)
+    MapPopupView(nameProfile: "Romeo", gender: "Macho", years: "4", friendly: "Si", longWalk: "+1h, paseo largo")
+        .frame(width: 200, height: 250)
+        .background(.red)
 }
