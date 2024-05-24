@@ -44,8 +44,8 @@ final class MapViewModel: ObservableObject {
     }
     
     func getData() {
-        userProfileViewModel.fetchData { profiles in
-            self.userProfiles.append(contentsOf: profiles)
+        userProfileViewModel.fetchData { [weak self] profiles in
+            self?.userProfiles.append(contentsOf: profiles)
         } onFailure: { error in
             print(error)
         }
