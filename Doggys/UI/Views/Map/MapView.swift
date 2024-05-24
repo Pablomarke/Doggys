@@ -9,6 +9,7 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
+    @State var selectedUser: MarkerMap? = nil
     @ObservedObject var viewModel: MapViewModel
    
     // MARK: - View -
@@ -19,8 +20,11 @@ struct MapView: View {
                 annotationItems: viewModel.markers) { marker in
                 MapAnnotation(coordinate: marker.coordinate) {
                     CustomMapIcon()
-                        .frame(width: 100, height: 70)
-                        .foregroundColor(.customMain)
+                        .onTapGesture {
+                        selectedUser = marker
+                    }
+                    .frame(width: 100, height: 70)
+                    .foregroundColor(.customMain)
                     
                     Image(.logoIcon)
                         .resizable()
@@ -30,6 +34,20 @@ struct MapView: View {
                 }
             }
             .id(0)
+            if let user = selectedUser {
+                               VStack{
+                                   MapPopupView(nameProfile: user.name)
+                                           .padding()
+                                           .background(Color.white)
+                                           .cornerRadius(20)
+                                   Button("", systemImage: "x.circle.fill") {
+                                       selectedUser = nil
+                                   }
+                                   .foregroundStyle(.red)
+                           }
+                           .transition(.move(edge: .top))
+                           .animation(.easeInOut)
+                       }
             VStack {
                 Spacer()
                 HStack {
