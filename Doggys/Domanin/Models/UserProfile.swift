@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MapKit
 
 typealias UsersProfileList = [UserProfile]
 
@@ -21,6 +22,7 @@ class UserProfile: Identifiable, Decodable {
     let dogFriendly: DogFriendly
     let selfLatitude : Double
     let selfLongitude: Double
+    var coordinate: CLLocationCoordinate2D { CLLocationCoordinate2D(latitude: selfLatitude, longitude: selfLongitude)}
     
     init(
          imageProfile: String,

@@ -10,12 +10,10 @@ import SwiftUI
 final class MapViewWireFrame {
     //MARK: Public Methods
     var viewController: AnyView {
-        let dataManager: MapViewDataManager = createDataManager()
         let locationManager: GpsLocationManager = createGpsLocationManager()
         let userProfileViewModel: UserProfileProtocol = createUserProfileViewModel()
         
-        let viewModel: MapViewModel = MapViewModel(dataManager: dataManager,
-                                                   locationManager: locationManager,
+        let viewModel: MapViewModel = MapViewModel(locationManager: locationManager,
                                                    userProfileViewModel: userProfileViewModel)
         var viewController = MapView(viewModel: viewModel)
         viewController.set(viewModel: viewModel)
@@ -23,16 +21,10 @@ final class MapViewWireFrame {
     }
     
     //MARK: - Private Methods -
-    private func createViewModel(dataManager: MapViewDataManager,
-                                 locationManager: GpsLocationManager,
+    private func createViewModel(locationManager: GpsLocationManager,
                                  userProfileViewModel: UserProfileProtocol) -> MapViewModel {
-        MapViewModel(dataManager: dataManager,
-                     locationManager: locationManager, 
+        MapViewModel(locationManager: locationManager,
                      userProfileViewModel: userProfileViewModel)
-    }
-    
-    private func createDataManager() -> MapViewDataManager {
-        MapViewDataManager()
     }
     
     private func createGpsLocationManager() -> GpsLocationManager {

@@ -13,24 +13,19 @@ final class MapViewModel: ObservableObject {
     // MARK: - Properties -
     private var locationManager: GpsLocationManager
     private var userProfileViewModel: UserProfileProtocol
-    private var dataManager: MapViewDataManager
     @Published var selfRegion: MKCoordinateRegion = .init()
     private var selfSpan: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.01,
                                                               longitudeDelta: 0.01)
     var userProfiles: UsersProfileList = .init()
-    var markers: MarkerMapList = .init()
     
-    init(dataManager: MapViewDataManager,
-         locationManager: GpsLocationManager,
+    init(locationManager: GpsLocationManager,
          userProfileViewModel: UserProfileProtocol) {
-        self.dataManager = dataManager
         self.locationManager = locationManager
         self.userProfileViewModel = userProfileViewModel
     }
     
     // MARK: - Public methods -
     func chargeData() {
-        markers = dataManager.mockUsersData
         getLocationAndCenter()
         getData()
     }

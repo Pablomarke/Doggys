@@ -47,7 +47,6 @@
 		39AF65ED2BD17FED00FC602C /* RecoveryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65EC2BD17FED00FC602C /* RecoveryText.swift */; };
 		39AF65EF2BD1800C00FC602C /* RegisterText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65EE2BD1800C00FC602C /* RegisterText.swift */; };
 		39AF65F12BD187F400FC602C /* BackArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65F02BD187F400FC602C /* BackArrow.swift */; };
-		39AF65F62BD1A7EE00FC602C /* MapViewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65F52BD1A7EE00FC602C /* MapViewDataManager.swift */; };
 		39DA4CAE2BCD11F500717DCD /* TextPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA4CAD2BCD11F500717DCD /* TextPickerView.swift */; };
 		5D16A5192BC458A8004EE58F /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */; };
 		5D24D97D2BCFE8EB007294E2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D24D97C2BCFE8EB007294E2 /* LoadingView.swift */; };
@@ -105,7 +104,6 @@
 		A9CC34932BC3DFDA00E1599A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC34922BC3DFDA00E1599A /* MapView.swift */; };
 		A9CC34952BC3DFE800E1599A /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC34942BC3DFE800E1599A /* MapViewModel.swift */; };
 		A9CC34972BC3DFF400E1599A /* MapViewWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC34962BC3DFF400E1599A /* MapViewWireFrame.swift */; };
-		A9CC34992BC3E3C200E1599A /* MarkerMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CC34982BC3E3C200E1599A /* MarkerMap.swift */; };
 		A9D748542BFC904C00031B43 /* CustomMapIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D748532BFC904C00031B43 /* CustomMapIcon.swift */; };
 		A9EDD0CD2BBBF9250052D03C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0CC2BBBF9250052D03C /* RegisterView.swift */; };
 		A9EDD0D02BBC153E0052D03C /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0CF2BBC153E0052D03C /* RegisterViewModel.swift */; };
@@ -182,7 +180,6 @@
 		39AF65EC2BD17FED00FC602C /* RecoveryText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryText.swift; sourceTree = "<group>"; };
 		39AF65EE2BD1800C00FC602C /* RegisterText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterText.swift; sourceTree = "<group>"; };
 		39AF65F02BD187F400FC602C /* BackArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackArrow.swift; sourceTree = "<group>"; };
-		39AF65F52BD1A7EE00FC602C /* MapViewDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewDataManager.swift; sourceTree = "<group>"; };
 		39DA4CAD2BCD11F500717DCD /* TextPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPickerView.swift; sourceTree = "<group>"; };
 		5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		5D24D97C2BCFE8EB007294E2 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -211,7 +208,6 @@
 		A9CC34922BC3DFDA00E1599A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A9CC34942BC3DFE800E1599A /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		A9CC34962BC3DFF400E1599A /* MapViewWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewWireFrame.swift; sourceTree = "<group>"; };
-		A9CC34982BC3E3C200E1599A /* MarkerMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerMap.swift; sourceTree = "<group>"; };
 		A9D748532BFC904C00031B43 /* CustomMapIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMapIcon.swift; sourceTree = "<group>"; };
 		A9EDD0CC2BBBF9250052D03C /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		A9EDD0CF2BBC153E0052D03C /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -599,7 +595,6 @@
 				A9286A342BC7E192003FC58A /* DogGender.swift */,
 				A9286A362BC7E3D4003FC58A /* DogWalkLong.swift */,
 				A9286A382BC7E607003FC58A /* DogFriendly.swift */,
-				A9CC34982BC3E3C200E1599A /* MarkerMap.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -682,7 +677,6 @@
 			children = (
 				A9CC34922BC3DFDA00E1599A /* MapView.swift */,
 				A9CC34942BC3DFE800E1599A /* MapViewModel.swift */,
-				39AF65F52BD1A7EE00FC602C /* MapViewDataManager.swift */,
 				A9CC34962BC3DFF400E1599A /* MapViewWireFrame.swift */,
 				A9A7368E2C010E9500C4A0F4 /* MapPopUpView.swift */,
 			);
@@ -900,7 +894,6 @@
 				A92BF8D12BC073B3004AA875 /* ProfileViewModel.swift in Sources */,
 				39AF65EA2BD17E5D00FC602C /* TextTitleHeader.swift in Sources */,
 				3979A3A22BCA793E00F5C3B1 /* ViewExtension.swift in Sources */,
-				A9CC34992BC3E3C200E1599A /* MarkerMap.swift in Sources */,
 				39228FDF2BAC701F00C91F40 /* LoginView.swift in Sources */,
 				A9FE0ED32BC9BC5F008564AB /* UserProfile+Firebase.swift in Sources */,
 				A9FE0ED12BC9BB01008564AB /* FirebaseUserProfileViewModel.swift in Sources */,
@@ -921,7 +914,6 @@
 				A9CC34952BC3DFE800E1599A /* MapViewModel.swift in Sources */,
 				A9EDD0D02BBC153E0052D03C /* RegisterViewModel.swift in Sources */,
 				392EECD32BC68204005409EA /* SwitchRemember.swift in Sources */,
-				39AF65F62BD1A7EE00FC602C /* MapViewDataManager.swift in Sources */,
 				A932073F2BB48FB40068D9C2 /* User.swift in Sources */,
 				A9C47F002BBDE03E0044ED5F /* RegisterWireFrame.swift in Sources */,
 				A9C47F052BBFE9B90044ED5F /* ProfileView.swift in Sources */,
@@ -1119,7 +1111,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Doggys/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = D35BGERC28;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Doggys/Info.plist;
@@ -1136,7 +1128,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Doggys;
+				PRODUCT_BUNDLE_IDENTIFIER = DoggysTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1152,7 +1144,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Doggys/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = D35BGERC28;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Doggys/Info.plist;
@@ -1169,7 +1161,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Doggys;
+				PRODUCT_BUNDLE_IDENTIFIER = DoggysTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
