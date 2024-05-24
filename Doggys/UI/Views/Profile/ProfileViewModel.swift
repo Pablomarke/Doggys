@@ -30,7 +30,10 @@ final class ProfileViewModel: ObservableObject {
     @Published var selfLongitude: Double = 20.00
 
     
-    init(userViewModel: UserProfileProtocol, logViewModel:LogProtocol, storageViewModel: StorageProtocol, locationManager: GpsLocationManager) {
+    init(userViewModel: UserProfileProtocol, 
+         logViewModel: LogProtocol,
+         storageViewModel: StorageProtocol,
+         locationManager: GpsLocationManager) {
         self.userViewModel = userViewModel
         self.logViewModel = logViewModel
         self.storageViewModel = storageViewModel
@@ -65,7 +68,7 @@ final class ProfileViewModel: ObservableObject {
     }
     
     func searchDataOnDataBase() {
-        let data = UserProfile(id: UUID().uuidString, 
+        let data = UserProfile(//id: UUID().uuidString,
                                imageProfile: self.urlImage,
                                humanName: self.dogOwner,
                                dogName: self.nameOfDog,

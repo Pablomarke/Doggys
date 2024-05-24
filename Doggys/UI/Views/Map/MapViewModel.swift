@@ -12,21 +12,26 @@ import Combine
 final class MapViewModel: ObservableObject {
     // MARK: - Properties -
     private var locationManager: GpsLocationManager
+    private var userProfileViewModel: UserProfileProtocol
     private var dataManager: MapViewDataManager
     @Published var selfRegion: MKCoordinateRegion = .init()
     private var selfSpan: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.01,
-                                        longitudeDelta: 0.01)
+                                                              longitudeDelta: 0.01)
     var markers: MarkerMapList = .init()
     
-    init(dataManager: MapViewDataManager, locationManager: GpsLocationManager) {
+    init(dataManager: MapViewDataManager,
+         locationManager: GpsLocationManager,
+         userProfileViewModel: UserProfileProtocol) {
         self.dataManager = dataManager
         self.locationManager = locationManager
+        self.userProfileViewModel = userProfileViewModel
     }
     
     // MARK: - Public methods -
     func chargeData() {
         markers = dataManager.mockUsersData
         getLocationAndCenter()
+        getData()
     }
     
     func getLocationAndCenter() {
@@ -34,6 +39,15 @@ final class MapViewModel: ObservableObject {
         DispatchQueue.main.async {
             self.selfRegion.center = location
             self.selfRegion.span = self.selfSpan
+        }
+    }
+    
+    func getData() {
+        userProfileViewModel.fetchData { profiles in
+            // TODO : - Implement data in map -
+            print(profiles.first?.humanName)
+        } onFailure: { error in
+            print(error)
         }
     }
 }

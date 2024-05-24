@@ -23,8 +23,8 @@ final class ProfileWireFrame: BaseWireframe {
         return AnyView(viewController)
     }
     
-    //MARK: - Private Methods
-    private func createViewModel(userViewModel: UserProfileProtocol, 
+    //MARK: - Private Methods -
+    private func createViewModel(userViewModel: UserProfileProtocol,
                                  logViewModel: LogProtocol,
                                  storageViewModel: StorageProtocol,
                                  locationManager: GpsLocationManager) -> ProfileViewModel {
