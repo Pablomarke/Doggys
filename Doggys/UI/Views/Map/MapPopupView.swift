@@ -28,7 +28,7 @@ struct MapPopupView: View {
             Text("Género: \(gender)")
             Text("Edad: \(years)")
             Text("Amigable: \(friendly)")
-            Text("Paseo: \(longWalk)")
+            Text("\(longWalk)")
             Button("", systemImage: isFav ? "star.fill" : "star") {
                 isFav.toggle()
             }
