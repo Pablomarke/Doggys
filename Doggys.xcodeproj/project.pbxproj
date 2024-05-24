@@ -97,6 +97,7 @@
 		A961DE4C2BFB614400B37C58 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A961DE4B2BFB614400B37C58 /* FirebaseStorage */; };
 		A961DE4E2BFB614400B37C58 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = A961DE4D2BFB614400B37C58 /* FirebaseStorageCombine-Community */; };
 		A961DE502BFB614400B37C58 /* FirebaseVertexAI-Preview in Frameworks */ = {isa = PBXBuildFile; productRef = A961DE4F2BFB614400B37C58 /* FirebaseVertexAI-Preview */; };
+		A9A7368F2C010E9500C4A0F4 /* MapPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A7368E2C010E9500C4A0F4 /* MapPopUpView.swift */; };
 		A9ACAE312BD25B020035B6CF /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ACAE302BD25B020035B6CF /* MailView.swift */; };
 		A9C47F002BBDE03E0044ED5F /* RegisterWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C47EFF2BBDE03E0044ED5F /* RegisterWireFrame.swift */; };
 		A9C47F022BBE93FC0044ED5F /* RecoveryWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C47F012BBE93FC0044ED5F /* RecoveryWireFrame.swift */; };
@@ -202,6 +203,7 @@
 		A932074E2BB4AC100068D9C2 /* LogViewModelEnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewModelEnvironmentKey.swift; sourceTree = "<group>"; };
 		A946A8062BCFF0550088ADE0 /* FirebaseStorageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageViewModel.swift; sourceTree = "<group>"; };
 		A946A8082BCFF07F0088ADE0 /* StorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProtocol.swift; sourceTree = "<group>"; };
+		A9A7368E2C010E9500C4A0F4 /* MapPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPopUpView.swift; sourceTree = "<group>"; };
 		A9ACAE302BD25B020035B6CF /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		A9C47EFF2BBDE03E0044ED5F /* RegisterWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWireFrame.swift; sourceTree = "<group>"; };
 		A9C47F012BBE93FC0044ED5F /* RecoveryWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryWireFrame.swift; sourceTree = "<group>"; };
@@ -682,6 +684,7 @@
 				A9CC34942BC3DFE800E1599A /* MapViewModel.swift */,
 				39AF65F52BD1A7EE00FC602C /* MapViewDataManager.swift */,
 				A9CC34962BC3DFF400E1599A /* MapViewWireFrame.swift */,
+				A9A7368E2C010E9500C4A0F4 /* MapPopUpView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -951,6 +954,7 @@
 				39AF65F12BD187F400FC602C /* BackArrow.swift in Sources */,
 				A932073A2BB48E170068D9C2 /* FirebaseAuthViewModel.swift in Sources */,
 				A9EDD0D52BBC19310052D03C /* RecoveryPasswordViewModel.swift in Sources */,
+				A9A7368F2C010E9500C4A0F4 /* MapPopUpView.swift in Sources */,
 				39DA4CAE2BCD11F500717DCD /* TextPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
