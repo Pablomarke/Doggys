@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum DogFriendly: String, CaseIterable, CustomStringConvertible {
+enum DogFriendly: String, CaseIterable, CustomStringConvertible, Decodable {
     case yes = "Sí"
     case no = "No"
     case yesMale = "Sí, sólo con Machos"

@@ -82,7 +82,9 @@ final class DoggysTests: XCTestCase {
                                        dogBreed: DogBreed.boxer,
                                        dogGender: DogGender.male,
                                        dogWalk: DogWalkLong.veryLong,
-                                       dogFriendly: DogFriendly.yesFemale)
+                                       dogFriendly: DogFriendly.yesFemale,
+                                       selfLatitude: 20.00,
+                                       selfLongitude: 20.00)
         
         XCTAssertEqual(userProfile1.dogBreed, DogBreed.boxer)
         XCTAssertEqual(userProfile1.dogYears, "4")
@@ -126,9 +128,8 @@ final class DoggysTests: XCTestCase {
     
     // MARK: - Testing components -
     func testComponents() throws {
-        let mapMarker = MapMarkerIcon(name: "test")
+        let mapMarker = CustomMapIcon()
         XCTAssertNotNil(mapMarker.body)
-        XCTAssertEqual(mapMarker.name, "test")
     }
     
     func testLogo() throws {

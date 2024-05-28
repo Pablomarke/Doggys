@@ -9,21 +9,55 @@ import Foundation
 import MapKit
 import Combine
 
-class MapViewModel: ObservableObject {
+final class MapViewModel: ObservableObject {
     // MARK: - Properties -
-    var dataManager: MapViewDataManager
-    var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40.414315106259174,
-                                                                                  longitude: -3.689848595545417),
-                                                   span: MKCoordinateSpan(latitudeDelta: 0.1,
-                                                                          longitudeDelta: 0.1))
-    @Published var markers: MarkerMapList = []
-
-    init(dataManager: MapViewDataManager) {
-        self.dataManager = dataManager
+    private var locationManager: GpsLocationManager
+    private var userProfileViewModel: UserProfileProtocol
+    @Published var selfRegion: MKCoordinateRegion = .init()
+    private var selfSpan: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.01,
+                                                              longitudeDelta: 0.01)
+    var userProfiles: UsersProfileList = .init()
+    
+    init(locationManager: GpsLocationManager,
+         userProfileViewModel: UserProfileProtocol) {
+        self.locationManager = locationManager
+        self.userProfileViewModel = userProfileViewModel
     }
     
     // MARK: - Public methods -
     func chargeData() {
-        markers = dataManager.mockUsersData
+        getLocationAndCenter()
+        getData()
+    }
+    
+    func getLocationAndCenter() {
+        let location = self.locationManager.getLocation()
+        DispatchQueue.main.async {
+            self.selfRegion.center = location
+            self.selfRegion.span = self.selfSpan
+        }
+    }
+    
+    func getData() {
+        userProfileViewModel.fetchData { [weak self] profiles in
+            self?.userProfiles.append(contentsOf: profiles)
+        } onFailure: { error in
+            print(error)
+        }
+    }
+}
+
+private extension MapViewModel {
+    //TODO: Implement this
+    func getCurrentLocationAndCenter() {
+        locationManager.getCurrentLocation { [weak self] coordinate, error in
+            if let coordinate = coordinate {
+                DispatchQueue.main.async {
+                    self?.selfRegion.center = coordinate
+                }
+            } else if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+        }
     }
 }

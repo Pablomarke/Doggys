@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum DogBreed: String, CaseIterable, CustomStringConvertible {
+enum DogBreed: String, CaseIterable, CustomStringConvertible, Decodable {
     case mestizo = "Mestizo"
     case akita = "Akita"
     case bassetHound = "Basset Hound"

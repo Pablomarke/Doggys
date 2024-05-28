@@ -89,8 +89,19 @@ struct ProfileView: View {
             .alert(isPresented: $showAlert) {
                        Alert(title: Text("Perfil"),
                              message: Text("Datos guardados con éxito"),
-                             dismissButton: .default(Text("OK")))
+                             dismissButton: .default(Text("OK"), action: {
+                           viewModel.isLoading = true
+                           viewModel.navigateToHome = true
+                       }))
                    }
+            .onAppear {
+                viewModel.getLocation()
+            }
+            if viewModel.navigateToHome {
+                NavigationLink(destination: AppTabView(),
+                               isActive: $viewModel.navigateToHome) { }
+            }
+            
         }
         .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
@@ -98,6 +109,11 @@ struct ProfileView: View {
                                             from: nil,
                                             for: nil)
         }
+        .overlay(
+            viewModel.isLoading ? LoadingView() : nil
+        )
+        .disabled(viewModel.isLoading)
+        .navigationBarBackButtonHidden(true)
     }
     //MARK: - Public Methods -
     mutating func set(viewModel: ProfileViewModel) {

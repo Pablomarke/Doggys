@@ -9,5 +9,7 @@ import Foundation
 import SwiftUI
 
 protocol StorageProtocol {
-    func uploadImage(image: UIImage, onSuccess: @escaping (String) -> Void, onFailure: @escaping (Error) -> Void)
+    func uploadImage(image: UIImage, 
+                     onSuccess: @escaping (String) -> Void,
+                     onFailure: @escaping (Error) -> Void)
 }

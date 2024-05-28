@@ -7,10 +7,11 @@
 
 import Foundation
 import MapKit
-import SwiftUI
 
-class UserProfile: Identifiable {
-    let id: String
+typealias UsersProfileList = [UserProfile]
+
+class UserProfile: Identifiable, Decodable {
+   // let id: String
     let imageProfile: String
     let humanName: String
     let dogName: String
@@ -19,23 +20,23 @@ class UserProfile: Identifiable {
     let dogGender: DogGender
     let dogWalk: DogWalkLong
     let dogFriendly: DogFriendly
-//    let coordenates : MarkerMap
+    let selfLatitude : Double
+    let selfLongitude: Double
+    var coordinate: CLLocationCoordinate2D { CLLocationCoordinate2D(latitude: selfLatitude, longitude: selfLongitude)}
     
-    init() {
-        self.id = ""
-        self.imageProfile = ""
-        self.humanName = ""
-        self.dogName = ""
-        self.dogYears = ""
-        self.dogBreed = .beagle
-        self.dogGender = .male
-        self.dogWalk = .short
-        self.dogFriendly = .yes
-//        self.coordenates = MarkerMap(name: String(), coordinate: CLLocationCoordinate2D())
-    }
-    
-    init(id: String, imageProfile: String, humanName: String, dogName: String, dogYears: String, dogBreed: DogBreed, dogGender: DogGender, dogWalk: DogWalkLong, dogFriendly: DogFriendly) {
-        self.id = id
+    init(
+         imageProfile: String,
+         humanName: String,
+         dogName: String, 
+         dogYears: String,
+         dogBreed: DogBreed,
+         dogGender: DogGender,
+         dogWalk: DogWalkLong,
+         dogFriendly: DogFriendly,
+         selfLatitude : Double,
+         selfLongitude: Double) {
+        
+        //self.id = id
         self.imageProfile = imageProfile
         self.humanName = humanName
         self.dogName = dogName
@@ -44,6 +45,7 @@ class UserProfile: Identifiable {
         self.dogGender = dogGender
         self.dogWalk = dogWalk
         self.dogFriendly = dogFriendly
-//        self.coordenates = coordenates
+        self.selfLatitude = selfLatitude
+        self.selfLongitude = selfLongitude
     }
 }
