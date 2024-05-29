@@ -55,5 +55,5 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsWireframe().viewController
+    SettingsWireframe.createView()
 }

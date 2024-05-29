@@ -26,7 +26,7 @@ struct AppTabView: View {
                 .padding(.bottom, 90)
                 .ignoresSafeArea()
             
-            SettingsWireframe().viewController
+            SettingsWireframe.createView()
                 .tabItem {
                     Label("Ajustes",
                           systemImage: "gear")

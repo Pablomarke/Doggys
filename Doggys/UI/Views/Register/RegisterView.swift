@@ -79,5 +79,5 @@ struct RegisterView: View {
 }
 
 #Preview {
-    RegisterWireFrame().viewController
+    RegisterWireFrame.createView()
 }
