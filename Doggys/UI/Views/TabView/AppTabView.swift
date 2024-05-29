@@ -10,29 +10,17 @@ import SwiftUI
 struct AppTabView: View {
     var body: some View {
         TabView {
-            MapViewWireFrame.createView()
-                .tabItem {
-                    Label("Mapa", 
-                          systemImage: "map")
-                }
-                .padding(.bottom, 90)
-                .ignoresSafeArea()
+            TabItemComponent(view: MapViewWireFrame.createView()
+                             ,name: "Map",
+                             systemImage: .map)
             
-            ProfileWireFrame.createView()
-                .tabItem {
-                    Label("Perfil", 
-                          systemImage: "person.fill")
-                }
-                .padding(.bottom, 90)
-                .ignoresSafeArea()
+            TabItemComponent(view: ProfileWireFrame.createView(),
+                             name: "Perfil",
+                             systemImage: .person)
             
-            SettingsWireframe.createView()
-                .tabItem {
-                    Label("Ajustes",
-                          systemImage: "gear")
-                }
-                .padding(.bottom, 90)
-                .ignoresSafeArea()
+            TabItemComponent(view: SettingsWireframe.createView(),
+                             name: "Ajustes",
+                             systemImage: .settings)
         }
         .navigationBarBackButtonHidden(true)
     }

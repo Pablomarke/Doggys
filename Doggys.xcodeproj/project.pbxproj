@@ -10,6 +10,7 @@
 		390BB76A2BBCA51F0052257E /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BB7692BBCA51F0052257E /* SplashView.swift */; };
 		390BB76D2BBCA8BE0052257E /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BB76C2BBCA8BE0052257E /* SplashViewModel.swift */; };
 		390BB76F2BBCA9D30052257E /* SplashWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BB76E2BBCA9D30052257E /* SplashWireFrame.swift */; };
+		392091CC2C077E63006E69B2 /* TabItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392091CB2C077E63006E69B2 /* TabItemComponent.swift */; };
 		39228FDD2BAC701F00C91F40 /* DoggysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39228FDC2BAC701F00C91F40 /* DoggysApp.swift */; };
 		39228FDF2BAC701F00C91F40 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39228FDE2BAC701F00C91F40 /* LoginView.swift */; };
 		39228FE12BAC702100C91F40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39228FE02BAC702100C91F40 /* Assets.xcassets */; };
@@ -41,7 +42,6 @@
 		399BE53B2BBA8A7600AC323C /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BE53A2BBA8A7600AC323C /* LogoView.swift */; };
 		39ADE2582BC29863007A6702 /* LogoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ADE2572BC29863007A6702 /* LogoHeader.swift */; };
 		39ADE25B2BC299D8007A6702 /* ButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ADE25A2BC299D8007A6702 /* ButtonLabel.swift */; };
-		39AF65E62BD13DCF00FC602C /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65E52BD13DCF00FC602C /* BaseWireframe.swift */; };
 		39AF65E82BD13F8500FC602C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65E72BD13F8500FC602C /* BaseViewModel.swift */; };
 		39AF65EA2BD17E5D00FC602C /* TextTitleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65E92BD17E5D00FC602C /* TextTitleHeader.swift */; };
 		39AF65ED2BD17FED00FC602C /* RecoveryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65EC2BD17FED00FC602C /* RecoveryText.swift */; };
@@ -139,6 +139,7 @@
 		390BB7692BBCA51F0052257E /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		390BB76C2BBCA8BE0052257E /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		390BB76E2BBCA9D30052257E /* SplashWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWireFrame.swift; sourceTree = "<group>"; };
+		392091CB2C077E63006E69B2 /* TabItemComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemComponent.swift; sourceTree = "<group>"; };
 		39228FD92BAC701F00C91F40 /* Doggys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doggys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39228FDC2BAC701F00C91F40 /* DoggysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoggysApp.swift; sourceTree = "<group>"; };
 		39228FDE2BAC701F00C91F40 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -174,7 +175,6 @@
 		399BE53A2BBA8A7600AC323C /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		39ADE2572BC29863007A6702 /* LogoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoHeader.swift; sourceTree = "<group>"; };
 		39ADE25A2BC299D8007A6702 /* ButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabel.swift; sourceTree = "<group>"; };
-		39AF65E52BD13DCF00FC602C /* BaseWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
 		39AF65E72BD13F8500FC602C /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		39AF65E92BD17E5D00FC602C /* TextTitleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTitleHeader.swift; sourceTree = "<group>"; };
 		39AF65EC2BD17FED00FC602C /* RecoveryText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryText.swift; sourceTree = "<group>"; };
@@ -512,7 +512,6 @@
 		39AF65E42BD13D9400FC602C /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				39AF65E52BD13DCF00FC602C /* BaseWireframe.swift */,
 				39AF65E72BD13F8500FC602C /* BaseViewModel.swift */,
 			);
 			path = Base;
@@ -578,6 +577,7 @@
 			isa = PBXGroup;
 			children = (
 				A9286A302BC6E55C003FC58A /* AppTabView.swift */,
+				392091CB2C077E63006E69B2 /* TabItemComponent.swift */,
 			);
 			path = TabView;
 			sourceTree = "<group>";
@@ -905,7 +905,6 @@
 				39228FDF2BAC701F00C91F40 /* LoginView.swift in Sources */,
 				A9FE0ED32BC9BC5F008564AB /* UserProfile+Firebase.swift in Sources */,
 				A9FE0ED12BC9BB01008564AB /* FirebaseUserProfileViewModel.swift in Sources */,
-				39AF65E62BD13DCF00FC602C /* BaseWireframe.swift in Sources */,
 				39ADE2582BC29863007A6702 /* LogoHeader.swift in Sources */,
 				A93207452BB4A9C90068D9C2 /* FireBaseLogViewModel.swift in Sources */,
 				39228FDD2BAC701F00C91F40 /* DoggysApp.swift in Sources */,
@@ -939,6 +938,7 @@
 				390BB76D2BBCA8BE0052257E /* SplashViewModel.swift in Sources */,
 				392EECDB2BC68CEA005409EA /* KeyChainEnum.swift in Sources */,
 				3966BD872BFF2E1F0087D7C3 /* CenterMapButton.swift in Sources */,
+				392091CC2C077E63006E69B2 /* TabItemComponent.swift in Sources */,
 				5D24D97D2BCFE8EB007294E2 /* LoadingView.swift in Sources */,
 				39AF65ED2BD17FED00FC602C /* RecoveryText.swift in Sources */,
 				A9EDD0D32BBC16470052D03C /* RecoveryView.swift in Sources */,
