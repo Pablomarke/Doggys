@@ -18,7 +18,7 @@ struct AppTabView: View {
                 .padding(.bottom, 90)
                 .ignoresSafeArea()
             
-            ProfileWireFrame().viewController
+            ProfileWireFrame.createView()
                 .tabItem {
                     Label("Perfil", 
                           systemImage: "person.fill")

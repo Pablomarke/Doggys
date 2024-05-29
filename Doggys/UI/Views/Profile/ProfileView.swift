@@ -115,12 +115,8 @@ struct ProfileView: View {
         .disabled(viewModel.isLoading)
         .navigationBarBackButtonHidden(true)
     }
-    //MARK: - Public Methods -
-    mutating func set(viewModel: ProfileViewModel) {
-        self.viewModel = viewModel
-    }
 }
 
 #Preview {
-    ProfileWireFrame().viewController
+    ProfileWireFrame.createView()
 }
