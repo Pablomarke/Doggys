@@ -292,6 +292,7 @@
 			children = (
 				A919B15C2BDA432300A9FF08 /* Doggys.xctestplan */,
 				39228FDB2BAC701F00C91F40 /* Doggys */,
+				399BE5312BB976B600AC323C /* Assets */,
 				A9B53B8E2BB33687000AD215 /* Suporting Files */,
 				39228FEC2BAC702100C91F40 /* DoggysTests */,
 				39228FF62BAC702100C91F40 /* DoggysUITests */,
@@ -315,6 +316,7 @@
 			children = (
 				3979A3922BC958DD00F5C3B1 /* Info.plist */,
 				A9B53B8F2BB336A3000AD215 /* App */,
+				3930AF6D2C0754CB00F1C53A /* Data */,
 				39D9D83B2BB710C900B5331A /* Domanin */,
 				39D9D83C2BB7114100B5331A /* UI */,
 				39228FE22BAC702100C91F40 /* Preview Content */,
@@ -374,6 +376,18 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		3930AF6D2C0754CB00F1C53A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3989ED6A2BFC853C007074A1 /* Location */,
+				A932074B2BB4ABE30068D9C2 /* Environment */,
+				392EECDC2BC68D0E005409EA /* SharedPreferences */,
+				A93207502BB4B0110068D9C2 /* ViewModels */,
+				39AF65E42BD13D9400FC602C /* Base */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		39393DDC2BDA4E300078367F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,6 +444,7 @@
 		399BE5312BB976B600AC323C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				39228FE02BAC702100C91F40 /* Assets.xcassets */,
 				3979A3932BC95BB500F5C3B1 /* Fonts */,
 			);
 			path = Assets;
@@ -524,6 +539,7 @@
 		39AF65F72BD1AB0200FC602C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */,
 				A9286A2F2BC6E533003FC58A /* TabView */,
 				390BB76B2BBCA5260052257E /* Splash */,
 				A9B53B902BB336AC000AD215 /* Login */,
@@ -540,16 +556,9 @@
 		39D9D83B2BB710C900B5331A /* Domanin */ = {
 			isa = PBXGroup;
 			children = (
-				3989ED6A2BFC853C007074A1 /* Location */,
-				3979A3A02BCA792400F5C3B1 /* Extensions */,
-				392EECDC2BC68D0E005409EA /* SharedPreferences */,
 				392EECD72BC68C80005409EA /* Security */,
-				399BE5312BB976B600AC323C /* Assets */,
-				39228FE02BAC702100C91F40 /* Assets.xcassets */,
 				A932073D2BB48FA90068D9C2 /* Models */,
 				A93207402BB49D110068D9C2 /* Protocols */,
-				A932074B2BB4ABE30068D9C2 /* Environment */,
-				A93207502BB4B0110068D9C2 /* ViewModels */,
 			);
 			path = Domanin;
 			sourceTree = "<group>";
@@ -557,8 +566,7 @@
 		39D9D83C2BB7114100B5331A /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				39AF65E42BD13D9400FC602C /* Base */,
-				5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */,
+				3979A3A02BCA792400F5C3B1 /* Extensions */,
 				3979A3A32BCA864000F5C3B1 /* Animations */,
 				39ADE2592BC298EB007A6702 /* Components */,
 				39AF65F72BD1AB0200FC602C /* Views */,
