@@ -20,10 +20,10 @@ final class ProfileViewModel: ObservableObject {
     @Published var dogOwner: String = ""
     @Published var nameOfDog: String = ""
     @Published var ageOfDog: String = ""
-    @Published var selectedBreed: DogBreed = .mestizo
-    @Published var selectedGender: DogGender = .female
-    @Published var selectedWalk: DogWalkLong = .short
-    @Published var dofFriendly: DogFriendly = .yes
+    @Published var selectedBreed: DogBreed = .none
+    @Published var selectedGender: DogGender = .none
+    @Published var selectedWalk: DogWalkLong = .none
+    @Published var dofFriendly: DogFriendly = .none
     @Published var selectedImage: UIImage?
     @Published var urlImage: String = ""
     @Published var selfLatitude: Double = 20.00

@@ -8,6 +8,7 @@
 import Foundation
 
 enum DogGender: String, CaseIterable, CustomStringConvertible, Decodable {
+    case none = "Seleccione género"
     case female = "Hembra"
     case male = "Macho"
     

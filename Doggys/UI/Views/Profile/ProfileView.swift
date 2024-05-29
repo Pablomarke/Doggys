@@ -53,22 +53,19 @@ struct ProfileView: View {
                         .padding(10)
                     
                     TextPickerView(selectedItem: $viewModel.selectedBreed,
-                                   text: "Seleccione una raza:",
                                    items: DogBreed.allCases)
                     .id(5)
                     
                     TextPickerView(selectedItem: $viewModel.selectedGender,
-                                   text: "Seleccione género:",
                                    items: DogGender.allCases)
                     .id(6)
+                    .padding()
                     
                     TextPickerView(selectedItem: $viewModel.selectedWalk,
-                                   text: "Seleccione tipo de paseo:",
                                    items: DogWalkLong.allCases)
                     .id(7)
                     
                     TextPickerView(selectedItem: $viewModel.dofFriendly,
-                                   text: "¿Soy amigable con otros perros?",
                                    items: DogFriendly.allCases)
                     .id(8)
                     .padding()
