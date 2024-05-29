@@ -38,10 +38,9 @@ class GpsLocationManager: NSObject {
         self.errorHandler = { error in
             completion(nil, error)
         }
-    
+        
         self.locationManager.startUpdatingLocation()
     }
-
     
     func checkUserAuthorization() {
         let status = locationManager.authorizationStatus
