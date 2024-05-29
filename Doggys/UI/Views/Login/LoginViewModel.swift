@@ -11,7 +11,7 @@ final class LoginViewModel: BaseViewModel {
     //MARK: Properties
     private var authViewModel: AuthProtocol
     private var logViewModel: LogProtocol
-    private var keyChain: KeyChainDataProvider
+    private var keyChain: SecureDataProviderProtocol
     
     @Published var email: String = ""
     @Published var password: String = ""
@@ -24,7 +24,7 @@ final class LoginViewModel: BaseViewModel {
     
     init(authViewModel: AuthProtocol,
          logViewModel: LogProtocol,
-         keyChain: KeyChainDataProvider) {
+         keyChain: SecureDataProviderProtocol) {
         self.authViewModel = authViewModel
         self.logViewModel = logViewModel
         self.keyChain = keyChain

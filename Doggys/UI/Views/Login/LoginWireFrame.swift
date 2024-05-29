@@ -11,7 +11,7 @@ enum LoginWireFrame {
     static func createView() -> some View {
         let authViewModel: AuthProtocol = FirebaseAuthViewModel()
         let logViewModel: LogProtocol = FirebaseLogViewModel()
-        let keyChain: KeyChainDataProvider = KeyChainDataProvider()
+        let keyChain: SecureDataProviderProtocol = KeyChainDataProvider() 
         let viewModel: LoginViewModel = LoginViewModel(authViewModel: authViewModel,
                                                        logViewModel: logViewModel,
                                                        keyChain: keyChain)
