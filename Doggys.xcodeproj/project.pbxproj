@@ -107,8 +107,8 @@
 		A9D748542BFC904C00031B43 /* CustomMapIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D748532BFC904C00031B43 /* CustomMapIcon.swift */; };
 		A9EDD0CD2BBBF9250052D03C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0CC2BBBF9250052D03C /* RegisterView.swift */; };
 		A9EDD0D02BBC153E0052D03C /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0CF2BBC153E0052D03C /* RegisterViewModel.swift */; };
-		A9EDD0D32BBC16470052D03C /* RecoveryPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0D22BBC16470052D03C /* RecoveryPasswordView.swift */; };
-		A9EDD0D52BBC19310052D03C /* RecoveryPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0D42BBC19310052D03C /* RecoveryPasswordViewModel.swift */; };
+		A9EDD0D32BBC16470052D03C /* RecoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0D22BBC16470052D03C /* RecoveryView.swift */; };
+		A9EDD0D52BBC19310052D03C /* RecoveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0D42BBC19310052D03C /* RecoveryViewModel.swift */; };
 		A9F98CC72BB34CD6004E9451 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9F98CC62BB34CD6004E9451 /* GoogleService-Info.plist */; };
 		A9FE0ECB2BC9B520008564AB /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FE0ECA2BC9B520008564AB /* UserProfile.swift */; };
 		A9FE0ECD2BC9B7B5008564AB /* UserProfileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FE0ECC2BC9B7B5008564AB /* UserProfileProtocol.swift */; };
@@ -211,8 +211,8 @@
 		A9D748532BFC904C00031B43 /* CustomMapIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMapIcon.swift; sourceTree = "<group>"; };
 		A9EDD0CC2BBBF9250052D03C /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		A9EDD0CF2BBC153E0052D03C /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
-		A9EDD0D22BBC16470052D03C /* RecoveryPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordView.swift; sourceTree = "<group>"; };
-		A9EDD0D42BBC19310052D03C /* RecoveryPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordViewModel.swift; sourceTree = "<group>"; };
+		A9EDD0D22BBC16470052D03C /* RecoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryView.swift; sourceTree = "<group>"; };
+		A9EDD0D42BBC19310052D03C /* RecoveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryViewModel.swift; sourceTree = "<group>"; };
 		A9F98CC62BB34CD6004E9451 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9FE0ECA2BC9B520008564AB /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		A9FE0ECC2BC9B7B5008564AB /* UserProfileProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileProtocol.swift; sourceTree = "<group>"; };
@@ -704,8 +704,8 @@
 		A9EDD0D12BBC16310052D03C /* Recovery */ = {
 			isa = PBXGroup;
 			children = (
-				A9EDD0D22BBC16470052D03C /* RecoveryPasswordView.swift */,
-				A9EDD0D42BBC19310052D03C /* RecoveryPasswordViewModel.swift */,
+				A9EDD0D22BBC16470052D03C /* RecoveryView.swift */,
+				A9EDD0D42BBC19310052D03C /* RecoveryViewModel.swift */,
 				A9C47F012BBE93FC0044ED5F /* RecoveryWireFrame.swift */,
 			);
 			path = Recovery;
@@ -941,7 +941,7 @@
 				3966BD872BFF2E1F0087D7C3 /* CenterMapButton.swift in Sources */,
 				5D24D97D2BCFE8EB007294E2 /* LoadingView.swift in Sources */,
 				39AF65ED2BD17FED00FC602C /* RecoveryText.swift in Sources */,
-				A9EDD0D32BBC16470052D03C /* RecoveryPasswordView.swift in Sources */,
+				A9EDD0D32BBC16470052D03C /* RecoveryView.swift in Sources */,
 				3979A3A52BCA866300F5C3B1 /* FadeinModifier.swift in Sources */,
 				A932073C2BB48F860068D9C2 /* AuthProtocol.swift in Sources */,
 				A9D748542BFC904C00031B43 /* CustomMapIcon.swift in Sources */,
@@ -953,7 +953,7 @@
 				3989ED6C2BFC856C007074A1 /* GpsLocationManager.swift in Sources */,
 				39AF65F12BD187F400FC602C /* BackArrow.swift in Sources */,
 				A932073A2BB48E170068D9C2 /* FirebaseAuthViewModel.swift in Sources */,
-				A9EDD0D52BBC19310052D03C /* RecoveryPasswordViewModel.swift in Sources */,
+				A9EDD0D52BBC19310052D03C /* RecoveryViewModel.swift in Sources */,
 				A9A7368F2C010E9500C4A0F4 /* MapPopUpView.swift in Sources */,
 				39DA4CAE2BCD11F500717DCD /* TextPickerView.swift in Sources */,
 			);

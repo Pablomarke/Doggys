@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct RecoveryPasswordView: View {
+struct RecoveryView: View {
     //MARK: Properties
-    @ObservedObject var viewModel: RecoveryPasswordViewModel
+    @ObservedObject var viewModel: RecoveryViewModel
     @Environment(\.presentationMode) var presentationMode
     static var viewName: String = "RecoveryPasswordView"
     @State private var showAlert = false
@@ -47,11 +47,11 @@ struct RecoveryPasswordView: View {
         }
     }
     
-    mutating func set(viewModel: RecoveryPasswordViewModel) {
+    mutating func set(viewModel: RecoveryViewModel) {
         self.viewModel = viewModel
     }
 }
 
 #Preview {
-    RecoveryWireFrame().viewController
+    RecoveryWireFrame.createView()
 }

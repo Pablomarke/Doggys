@@ -7,22 +7,13 @@
 
 import SwiftUI
 
-final class RecoveryWireFrame: BaseWireframe {
-    //MARK: Public Methods
-    var viewController: AnyView {
-        let authViewModel: AuthProtocol = createAutViewModel()
-        let logViewModel: LogProtocol = createLogViewModel()
-        let viewModel: RecoveryPasswordViewModel = createViewModel(authViewModel: authViewModel, logViewModel: logViewModel)
-        var viewController = RecoveryPasswordView(viewModel: viewModel)
-        viewController.set(viewModel: viewModel)
-        
-        return AnyView(viewController)
-    }
-    
-    //MARK: Private Methods
-    private func createViewModel(authViewModel: AuthProtocol, 
-                                 logViewModel: LogProtocol) -> RecoveryPasswordViewModel {
-        return RecoveryPasswordViewModel(logViewModel: logViewModel,
-                                         authViewModel: authViewModel)
+enum RecoveryWireFrame {
+    static func createView() -> some View {
+        let authViewModel: AuthProtocol = FirebaseAuthViewModel()
+        let logViewModel: LogProtocol = FirebaseLogViewModel()
+        let viewModel: RecoveryViewModel = RecoveryViewModel(logViewModel: logViewModel, 
+                                                                             authViewModel: authViewModel)
+        let view = RecoveryView(viewModel: viewModel)
+        return view
     }
 }

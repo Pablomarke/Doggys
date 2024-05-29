@@ -67,7 +67,7 @@ struct LoginView: View {
                     
                     // MARK: - Navigation -
                     NavigationLink {
-                        RecoveryWireFrame().viewController
+                        RecoveryWireFrame.createView()
                     } label: {
                         RecoveryText()
                     }
