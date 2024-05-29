@@ -50,10 +50,6 @@ struct SplashView: View {
             )
         }
     }
-    /*
-    mutating func set(viewModel: SplashViewModel) {
-        self.viewModel = viewModel
-    }*/
 }
 
 #Preview {
