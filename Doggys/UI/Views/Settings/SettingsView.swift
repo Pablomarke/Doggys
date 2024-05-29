@@ -52,10 +52,6 @@ struct SettingsView: View {
             self.viewModel.checkMailAvailability()
         }
     }
-    // MARK: - Public methods -
-    mutating func set(viewModel: SettingsViewModel) {
-        self.viewModel = viewModel
-    }
 }
 
 #Preview {
