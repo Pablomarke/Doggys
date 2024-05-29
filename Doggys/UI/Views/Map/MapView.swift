@@ -63,10 +63,6 @@ struct MapView: View {
             viewModel.chargeData()
         }
     }
-
-    mutating func set(viewModel: MapViewModel) {
-        self.viewModel = viewModel
-    }
 }
 
 #Preview {

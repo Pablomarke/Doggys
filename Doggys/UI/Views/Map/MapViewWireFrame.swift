@@ -7,31 +7,15 @@
 
 import SwiftUI
 
-final class MapViewWireFrame {
-    //MARK: Public Methods
-    var viewController: AnyView {
-        let locationManager: GpsLocationManager = createGpsLocationManager()
-        let userProfileViewModel: UserProfileProtocol = createUserProfileViewModel()
-        
+enum MapViewWireFrame {
+    static func createView() -> some View {
+        let authViewModel: AuthProtocol = FirebaseAuthViewModel()
+        let logViewModel: LogProtocol = FirebaseLogViewModel()
+        let locationManager: GpsLocationManager = GpsLocationManager()
+        let userProfileViewModel: UserProfileProtocol = FirebaseUserProfileViewModel()
         let viewModel: MapViewModel = MapViewModel(locationManager: locationManager,
                                                    userProfileViewModel: userProfileViewModel)
-        var viewController = MapView(viewModel: viewModel)
-        viewController.set(viewModel: viewModel)
-        return AnyView(viewController)
-    }
-    
-    //MARK: - Private Methods -
-    private func createViewModel(locationManager: GpsLocationManager,
-                                 userProfileViewModel: UserProfileProtocol) -> MapViewModel {
-        MapViewModel(locationManager: locationManager,
-                     userProfileViewModel: userProfileViewModel)
-    }
-    
-    private func createGpsLocationManager() -> GpsLocationManager {
-        GpsLocationManager()
-    }
-    
-    private func createUserProfileViewModel() -> UserProfileProtocol {
-        return FirebaseUserProfileViewModel()
+        let view: MapView = MapView(viewModel: viewModel)
+        return view
     }
 }

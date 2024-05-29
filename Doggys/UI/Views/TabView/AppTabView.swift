@@ -10,7 +10,7 @@ import SwiftUI
 struct AppTabView: View {
     var body: some View {
         TabView {
-            MapViewWireFrame().viewController
+            MapViewWireFrame.createView()
                 .tabItem {
                     Label("Mapa", 
                           systemImage: "map")
