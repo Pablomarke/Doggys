@@ -15,7 +15,7 @@ final class ProfileViewModel: ObservableObject {
     private var userViewModel: UserProfileProtocol
     private var logViewModel: LogProtocol
     private var storageViewModel: StorageProtocol
-    private var locationManager: GpsLocationManager
+    private var locationManager: GpsLocationManagerProtocol
 
     @Published var dogOwner: String = ""
     @Published var nameOfDog: String = ""
@@ -34,7 +34,7 @@ final class ProfileViewModel: ObservableObject {
     init(userViewModel: UserProfileProtocol, 
          logViewModel: LogProtocol,
          storageViewModel: StorageProtocol,
-         locationManager: GpsLocationManager) {
+         locationManager: GpsLocationManagerProtocol) {
         self.userViewModel = userViewModel
         self.logViewModel = logViewModel
         self.storageViewModel = storageViewModel

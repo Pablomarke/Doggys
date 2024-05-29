@@ -12,11 +12,11 @@ enum ProfileWireFrame {
         let userViewModel: UserProfileProtocol = FirebaseUserProfileViewModel()
         let logViewModel: LogProtocol = FirebaseLogViewModel()
         let storageViewModel: StorageProtocol = FirebaseStorageViewModel()
-        let locationManager: GpsLocationManager = GpsLocationManager()
+        let locationManager: GpsLocationManagerProtocol = GpsLocationManager()
         let viewModel: ProfileViewModel = ProfileViewModel(userViewModel: userViewModel,
-                                                          logViewModel: logViewModel,
-                                                          storageViewModel: storageViewModel,
-                                                          locationManager: locationManager)
+                                                           logViewModel: logViewModel,
+                                                           storageViewModel: storageViewModel,
+                                                           locationManager: locationManager)
         var viewController = ProfileView(viewModel: viewModel)
         return AnyView(viewController)
     }

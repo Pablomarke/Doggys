@@ -100,7 +100,6 @@ struct LoginView: View {
     }
 }
 
-
 #Preview {
     LoginWireFrame.createView()
 }

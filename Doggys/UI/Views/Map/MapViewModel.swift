@@ -11,14 +11,14 @@ import Combine
 
 final class MapViewModel: ObservableObject {
     // MARK: - Properties -
-    private var locationManager: GpsLocationManager
+    private var locationManager: GpsLocationManagerProtocol
     private var userProfileViewModel: UserProfileProtocol
     @Published var selfRegion: MKCoordinateRegion = .init()
     private var selfSpan: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.01,
                                                               longitudeDelta: 0.01)
     var userProfiles: UsersProfileList = .init()
     
-    init(locationManager: GpsLocationManager,
+    init(locationManager: GpsLocationManagerProtocol,
          userProfileViewModel: UserProfileProtocol) {
         self.locationManager = locationManager
         self.userProfileViewModel = userProfileViewModel

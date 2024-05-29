@@ -7,7 +7,14 @@
 
 import CoreLocation
 
-class GpsLocationManager: NSObject {
+protocol GpsLocationManagerProtocol {
+    func getLocation() -> CLLocationCoordinate2D
+    func getCurrentLocation(completion: @escaping (CLLocationCoordinate2D?,
+                                                   Error?) -> Void)
+    func checkUserAuthorization()
+}
+
+final class GpsLocationManager: NSObject, GpsLocationManagerProtocol {
     private var locationManager: CLLocationManager
     var locationUpdateHandler: ((CLLocationCoordinate2D) -> Void)?
     var errorHandler: ((Error) -> Void)?
