@@ -9,12 +9,13 @@ import SwiftUI
 
 struct ButtonLabel: View {
     var word: String
+    var colorForeground: Color
     
     var body: some View {
         Text(word)
             .font(.custom("Jost-Light",
                           size: 24))
-            .foregroundStyle(.customWhite)
+            .foregroundStyle(colorForeground)
             .frame(width: 200,
                    height: 56)
             .background(.customLightBlue)
@@ -26,5 +27,5 @@ struct ButtonLabel: View {
 }
 
 #Preview {
-    ButtonLabel(word: "enviar")
+    ButtonLabel(word: "enviar", colorForeground: .customWhite)
 }

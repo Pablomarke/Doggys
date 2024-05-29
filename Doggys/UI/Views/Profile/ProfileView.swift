@@ -73,8 +73,9 @@ struct ProfileView: View {
                         viewModel.searchImageOnRB()
                         self.showAlert = true
                     }, label: {
-                        ButtonLabel(word: "Guardar")
+                        ButtonLabel(word: "Guardar", colorForeground: viewModel.isButtonDisabled ? Color.gray : Color.customWhite)
                     })
+                    .disabled(viewModel.isButtonDisabled)
                     .id(9)
                     .padding()
                 }

@@ -28,7 +28,7 @@ struct RecoveryPasswordView: View {
                     viewModel.recoveryPassword()
                     self.showAlert = true
                 }, label: {
-                    ButtonLabel(word: "enviar")
+                    ButtonLabel(word: "enviar", colorForeground: .customWhite)
                         .padding()
                 })
                 .id(2)

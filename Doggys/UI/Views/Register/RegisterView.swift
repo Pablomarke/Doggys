@@ -41,7 +41,7 @@ struct RegisterView: View {
                     viewModel.registerUser()
                     self.showAlert = true
                 }, label: {
-                    ButtonLabel(word: "Registrar")
+                    ButtonLabel(word: "Registrar", colorForeground: .customWhite)
                 })
                 .id(4)
                 .padding(.top, 20)

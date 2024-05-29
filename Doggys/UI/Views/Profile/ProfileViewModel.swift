@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import FirebaseStorage
 import FirebaseFirestore
+import Combine
 
 final class ProfileViewModel: ObservableObject {
     //MARK: Properties
@@ -16,6 +17,8 @@ final class ProfileViewModel: ObservableObject {
     private var logViewModel: LogProtocol
     private var storageViewModel: StorageProtocol
     private var locationManager: GpsLocationManager
+    
+    @Published var isButtonDisabled: Bool = true
 
     @Published var dogOwner: String = ""
     @Published var nameOfDog: String = ""
@@ -28,10 +31,12 @@ final class ProfileViewModel: ObservableObject {
     @Published var urlImage: String = ""
     @Published var selfLatitude: Double = 20.00
     @Published var selfLongitude: Double = 20.00
-    @Published var navigateToHome: Bool = false
+    @Published var navigateToHome: Bool = true
     @Published var isLoading: Bool = false
-
-    init(userViewModel: UserProfileProtocol, 
+    
+    private var cancellables = Set<AnyCancellable>()
+    
+    init(userViewModel: UserProfileProtocol,
          logViewModel: LogProtocol,
          storageViewModel: StorageProtocol,
          locationManager: GpsLocationManager) {
@@ -39,8 +44,15 @@ final class ProfileViewModel: ObservableObject {
         self.logViewModel = logViewModel
         self.storageViewModel = storageViewModel
         self.locationManager = locationManager
+        
+        Publishers.CombineLatest3($dogOwner, $nameOfDog, $ageOfDog)
+            .map { dogOwner, nameOfDog, ageOfDog in
+                return dogOwner.isEmpty || nameOfDog.isEmpty || ageOfDog.isEmpty
+            }
+            .assign(to: \.isButtonDisabled, on: self)
+            .store(in: &cancellables)
     }
-    
+
     func searchImageOnRB() {
         guard let selectedImage = selectedImage else {
             return
@@ -87,4 +99,12 @@ final class ProfileViewModel: ObservableObject {
             print("Error: \(error)")
         }
     }
+    
+//    func validateFields(dogOwner: String, nameOfDog: String, ageOfDog: String) {
+//        if dogOwner.isEmpty || nameOfDog.isEmpty || ageOfDog.isEmpty {
+//               isButtonDisabled = true
+//           } else {
+//               isButtonDisabled = false
+//           }
+//       }
 }
