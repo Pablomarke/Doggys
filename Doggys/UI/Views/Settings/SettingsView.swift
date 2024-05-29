@@ -43,7 +43,7 @@ struct SettingsView: View {
                     MailView(isShowing: self.$showMailView)
                 }
             }
-            NavigationLink(destination: LoginWireFrame().viewController,
+            NavigationLink(destination: LoginWireFrame.createView(),
                            isActive: $viewModel.isLogOut) {
                 EmptyView()
             }

@@ -36,7 +36,7 @@ struct SplashView: View {
             // MARK: - Navigation -
             .background(
                 NavigationLink(
-                    destination: LoginWireFrame().viewController,
+                    destination: LoginWireFrame.createView(),
                     isActive: $viewModel.navigateToLogin) {
                         EmptyView()
                     }

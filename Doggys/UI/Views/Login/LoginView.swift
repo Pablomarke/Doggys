@@ -98,14 +98,9 @@ struct LoginView: View {
         .disabled(viewModel.isLoading)
         .navigationBarBackButtonHidden(true)
     }
-    
-    // MARK: - Functions
-    mutating func set(viewModel: LoginViewModel) {
-        self.viewModel = viewModel
-    }
 }
 
 
 #Preview {
-    LoginWireFrame().viewController
+    LoginWireFrame.createView()
 }
