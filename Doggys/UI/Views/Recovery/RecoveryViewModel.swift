@@ -7,12 +7,11 @@
 
 import Foundation
 
-final class RecoveryPasswordViewModel: ObservableObject {
-    
+final class RecoveryViewModel: ObservableObject {
     //MARK: Properties
     private var logViewModel: LogProtocol
     private var authViewModel: AuthProtocol
-    @Published var email = ""
+    @Published var email: String = ""
     @Published var alertMessage: String = ""
     @Published var showAlert: Bool = false
     
@@ -24,7 +23,7 @@ final class RecoveryPasswordViewModel: ObservableObject {
     //MARK: - Public methods
     func recoveryPassword(){
         authViewModel.recoverPassword(email: email) {
-            self.logViewModel.log(screen: RecoveryPasswordView.viewName,
+            self.logViewModel.log(screen: RecoveryView.viewName,
                                   action: "PASSWORD_RECOVERED")
             self.alertMessage = "Password recovery initiated"
         } onFailure: { [weak self] error in

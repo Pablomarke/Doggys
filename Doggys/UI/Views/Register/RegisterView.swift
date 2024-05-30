@@ -67,7 +67,7 @@ struct RegisterView: View {
                                             for: nil)
         }
         if viewModel.navigateToProfile {
-            NavigationLink(destination: ProfileWireFrame().viewController,
+            NavigationLink(destination: ProfileWireFrame.createView(),
                            isActive: $viewModel.navigateToProfile) { }
         }
     }
@@ -79,5 +79,5 @@ struct RegisterView: View {
 }
 
 #Preview {
-    RegisterWireFrame().viewController
+    RegisterWireFrame.createView()
 }

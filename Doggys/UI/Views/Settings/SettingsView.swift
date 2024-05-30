@@ -43,7 +43,7 @@ struct SettingsView: View {
                     MailView(isShowing: self.$showMailView)
                 }
             }
-            NavigationLink(destination: LoginWireFrame().viewController,
+            NavigationLink(destination: LoginWireFrame.createView(),
                            isActive: $viewModel.isLogOut) {
                 EmptyView()
             }
@@ -52,12 +52,8 @@ struct SettingsView: View {
             self.viewModel.checkMailAvailability()
         }
     }
-    // MARK: - Public methods -
-    mutating func set(viewModel: SettingsViewModel) {
-        self.viewModel = viewModel
-    }
 }
 
 #Preview {
-    SettingsWireframe().viewController
+    SettingsWireframe.createView()
 }

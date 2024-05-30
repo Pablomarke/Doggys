@@ -10,6 +10,7 @@
 		390BB76A2BBCA51F0052257E /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BB7692BBCA51F0052257E /* SplashView.swift */; };
 		390BB76D2BBCA8BE0052257E /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BB76C2BBCA8BE0052257E /* SplashViewModel.swift */; };
 		390BB76F2BBCA9D30052257E /* SplashWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BB76E2BBCA9D30052257E /* SplashWireFrame.swift */; };
+		392091CC2C077E63006E69B2 /* TabItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392091CB2C077E63006E69B2 /* TabItemComponent.swift */; };
 		39228FDD2BAC701F00C91F40 /* DoggysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39228FDC2BAC701F00C91F40 /* DoggysApp.swift */; };
 		39228FDF2BAC701F00C91F40 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39228FDE2BAC701F00C91F40 /* LoginView.swift */; };
 		39228FE12BAC702100C91F40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39228FE02BAC702100C91F40 /* Assets.xcassets */; };
@@ -41,7 +42,6 @@
 		399BE53B2BBA8A7600AC323C /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BE53A2BBA8A7600AC323C /* LogoView.swift */; };
 		39ADE2582BC29863007A6702 /* LogoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ADE2572BC29863007A6702 /* LogoHeader.swift */; };
 		39ADE25B2BC299D8007A6702 /* ButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ADE25A2BC299D8007A6702 /* ButtonLabel.swift */; };
-		39AF65E62BD13DCF00FC602C /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65E52BD13DCF00FC602C /* BaseWireframe.swift */; };
 		39AF65E82BD13F8500FC602C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65E72BD13F8500FC602C /* BaseViewModel.swift */; };
 		39AF65EA2BD17E5D00FC602C /* TextTitleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65E92BD17E5D00FC602C /* TextTitleHeader.swift */; };
 		39AF65ED2BD17FED00FC602C /* RecoveryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65EC2BD17FED00FC602C /* RecoveryText.swift */; };
@@ -107,8 +107,8 @@
 		A9D748542BFC904C00031B43 /* CustomMapIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D748532BFC904C00031B43 /* CustomMapIcon.swift */; };
 		A9EDD0CD2BBBF9250052D03C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0CC2BBBF9250052D03C /* RegisterView.swift */; };
 		A9EDD0D02BBC153E0052D03C /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0CF2BBC153E0052D03C /* RegisterViewModel.swift */; };
-		A9EDD0D32BBC16470052D03C /* RecoveryPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0D22BBC16470052D03C /* RecoveryPasswordView.swift */; };
-		A9EDD0D52BBC19310052D03C /* RecoveryPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0D42BBC19310052D03C /* RecoveryPasswordViewModel.swift */; };
+		A9EDD0D32BBC16470052D03C /* RecoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0D22BBC16470052D03C /* RecoveryView.swift */; };
+		A9EDD0D52BBC19310052D03C /* RecoveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDD0D42BBC19310052D03C /* RecoveryViewModel.swift */; };
 		A9F98CC72BB34CD6004E9451 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9F98CC62BB34CD6004E9451 /* GoogleService-Info.plist */; };
 		A9FE0ECB2BC9B520008564AB /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FE0ECA2BC9B520008564AB /* UserProfile.swift */; };
 		A9FE0ECD2BC9B7B5008564AB /* UserProfileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FE0ECC2BC9B7B5008564AB /* UserProfileProtocol.swift */; };
@@ -139,6 +139,7 @@
 		390BB7692BBCA51F0052257E /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		390BB76C2BBCA8BE0052257E /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		390BB76E2BBCA9D30052257E /* SplashWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWireFrame.swift; sourceTree = "<group>"; };
+		392091CB2C077E63006E69B2 /* TabItemComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemComponent.swift; sourceTree = "<group>"; };
 		39228FD92BAC701F00C91F40 /* Doggys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doggys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39228FDC2BAC701F00C91F40 /* DoggysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoggysApp.swift; sourceTree = "<group>"; };
 		39228FDE2BAC701F00C91F40 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -174,7 +175,6 @@
 		399BE53A2BBA8A7600AC323C /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		39ADE2572BC29863007A6702 /* LogoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoHeader.swift; sourceTree = "<group>"; };
 		39ADE25A2BC299D8007A6702 /* ButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabel.swift; sourceTree = "<group>"; };
-		39AF65E52BD13DCF00FC602C /* BaseWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
 		39AF65E72BD13F8500FC602C /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		39AF65E92BD17E5D00FC602C /* TextTitleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTitleHeader.swift; sourceTree = "<group>"; };
 		39AF65EC2BD17FED00FC602C /* RecoveryText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryText.swift; sourceTree = "<group>"; };
@@ -211,8 +211,8 @@
 		A9D748532BFC904C00031B43 /* CustomMapIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMapIcon.swift; sourceTree = "<group>"; };
 		A9EDD0CC2BBBF9250052D03C /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		A9EDD0CF2BBC153E0052D03C /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
-		A9EDD0D22BBC16470052D03C /* RecoveryPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordView.swift; sourceTree = "<group>"; };
-		A9EDD0D42BBC19310052D03C /* RecoveryPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordViewModel.swift; sourceTree = "<group>"; };
+		A9EDD0D22BBC16470052D03C /* RecoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryView.swift; sourceTree = "<group>"; };
+		A9EDD0D42BBC19310052D03C /* RecoveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryViewModel.swift; sourceTree = "<group>"; };
 		A9F98CC62BB34CD6004E9451 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9FE0ECA2BC9B520008564AB /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		A9FE0ECC2BC9B7B5008564AB /* UserProfileProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileProtocol.swift; sourceTree = "<group>"; };
@@ -315,7 +315,9 @@
 			children = (
 				3979A3922BC958DD00F5C3B1 /* Info.plist */,
 				A9B53B8F2BB336A3000AD215 /* App */,
+				3930AF6D2C0754CB00F1C53A /* Data */,
 				39D9D83B2BB710C900B5331A /* Domanin */,
+				399BE5312BB976B600AC323C /* Assets */,
 				39D9D83C2BB7114100B5331A /* UI */,
 				39228FE22BAC702100C91F40 /* Preview Content */,
 			);
@@ -374,6 +376,18 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		3930AF6D2C0754CB00F1C53A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3989ED6A2BFC853C007074A1 /* Location */,
+				A932074B2BB4ABE30068D9C2 /* Environment */,
+				392EECDC2BC68D0E005409EA /* SharedPreferences */,
+				A93207502BB4B0110068D9C2 /* ViewModels */,
+				39AF65E42BD13D9400FC602C /* Base */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		39393DDC2BDA4E300078367F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,6 +444,7 @@
 		399BE5312BB976B600AC323C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				39228FE02BAC702100C91F40 /* Assets.xcassets */,
 				3979A3932BC95BB500F5C3B1 /* Fonts */,
 			);
 			path = Assets;
@@ -497,7 +512,6 @@
 		39AF65E42BD13D9400FC602C /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				39AF65E52BD13DCF00FC602C /* BaseWireframe.swift */,
 				39AF65E72BD13F8500FC602C /* BaseViewModel.swift */,
 			);
 			path = Base;
@@ -524,6 +538,7 @@
 		39AF65F72BD1AB0200FC602C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */,
 				A9286A2F2BC6E533003FC58A /* TabView */,
 				390BB76B2BBCA5260052257E /* Splash */,
 				A9B53B902BB336AC000AD215 /* Login */,
@@ -540,16 +555,9 @@
 		39D9D83B2BB710C900B5331A /* Domanin */ = {
 			isa = PBXGroup;
 			children = (
-				3989ED6A2BFC853C007074A1 /* Location */,
-				3979A3A02BCA792400F5C3B1 /* Extensions */,
-				392EECDC2BC68D0E005409EA /* SharedPreferences */,
 				392EECD72BC68C80005409EA /* Security */,
-				399BE5312BB976B600AC323C /* Assets */,
-				39228FE02BAC702100C91F40 /* Assets.xcassets */,
 				A932073D2BB48FA90068D9C2 /* Models */,
 				A93207402BB49D110068D9C2 /* Protocols */,
-				A932074B2BB4ABE30068D9C2 /* Environment */,
-				A93207502BB4B0110068D9C2 /* ViewModels */,
 			);
 			path = Domanin;
 			sourceTree = "<group>";
@@ -557,8 +565,7 @@
 		39D9D83C2BB7114100B5331A /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				39AF65E42BD13D9400FC602C /* Base */,
-				5D16A5182BC458A8004EE58F /* Launch Screen.storyboard */,
+				3979A3A02BCA792400F5C3B1 /* Extensions */,
 				3979A3A32BCA864000F5C3B1 /* Animations */,
 				39ADE2592BC298EB007A6702 /* Components */,
 				39AF65F72BD1AB0200FC602C /* Views */,
@@ -570,6 +577,7 @@
 			isa = PBXGroup;
 			children = (
 				A9286A302BC6E55C003FC58A /* AppTabView.swift */,
+				392091CB2C077E63006E69B2 /* TabItemComponent.swift */,
 			);
 			path = TabView;
 			sourceTree = "<group>";
@@ -696,8 +704,8 @@
 		A9EDD0D12BBC16310052D03C /* Recovery */ = {
 			isa = PBXGroup;
 			children = (
-				A9EDD0D22BBC16470052D03C /* RecoveryPasswordView.swift */,
-				A9EDD0D42BBC19310052D03C /* RecoveryPasswordViewModel.swift */,
+				A9EDD0D22BBC16470052D03C /* RecoveryView.swift */,
+				A9EDD0D42BBC19310052D03C /* RecoveryViewModel.swift */,
 				A9C47F012BBE93FC0044ED5F /* RecoveryWireFrame.swift */,
 			);
 			path = Recovery;
@@ -897,7 +905,6 @@
 				39228FDF2BAC701F00C91F40 /* LoginView.swift in Sources */,
 				A9FE0ED32BC9BC5F008564AB /* UserProfile+Firebase.swift in Sources */,
 				A9FE0ED12BC9BB01008564AB /* FirebaseUserProfileViewModel.swift in Sources */,
-				39AF65E62BD13DCF00FC602C /* BaseWireframe.swift in Sources */,
 				39ADE2582BC29863007A6702 /* LogoHeader.swift in Sources */,
 				A93207452BB4A9C90068D9C2 /* FireBaseLogViewModel.swift in Sources */,
 				39228FDD2BAC701F00C91F40 /* DoggysApp.swift in Sources */,
@@ -931,9 +938,10 @@
 				390BB76D2BBCA8BE0052257E /* SplashViewModel.swift in Sources */,
 				392EECDB2BC68CEA005409EA /* KeyChainEnum.swift in Sources */,
 				3966BD872BFF2E1F0087D7C3 /* CenterMapButton.swift in Sources */,
+				392091CC2C077E63006E69B2 /* TabItemComponent.swift in Sources */,
 				5D24D97D2BCFE8EB007294E2 /* LoadingView.swift in Sources */,
 				39AF65ED2BD17FED00FC602C /* RecoveryText.swift in Sources */,
-				A9EDD0D32BBC16470052D03C /* RecoveryPasswordView.swift in Sources */,
+				A9EDD0D32BBC16470052D03C /* RecoveryView.swift in Sources */,
 				3979A3A52BCA866300F5C3B1 /* FadeinModifier.swift in Sources */,
 				A932073C2BB48F860068D9C2 /* AuthProtocol.swift in Sources */,
 				A9D748542BFC904C00031B43 /* CustomMapIcon.swift in Sources */,
@@ -945,7 +953,7 @@
 				3989ED6C2BFC856C007074A1 /* GpsLocationManager.swift in Sources */,
 				39AF65F12BD187F400FC602C /* BackArrow.swift in Sources */,
 				A932073A2BB48E170068D9C2 /* FirebaseAuthViewModel.swift in Sources */,
-				A9EDD0D52BBC19310052D03C /* RecoveryPasswordViewModel.swift in Sources */,
+				A9EDD0D52BBC19310052D03C /* RecoveryViewModel.swift in Sources */,
 				A9A7368F2C010E9500C4A0F4 /* MapPopUpView.swift in Sources */,
 				39DA4CAE2BCD11F500717DCD /* TextPickerView.swift in Sources */,
 			);

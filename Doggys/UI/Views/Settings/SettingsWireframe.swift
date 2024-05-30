@@ -9,18 +9,11 @@ import Foundation
 
 import SwiftUI
 
-final class SettingsWireframe: BaseWireframe {
-    //MARK: Public Methods
-    var viewController: AnyView {
-        let keyChain: KeyChainDataProvider = createkeyChain()
+enum SettingsWireframe{
+    static func createView() -> some View {
+        let keyChain: SecureDataProviderProtocol = KeyChainDataProvider()
         let viewModel: SettingsViewModel = SettingsViewModel(keyChain: keyChain)
-        var viewController = SettingsView(viewModel: viewModel)
-        viewController.set(viewModel: viewModel)
-        return AnyView(viewController)
-    }
-    
-    //MARK: Private Methods
-    private func createViewModel(with keyChain: KeyChainDataProvider) -> SettingsViewModel {
-        return SettingsViewModel(keyChain: keyChain)
+        let view = SettingsView(viewModel: viewModel)
+        return view
     }
 }

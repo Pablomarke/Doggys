@@ -10,11 +10,11 @@ import MessageUI
 
 final class SettingsViewModel: ObservableObject {
     //MARK: - Properties -
-    private var keyChain: KeyChainDataProvider
+    private var keyChain: SecureDataProviderProtocol
     @Published var isLogOut: Bool = false
-    @Published var isMailAvailable = false
+    @Published var isMailAvailable: Bool = false
     
-    init(keyChain: KeyChainDataProvider) {
+    init(keyChain: SecureDataProviderProtocol) {
         self.keyChain = keyChain
     }
     

@@ -36,7 +36,7 @@ struct SplashView: View {
             // MARK: - Navigation -
             .background(
                 NavigationLink(
-                    destination: LoginWireFrame().viewController,
+                    destination: LoginWireFrame.createView(),
                     isActive: $viewModel.navigateToLogin) {
                         EmptyView()
                     }
@@ -50,12 +50,8 @@ struct SplashView: View {
             )
         }
     }
-    
-    mutating func set(viewModel: SplashViewModel) {
-        self.viewModel = viewModel
-    }
 }
 
 #Preview {
-    SplashWireFrame().viewController
+    SplashWireFrame.createView()
 }

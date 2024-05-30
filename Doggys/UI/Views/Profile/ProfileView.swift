@@ -42,15 +42,18 @@ struct ProfileView: View {
                         .id(1)
                         .font(.title2)
                     }
-                    TextFieldView(text: $viewModel.dogOwner, placeholder: "Nombre del Humano")
-                        .id(2)
-                        .padding(10)
-                    TextFieldView(text: $viewModel.nameOfDog, placeholder: "Doggy Nombre")
-                        .id(3)
-                        .padding(10)
-                    TextFieldView(text: $viewModel.ageOfDog, placeholder: "Doggy Edad")
-                        .id(4)
-                        .padding(10)
+                    TextFieldView(text: $viewModel.dogOwner,
+                                  placeholder: "Nombre del Humano")
+                    .id(2)
+                    .padding(10)
+                    TextFieldView(text: $viewModel.nameOfDog,
+                                  placeholder: "Doggy Nombre")
+                    .id(3)
+                    .padding(10)
+                    TextFieldView(text: $viewModel.ageOfDog,
+                                  placeholder: "Doggy Edad")
+                    .id(4)
+                    .padding(10)
                     
                     TextPickerView(selectedItem: $viewModel.selectedBreed,
                                    text: "Seleccione una raza:",
@@ -87,13 +90,14 @@ struct ProfileView: View {
                 })
             }
             .alert(isPresented: $showAlert) {
-                       Alert(title: Text("Perfil"),
-                             message: Text("Datos guardados con éxito"),
-                             dismissButton: .default(Text("OK"), action: {
-                           viewModel.isLoading = true
-                           viewModel.navigateToHome = true
-                       }))
-                   }
+                Alert(title: Text("Perfil"),
+                      message: Text("Datos guardados con éxito"),
+                      dismissButton: .default(Text("OK"),
+                                              action: {
+                    viewModel.isLoading = true
+                    viewModel.navigateToHome = true
+                }))
+            }
             .onAppear {
                 viewModel.getLocation()
             }
@@ -101,7 +105,6 @@ struct ProfileView: View {
                 NavigationLink(destination: AppTabView(),
                                isActive: $viewModel.navigateToHome) { }
             }
-            
         }
         .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
@@ -115,12 +118,8 @@ struct ProfileView: View {
         .disabled(viewModel.isLoading)
         .navigationBarBackButtonHidden(true)
     }
-    //MARK: - Public Methods -
-    mutating func set(viewModel: ProfileViewModel) {
-        self.viewModel = viewModel
-    }
 }
 
 #Preview {
-    ProfileWireFrame().viewController
+    ProfileWireFrame.createView()
 }
