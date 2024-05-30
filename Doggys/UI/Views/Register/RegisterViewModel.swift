@@ -12,9 +12,9 @@ final class RegisterViewModel: BaseViewModel{
     //MARK: - Properties
     private var logViewModel: LogProtocol
     private var authViewModel: AuthProtocol
-    @Published var email = ""
-    @Published var password = ""
-    @Published var repeatPassword = ""
+    @Published var email: String = ""
+    @Published var password: String = ""
+    @Published var repeatPassword: String = ""
     @Published var alertMessage: String = ""
     @Published var showAlert: Bool = false
     @Published var navigateToProfile: Bool = false

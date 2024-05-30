@@ -11,7 +11,7 @@ final class RecoveryViewModel: ObservableObject {
     //MARK: Properties
     private var logViewModel: LogProtocol
     private var authViewModel: AuthProtocol
-    @Published var email = ""
+    @Published var email: String = ""
     @Published var alertMessage: String = ""
     @Published var showAlert: Bool = false
     

@@ -9,8 +9,8 @@ import Foundation
 
 final class SplashViewModel: ObservableObject {
     // MARK: - Properties -
-    @Published var navigateToLogin = false
-    @Published var navigateToHome = false
+    @Published var navigateToLogin: Bool = false
+    @Published var navigateToHome: Bool = false
     private var authViewModel: AuthProtocol
     private var logViewModel: LogProtocol
     
