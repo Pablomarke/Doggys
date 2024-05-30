@@ -10,8 +10,8 @@ import SwiftUI
 struct AppTabView: View {
     var body: some View {
         TabView {
-            TabItemComponent(view: MapViewWireFrame.createView()
-                             ,name: "Map",
+            TabItemComponent(view: MapViewWireFrame.createView(),
+                             name: "Map",
                              systemImage: .map)
             
             TabItemComponent(view: ProfileWireFrame.createView(),

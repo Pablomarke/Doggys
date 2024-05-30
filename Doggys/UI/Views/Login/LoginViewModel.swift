@@ -68,7 +68,7 @@ private extension LoginViewModel {
         isLoading = false
         rememberLoginAndPasswordInKeyChainAndPreferences()
         initAnalyticsFirebase(text: "Enter app",
-                                    message: "Enter app")
+                              message: "Enter app")
     }
     
     func rememberLoginAndPassword(remember: Bool) {

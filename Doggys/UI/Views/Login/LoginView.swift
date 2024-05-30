@@ -29,7 +29,7 @@ struct LoginView: View {
                                   placeholder: "E-mail")
                     .id(1)
                     .focused($nameIsFocused)
-                        .padding(.top, 60)
+                    .padding(.top, 60)
                     SecureTextFieldView("Password",
                                         placeholder: "Password",
                                         text: $viewModel.password)
@@ -62,7 +62,7 @@ struct LoginView: View {
                     .id(4)
                     .disabled(!viewModel.loginIsValid(email: viewModel.email,
                                                       password: viewModel.password))
-                    .opacity(viewModel.loginIsValid(email: viewModel.email, 
+                    .opacity(viewModel.loginIsValid(email: viewModel.email,
                                                     password: viewModel.password) ? 1.0 : 0.5)
                     
                     // MARK: - Navigation -
@@ -85,7 +85,7 @@ struct LoginView: View {
             .onTapGesture {
                 nameIsFocused = false
             }
-
+            
             // MARK: - Life cycle -
             .onAppear {
                 viewModel.initAnalyticsFirebase(text: "App run",

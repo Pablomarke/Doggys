@@ -69,8 +69,7 @@ final class ProfileViewModel: ObservableObject {
     }
     
     func searchDataOnDataBase() {
-        let data = UserProfile(//id: UUID().uuidString,
-                               imageProfile: self.urlImage,
+        let data = UserProfile(imageProfile: self.urlImage,
                                humanName: self.dogOwner,
                                dogName: self.nameOfDog,
                                dogYears: self.ageOfDog,
