@@ -6,15 +6,16 @@
 //
 
 import CoreLocation
+import Combine
 
 protocol GpsLocationManagerProtocol {
-    func getLocation() -> CLLocationCoordinate2D
-    func getCurrentLocation(completion: @escaping (CLLocationCoordinate2D?,
-                                                   Error?) -> Void)
+    func getLocation() -> AnyPublisher<CLLocationCoordinate2D, Never>
+    func getCurrentLocation() -> AnyPublisher<CLLocationCoordinate2D, Never>
     func checkUserAuthorization()
 }
 
 final class GpsLocationManager: NSObject, GpsLocationManagerProtocol {
+    private var locationSubject = PassthroughSubject<CLLocationCoordinate2D, Never>()
     private var locationManager: CLLocationManager
     var locationUpdateHandler: ((CLLocationCoordinate2D) -> Void)?
     var errorHandler: ((Error) -> Void)?
@@ -29,24 +30,19 @@ final class GpsLocationManager: NSObject, GpsLocationManagerProtocol {
         self.checkUserAuthorization()
     }
     
-    func getLocation() -> CLLocationCoordinate2D {
+    func getLocation() -> AnyPublisher<CLLocationCoordinate2D, Never> {
         if let location = locationManager.location?.coordinate {
-            return location
+            return Just(location)
+                .eraseToAnyPublisher()
+        } else {
+            return Empty()
+                .eraseToAnyPublisher()
         }
-        return CLLocationCoordinate2D()
     }
     
-    func getCurrentLocation(completion: @escaping (CLLocationCoordinate2D?,
-                                                   Error?) -> Void) {
-        self.locationUpdateHandler = { coordinate in
-            completion(coordinate, nil)
-        }
-        
-        self.errorHandler = { error in
-            completion(nil, error)
-        }
-        
+    func getCurrentLocation() -> AnyPublisher<CLLocationCoordinate2D, Never> {
         self.locationManager.startUpdatingLocation()
+        return locationSubject.eraseToAnyPublisher()
     }
     
     func checkUserAuthorization() {
