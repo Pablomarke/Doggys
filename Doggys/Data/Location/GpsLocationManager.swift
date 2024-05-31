@@ -24,25 +24,26 @@ final class GpsLocationManager: NSObject, GpsLocationManagerProtocol {
     override init() {
         self.locationManager = CLLocationManager()
         super.init()
-        
         self.locationManager.delegate = self
-        self.locationManager.requestWhenInUseAuthorization()
         self.checkUserAuthorization()
+        self.locationManager.startUpdatingLocation()
     }
     
     func getLocation() -> AnyPublisher<CLLocationCoordinate2D, Never> {
         if let location = locationManager.location?.coordinate {
+            locationSubject.send(location)
             return Just(location)
                 .eraseToAnyPublisher()
         } else {
-            return Empty()
+            return locationSubject
+                .first()
                 .eraseToAnyPublisher()
         }
     }
     
     func getCurrentLocation() -> AnyPublisher<CLLocationCoordinate2D, Never> {
-        self.locationManager.startUpdatingLocation()
-        return locationSubject.eraseToAnyPublisher()
+         locationSubject
+            .eraseToAnyPublisher()
     }
     
     func checkUserAuthorization() {
@@ -66,8 +67,9 @@ extension GpsLocationManager: CLLocationManagerDelegate {
         guard let location = locations.last else {
             return
         }
-        
         let coordinate = location.coordinate
+        locationSubject.send(coordinate)
+        userHasLocation = true
         locationUpdateHandler?(coordinate)
     }
     

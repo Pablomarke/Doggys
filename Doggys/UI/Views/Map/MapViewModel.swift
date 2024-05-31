@@ -32,12 +32,15 @@ final class MapViewModel: ObservableObject {
     }
     
     func getLocationAndCenter() {
-        let location = self.locationManager.getLocation()
+        self.locationManager.getLocation()
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] location in
-                self?.selfRegion.center = location
-                self?.selfRegion.span = self?.selfSpan ?? MKCoordinateSpan()
-            }.store(in: &cancellable)
+            .sink(receiveCompletion: { completion in
+                print(completion)
+            }, receiveValue: { location in
+                self.selfRegion.center = location
+                self.selfRegion.span = self.selfSpan
+            })
+            .store(in: &cancellable)
     }
     
     func getData() {
