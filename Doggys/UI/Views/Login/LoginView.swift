@@ -36,24 +36,10 @@ struct LoginView: View {
                     .id(2)
                     .focused($nameIsFocused)
                     .padding(.top, 2)
-                    HStack {
-                        Toggle(isOn: $rememberLogin) {
-                            Text("Recordar")
-                        }
-                        .id(3)
-                        .toggleStyle(SwitchToggleStyle(tint: rememberLogin
-                                                       ? Color.customLightBlue
-                                                       : Color.customWhite)
-                        )
-                    }
-                    .foregroundColor(.customWhite)
-                    .padding(.bottom, 60)
-                    .padding([.leading,
-                              .trailing], 130)
-                    .onChange(of: rememberLogin) { newValue in
+                    SwitchRemember(remember: rememberLogin,
+                                   title: "Recordar") { newValue in
                         viewModel.rememberLogin(remember: newValue)
                     }
-                    
                     Button(action: {
                         viewModel.loginUser()
                     }, label: {
