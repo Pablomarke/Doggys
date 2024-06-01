@@ -72,7 +72,9 @@ struct LoginView: View {
                         RecoveryText()
                     }
                     
-                    NavigationLink(destination: RegisterWireFrame.createView()) {
+                    NavigationLink { 
+                        RegisterWireFrame.createView()
+                    } label: {
                         RegisterText()
                     }
                     
