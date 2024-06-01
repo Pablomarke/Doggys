@@ -18,7 +18,15 @@ final class ProfileViewModel: ObservableObject {
     private var storageViewModel: StorageProtocol
     private var locationManager: GpsLocationManager
     
-    @Published var isButtonDisabled: Bool = true
+    var isButtonDisabled: Bool {
+        dogOwner == "" ||
+        nameOfDog == ""
+        || ageOfDog == "" ||
+        selectedBreed == .none ||
+        selectedGender == .none ||
+        selectedWalk == .none ||
+        dofFriendly == .none
+    }
 
     @Published var dogOwner: String = ""
     @Published var nameOfDog: String = ""
@@ -44,13 +52,6 @@ final class ProfileViewModel: ObservableObject {
         self.logViewModel = logViewModel
         self.storageViewModel = storageViewModel
         self.locationManager = locationManager
-        
-        Publishers.CombineLatest3($dogOwner, $nameOfDog, $ageOfDog)
-            .map { dogOwner, nameOfDog, ageOfDog in
-                return dogOwner.isEmpty || nameOfDog.isEmpty || ageOfDog.isEmpty
-            }
-            .assign(to: \.isButtonDisabled, on: self)
-            .store(in: &cancellables)
     }
 
     func searchImageOnRB() {
@@ -99,12 +100,4 @@ final class ProfileViewModel: ObservableObject {
             print("Error: \(error)")
         }
     }
-    
-//    func validateFields(dogOwner: String, nameOfDog: String, ageOfDog: String) {
-//        if dogOwner.isEmpty || nameOfDog.isEmpty || ageOfDog.isEmpty {
-//               isButtonDisabled = true
-//           } else {
-//               isButtonDisabled = false
-//           }
-//       }
 }
