@@ -7,8 +7,27 @@
 
 import Foundation
 import FirebaseAuth
+import Combine
 
 class FirebaseAuthViewModel: AuthProtocol {
+    func login(email: String, password: String) -> AnyPublisher<User, Error> {
+        Future<User, Error> { promise in
+            Auth.auth().signIn(withEmail: email, 
+                               password: password) { result, error in
+                if let error = error {
+                    promise(.failure(error))
+                } else if let authResult = result {
+                    let id = authResult.user.uid
+                    let user = User(id: id, 
+                                    email: email,
+                                    password: "")
+                    promise(.success(user))
+                }
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+
     func register(email: String, 
                   password: String,
                   onSuccess: @escaping (User) -> Void,
@@ -45,7 +64,7 @@ class FirebaseAuthViewModel: AuthProtocol {
         }
     }
     
-    func isUserLoggedIn(onSuccess: @escaping (Bool) -> Void, 
+    func isUserLoggedIn(onSuccess: @escaping (Bool) -> Void,
                         onFailure: @escaping (Error) -> Void) {
         
         if let _ = Auth.auth().currentUser {

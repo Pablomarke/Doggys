@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 protocol AuthProtocol {
     func register(email: String,
@@ -14,9 +15,7 @@ protocol AuthProtocol {
                   onFailure: @escaping (Error) -> Void)
     
     func login(email: String,
-               password: String, 
-               onSuccess: @escaping (User) -> Void,
-               onFailure: @escaping (Error) -> Void)
+                      password: String) -> AnyPublisher<User, Error>
     
     func isUserLoggedIn(onSuccess: @escaping (Bool) -> Void,
                         onFailure: @escaping (Error) -> Void)
