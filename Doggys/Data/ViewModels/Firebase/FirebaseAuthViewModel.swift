@@ -10,7 +10,8 @@ import FirebaseAuth
 import Combine
 
 class FirebaseAuthViewModel: AuthProtocol {
-    func login(email: String, password: String) -> AnyPublisher<User, Error> {
+    func login(email: String,
+               password: String) -> AnyPublisher<User, Error> {
         Future<User, Error> { promise in
             Auth.auth().signIn(withEmail: email,
                                password: password) { result, error in
@@ -29,7 +30,7 @@ class FirebaseAuthViewModel: AuthProtocol {
     }
     
     func register(email: String,
-                         password: String) -> AnyPublisher<User, Error> {
+                  password: String) -> AnyPublisher<User, Error> {
         Future<User, Error> { promise in
             Auth.auth().createUser(withEmail: email,
                                    password: password) { result, error in
@@ -60,35 +61,13 @@ class FirebaseAuthViewModel: AuthProtocol {
         .eraseToAnyPublisher()
     }
     
-    func login(email: String,
-               password: String,
-               onSuccess: @escaping (User) -> Void,
-               onFailure: @escaping (Error) -> Void) {
-        Auth.auth().signIn(withEmail: email,
-                           password: password) { result, error in
-            if let error = error {
-                onFailure(error)
-            } else if let authResult = result {
-                let id = authResult.user.uid
-                let user = User(id: id, 
-                                email: email,
-                                password: "")
-                onSuccess(user)
-            }
+    func isUserLoggedIn() -> AnyPublisher<Bool, Error> {
+        Future<Bool, Never> { promise in
+            promise(.success(Auth.auth().currentUser != nil))
         }
+        .mapError { $0 as Error }
+        .eraseToAnyPublisher()
     }
-    
-    func isUserLoggedIn(onSuccess: @escaping (Bool) -> Void,
-                        onFailure: @escaping (Error) -> Void) {
-        
-        if let _ = Auth.auth().currentUser {
-            onSuccess(true)
-        } else {
-            onSuccess(false)
-        }
-    }
-    
-    
     
     func getUser(onSuccess: @escaping (User) -> Void,
                  onFailure: @escaping (Error) -> Void) {
