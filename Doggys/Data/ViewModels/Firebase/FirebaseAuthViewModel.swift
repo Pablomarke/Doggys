@@ -47,6 +47,19 @@ class FirebaseAuthViewModel: AuthProtocol {
         .eraseToAnyPublisher()
     }
     
+    func recoverPassword(email: String) -> AnyPublisher<Void, Error> {
+        Future<Void, Error> { promise in
+            Auth.auth().sendPasswordReset(withEmail: email) { error in
+                if let error = error {
+                    promise(.failure(error))
+                } else {
+                    promise(.success({}()))
+                }
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+    
     func login(email: String,
                password: String,
                onSuccess: @escaping (User) -> Void,
@@ -75,18 +88,7 @@ class FirebaseAuthViewModel: AuthProtocol {
         }
     }
     
-    func recoverPassword(email: String,
-                         onSuccess: @escaping () -> Void,
-                         onFailure: @escaping (Error) -> Void) {
-        Auth.auth().sendPasswordReset(withEmail: email) { error in
-            
-            if let error = error {
-                onFailure(error)
-            } else {
-                onSuccess()
-            }
-        }
-    }
+    
     
     func getUser(onSuccess: @escaping (User) -> Void,
                  onFailure: @escaping (Error) -> Void) {

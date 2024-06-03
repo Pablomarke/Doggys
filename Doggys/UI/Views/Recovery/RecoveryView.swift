@@ -38,7 +38,10 @@ struct RecoveryView: View {
             .navigationBarItems(leading: BackArrow())
         }
         .onTapGesture {
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), 
+                                            to: nil, 
+                                            from: nil,
+                                            for: nil)
          }
         .alert(isPresented: $showAlert) {
             Alert(title: Text("Recuperar"),
