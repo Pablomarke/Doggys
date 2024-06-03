@@ -46,10 +46,6 @@ struct RecoveryView: View {
                   dismissButton: .default(Text("OK")))
         }
     }
-    
-    mutating func set(viewModel: RecoveryViewModel) {
-        self.viewModel = viewModel
-    }
 }
 
 #Preview {
