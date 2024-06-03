@@ -6,9 +6,9 @@
 //
 
 import Foundation
+import Combine
 
 final class RegisterViewModel: BaseViewModel{
-    
     //MARK: - Properties
     private var logViewModel: LogProtocol
     private var authViewModel: AuthProtocol
@@ -18,6 +18,8 @@ final class RegisterViewModel: BaseViewModel{
     @Published var alertMessage: String = ""
     @Published var showAlert: Bool = false
     @Published var navigateToProfile: Bool = false
+    private var cancellables: Set<AnyCancellable> = .init()
+    
     init(logViewModel: LogProtocol, authViewModel: AuthProtocol) {
         self.logViewModel = logViewModel
         self.authViewModel = authViewModel
@@ -26,15 +28,14 @@ final class RegisterViewModel: BaseViewModel{
     // MARK: - Public methods
     func registerUser() {
         authViewModel.register(email: email,
-                               password: password,
-                               onSuccess: { [weak self] user in
+                                      password: password)
+        .sink { [weak self] error in
+            self?.alertMessage = "Error"
+            self?.showAlert = true
+        } receiveValue: { [weak self] user in
             self?.logViewModel.log(screen: RegisterView.viewName,
                              action: "USER_REGISTERED")
-        },
-                               onFailure: { [weak self] error in
-            self?.alertMessage = error.localizedDescription
-            self?.showAlert = true
-        })
+        }.store(in: &cancellables)
     }
     
     func registerValid() -> Bool {

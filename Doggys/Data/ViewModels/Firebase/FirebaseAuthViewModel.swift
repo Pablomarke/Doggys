@@ -12,13 +12,13 @@ import Combine
 class FirebaseAuthViewModel: AuthProtocol {
     func login(email: String, password: String) -> AnyPublisher<User, Error> {
         Future<User, Error> { promise in
-            Auth.auth().signIn(withEmail: email, 
+            Auth.auth().signIn(withEmail: email,
                                password: password) { result, error in
                 if let error = error {
                     promise(.failure(error))
                 } else if let authResult = result {
                     let id = authResult.user.uid
-                    let user = User(id: id, 
+                    let user = User(id: id,
                                     email: email,
                                     password: "")
                     promise(.success(user))
@@ -27,14 +27,32 @@ class FirebaseAuthViewModel: AuthProtocol {
         }
         .eraseToAnyPublisher()
     }
-
-    func register(email: String, 
-                  password: String,
-                  onSuccess: @escaping (User) -> Void,
-                  onFailure: @escaping (Error) -> Void) {
-        Auth.auth().createUser(withEmail: email, 
-                               password: password) { result, error in
-            
+    
+    func register(email: String,
+                         password: String) -> AnyPublisher<User, Error> {
+        Future<User, Error> { promise in
+            Auth.auth().createUser(withEmail: email,
+                                   password: password) { result, error in
+                if let error = error {
+                    promise(.failure(error))
+                } else if let authResult = result {
+                    let id = authResult.user.uid
+                    let user = User(id: id,
+                                    email: email,
+                                    password: "")
+                    promise(.success(user))
+                }
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+    
+    func login(email: String,
+               password: String,
+               onSuccess: @escaping (User) -> Void,
+               onFailure: @escaping (Error) -> Void) {
+        Auth.auth().signIn(withEmail: email,
+                           password: password) { result, error in
             if let error = error {
                 onFailure(error)
             } else if let authResult = result {
@@ -42,23 +60,6 @@ class FirebaseAuthViewModel: AuthProtocol {
                 let user = User(id: id, 
                                 email: email,
                                 password: "")
-                onSuccess(user)
-            }
-        }
-    }
-    
-    func login(email: String, 
-               password: String,
-               onSuccess: @escaping (User) -> Void,
-               onFailure: @escaping (Error) -> Void) {
-        Auth.auth().signIn(withEmail: email, 
-                           password: password) { result, error in
-            
-            if let error = error {
-                onFailure(error)
-            } else if let authResult = result {
-                let id = authResult.user.uid
-                let user = User(id: id, email: email, password: "")
                 onSuccess(user)
             }
         }
@@ -74,7 +75,7 @@ class FirebaseAuthViewModel: AuthProtocol {
         }
     }
     
-    func recoverPassword(email: String, 
+    func recoverPassword(email: String,
                          onSuccess: @escaping () -> Void,
                          onFailure: @escaping (Error) -> Void) {
         Auth.auth().sendPasswordReset(withEmail: email) { error in
@@ -87,20 +88,20 @@ class FirebaseAuthViewModel: AuthProtocol {
         }
     }
     
-    func getUser(onSuccess: @escaping (User) -> Void, 
+    func getUser(onSuccess: @escaping (User) -> Void,
                  onFailure: @escaping (Error) -> Void) {
         
         if let user = Auth.auth().currentUser {
-            onSuccess(User(id: user.uid, 
+            onSuccess(User(id: user.uid,
                            email: user.email ?? "",
                            password: ""))
         } else {
-            onFailure(NSError(domain: "", 
+            onFailure(NSError(domain: "",
                               code: -1))
         }
     }
     
-    func logout(onSuccess: @escaping () -> Void, 
+    func logout(onSuccess: @escaping () -> Void,
                 onFailure: @escaping (Error) -> Void) {
         do {
             try Auth.auth().signOut()
