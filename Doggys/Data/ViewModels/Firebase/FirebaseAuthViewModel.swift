@@ -97,14 +97,4 @@ class FirebaseAuthViewModel: AuthProtocol {
         .mapError { $0 as Error }
         .eraseToAnyPublisher()
     }
-    
-    func logout(onSuccess: @escaping () -> Void,
-                onFailure: @escaping (Error) -> Void) {
-        do {
-            try Auth.auth().signOut()
-            onSuccess()
-        } catch let signOutError {
-            onFailure(signOutError)
-        }
-    }
 }
