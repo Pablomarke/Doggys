@@ -69,17 +69,33 @@ class FirebaseAuthViewModel: AuthProtocol {
         .eraseToAnyPublisher()
     }
     
-    func getUser(onSuccess: @escaping (User) -> Void,
-                 onFailure: @escaping (Error) -> Void) {
-        
-        if let user = Auth.auth().currentUser {
-            onSuccess(User(id: user.uid,
-                           email: user.email ?? "",
-                           password: ""))
-        } else {
-            onFailure(NSError(domain: "",
-                              code: -1))
+    func getUser() -> AnyPublisher<User, Error> {
+        Future<User, Error> { promise in
+            if let authResult = Auth.auth().currentUser {
+                let id = authResult.uid
+                let user = User(id: id,
+                                email: authResult.email ?? "",
+                                password: "")
+                promise(.success(user))
+            } else {
+                let error = NSError(domain: "FirebaseAuthError",
+                                    code: -1,
+                                    userInfo: [NSLocalizedDescriptionKey: "No user is currently logged in."])
+                promise(.failure(error))
+            }
         }
+        .eraseToAnyPublisher()
+    }
+    
+    func logOut() -> AnyPublisher<Void, Error> {
+        Future<Void, Never> { promise in
+            do {
+                try Auth.auth().signOut()
+            } catch let signOutError {
+            }
+        }
+        .mapError { $0 as Error }
+        .eraseToAnyPublisher()
     }
     
     func logout(onSuccess: @escaping () -> Void,

@@ -19,10 +19,7 @@ protocol AuthProtocol {
     
     func recoverPassword(email: String) -> AnyPublisher<Void, Error>
     
-    //   func logOutCombine() -> AnyPublisher<Void, Error>
-    func logout(onSuccess: @escaping () -> Void,
-                onFailure: @escaping (Error) -> Void)
-    //    func getUserCombine() -> AnyPublisher<User, Error>
-    func getUser(onSuccess: @escaping (User) -> Void,
-                 onFailure: @escaping (Error) -> Void)
+    func logOut() -> AnyPublisher<Void, Error>
+    
+    func getUser() -> AnyPublisher<User, Error>
 }
