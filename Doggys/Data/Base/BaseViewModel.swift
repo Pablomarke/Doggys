@@ -7,8 +7,11 @@
 
 import Foundation
 import FirebaseAnalytics
+import Combine
 
 class BaseViewModel: ObservableObject {
+    var cancellables: Set<AnyCancellable> = .init()
+    
     func emailIsValid(email: String) -> Bool {
         return email.contains("@")
     }

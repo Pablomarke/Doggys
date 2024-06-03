@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 
 final class LoginViewModel: BaseViewModel {
     //MARK: Properties
@@ -22,7 +21,6 @@ final class LoginViewModel: BaseViewModel {
     @Published var rememberLogin: Bool = false
     @Published var navigateToHome: Bool = false
     @Published var isLoading: Bool = false
-    var cancellable: Set<AnyCancellable> = .init()
     
     init(authViewModel: AuthProtocol,
          logViewModel: LogProtocol,
@@ -55,7 +53,7 @@ final class LoginViewModel: BaseViewModel {
                                    action: "USER_LOGGED_IN")
             self?.navigateToHomeWithLogin()
         })
-        .store(in: &cancellable)
+        .store(in: &cancellables)
     }
     
     func rememberLogin(remember: Bool) {

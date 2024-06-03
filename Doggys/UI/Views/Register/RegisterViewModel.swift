@@ -18,7 +18,6 @@ final class RegisterViewModel: BaseViewModel{
     @Published var alertMessage: String = ""
     @Published var showAlert: Bool = false
     @Published var navigateToProfile: Bool = false
-    private var cancellables: Set<AnyCancellable> = .init()
     
     init(logViewModel: LogProtocol, authViewModel: AuthProtocol) {
         self.logViewModel = logViewModel
