@@ -43,12 +43,21 @@ struct ProfileView: View {
                         .font(.title2)
                     }
                     TextFieldView(text: $viewModel.dogOwner, placeholder: "Nombre del Humano")
+                        .onChange(of: viewModel.dogOwner) { newValue in
+                            viewModel.dogOwner = viewModel.filterText(newValue)
+                        }
                         .id(2)
                         .padding(10)
                     TextFieldView(text: $viewModel.nameOfDog, placeholder: "Doggy Nombre")
+                        .onChange(of: viewModel.nameOfDog) { newValue in
+                            viewModel.nameOfDog = viewModel.filterText(newValue)
+                        }
                         .id(3)
                         .padding(10)
                     TextFieldView(text: $viewModel.ageOfDog, placeholder: "Doggy Edad")
+                        .onChange(of: viewModel.ageOfDog) { newValue in
+                            viewModel.ageOfDog = viewModel.filterText(newValue)
+                        }
                         .id(4)
                         .padding(10)
                     

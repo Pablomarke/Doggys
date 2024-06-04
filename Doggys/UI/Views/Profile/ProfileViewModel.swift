@@ -17,6 +17,7 @@ final class ProfileViewModel: ObservableObject {
     private var logViewModel: LogProtocol
     private var storageViewModel: StorageProtocol
     private var locationManager: GpsLocationManager
+    private let forbiddenCharacters = CharacterSet(charactersIn: "·´çÇ¨+`;¡¿?=)(/&%$#!|:[]*ªº^_-.{}")
     
     var isButtonDisabled: Bool {
         dogOwner == "" ||
@@ -100,4 +101,7 @@ final class ProfileViewModel: ObservableObject {
             print("Error: \(error)")
         }
     }
-}
+    
+    func filterText(_ text: String) -> String {
+           return String(text.unicodeScalars.filter { !forbiddenCharacters.contains($0) })
+       }}
