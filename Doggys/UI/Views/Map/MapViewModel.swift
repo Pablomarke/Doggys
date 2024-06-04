@@ -17,6 +17,7 @@ final class MapViewModel: ObservableObject {
     private var selfSpan: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.01,
                                                               longitudeDelta: 0.01)
     var userProfiles: UsersProfileList = .init()
+    var cancellable: Set<AnyCancellable> = .init()
     
     init(locationManager: GpsLocationManagerProtocol,
          userProfileViewModel: UserProfileProtocol) {
@@ -31,11 +32,15 @@ final class MapViewModel: ObservableObject {
     }
     
     func getLocationAndCenter() {
-        let location = self.locationManager.getLocation()
-        DispatchQueue.main.async {
-            self.selfRegion.center = location
-            self.selfRegion.span = self.selfSpan
-        }
+        self.locationManager.getLocation()
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                print(completion)
+            }, receiveValue: { location in
+                self.selfRegion.center = location
+                self.selfRegion.span = self.selfSpan
+            })
+            .store(in: &cancellable)
     }
     
     func getData() {
@@ -50,14 +55,12 @@ final class MapViewModel: ObservableObject {
 private extension MapViewModel {
     //TODO: Implement this
     func getCurrentLocationAndCenter() {
-        locationManager.getCurrentLocation { [weak self] coordinate, error in
-            if let coordinate = coordinate {
-                DispatchQueue.main.async {
-                    self?.selfRegion.center = coordinate
-                }
-            } else if let error = error {
-                print("Error: \(error.localizedDescription)")
-            }
-        }
+        locationManager.getCurrentLocation()
+            .sink { [weak self] completion in
+                //TODO: error
+                print(completion)
+            } receiveValue: { [weak self] location in
+                self?.selfRegion.center = location
+            }.store(in: &cancellable)
     }
 }

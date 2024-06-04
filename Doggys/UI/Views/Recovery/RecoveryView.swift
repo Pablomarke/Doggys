@@ -38,17 +38,16 @@ struct RecoveryView: View {
             .navigationBarItems(leading: BackArrow())
         }
         .onTapGesture {
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), 
+                                            to: nil, 
+                                            from: nil,
+                                            for: nil)
          }
         .alert(isPresented: $showAlert) {
             Alert(title: Text("Recuperar"),
                   message: Text("E-mail de recuperación enviado"),
                   dismissButton: .default(Text("OK")))
         }
-    }
-    
-    mutating func set(viewModel: RecoveryViewModel) {
-        self.viewModel = viewModel
     }
 }
 

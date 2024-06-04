@@ -9,11 +9,13 @@ import SwiftUI
 
 struct SwitchRemember: View {
     @State var remember: Bool
-    
+    var title: String
+    var onChange: (Bool) -> Void
+   
     var body: some View {
         HStack {
             Toggle(isOn: $remember) {
-                Text("Recordar")
+                Text(title)
             }
             .toggleStyle(SwitchToggleStyle(tint: remember
                                            ? Color.customLightBlue
@@ -24,9 +26,14 @@ struct SwitchRemember: View {
         .padding(.bottom, 60)
         .padding([.leading,
                     .trailing], 130)
+        .onChange(of: remember) { newValue in
+            onChange(newValue)
+        }
     }
 }
 
 #Preview {
-    SwitchRemember(remember: true)
+    SwitchRemember(remember: true,
+                   title: "Recordar",
+                   onChange: { _ in })
 }

@@ -34,20 +34,26 @@ final class LoginViewModel: BaseViewModel {
     func loginUser() {
         isLoading = true
         authViewModel.login(email: email,
-                            password: password,
-                            onSuccess: { [weak self] user in
+                                   password: password)
+        .sink(receiveCompletion: { [weak self] completion in
+            switch completion {
+                case .failure(let error):
+                    self?.logViewModel.crash(screen: LoginView.viewName,
+                                             exception: error)
+                    self?.alertMessage = error.localizedDescription
+                    self?.showAlert = true
+                    self?.isLoading = false
+                    print("Login failed with error: \(error)")
+                case .finished:
+                    print("Login successful")
+            }
+        }, receiveValue: { [weak self] user in
+            print("Logged in user: \(user)")
             self?.logViewModel.log(screen: LoginView.viewName,
                                    action: "USER_LOGGED_IN")
             self?.navigateToHomeWithLogin()
-        },
-                            onFailure: { [weak self] error in
-            self?.logViewModel.crash(screen: LoginView.viewName,
-                                     exception: error)
-            self?.alertMessage = error.localizedDescription
-            self?.showAlert = true
-            self?.isLoading = false
-        }
-        )
+        })
+        .store(in: &cancellables)
     }
     
     func rememberLogin(remember: Bool) {

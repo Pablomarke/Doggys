@@ -64,8 +64,11 @@ final class ProfileViewModel: ObservableObject {
     
     func getLocation() {
         let location = self.locationManager.getLocation()
-        self.selfLatitude = location.latitude
-        self.selfLongitude = location.longitude
+            .receive(on: DispatchQueue.main)
+            .sink { coordinate in
+                self.selfLatitude = coordinate.latitude
+                self.selfLongitude = coordinate.longitude
+            }
     }
     
     func searchDataOnDataBase() {

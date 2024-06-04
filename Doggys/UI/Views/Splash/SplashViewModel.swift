@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class SplashViewModel: ObservableObject {
+final class SplashViewModel: BaseViewModel {
     // MARK: - Properties -
     @Published var navigateToLogin: Bool = false
     @Published var navigateToHome: Bool = false
@@ -38,18 +38,18 @@ private extension SplashViewModel {
     
     func checkIfUserIsLoggedIn() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
-            self?.authViewModel.isUserLoggedIn(
-                onSuccess: { [weak self] loggedIn in
+            self?.authViewModel.isUserLoggedIn()
+                .sink(receiveCompletion: { completion in
+                    if case .failure(let error) = completion {
+                        self?.logViewModel.crash(screen: LoginView.viewName,
+                                                 exception: error)
+                    }
+                }, receiveValue: { [weak self] loggedIn in
                     self?.navigateToHome = loggedIn
                     if !loggedIn {
                         self?.navigateToLogin = true
                     }
-                },
-                onFailure: { [weak self] error in
-                    self?.logViewModel.crash(screen: LoginView.viewName,
-                                             exception: error)
-                }
-            )
+                }).store(in: &self!.cancellables)
         }
     }
 }

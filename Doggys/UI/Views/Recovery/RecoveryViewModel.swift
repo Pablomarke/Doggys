@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class RecoveryViewModel: ObservableObject {
+final class RecoveryViewModel: BaseViewModel {
     //MARK: Properties
     private var logViewModel: LogProtocol
     private var authViewModel: AuthProtocol
@@ -21,14 +21,15 @@ final class RecoveryViewModel: ObservableObject {
     }
     
     //MARK: - Public methods
-    func recoveryPassword(){
-        authViewModel.recoverPassword(email: email) {
-            self.logViewModel.log(screen: RecoveryView.viewName,
-                                  action: "PASSWORD_RECOVERED")
-            self.alertMessage = "Password recovery initiated"
-        } onFailure: { [weak self] error in
-            self?.alertMessage = error.localizedDescription
-            self?.showAlert = true
-        }
+    func recoveryPassword() {
+        authViewModel.recoverPassword(email: email)
+            .sink { [weak self] error in
+                self?.alertMessage = "Error"
+                self?.showAlert = true
+            } receiveValue: { _ in
+                self.logViewModel.log(screen: RecoveryView.viewName,
+                                      action: "PASSWORD_RECOVERED")
+                self.alertMessage = "Password recovery initiated"
+            }.store(in: &cancellables)
     }
 }

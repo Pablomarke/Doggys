@@ -71,11 +71,6 @@ struct RegisterView: View {
                            isActive: $viewModel.navigateToProfile) { }
         }
     }
-    
-    //MARK: - Publics methods -
-    mutating func set(viewModel: RegisterViewModel) {
-        self.viewModel = viewModel
-    }
 }
 
 #Preview {
