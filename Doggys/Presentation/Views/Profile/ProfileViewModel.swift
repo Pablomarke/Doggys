@@ -53,12 +53,14 @@ final class ProfileViewModel: BaseViewModel {
             return
         }
         
-        storageViewModel.uploadImage(image: compressedImage) { url in
-            self.urlImage = url
-            self.getLocationAndSaveData()
-        } onFailure: { error in
-            print("Error: \(error)")
-        }
+        storageViewModel.uploadImage(image: compressedImage) 
+            .sink { completion in
+                print(completion)
+            } receiveValue: { url in
+                self.urlImage = url
+                self.getLocationAndSaveData()
+            }
+            .store(in: &cancellables)
     }
     
     func getLocation() {
@@ -69,7 +71,7 @@ final class ProfileViewModel: BaseViewModel {
                 self.selfLongitude = coordinate.longitude
             }
     }
-
+    
     func getLocationAndSaveData() {
         locationManager.getLocation()
             .sink(receiveCompletion: { completion in

@@ -7,36 +7,34 @@
 
 import SwiftUI
 import FirebaseStorage
+import Combine
 
-class FirebaseStorageViewModel: StorageProtocol{
-    func uploadImage(image: UIImage, 
-                     onSuccess: @escaping (String) -> Void,
-                     onFailure: @escaping (Error) -> Void) {
-        guard let imageData = image.jpegData(compressionQuality: 0.1) else {
-            onFailure(NSError(domain: "Error", 
-                              code: -1,
-                              userInfo: [NSLocalizedDescriptionKey: "Unable to comvert image to data"]))
-            return
-        }
-        
-        let storage = Storage.storage()
-        let storageRef = storage.reference()
-        
-        let imageName = "\(UUID().uuidString).png"
-        let imageRef = storageRef.child(imageName)
-        
-        imageRef.putData(imageData, metadata: nil) { metadata, error in
-            if let error = error {
-                onFailure(error)
-            } else {
-                imageRef.downloadURL { url, error in
-                    if let error = error {
-                        onFailure(error)
-                    } else if let url = url {
-                        onSuccess(url.absoluteString)
+class FirebaseStorageViewModel: StorageProtocol {
+    func uploadImage(image: UIImage) -> AnyPublisher<String, Error> {
+        Future<String, Error> { promise in
+            guard let imageData = image.jpegData(compressionQuality: 0.1) else {
+                print("error compression")
+                return
+            }
+            
+            let storage = Storage.storage()
+            let storageRef = storage.reference()
+            let imageName = "\(UUID().uuidString).png"
+            let imageRef = storageRef.child(imageName)
+            imageRef.putData(imageData) { data, error in
+                if let error = error {
+                    promise(.failure(error))
+                } else if let data = data {
+                    imageRef.downloadURL { url, error in
+                        if let error = error {
+                            promise(.failure(error))
+                        } else if let url = url {
+                            promise(.success(url.absoluteString))
+                        }
                     }
                 }
             }
         }
+        .eraseToAnyPublisher()
     }
 }

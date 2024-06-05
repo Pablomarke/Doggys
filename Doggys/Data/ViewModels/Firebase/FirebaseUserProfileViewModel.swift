@@ -18,7 +18,8 @@ class FirebaseUserProfileViewModel: UserProfileProtocol {
                 .addSnapshotListener { querySnapshot, error in
                     if let error = error {
                         promise(.failure(error))
-                    } else if let querySnapshot = querySnapshot {var data: UsersProfileList = []
+                    } else if let querySnapshot = querySnapshot {
+                        var data: UsersProfileList = []
                         for document in querySnapshot.documents {
                             do {
                                 let userProfile = try document.data(as: UserProfile.self)
