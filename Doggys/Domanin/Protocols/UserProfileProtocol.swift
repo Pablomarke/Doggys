@@ -10,6 +10,5 @@ import Combine
 
 protocol UserProfileProtocol {
     func fetchData() -> AnyPublisher<UsersProfileList, Error>
-    
     func searchData(userProfile: UserProfile) -> AnyPublisher<Void, Error>
 }

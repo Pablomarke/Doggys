@@ -12,9 +12,9 @@ class FirebaseLogViewModel: LogProtocol {
     func log(screen: String, action: String) {
         Analytics.logEvent(action, 
                            parameters: [
-            AnalyticsParameterScreenName: screen,
-            "custom_key": ""
-        ])
+                            AnalyticsParameterScreenName: screen,
+                            "custom_key": ""
+                           ])
     }
     
     func crash(screen: String, exception: Error) {
