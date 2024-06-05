@@ -69,15 +69,9 @@ final class ProfileViewModel: BaseViewModel {
                 self.selfLongitude = coordinate.longitude
             }
     }
-    
-    func getLocation2() -> AnyPublisher<CLLocationCoordinate2D, Never> {
-        return locationManager.getLocation()
-            .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
-    }
-    
+
     func getLocationAndSaveData() {
-        getLocation2()
+        locationManager.getLocation()
             .sink(receiveCompletion: { completion in
                 switch completion {
                     case .finished:
@@ -110,12 +104,11 @@ final class ProfileViewModel: BaseViewModel {
                 switch completion {
                     case .finished:
                         print(self.selfLatitude)
-                        print("Document added succesfully")
                     case .failure(let error):
-                        print("-----Error saving data: \(error)")
+                        print("Error saving data: \(error)")
                 }
             }, receiveValue: {
-                print("ok2")
+                print("Document added succesfully")
             })
             .store(in: &cancellables)
     }
