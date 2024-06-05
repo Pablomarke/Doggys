@@ -5,18 +5,17 @@
 //  Created by Marco Muñoz on 5/4/24.
 //
 
-import Foundation
 import SwiftUI
-import FirebaseStorage
-import FirebaseFirestore
+import Combine
+import MapKit
 
-final class ProfileViewModel: ObservableObject {
+final class ProfileViewModel: BaseViewModel {
     //MARK: Properties
     private var userViewModel: UserProfileProtocol
     private var logViewModel: LogProtocol
     private var storageViewModel: StorageProtocol
     private var locationManager: GpsLocationManagerProtocol
-
+    
     @Published var dogOwner: String = ""
     @Published var nameOfDog: String = ""
     @Published var ageOfDog: String = ""
@@ -26,12 +25,12 @@ final class ProfileViewModel: ObservableObject {
     @Published var dofFriendly: DogFriendly = .yes
     @Published var selectedImage: UIImage?
     @Published var urlImage: String = ""
-    @Published var selfLatitude: Double = 20.00
-    @Published var selfLongitude: Double = 20.00
+    @Published var selfLatitude: Double = .init()
+    @Published var selfLongitude: Double = .init()
     @Published var navigateToHome: Bool = false
     @Published var isLoading: Bool = false
-
-    init(userViewModel: UserProfileProtocol, 
+    
+    init(userViewModel: UserProfileProtocol,
          logViewModel: LogProtocol,
          storageViewModel: StorageProtocol,
          locationManager: GpsLocationManagerProtocol) {
@@ -56,7 +55,7 @@ final class ProfileViewModel: ObservableObject {
         
         storageViewModel.uploadImage(image: compressedImage) { url in
             self.urlImage = url
-            self.searchDataOnDataBase()
+            self.getLocationAndSaveData()
         } onFailure: { error in
             print("Error: \(error)")
         }
@@ -71,6 +70,29 @@ final class ProfileViewModel: ObservableObject {
             }
     }
     
+    func getLocation2() -> AnyPublisher<CLLocationCoordinate2D, Never> {
+        return locationManager.getLocation()
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+    
+    func getLocationAndSaveData() {
+        getLocation2()
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                    case .finished:
+                        print("Location ok")
+                    case .failure(let error):
+                        print("Error getting location: \(error)")
+                }
+            }, receiveValue: { coordinate in
+                self.selfLatitude = coordinate.latitude
+                self.selfLongitude = coordinate.longitude
+                self.searchDataOnDataBase()
+            })
+            .store(in: &cancellables)
+    }
+    
     func searchDataOnDataBase() {
         let data = UserProfile(imageProfile: self.urlImage,
                                humanName: self.dogOwner,
@@ -78,15 +100,23 @@ final class ProfileViewModel: ObservableObject {
                                dogYears: self.ageOfDog,
                                dogBreed: self.selectedBreed,
                                dogGender: self.selectedGender,
-                               dogWalk: self.selectedWalk, 
+                               dogWalk: self.selectedWalk,
                                dogFriendly: self.dofFriendly,
                                selfLatitude: self.selfLatitude,
                                selfLongitude: self.selfLongitude)
         
-        userViewModel.searchData(userProfile: data) {
-            print("Document added succesfully")
-        } onFailure: { error in
-            print("Error: \(error)")
-        }
+        userViewModel.searchData(userProfile: data)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                    case .finished:
+                        print(self.selfLatitude)
+                        print("Document added succesfully")
+                    case .failure(let error):
+                        print("-----Error saving data: \(error)")
+                }
+            }, receiveValue: {
+                print("ok2")
+            })
+            .store(in: &cancellables)
     }
 }

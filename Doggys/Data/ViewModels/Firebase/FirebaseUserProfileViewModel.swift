@@ -34,16 +34,17 @@ class FirebaseUserProfileViewModel: UserProfileProtocol {
         .eraseToAnyPublisher()
     }
     
-    func searchData(userProfile: UserProfile,
-                    onSuccess: @escaping () -> Void,
-                    onFailure: @escaping (Error) -> Void) {
-        dataBase.collection(collectionName)
-            .addDocument(data: userProfile.dictionary) { error in
-                if let error = error {
-                    onFailure(error)
-                } else {
-                    onSuccess()
+    func searchData(userProfile: UserProfile) -> AnyPublisher<Void, Error> {
+        Future<Void, Error> { [self] promise in
+            dataBase.collection(self.collectionName)
+                .addDocument(data: userProfile.dictionary) { error in
+                    if let error = error {
+                        promise(.failure(error))
+                    } else {
+                        promise(.success(()))
+                    }
                 }
-            }
+        }
+        .eraseToAnyPublisher()
     }
 }
