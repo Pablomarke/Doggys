@@ -318,7 +318,7 @@
 				3930AF6D2C0754CB00F1C53A /* Data */,
 				39D9D83B2BB710C900B5331A /* Domanin */,
 				399BE5312BB976B600AC323C /* Assets */,
-				39D9D83C2BB7114100B5331A /* UI */,
+				39D9D83C2BB7114100B5331A /* Presentation */,
 				39228FE22BAC702100C91F40 /* Preview Content */,
 			);
 			path = Doggys;
@@ -562,7 +562,7 @@
 			path = Domanin;
 			sourceTree = "<group>";
 		};
-		39D9D83C2BB7114100B5331A /* UI */ = {
+		39D9D83C2BB7114100B5331A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				3979A3A02BCA792400F5C3B1 /* Extensions */,
@@ -570,7 +570,7 @@
 				39ADE2592BC298EB007A6702 /* Components */,
 				39AF65F72BD1AB0200FC602C /* Views */,
 			);
-			path = UI;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		A9286A2F2BC6E533003FC58A /* TabView */ = {
@@ -1119,7 +1119,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Doggys/Preview Content\"";
-				DEVELOPMENT_TEAM = D35BGERC28;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Doggys/Info.plist;
@@ -1152,7 +1152,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Doggys/Preview Content\"";
-				DEVELOPMENT_TEAM = D35BGERC28;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Doggys/Info.plist;

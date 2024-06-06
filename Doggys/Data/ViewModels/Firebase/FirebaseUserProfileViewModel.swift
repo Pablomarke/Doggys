@@ -6,43 +6,46 @@
 //
 
 import FirebaseFirestore
+import Combine
 
 class FirebaseUserProfileViewModel: UserProfileProtocol {
-    private let db = Firestore.firestore()
+    private let dataBase = Firestore.firestore()
     private let collectionName = "userprofile_doggys"
     
-    func fetchData(onSucces: @escaping (UsersProfileList) -> Void,
-                   onFailure: @escaping (Error) -> Void) {
-        db.collection(collectionName)
-            .addSnapshotListener { querySnapshot, error in
-                if let error = error {
-                    onFailure(error)
-                } else if let querySnapshot = querySnapshot {
-                    var data: UsersProfileList = []
-                    for document in querySnapshot.documents {
-                        do {
-                            let userProfile = try document.data(as: UserProfile.self)
-                            data.append(userProfile)
-                        } catch {
-                            onFailure(error)
-                            return
+    func fetchData() -> AnyPublisher<UsersProfileList, Error> {
+        Future<UsersProfileList, Error> { promise in
+            self.dataBase.collection(self.collectionName)
+                .addSnapshotListener { querySnapshot, error in
+                    if let error = error {
+                        promise(.failure(error))
+                    } else if let querySnapshot = querySnapshot {
+                        var data: UsersProfileList = []
+                        for document in querySnapshot.documents {
+                            do {
+                                let userProfile = try document.data(as: UserProfile.self)
+                                data.append(userProfile)
+                            } catch {
+                                return
+                            }
                         }
+                        promise(.success(data))
                     }
-                    onSucces(data)
                 }
-            }
+        }
+        .eraseToAnyPublisher()
     }
     
-    func searchData(userProfile: UserProfile,
-                    onSuccess: @escaping () -> Void,
-                    onFailure: @escaping (Error) -> Void) {
-        db.collection(collectionName)
-            .addDocument(data: userProfile.dictionary) { error in
-                if let error = error {
-                    onFailure(error)
-                } else {
-                    onSuccess()
+    func searchData(userProfile: UserProfile) -> AnyPublisher<Void, Error> {
+        Future<Void, Error> { [self] promise in
+            dataBase.collection(self.collectionName)
+                .addDocument(data: userProfile.dictionary) { error in
+                    if let error = error {
+                        promise(.failure(error))
+                    } else {
+                        promise(.success(()))
+                    }
                 }
-            }
+        }
+        .eraseToAnyPublisher()
     }
 }

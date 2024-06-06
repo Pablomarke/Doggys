@@ -44,11 +44,14 @@ final class MapViewModel: ObservableObject {
     }
     
     func getData() {
-        userProfileViewModel.fetchData { [weak self] profiles in
-            self?.userProfiles.append(contentsOf: profiles)
-        } onFailure: { error in
-            print(error)
+        userProfileViewModel.fetchData()
+            .sink { [weak self] completion in
+                //TODO: error
+                print(completion)
+        } receiveValue: { [weak self] data in
+            self?.userProfiles.append(contentsOf: data)
         }
+        .store(in: &cancellable)
     }
 }
 
