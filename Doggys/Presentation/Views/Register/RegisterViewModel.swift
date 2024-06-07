@@ -17,6 +17,7 @@ final class RegisterViewModel: BaseViewModel{
     @Published var repeatPassword: String = ""
     @Published var alertMessage: String = ""
     @Published var showAlert: Bool = false
+    @Published var showAlertError: Bool = false
     @Published var navigateToProfile: Bool = false
     
     init(logViewModel: LogProtocol, authViewModel: AuthProtocol) {
@@ -27,14 +28,18 @@ final class RegisterViewModel: BaseViewModel{
     // MARK: - Public methods
     func registerUser() {
         authViewModel.register(email: email,
-                                      password: password)
+                               password: password)
         .sink { [weak self] error in
-            self?.alertMessage = "Error"
-            self?.showAlert = true
+            //TODO: If app is registered, you can change this fuction to error
+            // self?.alertMessage = "Error"
+             //self?.showAlertError = true
         } receiveValue: { [weak self] user in
+            self?.alertMessage = "Registro"
+            self?.showAlert = true
             self?.logViewModel.log(screen: RegisterView.viewName,
-                             action: "USER_REGISTERED")
-        }.store(in: &cancellables)
+                                   action: "USER_REGISTERED")
+        }
+        .store(in: &cancellables)
     }
     
     func registerValid() -> Bool {

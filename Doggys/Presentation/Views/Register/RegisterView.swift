@@ -12,7 +12,6 @@ struct RegisterView: View {
     static var viewName: String = "RegisterView"
     @ObservedObject var viewModel: RegisterViewModel
     @Environment(\.presentationMode) var presentationMode
-    @State private var showAlert = false
     
     public init(viewModel: RegisterViewModel) {
         self.viewModel = viewModel
@@ -39,7 +38,6 @@ struct RegisterView: View {
                 
                 Button(action: {
                     viewModel.registerUser()
-                    self.showAlert = true
                 }, label: {
                     ButtonLabel(word: "Registrar")
                 })
@@ -49,8 +47,16 @@ struct RegisterView: View {
                 .opacity(viewModel.registerValid() ? 1.0 : 0.5)
                 Spacer()
             }
-            .alert(isPresented: $showAlert) {
-                Alert(title: Text("Registro"),
+           .alert(isPresented: $viewModel.showAlertError) {
+                Alert(title: Text(viewModel.alertMessage),
+                      message: Text("Registro Erroneo"),
+                      dismissButton: .default(Text("OK"),
+                                              action: {
+                    
+                }))
+            }
+            .alert(isPresented: $viewModel.showAlert) {
+                Alert(title: Text(viewModel.alertMessage),
                       message: Text("Registro completado con éxito"),
                       dismissButton: .default(Text("OK"),
                                               action: {
