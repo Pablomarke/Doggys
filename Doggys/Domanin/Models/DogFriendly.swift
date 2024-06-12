@@ -8,6 +8,7 @@
 import Foundation
 
 enum DogFriendly: String, CaseIterable, CustomStringConvertible, Decodable {
+    case none = "¿Sociable?"
     case yes = "Sí"
     case no = "No"
     case yesMale = "Sí, sólo con Machos"

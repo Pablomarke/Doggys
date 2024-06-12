@@ -43,7 +43,7 @@ struct LoginView: View {
                     Button(action: {
                         viewModel.loginUser()
                     }, label: {
-                        ButtonLabel(word: "Login")
+                        ButtonLabel(word: "Login", colorForeground: .customWhite)
                     })
                     .id(4)
                     .disabled(!viewModel.loginIsValid(email: viewModel.email,

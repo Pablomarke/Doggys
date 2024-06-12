@@ -8,6 +8,7 @@
 import Foundation
 
 enum DogBreed: String, CaseIterable, CustomStringConvertible, Decodable {
+    case none = "Seleccione raza"
     case mestizo = "Mestizo"
     case akita = "Akita"
     case bassetHound = "Basset Hound"

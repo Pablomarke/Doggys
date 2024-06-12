@@ -26,7 +26,7 @@ struct SettingsView: View {
                 Button(action: {
                     viewModel.disconnect()
                 }, label: {
-                    ButtonLabel(word: "Desconectar")
+                    ButtonLabel(word: "Desconectar", colorForeground: .customWhite)
                 })
                 .id(1)
                 .padding(.bottom, 50)
@@ -37,7 +37,7 @@ struct SettingsView: View {
                         print("Not registered mail, not available in simulator")
                     }
                 }, label: {
-                    ButtonLabel(word: "Contacto")
+                    ButtonLabel(word: "Contacto", colorForeground: .customWhite)
                 })
                 .sheet(isPresented: $showMailView) {
                     MailView(isShowing: self.$showMailView)
