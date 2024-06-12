@@ -12,6 +12,7 @@ protocol GpsLocationManagerProtocol {
     func getLocation() -> AnyPublisher<CLLocationCoordinate2D, Never>
     func getCurrentLocation() -> AnyPublisher<CLLocationCoordinate2D, Never>
     func checkUserAuthorization()
+    func gpsLocation() -> CLLocationCoordinate2D
 }
 
 final class GpsLocationManager: NSObject, GpsLocationManagerProtocol {
@@ -38,6 +39,14 @@ final class GpsLocationManager: NSObject, GpsLocationManagerProtocol {
             return locationSubject
                 .first()
                 .eraseToAnyPublisher()
+        }
+    }
+    
+    func gpsLocation() -> CLLocationCoordinate2D {
+        if let location = locationManager.location?.coordinate {
+            return location
+        } else {
+            return CLLocationCoordinate2D()
         }
     }
     
