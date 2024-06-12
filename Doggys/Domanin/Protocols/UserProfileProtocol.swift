@@ -6,11 +6,9 @@
 //
 
 import Foundation
+import Combine
 
 protocol UserProfileProtocol {
-    func fetchData(onSucces: @escaping (UsersProfileList) -> Void, 
-                   onFailure: @escaping (Error) -> Void)
-    func searchData(userProfile: UserProfile, 
-                    onSuccess: @escaping () -> Void, 
-                    onFailure: @escaping (Error) -> Void)
+    func fetchData() -> AnyPublisher<UsersProfileList, Error>
+    func searchData(userProfile: UserProfile) -> AnyPublisher<Void, Error>
 }

@@ -6,28 +6,20 @@
 //
 
 import Foundation
+import Combine
 
 protocol AuthProtocol {
-    func register(email: String,
-                  password: String,
-                  onSuccess: @escaping (User) -> Void,
-                  onFailure: @escaping (Error) -> Void)
-    
     func login(email: String,
-               password: String, 
-               onSuccess: @escaping (User) -> Void,
-               onFailure: @escaping (Error) -> Void)
+               password: String) -> AnyPublisher<User, Error>
     
-    func isUserLoggedIn(onSuccess: @escaping (Bool) -> Void,
-                        onFailure: @escaping (Error) -> Void)
+    func register(email: String,
+                  password: String) -> AnyPublisher<User, Error>
     
-    func recoverPassword(email: String,
-                         onSuccess: @escaping () -> Void,
-                         onFailure: @escaping (Error) -> Void)
+    func isUserLoggedIn() -> AnyPublisher<Bool, Error>
     
-    func getUser(onSuccess: @escaping (User) -> Void,
-                 onFailure: @escaping (Error) -> Void)
+    func recoverPassword(email: String) -> AnyPublisher<Void, Error>
     
-    func logout(onSuccess: @escaping () -> Void,
-                onFailure: @escaping (Error) -> Void)
+    func logOut() -> AnyPublisher<Void, Error>
+    
+    func getUser() -> AnyPublisher<User, Error>
 }

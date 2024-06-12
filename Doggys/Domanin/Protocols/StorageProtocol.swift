@@ -5,11 +5,9 @@
 //  Created by Marco Muñoz on 17/4/24.
 //
 
-import Foundation
 import SwiftUI
+import Combine
 
 protocol StorageProtocol {
-    func uploadImage(image: UIImage, 
-                     onSuccess: @escaping (String) -> Void,
-                     onFailure: @escaping (Error) -> Void)
+    func uploadImage(image: UIImage) -> AnyPublisher<String, Error>
 }
