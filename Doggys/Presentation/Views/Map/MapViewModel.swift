@@ -9,7 +9,7 @@ import Foundation
 import MapKit
 import Combine
 
-final class MapViewModel: ObservableObject {
+final class MapViewModel: BaseViewModel {
     // MARK: - Properties -
     private var locationManager: GpsLocationManagerProtocol
     private var userProfileViewModel: UserProfileProtocol
@@ -17,7 +17,6 @@ final class MapViewModel: ObservableObject {
     private var selfSpan: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.01,
                                                               longitudeDelta: 0.01)
     var userProfiles: UsersProfileList = .init()
-    var cancellable: Set<AnyCancellable> = .init()
     
     init(locationManager: GpsLocationManagerProtocol,
          userProfileViewModel: UserProfileProtocol) {
@@ -36,22 +35,28 @@ final class MapViewModel: ObservableObject {
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 print(completion)
-            }, receiveValue: { location in
-                self.selfRegion.center = location
-                self.selfRegion.span = self.selfSpan
+            }, receiveValue: { [weak self] location in
+                guard let self = self else {
+                    return
+                }
+                
+                let region = MKCoordinateRegion(center: location,
+                                                span: self.selfSpan)
+                selfRegion = region
             })
-            .store(in: &cancellable)
+            .store(in: &cancellables)
     }
     
     func getData() {
         userProfileViewModel.fetchData()
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 //TODO: error
                 print(completion)
-        } receiveValue: { [weak self] data in
-            self?.userProfiles.append(contentsOf: data)
-        }
-        .store(in: &cancellable)
+            } receiveValue: { [weak self] data in
+                self?.userProfiles.append(contentsOf: data)
+            }
+            .store(in: &cancellables)
     }
 }
 
@@ -64,6 +69,6 @@ private extension MapViewModel {
                 print(completion)
             } receiveValue: { [weak self] location in
                 self?.selfRegion.center = location
-            }.store(in: &cancellable)
+            }.store(in: &cancellables)
     }
 }
