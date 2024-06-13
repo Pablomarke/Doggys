@@ -13,10 +13,14 @@ final class SplashViewModel: BaseViewModel {
     @Published var navigateToHome: Bool = false
     private var authViewModel: AuthProtocol
     private var logViewModel: LogProtocol
+    private var locationManager: GpsLocationManagerProtocol
     
-    init(authViewModel: AuthProtocol, logViewModel: LogProtocol) {
+    init(authViewModel: AuthProtocol, 
+         logViewModel: LogProtocol,
+         locationManager: GpsLocationManagerProtocol) {
         self.authViewModel = authViewModel
         self.logViewModel = logViewModel
+        self.locationManager = locationManager
     }
     
     // MARK: - Public methods -
@@ -49,7 +53,8 @@ private extension SplashViewModel {
                     if !loggedIn {
                         self?.navigateToLogin = true
                     }
-                }).store(in: &self!.cancellables)
+                })
+                .store(in: &self!.cancellables)
         }
     }
 }

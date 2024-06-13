@@ -11,8 +11,10 @@ enum SplashWireFrame {
     static func createView() -> some View {
         let authViewModel: AuthProtocol = FirebaseAuthViewModel()
         let logViewModel: LogProtocol = FirebaseLogViewModel()
+        let locationManager: GpsLocationManagerProtocol = GpsLocationManager()
         let viewModel: SplashViewModel = SplashViewModel(authViewModel: authViewModel,
-                                                            logViewModel: logViewModel)
+                                                         logViewModel: logViewModel, 
+                                                         locationManager: locationManager)
         let view = SplashView(viewModel: viewModel)
         return view
     }
