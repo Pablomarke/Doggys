@@ -35,14 +35,7 @@ struct MapView: View {
                 .id(0)
             if let user = viewModel.selectedUser {
                 VStack{
-                    MapPopupView(nameProfile: user.dogName,
-                                 gender: user.dogGender.rawValue,
-                                 years: user.dogYears,
-                                 friendly: user.dogFriendly.rawValue,
-                                 longWalk: user.dogWalk.rawValue)
-                    .padding()
-                    .background(Color.white)
-                    .cornerRadius(20)
+                    MapPopupView(model: user)
                     Button("", systemImage: "x.circle.fill") {
                         viewModel.selectedUser = nil
                     }

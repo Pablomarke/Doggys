@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct MapPopupView: View {
-    var nameProfile: String
-    var gender: String
-    var years: String
-    var friendly: String
-    var longWalk: String
+    var model: UserProfile
     @State var isFav: Bool = false
     
     var body: some View {
@@ -21,14 +17,14 @@ struct MapPopupView: View {
                 .resizable()
                 .frame(width: 100, height: 60)
                 .padding(.bottom, -1)
-            Text(nameProfile)
+            Text(model.dogName)
                 .padding(.bottom, -1)
                 .font(.title3)
                 .bold()
-            Text("Género: \(gender)")
-            Text("Edad: \(years)")
-            Text("Amigable: \(friendly)")
-            Text("\(longWalk)")
+            Text("Género: \(model.dogGender)")
+            Text("Edad: \(model.dogYears)")
+            Text("Amigable: \(model.dogFriendly)")
+            Text("\(model.dogWalk)")
             Button("", systemImage: isFav ? "star.fill" : "star") {
                 isFav.toggle()
             }
@@ -36,11 +32,14 @@ struct MapPopupView: View {
             .foregroundStyle(isFav ? .yellow : .gray)
         }
         .frame(width: 200, height: 250)
+        .padding()
+        .background(Color.customWhite)
+        .cornerRadius(20)
     }
 }
-
+/*
 #Preview {
     MapPopupView(nameProfile: "Romeo", gender: "Macho", years: "4", friendly: "Si", longWalk: "+1h, paseo largo")
         .frame(width: 200, height: 250)
         .background(.red)
-}
+}*/
