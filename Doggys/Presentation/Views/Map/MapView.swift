@@ -34,15 +34,9 @@ struct MapView: View {
             }
                 .id(0)
             if let user = viewModel.selectedUser {
-                VStack{
-                    MapPopupView(model: user)
-                    Button("", systemImage: "x.circle.fill") {
-                        viewModel.selectedUser = nil
-                    }
-                    .foregroundStyle(.red)
+                MapPopupView(model: user) {
+                    viewModel.selectedUser = nil
                 }
-                .transition(.move(edge: .top))
-                .animation(.easeInOut)
             }
             VStack {
                 Spacer()
