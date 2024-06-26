@@ -13,6 +13,7 @@ protocol GpsLocationManagerProtocol {
     func getCurrentLocation() -> AnyPublisher<CLLocationCoordinate2D, Never>
     func checkUserAuthorization()
     func gpsLocation() -> CLLocationCoordinate2D
+    var userHasLocation: Bool { get }
 }
 
 final class GpsLocationManager: NSObject, GpsLocationManagerProtocol {
@@ -53,7 +54,7 @@ final class GpsLocationManager: NSObject, GpsLocationManagerProtocol {
     }
     
     func getCurrentLocation() -> AnyPublisher<CLLocationCoordinate2D, Never> {
-         locationSubject
+        locationSubject
             .eraseToAnyPublisher()
     }
     
