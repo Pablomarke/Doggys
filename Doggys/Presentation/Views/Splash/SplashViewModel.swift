@@ -13,15 +13,20 @@ final class SplashViewModel: BaseViewModel {
     @Published var navigateToHome: Bool = false
     private var authViewModel: AuthProtocol
     private var logViewModel: LogProtocol
+    private var locationManager: GpsLocationManagerProtocol
     
-    init(authViewModel: AuthProtocol, logViewModel: LogProtocol) {
+    init(authViewModel: AuthProtocol,
+         logViewModel: LogProtocol,
+         locationManager: GpsLocationManagerProtocol) {
         self.authViewModel = authViewModel
         self.logViewModel = logViewModel
+        self.locationManager = locationManager
     }
     
     // MARK: - Public methods -
     func initView() {
         userRememberLogin()
+        checkGPS()
     }
 }
 
@@ -49,7 +54,20 @@ private extension SplashViewModel {
                     if !loggedIn {
                         self?.navigateToLogin = true
                     }
-                }).store(in: &self!.cancellables)
+                })
+                .store(in: &self!.cancellables)
+        }
+    }
+    
+    func checkGPS() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+            guard let self = self else {
+                return
+            }
+            
+            if !self.locationManager.userHasLocation {
+                self.gpsAlert = true
+            }
         }
     }
 }

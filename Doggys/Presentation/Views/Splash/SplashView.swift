@@ -48,6 +48,14 @@ struct SplashView: View {
                         EmptyView()
                     }
             )
+            .alert(isPresented: $viewModel.gpsAlert) {
+                Alert(title: Text("GPS desconectado"),
+                      message: Text("La app requiere autorización para el uso del GPS"),
+                      dismissButton: .default(Text("OK"),
+                                              action: {
+                    viewModel.openSettings()
+                }))
+            }
         }
     }
 }

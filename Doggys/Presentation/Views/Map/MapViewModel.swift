@@ -14,9 +14,11 @@ final class MapViewModel: BaseViewModel {
     private var locationManager: GpsLocationManagerProtocol
     private var userProfileViewModel: UserProfileProtocol
     @Published var selfRegion: MKCoordinateRegion = .init()
+    @Published var selectedUser: UserProfile? = nil
+    @Published var userProfiles: UsersProfileList = .init()
+
     private var selfSpan: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.01,
                                                               longitudeDelta: 0.01)
-    var userProfiles: UsersProfileList = .init()
     
     init(locationManager: GpsLocationManagerProtocol,
          userProfileViewModel: UserProfileProtocol) {
@@ -26,8 +28,17 @@ final class MapViewModel: BaseViewModel {
     
     // MARK: - Public methods -
     func chargeData() {
-        getLocationAndCenter()
+        defaultRegion()
         getData()
+    }
+    
+    func defaultRegion() {
+        DispatchQueue.main.async {
+            let location = self.locationManager.gpsLocation()
+            let region = MKCoordinateRegion(center: location,
+                                            span: self.selfSpan)
+            self.selfRegion = region
+        }
     }
     
     func getLocationAndCenter() {
@@ -69,6 +80,7 @@ private extension MapViewModel {
                 print(completion)
             } receiveValue: { [weak self] location in
                 self?.selfRegion.center = location
-            }.store(in: &cancellables)
+            }
+            .store(in: &cancellables)
     }
 }

@@ -13,6 +13,7 @@ protocol GpsLocationManagerProtocol {
     func getCurrentLocation() -> AnyPublisher<CLLocationCoordinate2D, Never>
     func checkUserAuthorization()
     func gpsLocation() -> CLLocationCoordinate2D
+    var userHasLocation: Bool { get }
 }
 
 final class GpsLocationManager: NSObject, GpsLocationManagerProtocol {
@@ -25,9 +26,11 @@ final class GpsLocationManager: NSObject, GpsLocationManagerProtocol {
     override init() {
         self.locationManager = CLLocationManager()
         super.init()
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
         self.locationManager.delegate = self
         self.checkUserAuthorization()
-        self.locationManager.startUpdatingLocation()
     }
     
     func getLocation() -> AnyPublisher<CLLocationCoordinate2D, Never> {
@@ -51,7 +54,7 @@ final class GpsLocationManager: NSObject, GpsLocationManagerProtocol {
     }
     
     func getCurrentLocation() -> AnyPublisher<CLLocationCoordinate2D, Never> {
-         locationSubject
+        locationSubject
             .eraseToAnyPublisher()
     }
     
@@ -76,6 +79,7 @@ extension GpsLocationManager: CLLocationManagerDelegate {
         guard let location = locations.last else {
             return
         }
+        
         let coordinate = location.coordinate
         locationSubject.send(coordinate)
         userHasLocation = true
