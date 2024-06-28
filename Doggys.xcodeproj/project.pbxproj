@@ -40,6 +40,9 @@
 		399BE5332BB9791B00AC323C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BE5322BB9791B00AC323C /* LoginViewModel.swift */; };
 		399BE5352BB979A600AC323C /* LoginWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BE5342BB979A600AC323C /* LoginWireFrame.swift */; };
 		399BE53B2BBA8A7600AC323C /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399BE53A2BBA8A7600AC323C /* LogoView.swift */; };
+		39ADB1892C2EC5E100AEB3AE /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ADB1882C2EC5E000AEB3AE /* FriendsView.swift */; };
+		39ADB18B2C2EC5F100AEB3AE /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ADB18A2C2EC5F100AEB3AE /* FriendsViewModel.swift */; };
+		39ADB18D2C2EC60000AEB3AE /* FriendsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ADB18C2C2EC60000AEB3AE /* FriendsWireframe.swift */; };
 		39ADE2582BC29863007A6702 /* LogoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ADE2572BC29863007A6702 /* LogoHeader.swift */; };
 		39ADE25B2BC299D8007A6702 /* ButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ADE25A2BC299D8007A6702 /* ButtonLabel.swift */; };
 		39AF65E82BD13F8500FC602C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AF65E72BD13F8500FC602C /* BaseViewModel.swift */; };
@@ -173,6 +176,9 @@
 		399BE5322BB9791B00AC323C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		399BE5342BB979A600AC323C /* LoginWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWireFrame.swift; sourceTree = "<group>"; };
 		399BE53A2BBA8A7600AC323C /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		39ADB1882C2EC5E000AEB3AE /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
+		39ADB18A2C2EC5F100AEB3AE /* FriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
+		39ADB18C2C2EC60000AEB3AE /* FriendsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsWireframe.swift; sourceTree = "<group>"; };
 		39ADE2572BC29863007A6702 /* LogoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoHeader.swift; sourceTree = "<group>"; };
 		39ADE25A2BC299D8007A6702 /* ButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabel.swift; sourceTree = "<group>"; };
 		39AF65E72BD13F8500FC602C /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
@@ -450,6 +456,16 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		39ADB1872C2EC5AE00AEB3AE /* FriendsView */ = {
+			isa = PBXGroup;
+			children = (
+				39ADB1882C2EC5E000AEB3AE /* FriendsView.swift */,
+				39ADB18A2C2EC5F100AEB3AE /* FriendsViewModel.swift */,
+				39ADB18C2C2EC60000AEB3AE /* FriendsWireframe.swift */,
+			);
+			path = FriendsView;
+			sourceTree = "<group>";
+		};
 		39ADE2592BC298EB007A6702 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -542,6 +558,7 @@
 				A9286A2F2BC6E533003FC58A /* TabView */,
 				390BB76B2BBCA5260052257E /* Splash */,
 				A9B53B902BB336AC000AD215 /* Login */,
+				39ADB1872C2EC5AE00AEB3AE /* FriendsView */,
 				A9CC34912BC3DFC000E1599A /* Map */,
 				A9C47F032BBFE9AA0044ED5F /* Profile */,
 				A9EDD0CE2BBC150C0052D03C /* Register */,
@@ -916,6 +933,7 @@
 				A9FE0ECF2BC9BA54008564AB /* UserProfileEnvironmentKey.swift in Sources */,
 				A946A8092BCFF07F0088ADE0 /* StorageProtocol.swift in Sources */,
 				392EECE32BC7C73E005409EA /* SettingsViewModel.swift in Sources */,
+				39ADB1892C2EC5E100AEB3AE /* FriendsView.swift in Sources */,
 				A946A8072BCFF0550088ADE0 /* FirebaseStorageViewModel.swift in Sources */,
 				A9286A392BC7E607003FC58A /* DogFriendly.swift in Sources */,
 				A9CC34952BC3DFE800E1599A /* MapViewModel.swift in Sources */,
@@ -943,6 +961,7 @@
 				39AF65ED2BD17FED00FC602C /* RecoveryText.swift in Sources */,
 				A9EDD0D32BBC16470052D03C /* RecoveryView.swift in Sources */,
 				3979A3A52BCA866300F5C3B1 /* FadeinModifier.swift in Sources */,
+				39ADB18D2C2EC60000AEB3AE /* FriendsWireframe.swift in Sources */,
 				A932073C2BB48F860068D9C2 /* AuthProtocol.swift in Sources */,
 				A9D748542BFC904C00031B43 /* CustomMapIcon.swift in Sources */,
 				A9CC34932BC3DFDA00E1599A /* MapView.swift in Sources */,
@@ -953,6 +972,7 @@
 				3989ED6C2BFC856C007074A1 /* GpsLocationManager.swift in Sources */,
 				39AF65F12BD187F400FC602C /* BackArrow.swift in Sources */,
 				A932073A2BB48E170068D9C2 /* FirebaseAuthViewModel.swift in Sources */,
+				39ADB18B2C2EC5F100AEB3AE /* FriendsViewModel.swift in Sources */,
 				A9EDD0D52BBC19310052D03C /* RecoveryViewModel.swift in Sources */,
 				A9A7368F2C010E9500C4A0F4 /* MapPopUpView.swift in Sources */,
 				39DA4CAE2BCD11F500717DCD /* TextPickerView.swift in Sources */,

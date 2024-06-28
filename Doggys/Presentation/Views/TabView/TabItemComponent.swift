@@ -16,6 +16,7 @@ struct TabItemComponent<Content: View>: View  {
         case map = "map"
         case person = "person.fill"
         case settings = "gear"
+        case friends = "person.2"
     }
     
     var body: some View {

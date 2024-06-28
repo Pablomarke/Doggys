@@ -18,6 +18,10 @@ struct AppTabView: View {
                              name: "Perfil",
                              systemImage: .person)
             
+            TabItemComponent(view: FriendsWireframe.createView(),
+                             name: "Amigos",
+                             systemImage: .friends)
+            
             TabItemComponent(view: SettingsWireframe.createView(),
                              name: "Ajustes",
                              systemImage: .settings)
